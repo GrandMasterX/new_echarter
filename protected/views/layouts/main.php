@@ -15,7 +15,7 @@
     <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="static/css/form/form.css"/>
-    <!--<link rel="stylesheet" type="text/css" href="static/css/form/style.css"/>-->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/jquery.editable-select.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/jquery-ui.css"/>
 

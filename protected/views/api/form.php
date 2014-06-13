@@ -116,11 +116,6 @@
     </div>
 </div>
 
-
-
-
-
-
 <table class="discountsTbl" cellpadding="0" cellspacing="0" style="display:none;">
     <tr>
         <td colspan="5" style="background-color: #41a1e0;border-bottom: 1px solid #41a1e0;color: white;">Льготные категории пассажиров</td>
