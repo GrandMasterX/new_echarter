@@ -1,0 +1,37 @@
+.autocomplete-suggestion {
+		width: 280px!important;
+		line-height: 16px;
+		cursor: pointer;
+		font-size: 16px;
+		color: #000;
+		border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		text-indent: 10px;
+		padding: 10px 0;
+		background: #fff;
+		font-family: Arial, Verdana, 'Bree Serif'; 
+}
+.autocomplete-suggestion strong {
+		color: #0bb7da;
+		font-family: Arial, Verdana, 'Bree Serif';
+		font-weight: normal;
+}
+
+ul.autocmpl-ul{list-style-type: none;
+margin: 0px;
+min-width: 258px;
+background: white;
+color: grey;
+font-size: 14px;
+font-weight: normal;
+border: 1px solid grey;
+padding: 10px;
+z-index: 2000;
+position: absolute;
+overflow: auto;white-space: nowrap;max-height: 150px;}
+ul.autocmpl-ul li{border:1px solid transparent; cursor:pointer; display: block; }
+ul.autocmpl-ul li:hover{text-decoration:underline;display:block;}
