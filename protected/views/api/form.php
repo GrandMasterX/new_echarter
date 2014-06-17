@@ -9,6 +9,7 @@
 ?>
 <body>
 <div class="slider clearfix">
+<?php $this->widget('application.components.widgets.PopularBlockWidget'); ?>
 <div class="form right clearfix">
 <div class="tabs clearfix">
     <div class="right menu_cont">

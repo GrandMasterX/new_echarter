@@ -75,6 +75,7 @@ class SiteController extends Bus {
     public function actionContent($alias) {
         $model = Content::model()->findByAttributes(array('alias'=>$alias));
         $form = $this->actionCreateSession();
+        //http://www.yiiframework.com/extension/yii-curl/
         $this->render('index',array('model'=>$model,'form'=>$form));
     }
 

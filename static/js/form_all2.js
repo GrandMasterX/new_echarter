@@ -1,8 +1,8 @@
 $( function() {
-            $('form.clearfix').submit(function() {
-                return false;
-            });
-        });
+    $('form.clearfix').submit(function() {
+        return false;
+    });
+});
 function correctStr(str) {
     if (!str) return '';
     var arrReplace = {
@@ -23,53 +23,53 @@ function correctStr(str) {
         newStr += arrReplace[str[i]] ? arrReplace[str[i]] : str[i];
     }
     return newStr;
-}		
+}
 function getCities(searchStr,lang, selector){
-	if(document.all){ // IE
-		var xhr = new XDomainRequest();
-	}
-	else {var xhr = new XMLHttpRequest();}
-searchStr = correctStr(searchStr);
-	xhr.open('GET', 'http://e-travels.com.ua/includes/get_cities.php?lang='+lang+'&searchStr='+searchStr, true);
+    if(document.all){ // IE
+        var xhr = new XDomainRequest();
+    }
+    else {var xhr = new XMLHttpRequest();}
+    searchStr = correctStr(searchStr);
+    xhr.open('GET', 'http://e-travels.com.ua/includes/get_cities.php?lang='+lang+'&searchStr='+searchStr, true);
 
-	xhr.onload = function() {
-	if(this.responseText == '0') return false;
-	selector.closest('div').find('div.autocompl-block').html(this.responseText);
-	 // alert(this.responseText);
-	}
-	xhr.onerror = function() {
-	  alert('Ошибка ' + this.status);
-	}
-	xhr.send('');
+    xhr.onload = function() {
+        if(this.responseText == '0') return false;
+        selector.closest('div').find('div.autocompl-block').html(this.responseText);
+        // alert(this.responseText);
+    }
+    xhr.onerror = function() {
+        alert('Ошибка ' + this.status);
+    }
+    xhr.send('');
 }
 $(document).ready(function(){
 
-	$( "input.town" ).keyup(function (e){ 
-	var that = $(this);
-		var text = that.val();
+    $( "input.town" ).keyup(function (e){
+        var that = $(this);
+        var text = that.val();
 //	if (e.which !== 0) 
-		if((text.length >= 3)&&(e.keyCode > 40)){
-			getCities(text, 'ru', that);
-		}
-	
-	});
+        if((text.length >= 3)&&(e.keyCode > 40)){
+            getCities(text, 'ru', that);
+        }
 
-	$('body').click(function(){$('ul.autocmpl-ul').hide();});
-	$('li.autocmpl-li').live('click', function(){ 
-		var thisID = $(this).attr('id'); 
-		var thisNAME = $(this).text();
-		$(this).closest('div.pointCheck').find('input.hid_city_id').val(thisID);
-		$(this).closest('div.pointCheck').find('input.town').val(thisNAME);
-	});	
-	$('.element.oneway').click(function(){$('div.ret').hide().find('#backTripDate').attr('value','');});
-	$('.element.rt').click(function(){$('div.ret').show();});
-	
+    });
+
+    $('body').click(function(){$('ul.autocmpl-ul').hide();});
+    $('li.autocmpl-li').live('click', function(){
+        var thisID = $(this).attr('id');
+        var thisNAME = $(this).text();
+        $(this).closest('div.pointCheck').find('input.hid_city_id').val(thisID);
+        $(this).closest('div.pointCheck').find('input.town').val(thisNAME);
+    });
+    $('.element.oneway').click(function(){$('div.ret').hide().find('#backTripDate').attr('value','');});
+    $('.element.rt').click(function(){$('div.ret').show();});
+
 });
 
-	
-	
 
-	
+
+
+
 var api_params = {};
 
 function isEmptyObject(obj) {
@@ -91,12 +91,12 @@ function checkError(response, outputElement) {
 }
 
 function getNowDate() {
-            var date = new Date();
-            var dd = date.getDate();
-            var mm = date.getMonth()+1;//January is 0!
-            var yyyy = date.getFullYear();
-			if(dd<10){dd='0'+dd}
-            if(mm<10){mm='0'+mm}
+    var date = new Date();
+    var dd = date.getDate();
+    var mm = date.getMonth()+1;//January is 0!
+    var yyyy = date.getFullYear();
+    if(dd<10){dd='0'+dd}
+    if(mm<10){mm='0'+mm}
 
     return dd+'.'+mm+'.'+yyyy;
 }
@@ -123,7 +123,7 @@ function isset() {
 
 $(document).ready(function () {
 
-$.order();
+    $.order();
 
 });
 
@@ -159,16 +159,17 @@ $.order();
         var el_loaders = {};
 
         var def_params = {
-			searchButtonS: '#searchButton', 
+            searchButtonS: '#searchButton',
             firstCityS: '#startCityId',
-			secondCityS: '#endCityId',
+            secondCityS: '#endCityId',
             tripDateS: '#tripDate',
             backTripDateS: '#backTripDate',
-            resultContainerS: '#tripsResultContainer', 
-			showSeatsButtonS: '.check_seats', 
-			seatsContainerS: '.check_seats_container', 
+            resultContainerS: '#tripsResultContainer',
+            closeContainerS: '.close_popup_block',
+            showSeatsButtonS: '.check_seats',
+            seatsContainerS: '.check_seats_container',
 
-			
+
             busCheckS: '#buscheck',//
             aviaCheckS: '#aviacheck',//
             aviaCheckEconomS: '#aviacheckeconom',//
@@ -176,14 +177,14 @@ $.order();
             trainCheckS: '#traincheck',//
             exchangeCheckS: '#exchangecheck', //
             transferCityS: '#cityId_search2',
-			seatsBackContainerS: '.seatsBackContainer', 
-			searchPlusOneDayS: '.searchPlusOneDay', 
-			searchAviaTripsS: '.searchAviaTrips', 
-			ticketsS: '#totalTicketsAmount', 
-			lockSeatsS: '.lock-seats', 
-			buyContainerS: '.buy-container', 
-			discountsPopupS: 'table.discountsTbl', 
-			discountsPopupBtnS: '#skidki_plus'
+            seatsBackContainerS: '.seatsBackContainer',
+            searchPlusOneDayS: '.searchPlusOneDay',
+            searchAviaTripsS: '.searchAviaTrips',
+            ticketsS: '#totalTicketsAmount',
+            lockSeatsS: '.lock-seats',
+            buyContainerS: '.buy-container',
+            discountsPopupS: 'table.discountsTbl',
+            discountsPopupBtnS: '#skidki_plus'
         };
 
         var params = params ? params : {};
@@ -196,7 +197,7 @@ $.order();
                 def_params[el] = p[el];
             }
             params = def_params;
-var jsInitParams = {"loadBackDates":1,"loadDates":1,"salt":"11111111111"};
+            var jsInitParams = {"loadBackDates":1,"loadDates":1,"salt":"11111111111"};
             if (jsInitParams) {
                 data.initParams = jsInitParams;
             } else {
@@ -210,20 +211,21 @@ var jsInitParams = {"loadBackDates":1,"loadDates":1,"salt":"11111111111"};
             objs.secondCountry = $(params.secondCountryS);
             objs.firstCity = $(params.firstCityS);
 
-	////////
+            ////////
             objs.busCheck = $(params.busCheckS);
             objs.aviaCheck = $(params.aviaCheckS);
             objs.aviaCheckEconom = $(params.aviaCheckEconomS);
             objs.aviaCheckBusines = $(params.aviaCheckBusinesS);
             objs.trainCheck = $(params.trainCheckS);
             objs.exchangeCheck = $(params.exchangeCheckS);
-	//////////
+            //////////
 
             objs.secondCity = $(params.secondCityS);
             objs.transferCity = $(params.transferCityS);
             objs.tripDate = $(params.tripDateS);
             objs.backTripDate = $(params.backTripDateS);
             objs.resultContainer = $(params.resultContainerS);
+            objs.closeContainer = $(params.closeContainerS);
             objs.searchButton = $(params.searchButtonS);
             objs.searchPlusOneDay = $(params.searchPlusOneDayS);
             objs.searchAviaTrips = $(params.searchAviaTripsS);
@@ -234,7 +236,7 @@ var jsInitParams = {"loadBackDates":1,"loadDates":1,"salt":"11111111111"};
             //objs.discountsForm = $(params.discountsFormS);
 
 
-           // data.roundTrip = !!parseInt(objs.roundTrip.filter(':checked').val());
+            // data.roundTrip = !!parseInt(objs.roundTrip.filter(':checked').val());
             data.tickets_checked ={f:[], b:[]};
             data.searchParams = {};
             data.trips = {};
@@ -246,46 +248,46 @@ var jsInitParams = {"loadBackDates":1,"loadDates":1,"salt":"11111111111"};
             };
 
 
-			
-            
+
+
 
 
 
             //**************//
-         
 
 
-					
+
+
 // установка городов по-умолчанию
-var default_start_city_name = $('input#firstDefaultCityName').val();
-var default_end_city_name = $('input#secondDefaultCityName').val();
-var default_start_city_id = $('input#firstDefaultCityId').val();
-var default_end_city_id = $('input#secondDefaultCityId').val();
-$('input#cityId_search').attr('value', default_start_city_id);
-$('input#cityId_search1').attr('value', default_end_city_id);
-$('input#search').attr('value', default_start_city_name);
-$('input#search1').attr('value', default_end_city_name);
-if((default_start_city_name!='')&&(default_end_city_name!=''))
-	objs.searchButton.enable();
+            var default_start_city_name = $('input#firstDefaultCityName').val();
+            var default_end_city_name = $('input#secondDefaultCityName').val();
+            var default_start_city_id = $('input#firstDefaultCityId').val();
+            var default_end_city_id = $('input#secondDefaultCityId').val();
+            $('input#cityId_search').attr('value', default_start_city_id);
+            $('input#cityId_search1').attr('value', default_end_city_id);
+            $('input#search').attr('value', default_start_city_name);
+            $('input#search1').attr('value', default_end_city_name);
+            if((default_start_city_name!='')&&(default_end_city_name!=''))
+                objs.searchButton.enable();
 
-/*
-var default_city2 = $('input#secondDefaultCity').val();
-if(!default_city1) var default_city11 = ''; else var default_city11 = default_city1;
-if(!default_city2) var default_city22 = ''; else var default_city22 = default_city2;
-*/
+            /*
+             var default_city2 = $('input#secondDefaultCity').val();
+             if(!default_city1) var default_city11 = ''; else var default_city11 = default_city1;
+             if(!default_city2) var default_city22 = ''; else var default_city22 = default_city2;
+             */
 
 
             objs.tripDate.datepicker({
 
-			numberOfMonths:[1,2],
+                numberOfMonths:[1,2],
                 minDate: new Date(),
                 constrainInput: true,
                 onChangeMonthYear: function (y, m, o) {
 
 
-				setTimeout(function() {
-							$('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
-						}, 0);
+                    setTimeout(function() {
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                    }, 0);
 
                     data.tripDates = null;
                     if (!data.initParams.loadDates) return;
@@ -316,26 +318,26 @@ if(!default_city2) var default_city22 = ''; else var default_city22 = default_ci
                         contentLoaderER(objs.tripDate);
                         data.tripDates = json.DATES;
                         objs.tripDate.datepicker('refresh');
-						//if (!isEmptyObject(data.tripDates))
-						if (Object.keys(data.tripDates).length > 1)
-									setTimeout(function() {
-							$('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
-						}, 0);
+                        //if (!isEmptyObject(data.tripDates))
+                        if (Object.keys(data.tripDates).length > 1)
+                            setTimeout(function() {
+                                $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
+                            }, 0);
                     }, 'json', 0, 0);
                 },
                 beforeShow: function (field) {
-				
-			
-				//alert(selectedTransportTypes);
+
+
+                    //alert(selectedTransportTypes);
 
                     data.tripDates = null;
-	setTimeout(function() {
-							$('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
-						}, 0);
+                    setTimeout(function() {
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                    }, 0);
                     if (!data.initParams.loadDates) return;
-					//getNowDate();
-					var dateVal = $(field).val()? $(field).val() : getNowDate();
-				//	alert(dateVal);
+                    //getNowDate();
+                    var dateVal = $(field).val()? $(field).val() : getNowDate();
+                    //	alert(dateVal);
                     var date = Date.parseExact(dateVal, 'dd.MM.yyyy');
                     var str_date = $.datepicker.formatDate('01.mm.yy', date);
                     var params = {
@@ -343,7 +345,7 @@ if(!default_city2) var default_city22 = ''; else var default_city22 = default_ci
                         'END_CITY_ID': objs.secondCity.val(),
                         'START_DATE': str_date,
                         'END_DATE': date.clone().add({ days: 62 }).toString('dd.MM.yyyy'),
-                       // 'onewayTripDate': Date.today().add({days: -1}).toString('dd.MM.yyyy'),
+                        // 'onewayTripDate': Date.today().add({days: -1}).toString('dd.MM.yyyy'),
                         'action': 'getDates'
                     };
                     contentLoaderE(objs.tripDate, 'dataBlockLoader');
@@ -352,28 +354,28 @@ if(!default_city2) var default_city22 = ''; else var default_city22 = default_ci
                         contentLoaderER(objs.tripDate);
                         data.tripDates = json.DATES;
                         objs.tripDate.datepicker('refresh');
-					//	console.log(Object.keys(data.tripDates).length);
-	//alert(Object.keys(data.tripDates).length > 1);
+                        //	console.log(Object.keys(data.tripDates).length);
+                        //alert(Object.keys(data.tripDates).length > 1);
 
-					//	if (!isEmptyObject(data.tripDates))
-						if (Object.keys(data.tripDates).length > 1)
-						setTimeout(function() {
-							$('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
-						}, 0);
+                        //	if (!isEmptyObject(data.tripDates))
+                        if (Object.keys(data.tripDates).length > 1)
+                            setTimeout(function() {
+                                $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
+                            }, 0);
                     }, 'json', 0, 0);
 
                 },
                 onClose: function () {
-					var data1=$(this).val();
-					var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
-				if(my_pattern.test(data1))
-					{
-						$(this).closest('div').find('img.data-check').show();
-					}
-					else
-					{
-						$(this).closest('div').find('img.data-check').hide();
-					}
+                    var data1=$(this).val();
+                    var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
+                    if(my_pattern.test(data1))
+                    {
+                        $(this).closest('div').find('img.data-check').show();
+                    }
+                    else
+                    {
+                        $(this).closest('div').find('img.data-check').hide();
+                    }
 
                     contentLoaderER(objs.tripDate);
                 },
@@ -391,11 +393,11 @@ if(!default_city2) var default_city22 = ''; else var default_city22 = default_ci
                     } else {
 
                         if ($.inArray(str_date, data.tripDates) != -1) {
-                           return [ true, "calendar_actdate_charter", "" ];
+                            return [ true, "calendar_actdate_charter", "" ];
 
                         } else {
-                           // return [ false, "", "" ];
-							return [ true, "", "" ];
+                            // return [ false, "", "" ];
+                            return [ true, "", "" ];
                         }
                     }
 
@@ -403,24 +405,24 @@ if(!default_city2) var default_city22 = ''; else var default_city22 = default_ci
                 }
             }).change(function () {
 
-                var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
-                var cfdate = Date.parseExact(objs.backTripDate.val() ? objs.backTripDate.val() : $(this).val(), 'dd.MM.yyyy');
-					//objs.searchButton.enable();
-             /*   if ((data.roundTrip && !objs.backTripDate.val()) || cfdate.compareTo(date) < 0) {
-                    date.add(7).days();
-                    objs.backTripDate.val(date.toString('dd.MM.yyyy'));
-                }*/
-            });
+                    var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
+                    var cfdate = Date.parseExact(objs.backTripDate.val() ? objs.backTripDate.val() : $(this).val(), 'dd.MM.yyyy');
+                    //objs.searchButton.enable();
+                    /*   if ((data.roundTrip && !objs.backTripDate.val()) || cfdate.compareTo(date) < 0) {
+                     date.add(7).days();
+                     objs.backTripDate.val(date.toString('dd.MM.yyyy'));
+                     }*/
+                });
 
             objs.backTripDate.datepicker({
-			numberOfMonths:[1,2],
+                numberOfMonths:[1,2],
                 minDate: new Date(),
                 constrainInput: true,
                 onChangeMonthYear: function (y, m, o) {
 
-				setTimeout(function() {
-							$('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
-						}, 0);
+                    setTimeout(function() {
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                    }, 0);
 
                     data.tripBackDates = null;
                     if (!data.initParams.loadDates) return;
@@ -440,22 +442,22 @@ if(!default_city2) var default_city22 = ''; else var default_city22 = default_ci
                         contentLoaderER(objs.backTripDate);
                         data.tripBackDates = json.DATES;
                         objs.backTripDate.datepicker('refresh');
-						//if (!isEmptyObject(data.tripBackDates))
-						if (Object.keys(data.tripBackDates).length > 1)
-						
-						setTimeout(function() {
-							$('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
-						}, 0);
+                        //if (!isEmptyObject(data.tripBackDates))
+                        if (Object.keys(data.tripBackDates).length > 1)
+
+                            setTimeout(function() {
+                                $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
+                            }, 0);
                     }, 'json', 0, 0);
                 },
                 beforeShow: function (field) {
-				
+
                     data.tripBackDates = null;
-					setTimeout(function() {
-							$('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
-						}, 0);
+                    setTimeout(function() {
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                    }, 0);
                     if (!data.initParams.loadDates) return;
-var dateVal = $(field).val()? $(field).val() : getNowDate();
+                    var dateVal = $(field).val()? $(field).val() : getNowDate();
                     var date = Date.parseExact(dateVal, 'dd.MM.yyyy');
 
                     var str_date = date.toString('01.MM.yyyy');
@@ -474,25 +476,25 @@ var dateVal = $(field).val()? $(field).val() : getNowDate();
                         contentLoaderER(objs.backTripDate);
                         data.tripBackDates = json.DATES;
                         objs.backTripDate.datepicker('refresh');
-					//	if (!isEmptyObject(data.tripBackDates))
-						if (Object.keys(data.tripBackDates).length > 1)
-						setTimeout(function() {
-							$('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
-						}, 0);
+                        //	if (!isEmptyObject(data.tripBackDates))
+                        if (Object.keys(data.tripBackDates).length > 1)
+                            setTimeout(function() {
+                                $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
+                            }, 0);
                     }, 'json', 0, 0);
                 },
                 onClose: function(){
 
-					var data1=$(this).val();
-					var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
-					if(my_pattern.test(data1))
-					{
-						$(this).closest('div').find('img.data-check').show();
-					}
-					else
-					{
-						$(this).closest('div').find('img.data-check').hide();
-					}
+                    var data1=$(this).val();
+                    var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
+                    if(my_pattern.test(data1))
+                    {
+                        $(this).closest('div').find('img.data-check').show();
+                    }
+                    else
+                    {
+                        $(this).closest('div').find('img.data-check').hide();
+                    }
 
                     contentLoaderER(objs.backTripDate);
                 },
@@ -520,21 +522,21 @@ var dateVal = $(field).val()? $(field).val() : getNowDate();
                     return true;
                 }
             }).change(function () {
-                var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
-                var cfdate = Date.parseExact(objs.tripDate.val() ? objs.tripDate.val() : Date.today(), 'dd.MM.yyyy');
-                //console.log(cfdate.compareTo(date));
-             //   if (cfdate.compareTo(date) <= 0) return;
+                    var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
+                    var cfdate = Date.parseExact(objs.tripDate.val() ? objs.tripDate.val() : Date.today(), 'dd.MM.yyyy');
+                    //console.log(cfdate.compareTo(date));
+                    //   if (cfdate.compareTo(date) <= 0) return;
 
-                objs.backTripDate.val(cfdate.toString('dd.MM.yyyy'));
-			  
-            });
+                    objs.backTripDate.val(cfdate.toString('dd.MM.yyyy'));
+
+                });
 
 
-	
-		
-		
-		}
-		function uniqID(idlength) {
+
+
+
+        }
+        function uniqID(idlength) {
             var charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
             if (!idlength) {
                 idlength = Math.floor(Math.random() * charstoformid.length);
@@ -554,21 +556,21 @@ var dateVal = $(field).val()? $(field).val() : getNowDate();
         function contentLoader(obj, loader) {
             if (!loader) loader = 'ajax-loader-line.gif';
             return obj.html('<div class="ajax-loader-line"><img src="/img/' + loader + '" /></div>');
-        }        
-		
-		function reLogin(PageType, PageRes) {
-			var SP = {};
-			SP.action = 'getActionSalt';
-			data.PageType = PageType;
-			data.PageRes = PageRes;
-					api_post(api_url, SP, function (result) {
-						setTimeout(
-                                function () {
-									data.initParams.salt = result.salt;
-								//	console.log(data.initParams);
-								}, 2000
-                            );
-                     }, 'json');						
+        }
+
+        function reLogin(PageType, PageRes) {
+            var SP = {};
+            SP.action = 'getActionSalt';
+            data.PageType = PageType;
+            data.PageRes = PageRes;
+            api_post(api_url, SP, function (result) {
+                setTimeout(
+                    function () {
+                        data.initParams.salt = result.salt;
+                        //	console.log(data.initParams);
+                    }, 2000
+                );
+            }, 'json');
         }
 
         function contentLoaderE(obj, objClass) {
@@ -579,7 +581,7 @@ var dateVal = $(field).val()? $(field).val() : getNowDate();
                 position: 'absolute', top: obj.offset().top + obj.height() / 4, left: obj.offset().left + obj.width() / 4, width: obj.width() / 2, height: obj.height() / 2, 'z-index': 500
 
             }).hide();
-	
+
             //alert(obj.attr('id'));
             if (!obj.attr('id')) {
                 obj.attr('id', uniqID());
@@ -596,16 +598,17 @@ var dateVal = $(field).val()? $(field).val() : getNowDate();
                 el_loaders['#' + obj.attr('id')].remove();
             }
         }
-data.PageType = '';
-data.PageRes = '';
+        data.PageType = '';
+        data.PageRes = '';
         function api_post(url, params, callback, type, multiple, sync) {
-params['type'] = data.PageType;
-params['res'] = data.PageRes;
+            params['type'] = data.PageType;
+            params['res'] = data.PageRes;
             if (api_request && !multiple) api_request.abort();
-
-            if (data.initParams.salt) {
-                params['slt'] = data.initParams.salt;
-            }
+            /*console.log(data.initParams.salt);
+             if (data.initParams.salt) {
+             params['slt'] = data.initParams.salt;
+             }*/
+            params['slt'] = data.initParams.salt;
             var async = !sync;
             //alert(async);
             api_request = $.ajax({
@@ -641,81 +644,82 @@ params['res'] = data.PageRes;
              }, type);*/
         }
         init(params);
-		reLogin('avia_plus_charter','echarter');
+        //reLogin('avia_plus_charter','echarter2');
+        reLogin('all','echarter2');
         //SEARCH BUTTON CLICK
-		
-        
-		
+
+
+
         objs.searchButton.click(function () {
-		//alert('test');
+            //alert('test');
             if ($(this).disabled()) {
                 return false;
             }
             $(this).disable();
             var searchParams = {};
 /////////
-/* установка параметров ЖД фильтров - начало*/
-/*
-searchParams.TRAIN_TYPES_SEARCH_FILTER = '';
-            $("div.selectArea3Target.trainFilters input:checkbox").each(function(){
-                    if($(this).prop('checked')){
-                        searchParams.TRAIN_TYPES_SEARCH_FILTER += $(this).val()+';';
-                    }});
-					*/
-/* установка параметров ЖД фильтров  - конец*/
-/* установка параметров авиа фильтров - начало*/
-      /*      var depFlagString = '';
-            var arrFlagString = '';
-            $("div#segmentTimeDep input:checkbox").each(function(){
-                if($(this).prop('checked')){
-                    depFlagString += $(this).val();
-                }
-            });
-            $("div#segmentTimeArr input:checkbox").each(function(){
-                if($(this).prop('checked')){
-                    arrFlagString += $(this).val();
-                }
-            });
-			searchParams.DEP_FLAG_STRING = depFlagString;
-			searchParams.ARR_FLAG_STRING = arrFlagString;
-			*/
-/* установка параметров авиа фильтров  - конец*/
-searchParams.SELECTED_MODES = "";
-/*
-if($("div.transports").hasClass("active")){
-if((!$("div.transports #buscheck").prop("checked"))&&(!$("div.transports #traincheck").prop("checked"))&&(!$("div.transports #aviacheck").prop("checked")))
-{ 
-var waiter;
-$('div.messageAlert p').html('Выберите тип транспортного средства<br /> <img style="margin-top:10px;" src="http://e-travels.com.ua/images/form/transports.png" alt="" />');
-$('div.messageAlert').fadeIn(300, function(){
-// создаём таймер и запоминаем ссылку на него
-	waiter=setTimeout(function(){
-          // когда таймер отработает будут запущен fadeOut
-	          $('div.messageAlert').fadeOut(400);
-	   },5000);
-	})
-	 			  $('div.messageAlert').live('click', function () {
-	     clearTimeout(waiter);
-		 $('div.messageAlert').fadeOut(400);
-	});
-	// щелчок унечтожит таймер и обьект не исчезнет
-$(this).enable();
-	return false;
-}}
-*/
-/******
-if($("#buscheck").prop("checked")){
+            /* установка параметров ЖД фильтров - начало*/
+            /*
+             searchParams.TRAIN_TYPES_SEARCH_FILTER = '';
+             $("div.selectArea3Target.trainFilters input:checkbox").each(function(){
+             if($(this).prop('checked')){
+             searchParams.TRAIN_TYPES_SEARCH_FILTER += $(this).val()+';';
+             }});
+             */
+            /* установка параметров ЖД фильтров  - конец*/
+            /* установка параметров авиа фильтров - начало*/
+            /*      var depFlagString = '';
+             var arrFlagString = '';
+             $("div#segmentTimeDep input:checkbox").each(function(){
+             if($(this).prop('checked')){
+             depFlagString += $(this).val();
+             }
+             });
+             $("div#segmentTimeArr input:checkbox").each(function(){
+             if($(this).prop('checked')){
+             arrFlagString += $(this).val();
+             }
+             });
+             searchParams.DEP_FLAG_STRING = depFlagString;
+             searchParams.ARR_FLAG_STRING = arrFlagString;
+             */
+            /* установка параметров авиа фильтров  - конец*/
+            searchParams.SELECTED_MODES = "";
+            /*
+             if($("div.transports").hasClass("active")){
+             if((!$("div.transports #buscheck").prop("checked"))&&(!$("div.transports #traincheck").prop("checked"))&&(!$("div.transports #aviacheck").prop("checked")))
+             {
+             var waiter;
+             $('div.messageAlert p').html('Выберите тип транспортного средства<br /> <img style="margin-top:10px;" src="http://e-travels.com.ua/images/form/transports.png" alt="" />');
+             $('div.messageAlert').fadeIn(300, function(){
+             // создаём таймер и запоминаем ссылку на него
+             waiter=setTimeout(function(){
+             // когда таймер отработает будут запущен fadeOut
+             $('div.messageAlert').fadeOut(400);
+             },5000);
+             })
+             $('div.messageAlert').live('click', function () {
+             clearTimeout(waiter);
+             $('div.messageAlert').fadeOut(400);
+             });
+             // щелчок унечтожит таймер и обьект не исчезнет
+             $(this).enable();
+             return false;
+             }}
+             */
+            /******
+             if($("#buscheck").prop("checked")){
 		searchParams.SELECTED_MODES = objs.busCheck.val();
 	}
 
-	
-if($("#traincheck").prop("checked")){
+
+             if($("#traincheck").prop("checked")){
 	if(searchParams.SELECTED_MODES != "")
 		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.trainCheck.val();
 	else
 		searchParams.SELECTED_MODES = objs.trainCheck.val();
 	}
-if($("#exchangecheck").prop("checked")){
+             if($("#exchangecheck").prop("checked")){
 	if(searchParams.SELECTED_MODES != ""){
 			if(transferPointVal>3)
 				searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + 9;
@@ -725,38 +729,38 @@ if($("#exchangecheck").prop("checked")){
 	else
 		searchParams.SELECTED_MODES = objs.exchangeCheck.val();
 	}
-if(($("#aviacheckbusines").prop("checked"))&&($("#aviacheck").prop("checked"))){
+             if(($("#aviacheckbusines").prop("checked"))&&($("#aviacheck").prop("checked"))){
 	if(searchParams.SELECTED_MODES != "")
 		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.aviaCheckBusines.val();
 	else
 		searchParams.SELECTED_MODES = objs.aviaCheckBusines.val();
 	}
-if(($("#aviacheckeconom").prop("checked"))&&($("#aviacheck").prop("checked"))){
+             if(($("#aviacheckeconom").prop("checked"))&&($("#aviacheck").prop("checked"))){
 	if(searchParams.SELECTED_MODES != "")
 		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.aviaCheckEconom.val();
 	else
 		searchParams.SELECTED_MODES = objs.aviaCheckEconom.val();
 	}
-if(($("#aviacheck").prop("checked")) && !($("#aviacheckeconom").prop("checked")) && !($("#aviacheckbusines").prop("checked"))){
+             if(($("#aviacheck").prop("checked")) && !($("#aviacheckeconom").prop("checked")) && !($("#aviacheckbusines").prop("checked"))){
 	if(searchParams.SELECTED_MODES != "")
 		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.aviaCheck.val();
 	else
 		searchParams.SELECTED_MODES = objs.aviaCheck.val();
 	}
 
-	if(searchParams.SELECTED_MODES == "")
-	searchParams.SELECTED_MODES = "1;3;51";
-	
-*********/	
-	
-	
-	
-	
-searchParams.SELECTED_MODES = "4;3;8";
-	
+             if(searchParams.SELECTED_MODES == "")
+             searchParams.SELECTED_MODES = "1;3;51";
+
+             *********/
+
+
+
+
+            searchParams.SELECTED_MODES = "4;3;8";
+
 //////////////
 
-   
+
 
 
 //alert(searchParams.SELECTED_MODES);
@@ -768,29 +772,29 @@ searchParams.SELECTED_MODES = "4;3;8";
 
             searchParams.TRIP_DATE = objs.tripDate.val();
             searchParams.BACK_TRIP_DATE = objs.backTripDate.val();
-				var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
-				if(my_pattern.test(searchParams.BACK_TRIP_DATE))
-					searchParams.ROUND_TRIP = true;
-				else
-					searchParams.ROUND_TRIP = false;
+            var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
+            if(my_pattern.test(searchParams.BACK_TRIP_DATE))
+                searchParams.ROUND_TRIP = true;
+            else
+                searchParams.ROUND_TRIP = false;
 
-          //  searchParams.TICKETS = objs.tickets.val();
+            //  searchParams.TICKETS = objs.tickets.val();
             searchParams.TICKETS = '1';
-          //  searchParams.TRIP_ID = '';
-          //  searchParams.discount = objs.disocuntPopup.getData();
+            //  searchParams.TRIP_ID = '';
+            //  searchParams.discount = objs.disocuntPopup.getData();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
             }
-	
-					
+
+
             data.searchParams = searchParams;
             searchParams.action = 'searchTrips';
             objs.resultContainer.slideUp(500, function () {
-				
+
                 contentLoader(objs.resultContainer, 'ajax-big-loader.gif').slideDown(500, function () {
-                    	//objs.searchButton.enable();
-					api_post(api_url, searchParams, function (json) {
+                    //objs.searchButton.enable();
+                    api_post(api_url, searchParams, function (json) {
                         objs.searchButton.enable();
 
                         objs.resultContainer.slideUp(200, function () {
@@ -813,25 +817,25 @@ searchParams.SELECTED_MODES = "4;3;8";
                                 .html('');
                             // objs.resultContainer.find(params.showSeatsButtonS).enable();
                             if (json.success) {
-							
+
                                 $('html, body').animate({
                                     scrollTop: objs.resultContainer.offset().top
                                 }, 500);
                             }
-							/*else{
-								getTimeTable2(searchParams.START_CITY_ID, searchParams.END_CITY_ID);
-							} */
+                            /*else{
+                             getTimeTable2(searchParams.START_CITY_ID, searchParams.END_CITY_ID);
+                             } */
 
                             var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();//.first().hide();
                             objs.resultContainer.find('table.filters').find('td').first().html('<div>' + fhtml + '</div>').find('div').hide();
                             if (!json.COMPLETED) {
-							
-                             initFilters()
+
+                                initFilters()
                                 objs.resultContainer
                                     .find('div#loadOtherTrips')
                                     .before('<div class="ajax-loader-line"><img src="/img/ajax-big-loader.gif" /></div>');
                             } else {
-                               // initFilters();
+                                // initFilters();
                             }
                         });
 
@@ -851,9 +855,9 @@ searchParams.SELECTED_MODES = "4;3;8";
             });
         });
 
-		// поиск рейсов на ближайшую дату
-		// direction - направление поиска: forward - вперед, back - назад
-		// iteration - количество циклов поиска
+        // поиск рейсов на ближайшую дату
+        // direction - направление поиска: forward - вперед, back - назад
+        // iteration - количество циклов поиска
 
 
         function initSort() {
@@ -1048,9 +1052,23 @@ searchParams.SELECTED_MODES = "4;3;8";
             }, 'json', 1);
         }
 
+        //закрытие карты мест
+        /*objs.closeContainer.on('click', function () {
+         console.log('test');
+         $(this).closest('div').hide().html('');
+         $('body').find('#overlay').hide();
+         });*/
+        $('div.close_popup_block').live('click', function () {
+            console.log('test');
+            $(this).closest('div.check_seats_container').hide().html('');
+            $('body').find('#overlay').hide();
+        });
+
         // SHOW SEATS
         objs.resultContainer.on('click', params.showSeatsButtonS, function () {
 
+            $('div.popup.order').hide();
+            $('body').find('#overlay').show();
 
             var obj = $(this);
             objs.currTripBtn = obj;
@@ -1088,7 +1106,7 @@ searchParams.SELECTED_MODES = "4;3;8";
             if ((carraige_id)&&(!segment)) {
                 post_params['CARRIAGE_ID'] = carraige_id;
             }
-			else {
+            else {
                 post_params['segment'+segment+'CarriageId'] = carraige_id;
             }
 
@@ -1150,59 +1168,59 @@ searchParams.SELECTED_MODES = "4;3;8";
             data.searchParams.segment1CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'1');
         });
-		objs.resultContainer.on('change', '#segment2carriage', function () {
+        objs.resultContainer.on('change', '#segment2carriage', function () {
             data.searchParams.segment2CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'2');
         });
-		objs.resultContainer.on('change', '#segment3carriage', function () {
+        objs.resultContainer.on('change', '#segment3carriage', function () {
             data.searchParams.segment3CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'3');
         });
-		objs.resultContainer.on('change', '#segment4carriage', function () {
+        objs.resultContainer.on('change', '#segment4carriage', function () {
             data.searchParams.segment4CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'4');
         });
-		objs.resultContainer.on('change', '#segment5carriage', function () {
+        objs.resultContainer.on('change', '#segment5carriage', function () {
             data.searchParams.segment5CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'5');
         });
-		objs.resultContainer.on('change', '#segment6carriage', function () {
+        objs.resultContainer.on('change', '#segment6carriage', function () {
             data.searchParams.segment6CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'6');
         });
-		objs.resultContainer.on('change', '#segment7carriage', function () {
+        objs.resultContainer.on('change', '#segment7carriage', function () {
             data.searchParams.segment7CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'7');
         });
-		objs.resultContainer.on('change', '#segment8carriage', function () {
+        objs.resultContainer.on('change', '#segment8carriage', function () {
             data.searchParams.segment8CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'8');
         });
-		objs.resultContainer.on('change', '#segment9carriage', function () {
+        objs.resultContainer.on('change', '#segment9carriage', function () {
             data.searchParams.segment9CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'9');
         });
-		objs.resultContainer.on('change', '#segment10carriage', function () {
+        objs.resultContainer.on('change', '#segment10carriage', function () {
             data.searchParams.segment10CarriageId = $(this).val();
             loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn, $(this).val(),'10');
         });
 
         // CHECK SEAT
-		var tries = 0;
-		var tries2 = 0;
+        var tries = 0;
+        var tries2 = 0;
         objs.resultContainer.on('click', '.seat-available', function () {
             /*if (data.noSelectSeats) {
-                return false;
-            }*/
-			var tickets = parseInt(objs.tickets.val());
-			tries++;
-			
-			if((tries>tickets)&&(tries2 == 0)){
-			$('div.modelavto').before('<span style="display:block;text-align:center;padding-top: 20px;color: #8c1a11;">Если Вам нужно больше мест - увеличьте количество пассажиров в форме поиска (вверху) и начните поиск рейсов заново.</span>').slideDown(100);
-			tries2 = 1;
-			}
-			
-			//alert(test3);
+             return false;
+             }*/
+            var tickets = parseInt(objs.tickets.val());
+            tries++;
+
+            if((tries>tickets)&&(tries2 == 0)){
+                $('div.modelavto').before('<span style="display:block;text-align:center;padding-top: 20px;color: #8c1a11;">Если Вам нужно больше мест - увеличьте количество пассажиров в форме поиска (вверху) и начните поиск рейсов заново.</span>').slideDown(100);
+                tries2 = 1;
+            }
+
+            //alert(test3);
             var obj = $(this);
             var seatId = obj.attr('rel');
             var seatNum = obj.html();
@@ -1211,7 +1229,7 @@ searchParams.SELECTED_MODES = "4;3;8";
                 return false;
             }
             var direction = $(this).is('[back]') ? 'b' : 'f';
-			direction = $(this).is('[segment]') ?  $(this).attr('segment') : direction;
+            direction = $(this).is('[segment]') ?  $(this).attr('segment') : direction;
             // objs.lockSeats.disable();
             data.searchParams.CARRIAGE_ID = $(this).val();  //""
             data.searchParams.segment0CarriageId = $(this).val();
@@ -1294,24 +1312,24 @@ searchParams.SELECTED_MODES = "4;3;8";
 
         // BUY FORM
         objs.resultContainer.on('click', '.buy_order', function () {
-		
-		if($("input.international").length) { //если присутствует авиа рейс
-			var correct = true;
-			$("input.international").each(function(){
-				$(this).css({'border':'1px solid'});
-				var pattern = /^[a-zA-Z\s]+$/;
-				var str = $(this).val();
-				console.log(pattern.test(str));
-				if(!pattern.test(str)){
-					$(this).css({'border':'1px solid red'});
-					$('div.intAviaMess').show();
-					correct = false;
-					//return false;
-				}
-			});
-			if(!correct) return false;
-		}
-		
+
+            if($("input.international").length) { //если присутствует авиа рейс
+                var correct = true;
+                $("input.international").each(function(){
+                    $(this).css({'border':'1px solid'});
+                    var pattern = /^[a-zA-Z\s]+$/;
+                    var str = $(this).val();
+                    console.log(pattern.test(str));
+                    if(!pattern.test(str)){
+                        $(this).css({'border':'1px solid red'});
+                        $('div.intAviaMess').show();
+                        correct = false;
+                        //return false;
+                    }
+                });
+                if(!correct) return false;
+            }
+
             if ($(this).disabled()) {
                 return false;
             }
@@ -1322,19 +1340,19 @@ searchParams.SELECTED_MODES = "4;3;8";
             var form = $('form[name=order_data]');
 
             var post = $.extend(data.searchParams, {'order_data': form.serialize()});
-			post.TRIP = null;
+            post.TRIP = null;
             post.action = 'ticketsBooking';
             post.url1 = 'http://vega-reisen.com.ua/orderSuccess.php';
-/*
-			var str = $("form[name=order_data]").serialize();
-			var tickets = objs.tickets.val();
-            var post = {
-                        'order_data': str,
-                        'url1': 'http://e-travels.com.ua/orderSuccess.php',
-						'TICKETS': tickets
-                        'action': 'ticketsBooking'
-                    };
-		*/
+            /*
+             var str = $("form[name=order_data]").serialize();
+             var tickets = objs.tickets.val();
+             var post = {
+             'order_data': str,
+             'url1': 'http://e-travels.com.ua/orderSuccess.php',
+             'TICKETS': tickets
+             'action': 'ticketsBooking'
+             };
+             */
             api_post(api_url, post, function (json) {
                 objs.buyContainer.find('.field_error').removeClass('field_error');$("span.alertCheckMessage").hide();
                 p.html(obj);
@@ -1343,7 +1361,7 @@ searchParams.SELECTED_MODES = "4;3;8";
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
                         objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
-						if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
                 }
@@ -1367,25 +1385,25 @@ searchParams.SELECTED_MODES = "4;3;8";
             }, 'json');
             //objs.buyContainer.
         });
-	     // BUY FORM ALFABANK
+        // BUY FORM ALFABANK
 
         objs.resultContainer.on('click', '.buy_order_alfa', function () {
-		if($("input.international").length) { //если присутствует авиа рейс
-			var correct = true;
-			$("input.international").each(function(){
-				$(this).css({'border':'1px solid'});
-				var pattern = /^[a-zA-Z\s]+$/;
-				var str = $(this).val();
-				console.log(pattern.test(str));
-				if(!pattern.test(str)){
-					$(this).css({'border':'1px solid red'});
-					$('div.intAviaMess').show();
-					correct = false;
-					//return false;
-				}
-			});
-			if(!correct) return false;
-		}		
+            if($("input.international").length) { //если присутствует авиа рейс
+                var correct = true;
+                $("input.international").each(function(){
+                    $(this).css({'border':'1px solid'});
+                    var pattern = /^[a-zA-Z\s]+$/;
+                    var str = $(this).val();
+                    console.log(pattern.test(str));
+                    if(!pattern.test(str)){
+                        $(this).css({'border':'1px solid red'});
+                        $('div.intAviaMess').show();
+                        correct = false;
+                        //return false;
+                    }
+                });
+                if(!correct) return false;
+            }
             if ($(this).disabled()) {
                 return false;
             }
@@ -1396,18 +1414,18 @@ searchParams.SELECTED_MODES = "4;3;8";
             var form = $('form[name=order_data]');
 
             var post = $.extend(data.searchParams, {'order_data': form.serialize()});
-			post.TRIP = null;
+            post.TRIP = null;
             post.action = 'abankCheckout';
             post.url1 = 'http://vega-reisen.com.ua/orderSuccess.php';
 
-/*
-			var str = $("form[name=order_data]").serialize();
-            var post = {
-                        'order_data': str,
-                        'url1': 'http://e-travels.com.ua/orderSuccess.php',
-                        'action': 'abankCheckout'
-                    };
-*/
+            /*
+             var str = $("form[name=order_data]").serialize();
+             var post = {
+             'order_data': str,
+             'url1': 'http://e-travels.com.ua/orderSuccess.php',
+             'action': 'abankCheckout'
+             };
+             */
             api_post(api_url, post, function (json) {
                 objs.buyContainer.find('.field_error').removeClass('field_error');$("span.alertCheckMessage").hide();
                 p.html(obj);
@@ -1416,17 +1434,17 @@ searchParams.SELECTED_MODES = "4;3;8";
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
                         objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
-						if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
                 }
-				 obj.disabled();
+                obj.disabled();
                 window.location = json.furl;
-				
+
             }, 'json');
             //objs.buyContainer.
         });
-	
+
         // BUY_DISCOUNT FORM
         objs.resultContainer.on('click', '.order_discount', function () {
 
@@ -1438,25 +1456,25 @@ searchParams.SELECTED_MODES = "4;3;8";
             var discount_data = objs.resultContainer.find('div.buy_discount');
             var p = obj.parent();
             contentLoader(p);
-           // post.TRIP = null;
-/*
-            var form = $('form[name=order_data]');
+            // post.TRIP = null;
+            /*
+             var form = $('form[name=order_data]');
 
-            var post = $.extend(data.searchParams, {"order_data": form.serialize()});
-            post.check_discount = 1;
-            post.action = 'ticketsBooking';
-            post.url1 = 'http://e-travels.com.ua/orderSuccess.php';
+             var post = $.extend(data.searchParams, {"order_data": form.serialize()});
+             post.check_discount = 1;
+             post.action = 'ticketsBooking';
+             post.url1 = 'http://e-travels.com.ua/orderSuccess.php';
 
-			*/
-		 var str = $("form[name=order_data]").serialize();
+             */
+            var str = $("form[name=order_data]").serialize();
             var post = {
-                        'order_data': str,
-                        'url1': 'http://vega-reisen.com.ua/orderSuccess.php',
-                        'check_discount': 1,
-                    //    'discount_data': discount_data,
-                        'TRIP': null,
-                        'action': 'ticketsBooking'
-                    };
+                'order_data': str,
+                'url1': 'http://vega-reisen.com.ua/orderSuccess.php',
+                'check_discount': 1,
+                //    'discount_data': discount_data,
+                'TRIP': null,
+                'action': 'ticketsBooking'
+            };
 
             api_post(api_url, post, function (json) {
                 objs.buyContainer.find('.field_error').removeClass('field_error');$("span.alertCheckMessage").hide();
@@ -1466,7 +1484,7 @@ searchParams.SELECTED_MODES = "4;3;8";
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
                         objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
-						if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
                 }
@@ -1523,44 +1541,44 @@ searchParams.SELECTED_MODES = "4;3;8";
         });
         // BOOKING FORM
         objs.resultContainer.on('click', '.booking_order', function () {
-		
-		if($("input.international").length) { //если присутствует авиа рейс
-			var correct = true;
-			$("input.international").each(function(){
-				$(this).css({'border':'1px solid'});
-				var pattern = /^[a-zA-Z\s]+$/;
-				var str = $(this).val();
-				console.log(pattern.test(str));
-				if(!pattern.test(str)){
-					$(this).css({'border':'1px solid red'});
-					$('div.intAviaMess').show();
-					correct = false;
-					//return false;
-				}
-			});
-			if(!correct) return false;
-		}
-		
+
+            if($("input.international").length) { //если присутствует авиа рейс
+                var correct = true;
+                $("input.international").each(function(){
+                    $(this).css({'border':'1px solid'});
+                    var pattern = /^[a-zA-Z\s]+$/;
+                    var str = $(this).val();
+                    console.log(pattern.test(str));
+                    if(!pattern.test(str)){
+                        $(this).css({'border':'1px solid red'});
+                        $('div.intAviaMess').show();
+                        correct = false;
+                        //return false;
+                    }
+                });
+                if(!correct) return false;
+            }
+
             if ($(this).disabled()) {
                 return false;
             }
             var obj = $(this);
             var p = obj.parent();
             contentLoader(p);
-         //   var form = $('form[name=order_data]');
-          //  post.TRIP = null;
-		 var str = $("form[name=order_data]").serialize();
+            //   var form = $('form[name=order_data]');
+            //  post.TRIP = null;
+            var str = $("form[name=order_data]").serialize();
             var post = {
-                        'order_data': str,
-                        'url1': 'http://vega-reisen.com.ua/orderSuccess.php?r=1',
-                        'TRIP': null,
-                        'action': 'reserveTickets'
-                    };
+                'order_data': str,
+                'url1': 'http://vega-reisen.com.ua/orderSuccess.php?r=1',
+                'TRIP': null,
+                'action': 'reserveTickets'
+            };
 
 
-        //    post = $.extend(data.searchParams, {"order_data": form.serialize()});
-     //       post.action = 'reserveTickets';
-     //       post.url1 = 'http://e-travels.com.ua/orderSuccess.php?r=1';
+            //    post = $.extend(data.searchParams, {"order_data": form.serialize()});
+            //       post.action = 'reserveTickets';
+            //       post.url1 = 'http://e-travels.com.ua/orderSuccess.php?r=1';
             api_post(api_url, post, function (json) {
                 objs.buyContainer.find('.field_error').removeClass('field_error');$("span.alertCheckMessage").hide();
                 if (!json.success) {
@@ -1568,7 +1586,7 @@ searchParams.SELECTED_MODES = "4;3;8";
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
                         objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
-						if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
                 }

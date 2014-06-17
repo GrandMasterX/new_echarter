@@ -4,6 +4,7 @@ class Api extends Controller {
 
     public function actionCreateSession($post) {
         $remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
+        //Yii::app()->sessi//
         session_start();
         if (!empty($post)) {
             $action = $post['action'];
@@ -36,12 +37,12 @@ class Api extends Controller {
 
         $ch = curl_init($url);
         $sparams = http_build_query($params);
-        $_SESSION['sid'] = (isset($_SESSION['sid'])) ? $_SESSION['sid'] : '';
+        $_SESSION['sid'] = $_SESSION['sid'] ? $_SESSION['sid'] : '';
+
         curl_setopt($ch, CURLOPT_HEADER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 2);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 100);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $sparams);
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 GTB5');
