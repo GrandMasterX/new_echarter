@@ -1,5 +1,5 @@
 <?
-class DefaultController extends Controller {
+class DefaultController extends AdminController {
 
     public $layout = '/layouts/main';
 

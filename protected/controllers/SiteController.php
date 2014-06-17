@@ -73,8 +73,9 @@ class SiteController extends Bus {
     }
 
     public function actionContent($alias) {
+
         $model = Content::model()->findByAttributes(array('alias'=>$alias));
-        $form = $this->actionCreateSession();
+        $form = $this->actionCreateSession($_POST);
         //http://www.yiiframework.com/extension/yii-curl/
         $this->render('index',array('model'=>$model,'form'=>$form));
     }
@@ -150,6 +151,12 @@ class SiteController extends Bus {
         Yii::import('ext.components.HybridAuthIdentity');
         $path = Yii::getPathOfAlias('ext.hoauth');
         require_once $path . '\\hybridauth\\social.php';
+    }
+
+    public function actionGetActionSalt() {
+        $salt = $this->getActionSalt();
+
+        echo json_encode($salt);
     }
 
 }

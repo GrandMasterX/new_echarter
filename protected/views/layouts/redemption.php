@@ -6,10 +6,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="static/css/normalize.min.css">
-    <link rel="stylesheet" href="static/css/echarter_style.css">
+    <link rel="stylesheet" href="static/css/redemption/normalize.min.css">
+    <link rel="stylesheet" href="static/css/redemption/echarter_style.css">
+    <link rel="stylesheet" href="static/css/redemption/wSelect_search.css">
 
-    <link rel="stylesheet" href="static/css/radio.css">
+    <link rel="stylesheet" href="static/css/redemption/radio.css">
     <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -20,6 +21,13 @@
     </div>
 </div>
 <?php $this->renderPartial('/layouts/footer');?>
+<script src="static/js/wSelect.js"></script>
+<script>
+    $(document).ready(function() {
+        $.fn.wSelect.defaults.changeWidth = false;
+        $('select:not(".transport_details")').wSelect();
+    });
+</script>
 </body>
 
 

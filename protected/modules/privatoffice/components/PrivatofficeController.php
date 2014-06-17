@@ -1,8 +1,5 @@
 <?php
-/**
- * Controller is the customized base admin module controller class.
- * All admin module controller classes for this application should extend from this base class.
- */
+
 class PrivatofficeController extends Controller {
 
     public $layout = '/layouts/main';
@@ -23,6 +20,12 @@ class PrivatofficeController extends Controller {
             array('allow',
                 'users'=>array('@'),
             ),
+            array('deny',
+                'users'=>array('*'),
+                'deniedCallback' => function() {
+                        Yii::app()->controller->redirect('/');
+                    }
+            ),
         );
     }
 
@@ -30,12 +33,12 @@ class PrivatofficeController extends Controller {
     {
         parent::init();
 
-        if(Yii::app()->getRequest()->getIsAjaxRequest()) {
+        /*if(Yii::app()->getRequest()->getIsAjaxRequest()) {
             Yii::app()->clientscript->scriptMap['jquery.js'] = false;
             Yii::app()->clientscript->scriptMap['jquery.min.js'] = false;
 
             $this->layout = '//layouts/ajax';
-        }
+        }*/
     }
 
 

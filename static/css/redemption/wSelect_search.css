@@ -1,0 +1,33 @@
+select {display: none;}
+.wSelect-el {width: 0px; height: 0px; padding: 0px; margin: 0px; border: none; overflow: hidden;}
+.wSelect {position: relative; display: inline-block; *display: inline; zoom: 1; vertical-align: middle;
+		cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none;
+		-moz-user-select: none; -ms-user-select: none; user-select: none;}
+.wSelect-arrow {position: absolute; width: 30px; top: 0px; right: 0; height: 28px; background-repeat: no-repeat;
+		background: url('../img/arrow_form.png') center center no-repeat #dadada;}
+.wSelect.wSelect-multiple {overflow: hidden;}
+.wSelect-selected {overflow: hidden; white-space: nowrap; background-repeat: no-repeat;
+		background-position: 0 center; outline: none; height: 30px; line-height: 30px;}
+
+.wSelect-options-holder {position: absolute; display: none; left: 0px; z-index: 200; overflow: hidden;
+		height: 107px!important;}
+.wSelect-multiple .wSelect-options-holder {position: relative !important; display: block !important;
+		top: auto !important; z-index: auto !important; border: none !important;}
+.wSelect-options {overflow-y: scroll; overflow-x: hidden;}
+.wSelect-option {	background-repeat: no-repeat; background-position: 5px center;
+		cursor: pointer;}
+.wSelect-option-last {margin-bottom: 0px;}
+.wSelect-option-value {margin: 0 6px; background-repeat: no-repeat; background-position: 0 center;
+		white-space: nowrap; overflow: hidden; height: 25px; line-height: 25px;}
+.wSelect-option:last-of-type .wSelect-option-value {border-bottom: none;}
+.wSelect-option-disabled .wSelect-option-value {filter: alpha(opacity=20); opacity: 0.2;}
+.wSelect-theme-classic.wSelect {width: 210px; height: 30px; background-color: #fff; border: 1px solid #9a9a9a;
+		color: #3e3e3e; font-size: 16px; line-height: 30px; -webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box; box-sizing: border-box; padding: 0px 33px 0px 10px;}
+.wSelect-theme-classic .wSelect-options-holder {width: 100% !important; top: 29px !important; -moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box; box-sizing: border-box;}
+.wSelect-theme-classic .wSelect-options {border: solid #9a9a9a 1px; height: 104px!important;}
+.wSelect-theme-classic .wSelect-option {background-color: #fff;}
+.wSelect-theme-classic .wSelect-option:hover {background-color: #f1f1f1;}
+.wLabel-left-top {vertical-align: top;}
+.wSelect filter_price, .wSelect-theme-classic {margin-left: 20px;}

@@ -1272,9 +1272,10 @@ div.lock-seats[disabled=disabled] {
 
 .buybuy_dron p, .bookfree p {
 
-    /* margin-top: 7px;*/
+    margin-top: 2px;
     cursor: default;
     padding: 0 !important;
+    margin-bottom: 2px;
 
 }
 
@@ -1892,7 +1893,7 @@ td.tdhead {
 
 .check_seats {
 
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 
 }
 
@@ -2068,8 +2069,8 @@ td.tdhead {
 
     background-repeat: repeat-x;
 
-}*/
-
+}
+*/
 .btn[disabled=disabled] {
     color: #ffffff;
 

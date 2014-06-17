@@ -1,16 +1,87 @@
 <?php
 
-class Api extends Controller {
+class Api extends Config {
+
+    /**
+     * @var XApi
+     */
+    public $xapi = null;
+
+    /**
+     * @var Orders
+     */
+    public $_orders = null;
+    protected $_key = 'bus';
+    protected $_skey = 'bus';
+    public $type_tpls = array(
+        1 => array('seats_tpl' => 'bus', 'icon_class' => 'icon_bus', 'folder' => 'bus'),
+        2 => array('seats_tpl' => 'bus', 'icon_class' => 'icon_bus', 'folder' => 'bus'),
+        3 => array('seats_tpl' => '', 'icon_class' => 'icon_avia', 'folder' => 'avia'),
+        4 => array('seats_tpl' => '', 'icon_class' => 'icon_avia', 'folder' => 'avia'),
+        51 => array('seats_tpl' => 'train_51', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        52 => array('seats_tpl' => 'train_52', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        53 => array('seats_tpl' => 'train_53', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        54 => array('seats_tpl' => 'train_54', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        55 => array('seats_tpl' => 'train_55', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        56 => array('seats_tpl' => 'train_56', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        561 => array('seats_tpl' => 'train_561', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        562 => array('seats_tpl' => 'train_562', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        563 => array('seats_tpl' => 'train_563', 'icon_class' => 'icon_train', 'folder' => 'train'),
+        6 => array('seats_tpl' => 'bus', 'icon_class' => 'icon_bus', 'folder' => 'bus'),
+        7 => array('seats_tpl' => 'bus', 'icon_class' => 'icon_bus', 'folder' => 'bus'),
+        8 => array('seats_tpl' => 'bus', 'icon_class' => 'icon_bus', 'folder' => 'bus')
+    );
+
+    public $resources = array();
+
+    /*public function init()
+    {
+
+        $this->resources = $this->config->item('resources');
+
+        $keys = $this->config->item('api_keys');
+        $resource = $_GET['res'] ? $_GET['res'] : 'default';
+        $this->load->library('xApi');
+        $this->xapi->setKey('bus');
+        $this->xapi->setLocale($this->config->item('curr_lang'));
+
+        $salt = $_POST['slt'] ? $_POST['slt'] : '';
+        if (!empty($_GET['type']) && isset($keys[$_GET['type']])) {
+            $this->xapi->setKey($_GET['type'], $salt);
+        }
+        $this->_key = $this->xapi->getKey();
+
+        $this->_skey = md5($this->_key . $salt);
+        $this->load->model('Orders');
+        $this->_orders = $this->Orders;
+
+        $this->xapi->initialize(XAPI_ERROR_RETURN_JSON);
+        $this->_pageType = TPL_TYPE_NONE;
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Content-type: application/json');
+        $this->tvars->type_tpls = $this->type_tpls;
+
+        $this->resource = $this->tvars->resource = isset($this->resources[$resource]) ? $this->resources[$resource] : $this->resources['default'];
+        $this->tvars->currencyCode = $this->resource['currencyCode'] = !empty($this->resource['currencyCode']) ? $this->resource['currencyCode'] : 980;
+        $this->resource['trip_filter'] = !empty($this->resource['trip_filter']) ? true : 980;
+        $this->resource['acqid'] = !empty($this->resource['acqid']) ? $this->resource['acqid'] : 414963;
+        $this->resource['pb_merchant_id'] = !empty($this->resource['pb_merchant_id']) ? $this->resource['pb_merchant_id'] : $this->config->item('pb_merchant_id');
+        $this->resource['pb_merchant_password'] = !empty($this->resource['pb_merchant_password']) ? $this->resource['pb_merchant_password'] : $this->config->item('pb_merchant_password');
+        $this->resource['reservationUrl'] = !empty($this->resource['reservationUrl']) ? $this->resource['reservationUrl'] : ($this->config->item('curr_lang') == 'ru' ? '' : '/' . $this->config->item('curr_lang') ) .'/reservation.php';
+        $_SESSION['xapi'][$this->_skey]['remoteUser']=$_GET['remoteUser'];
+    }*/
 
     public function actionCreateSession($post) {
         $remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
-        //Yii::app()->sessi//
-        session_start();
+
         if (!empty($post)) {
+
             $action = $post['action'];
             $type = empty($post['type']) ? 'avia_plus_charter' : $post['type'];
-            $res = empty($post['res']) ? 'echarter' : $post['res'];
+            $res = empty($post['res']) ? 'echarter2' : $post['res'];
+
             $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
+
             if($action != 'getActionSalt'){
                 $x = str_replace('/images/', '/static/images/form/', $x[1]);
                 echo $x;
@@ -18,7 +89,6 @@ class Api extends Controller {
                 $data = array('salt' => $x[1]);
                 echo json_encode($data);
             }
-            //$x = str_replace('/images/form/form/', '/static/images/form/', $x);
 
             die;
         }
@@ -26,9 +96,21 @@ class Api extends Controller {
 
 
         $form = $this->renderPartial('/api/form',array(),true);
-        //$data = str_replace('regular-flights.php', 'regularFlights', $form[1]);
-        //$data = str_replace('/images/', '/static/images/form/', $form);
         return $form;
+    }
+
+    public function getActionSalt()
+    {
+        $salt = md5(mt_rand(1, time()));
+        $this->_skey = md5($this->_key . $salt);
+        $_SESSION[$this->_skey]['trip_search'] = array();
+        $_SESSION[$this->_skey]['trip_search']['INTERNATIONAL'] = false;
+        $_SESSION[$this->_skey]['trip_search']['CHECKED_SEATS'] = array();
+        if (!isset($_SESSION['formShown'])) {
+            $_SESSION['formShown'] = 1;
+        }
+
+        return $salt;
     }
 
     public function actionGetRemoteData($url, $params = array()) {
@@ -37,7 +119,7 @@ class Api extends Controller {
 
         $ch = curl_init($url);
         $sparams = http_build_query($params);
-        $_SESSION['sid'] = $_SESSION['sid'] ? $_SESSION['sid'] : '';
+        $_SESSION['sid'] = isset($_SESSION['sid']) ? $_SESSION['sid'] : '';
 
         curl_setopt($ch, CURLOPT_HEADER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 2);

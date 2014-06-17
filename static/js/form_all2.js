@@ -35,7 +35,6 @@ function getCities(searchStr,lang, selector){
     xhr.onload = function() {
         if(this.responseText == '0') return false;
         selector.closest('div').find('div.autocompl-block').html(this.responseText);
-        // alert(this.responseText);
     }
     xhr.onerror = function() {
         alert('Ошибка ' + this.status);
@@ -405,14 +404,14 @@ $(document).ready(function () {
                 }
             }).change(function () {
 
-                    var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
-                    var cfdate = Date.parseExact(objs.backTripDate.val() ? objs.backTripDate.val() : $(this).val(), 'dd.MM.yyyy');
-                    //objs.searchButton.enable();
-                    /*   if ((data.roundTrip && !objs.backTripDate.val()) || cfdate.compareTo(date) < 0) {
-                     date.add(7).days();
-                     objs.backTripDate.val(date.toString('dd.MM.yyyy'));
-                     }*/
-                });
+                var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
+                var cfdate = Date.parseExact(objs.backTripDate.val() ? objs.backTripDate.val() : $(this).val(), 'dd.MM.yyyy');
+                //objs.searchButton.enable();
+                /*   if ((data.roundTrip && !objs.backTripDate.val()) || cfdate.compareTo(date) < 0) {
+                 date.add(7).days();
+                 objs.backTripDate.val(date.toString('dd.MM.yyyy'));
+                 }*/
+            });
 
             objs.backTripDate.datepicker({
                 numberOfMonths:[1,2],
@@ -522,14 +521,14 @@ $(document).ready(function () {
                     return true;
                 }
             }).change(function () {
-                    var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
-                    var cfdate = Date.parseExact(objs.tripDate.val() ? objs.tripDate.val() : Date.today(), 'dd.MM.yyyy');
-                    //console.log(cfdate.compareTo(date));
-                    //   if (cfdate.compareTo(date) <= 0) return;
+                var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
+                var cfdate = Date.parseExact(objs.tripDate.val() ? objs.tripDate.val() : Date.today(), 'dd.MM.yyyy');
+                //console.log(cfdate.compareTo(date));
+                //   if (cfdate.compareTo(date) <= 0) return;
 
-                    objs.backTripDate.val(cfdate.toString('dd.MM.yyyy'));
+                objs.backTripDate.val(cfdate.toString('dd.MM.yyyy'));
 
-                });
+            });
 
 
 
@@ -563,12 +562,12 @@ $(document).ready(function () {
             SP.action = 'getActionSalt';
             data.PageType = PageType;
             data.PageRes = PageRes;
-            api_post(api_url, SP, function (result) {
+
+            api_post(api_url+SP.action, SP, function (result) {
                 setTimeout(
                     function () {
-                        data.initParams.salt = result.salt;
-                        //	console.log(data.initParams);
-                    }, 2000
+                        data.initParams.salt = result;
+                    }, 3000
                 );
             }, 'json');
         }
@@ -604,13 +603,8 @@ $(document).ready(function () {
             params['type'] = data.PageType;
             params['res'] = data.PageRes;
             if (api_request && !multiple) api_request.abort();
-            /*console.log(data.initParams.salt);
-             if (data.initParams.salt) {
-             params['slt'] = data.initParams.salt;
-             }*/
             params['slt'] = data.initParams.salt;
             var async = !sync;
-            //alert(async);
             api_request = $.ajax({
                     url: url,
                     async: async,
@@ -626,8 +620,6 @@ $(document).ready(function () {
                         callback(json);
                     },
                     error: function () {
-                        /*alert('Connection Error');*/
-
                         callback({ajax_cancel: 1});
                     }
 
@@ -651,7 +643,7 @@ $(document).ready(function () {
 
 
         objs.searchButton.click(function () {
-            //alert('test');
+
             if ($(this).disabled()) {
                 return false;
             }
@@ -793,7 +785,7 @@ $(document).ready(function () {
             objs.resultContainer.slideUp(500, function () {
 
                 contentLoader(objs.resultContainer, 'ajax-big-loader.gif').slideDown(500, function () {
-                    //objs.searchButton.enable();
+
                     api_post(api_url, searchParams, function (json) {
                         objs.searchButton.enable();
 
@@ -1052,14 +1044,7 @@ $(document).ready(function () {
             }, 'json', 1);
         }
 
-        //закрытие карты мест
-        /*objs.closeContainer.on('click', function () {
-         console.log('test');
-         $(this).closest('div').hide().html('');
-         $('body').find('#overlay').hide();
-         });*/
-        $('div.close_popup_block').live('click', function () {
-            console.log('test');
+        $('.close_popup_block').live('click', function () {
             $(this).closest('div.check_seats_container').hide().html('');
             $('body').find('#overlay').hide();
         });
@@ -1319,7 +1304,6 @@ $(document).ready(function () {
                     $(this).css({'border':'1px solid'});
                     var pattern = /^[a-zA-Z\s]+$/;
                     var str = $(this).val();
-                    console.log(pattern.test(str));
                     if(!pattern.test(str)){
                         $(this).css({'border':'1px solid red'});
                         $('div.intAviaMess').show();
@@ -1394,7 +1378,6 @@ $(document).ready(function () {
                     $(this).css({'border':'1px solid'});
                     var pattern = /^[a-zA-Z\s]+$/;
                     var str = $(this).val();
-                    console.log(pattern.test(str));
                     if(!pattern.test(str)){
                         $(this).css({'border':'1px solid red'});
                         $('div.intAviaMess').show();
@@ -1509,8 +1492,6 @@ $(document).ready(function () {
 
 
                 discount_data.find('.ecquiring_fields').html(form);
-                //form.appendTo(objs.buyContainer);
-                //p.html(obj);
 
                 discount_data.find('.discount_cost').html(json.amount);
                 discount_data.find('.buy_order_discount').click(function () {
@@ -1537,7 +1518,6 @@ $(document).ready(function () {
                 });
 //
             }, 'json');
-            //objs.buyContainer.
         });
         // BOOKING FORM
         objs.resultContainer.on('click', '.booking_order', function () {
@@ -1548,7 +1528,6 @@ $(document).ready(function () {
                     $(this).css({'border':'1px solid'});
                     var pattern = /^[a-zA-Z\s]+$/;
                     var str = $(this).val();
-                    console.log(pattern.test(str));
                     if(!pattern.test(str)){
                         $(this).css({'border':'1px solid red'});
                         $('div.intAviaMess').show();
@@ -1565,8 +1544,6 @@ $(document).ready(function () {
             var obj = $(this);
             var p = obj.parent();
             contentLoader(p);
-            //   var form = $('form[name=order_data]');
-            //  post.TRIP = null;
             var str = $("form[name=order_data]").serialize();
             var post = {
                 'order_data': str,
@@ -1575,10 +1552,6 @@ $(document).ready(function () {
                 'action': 'reserveTickets'
             };
 
-
-            //    post = $.extend(data.searchParams, {"order_data": form.serialize()});
-            //       post.action = 'reserveTickets';
-            //       post.url1 = 'http://e-travels.com.ua/orderSuccess.php?r=1';
             api_post(api_url, post, function (json) {
                 objs.buyContainer.find('.field_error').removeClass('field_error');$("span.alertCheckMessage").hide();
                 if (!json.success) {
@@ -1593,11 +1566,9 @@ $(document).ready(function () {
                 window.location = json.url;
 
             }, 'json');
-            //objs.buyContainer.
         });
 
         objs.resultContainer.on('click', '.booking_order', function () {
-            //alert('Booking');
         });
 
 
@@ -1672,11 +1643,7 @@ $(document).ready(function () {
                 else if (e.type == 'DOMMouseScroll') {
                     scrollTo = 40 * e.originalEvent.detail;
                 }
-                //alert(scrollTo);
-                //popup.find('.popup-map-next').next().html(scrollTo * -2);
                 if (scrollTo) {
-                    /* e.preventDefault();
-                     map_line.scrollTop(scrollTo + map_line.scrollTop());*/
                     move(scrollTo * -2);
                 }
                 return false;
@@ -1686,10 +1653,6 @@ $(document).ready(function () {
 
         });
 
-
-        //objs.firstCountry.change();
-        //objs.secondCountry.change();
         objs.tickets.change();
-        // objs.roundTrip.change();
     }
 })(jQuery);

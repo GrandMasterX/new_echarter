@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="menu_header clearfix">
-            <a href="#" class="logo_header left"></a>
+            <a href="/" class="logo_header left"></a>
             <div class="nav left">
                 <ul class="clearfix">
                     <li><a href="#" class="first">Главная</a></li>
