@@ -48145,3 +48145,38 @@ Stack trace:
 #8 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
 #9 Z:\home\sup_charter\www\index.php(22): CWebApplication->run()
 REQUEST_URI=/contactsgetActionSalt
+2014/06/18 15:43:38 [error] [php] Undefined offset: 1 (Z:\home\sup_charter\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\sup_charter\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\sup_charter\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\sup_charter\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\sup_charter\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\sup_charter\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\sup_charter\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\sup_charter\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\sup_charter\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/contactsgetActionSalt
+2014/06/18 15:43:42 [error] [php] Undefined offset: 1 (Z:\home\sup_charter\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\sup_charter\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\sup_charter\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\sup_charter\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\sup_charter\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\sup_charter\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\sup_charter\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\sup_charter\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\sup_charter\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/redemptiongetActionSalt
+2014/06/18 15:51:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\sup_charter\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\sup_charter\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\sup_charter\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://sup_charter/privatoffice
+---

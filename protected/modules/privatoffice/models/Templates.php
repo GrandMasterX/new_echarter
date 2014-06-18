@@ -61,9 +61,9 @@ class Templates extends CActiveRecord {
     {
         return array(
             'id' => '#',
-            'name' => 'Название',
-            'subject' => 'Тема',
-            //'template' => 'Шаблон',
+            'firstName' => 'Имя',
+            'lastName' => 'Отчество',
+            'middleName' => 'Фамилия',
         );
     }
     /*

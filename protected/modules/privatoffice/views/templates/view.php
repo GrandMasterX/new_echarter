@@ -29,6 +29,6 @@ $this->breadcrumbs=array(
 
 <?php $this->widget('bootstrap.widgets.TbButton', array(
 	'type'=>'danger',
-	'url' => array('/admin/mail/admin'),
+	'url' => array('/privatoffice/templates/all'),
 	'label'=>'Отмена',
 )); ?>
