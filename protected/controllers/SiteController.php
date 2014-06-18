@@ -60,6 +60,7 @@ class SiteController extends Bus {
     }
 
     public function actionContacts() {
+        $this->layout = '/layouts/contacts';
         $this->render('contacts');
     }
 

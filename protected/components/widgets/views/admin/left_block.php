@@ -57,7 +57,7 @@
                 'url' => 'javascript:;',
                 'active' => in_array($controller, array('news', 'page')),
                 'items'=>array(
-                    array('label'=>'Новости', 'url'=>'/admin/news/admin'),
+                    array('label'=>'Города', 'url'=>'/admin/cities/admin'),
                     array('label'=>'Страницы', 'url'=>'/admin/page/admin'),
                 )
             ),

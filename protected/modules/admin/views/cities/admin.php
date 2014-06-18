@@ -1,11 +1,11 @@
 <?php
     $this->breadcrumbs=array(
-        'Почта (шаблоны)'=>array('admin'),
+        'Города'=>array('admin'),
         'Список',
     );
 ?>
 
-<h1>Почта (шаблоны)</h1>
+<h1>Города</h1>
 
 <?php $this->widget('modules.admin.components.Toolbar', array(
 	'model'=>$model
@@ -35,7 +35,7 @@
 			'name'=>'name',
 			'type'=>'raw',
 			'value'=>function($data, $roe) {
-				return CHtml::link($data->name, array('/admin/mail/update', 'id'=>$data->id));
+				return CHtml::link($data->name, array('/admin/cities/update', 'id'=>$data->id));
 			}
 		),
 		'subject',

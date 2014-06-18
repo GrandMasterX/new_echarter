@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Почта (шаблоны)'=>array('admin'),
+	'Города'=>array('admin'),
 	$model->name,
 );
 ?>
@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 	'attributes'=>array(
 		'id',
 		'name',
-		'subject',
+		'alias',
 	),
 )); ?>
 
@@ -22,13 +22,13 @@ $this->breadcrumbs=array(
 
 <?php $this->widget('bootstrap.widgets.TbButton', array(
 	'type'=>'primary',
-	'url' => array('/admin/mail/update', 'id' => $model->id),
+	'url' => array('/admin/cities/update', 'id' => $model->id),
 	'icon' => 'pencil white',
 	'label'=>'Редактировать',
 )); ?>
 
 <?php $this->widget('bootstrap.widgets.TbButton', array(
 	'type'=>'danger',
-	'url' => array('/admin/mail/admin'),
+	'url' => array('/admin/cities/admin'),
 	'label'=>'Отмена',
 )); ?>

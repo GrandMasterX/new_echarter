@@ -30,7 +30,7 @@ class User extends CActiveRecord {
     public function rules()
     {
         return array(
-            array('password, email', 'required', 'on' => 'registration'),
+            array('password, email', 'required', 'on' => 'registration,signin'),
             array('email', 'email', 'on' => 'registration'),
             array('email', 'unique', 'message' => "Email address already exists", 'on' => 'registration'),
             array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Incorrect password (minimal length 4 symbols)", 'on' => 'registration'),
@@ -48,8 +48,7 @@ class User extends CActiveRecord {
         return Yii::t('user', $str, $params);
     }
 
-    public function search()
-    {
+    public function search() {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria=new CDbCriteria;

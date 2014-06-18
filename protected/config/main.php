@@ -26,7 +26,6 @@ return array(
         'application.modules.privatoffice',
         'application.modules.admin',
         'application.modules.mail',
-        'application.modules.cities',
         'modules.mail.models.*',
         'ext.eoauth.*',
         'ext.eoauth.lib.*',
@@ -39,7 +38,6 @@ return array(
         'privatoffice',
         'admin',
         'mail',
-        'cities',
     ),
 
 	// application components

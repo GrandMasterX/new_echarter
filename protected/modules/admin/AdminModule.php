@@ -3,8 +3,7 @@ class AdminModule extends CWebModule
 {
     public $layout='main';
 
-    protected function init()
-    {
+    protected function init() {
         parent::init();
 
         Yii::app()->theme = 'admin';
@@ -27,8 +26,6 @@ class AdminModule extends CWebModule
     {
         if(parent::beforeControllerAction($controller, $action))
         {
-            // this method is called before any module controller action is performed
-            // you may place customized code here
             return true;
         }
         else

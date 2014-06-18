@@ -6,7 +6,7 @@
  * Time: 11:40
  */
 
-class Cities extends AdminController{
+class Cities extends AdminController {
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
@@ -96,6 +96,7 @@ class Cities extends AdminController{
      */
     public function actionAdmin()
     {
+        die('123');
         $model=new Content('search');
         $model->unsetAttributes();  // clear any default values
         if(isset($_GET['Content']))

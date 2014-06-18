@@ -1,20 +1,20 @@
 <header>
     <div class="wrap clearfix">
         <div class="wrap_top clearfix">
+            <a name="top" id="top"></a>
             <div class="top_header clearfix right">
-                <div class="dictum left">Удобний заказ чартеров</div>
+                <div class="dictum left">Удобный заказ чартеров</div>
                 <div class="lk_office right">
                     <ul class="clearfix">
                         <li><a href="/redemption">Выкуп заказа</a></li>
                         <li><a href="#">Партнерам</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="/contacts">Контакты</a></li>
+                        <? if(Yii::app()->user->isGuest) {?>
                         <li>
                             <a class="top_menu_item" href="javascript:;">
                                 <span>Личный кабинет</span>
                                 <span class="ico"></span>
                             </a>
-
-
                             <div class="popup_login clearfix">
                                 <div class="top"></div>
                                 <div class="block_login clearfix">
@@ -29,12 +29,17 @@
                                     <div class="form_block right">
                                         <div class="form">
                                             <h5>Вход в личный кабинет:</h5>
-                                            <?php $this->widget('application.components.widgets.RegistrationWidget'); ?>
+                                            <?php $this->widget('application.components.widgets.LogInWidget'); ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        <?}else{?>
+                            <li>
+                                <a href="/privatoffice">Личный кабинет</a>
+                            </li>
+                        <?}?>
                     </ul>
                 </div>
             </div>
@@ -43,12 +48,14 @@
             <a href="/" class="logo_header left"></a>
             <div class="nav left">
                 <ul class="clearfix">
-                    <li><a href="#" class="first">Главная</a></li>
+                    <li><a href="/" class="first">Главная</a></li>
                     <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
                 </ul>
             </div>
-            <div class="number">8 (800) 88-888-88</div>
+            <div class="number">
+                <img alt="" src="static/img/phone_big.png" />
+            </div>
         </div>
     </div>
 </header>

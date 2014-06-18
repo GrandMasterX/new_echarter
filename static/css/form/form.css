@@ -977,7 +977,9 @@ div.lock-seats[disabled=disabled] {
     border-bottom: 1px dotted #cdcdcd;
 
 }
-
+table {
+    font-size: 13px;
+}
 .kursorchuktik {
 
     font-size: 15px;

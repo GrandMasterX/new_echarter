@@ -191,7 +191,7 @@ header .wrap .top_header .lk_office ul li .popup_login .block_login .form_block 
 header .wrap .menu_header {position: relative; z-index: 9;}
 header .wrap .menu_header a.logo_header {background: url('../img/logo_header.png') no-repeat transparent;
     height: 97px; width: 167px; display: block; margin-left: 3px;
-    position: absolute; z-index: 10;}
+    position: absolute; z-index: 10;top:-21px;}
 header .wrap .menu_header .nav {padding: 22px 0px 22px 193px;}
 header .wrap .menu_header .nav ul {list-style-type: none; margin: 0px; padding: 0px;}
 header .wrap .menu_header .nav ul li {float: left;}
@@ -224,9 +224,9 @@ header .wrap .menu_header .number {font-size: 24px; color: #fff; line-height: 24
 
 .container .wrap .slider .popular .table_town {margin: 20px 7px 0px 7px;}
 .container .wrap .slider .popular .table_town .row_town {background-color: #fff;
-    margin-bottom: 5px; padding: 3px 4px;
+    margin-bottom: 5px; padding: 3px 3px;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
-    box-sizing:  border-box;}
+    box-sizing:  border-box;border: 1px solid #405775;}
 .container .wrap .slider .popular .table_town .row_town .cell_town.foto {background-color: #000;
     height: 39px; width: 52px; margin-right: 8px;}
 .container .wrap .slider .popular .table_town .row_town .cell_town.text {width: 130px; color: #494949;
@@ -567,4 +567,49 @@ td.calendar_actdate_charter a {
     h3 {
         page-break-after: avoid;
     }
+}
+
+#back-top {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 99;
+}
+#back-top a {
+    width: 54px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #909090;
+
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s;
+}
+#back-top a:hover {
+    color: #c6c6c6;
+}
+
+#back-top span {
+    width: 54px;
+    height: 39px;
+    display: block;
+    margin-bottom: 7px;
+    background: url('/static/images/up-arrow.png') no-repeat center center;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader() !  important;
+    -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader() !important;
+
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s;
+}
+#back-top a:hover span {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 }

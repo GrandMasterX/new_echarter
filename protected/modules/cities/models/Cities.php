@@ -1,14 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 18.06.14
- * Time: 11:22
- */
+class Cities extends CActiveRecord {
 
-namespace models;
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
 
+    public function tableName()
+    {
+        return 'content';
+    }
 
-class Cities {
-
-} 
+    public function rules()
+    {
+        return array(
+            array('id, alias, description, content', 'safe'),
+        );
+    }
+}
