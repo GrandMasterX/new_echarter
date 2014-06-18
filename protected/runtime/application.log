@@ -48145,3 +48145,660 @@ Stack trace:
 #8 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
 #9 Z:\home\sup_charter\www\index.php(22): CWebApplication->run()
 REQUEST_URI=/contactsgetActionSalt
+2014/06/18 15:43:38 [error] [php] Undefined offset: 1 (Z:\home\sup_charter\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\sup_charter\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\sup_charter\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\sup_charter\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\sup_charter\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\sup_charter\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\sup_charter\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\sup_charter\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\sup_charter\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/contactsgetActionSalt
+2014/06/18 15:43:42 [error] [php] Undefined offset: 1 (Z:\home\sup_charter\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\sup_charter\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\sup_charter\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\sup_charter\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\sup_charter\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\sup_charter\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\sup_charter\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\sup_charter\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\sup_charter\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/redemptiongetActionSalt
+2014/06/18 15:51:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\sup_charter\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\sup_charter\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\sup_charter\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\sup_charter\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://sup_charter/privatoffice
+---
+2014/06/18 15:55:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice
+---
+2014/06/18 15:55:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/groups/view/id/4
+---
+2014/06/18 15:57:21 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\localhost\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\localhost\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/contactsgetActionSalt
+2014/06/18 15:57:24 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\localhost\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\localhost\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/redemptiongetActionSalt
+2014/06/18 15:58:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice
+---
+2014/06/18 16:03:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:03:31 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in Z:\home\localhost\www\framework\yiilite.php:610
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4084): CComponent->__get('role')
+#1 Z:\home\localhost\www\protected\components\PhpAuthManager.php(14): CWebUser->__get('role')
+#2 Z:\home\localhost\www\framework\yiilite.php(1060): PhpAuthManager->init()
+#3 Z:\home\localhost\www\framework\yiilite.php(1698): CModule->getComponent('authManager')
+#4 Z:\home\localhost\www\framework\yiilite.php(4442): CWebApplication->getAuthManager()
+#5 Z:\home\localhost\www\framework\yiilite.php(6913): CWebUser->checkAccess('*')
+#6 Z:\home\localhost\www\framework\yiilite.php(6871): CAccessRule->isRoleMatched(Object(CWebUser))
+#7 Z:\home\localhost\www\framework\yiilite.php(6825): CAccessRule->isUserAllowed(Object(CWebUser), Object(MailController), Object(CInlineAction), '127.0.0.1', 'GET')
+#8 Z:\home\localhost\www\framework\yiilite.php(6751): CAccessControlFilter->preFilter(Object(CFilterChain))
+#9 Z:\home\localhost\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#10 Z:\home\localhost\www\framework\yiilite.php(6786): CController->filterAccessControl(Object(CFilterChain))
+#11 Z:\home\localhost\www\framework\yiilite.php(6741): CInlineFilter->filter(Object(CFilterChain))
+#12 Z:\home\localhost\www\framework\yiilite.php(3560): CFilterChain->run()
+#13 Z:\home\localhost\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 Z:\home\localhost\www\framework\yiilite.php(1746): CController->run('admin')
+#15 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('admin/mail/admi...')
+#16 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#17 Z:\home\localhost\www\index.php(22): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/mail/admin
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:03:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:04:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:04:19 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.role" is not defined.' in Z:\home\localhost\www\framework\yiilite.php:610
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4084): CComponent->__get('role')
+#1 Z:\home\localhost\www\protected\components\PhpAuthManager.php(14): CWebUser->__get('role')
+#2 Z:\home\localhost\www\framework\yiilite.php(1060): PhpAuthManager->init()
+#3 Z:\home\localhost\www\framework\yiilite.php(1698): CModule->getComponent('authManager')
+#4 Z:\home\localhost\www\framework\yiilite.php(4442): CWebApplication->getAuthManager()
+#5 Z:\home\localhost\www\framework\yiilite.php(6913): CWebUser->checkAccess('*')
+#6 Z:\home\localhost\www\framework\yiilite.php(6871): CAccessRule->isRoleMatched(Object(CWebUser))
+#7 Z:\home\localhost\www\framework\yiilite.php(6825): CAccessRule->isUserAllowed(Object(CWebUser), Object(MailController), Object(CInlineAction), '127.0.0.1', 'GET')
+#8 Z:\home\localhost\www\framework\yiilite.php(6751): CAccessControlFilter->preFilter(Object(CFilterChain))
+#9 Z:\home\localhost\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#10 Z:\home\localhost\www\framework\yiilite.php(6786): CController->filterAccessControl(Object(CFilterChain))
+#11 Z:\home\localhost\www\framework\yiilite.php(6741): CInlineFilter->filter(Object(CFilterChain))
+#12 Z:\home\localhost\www\framework\yiilite.php(3560): CFilterChain->run()
+#13 Z:\home\localhost\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 Z:\home\localhost\www\framework\yiilite.php(1746): CController->run('admin')
+#15 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('admin/mail/admi...')
+#16 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#17 Z:\home\localhost\www\index.php(22): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/mail/admin
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:04:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:04:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:04:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:05:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:06:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:07:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:12:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:12:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/view/id/3
+---
+2014/06/18 16:14:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/3
+---
+2014/06/18 16:16:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice
+---
+2014/06/18 16:16:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice
+---
+2014/06/18 16:17:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:17:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings.png
+HTTP_REFERER=http://localhost/privatoffice/templates/update/id/1
+---
+2014/06/18 16:22:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/img/glyphicons-halflings-white.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('static/img/glyp...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/img/glyphicons-halflings-white.png
+HTTP_REFERER=http://localhost/privatoffice
+---
+2014/06/18 16:40:25 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 unknown(0): SiteController->actionContent()
+#1 Z:\home\localhost\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#2 Z:\home\localhost\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#3 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#4 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#5 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#6 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#7 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#8 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#9 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/redemptiongetActionSalt
+2014/06/18 16:43:28 [error] [php] Undefined index: page (Z:\home\localhost\www\protected\views\layouts\popular_container.php:43)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(3822): SiteController->renderFile()
+#1 Z:\home\localhost\www\protected\views\layouts\main.php(45): SiteController->renderPartial()
+#2 Z:\home\localhost\www\framework\yiilite.php(3419): require()
+#3 Z:\home\localhost\www\framework\yiilite.php(3398): SiteController->renderInternal()
+#4 Z:\home\localhost\www\framework\yiilite.php(3792): SiteController->renderFile()
+#5 Z:\home\localhost\www\protected\controllers\SiteController.php(38): SiteController->render()
+#6 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#7 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#8 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#9 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#10 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#11 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#12 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#13 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 16:43:28 [error] [php] Undefined index: page (Z:\home\localhost\www\protected\views\layouts\popular_container.php:43)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(3822): SiteController->renderFile()
+#1 Z:\home\localhost\www\protected\views\layouts\main.php(45): SiteController->renderPartial()
+#2 Z:\home\localhost\www\framework\yiilite.php(3419): require()
+#3 Z:\home\localhost\www\framework\yiilite.php(3398): SiteController->renderInternal()
+#4 Z:\home\localhost\www\framework\yiilite.php(3792): SiteController->renderFile()
+#5 Z:\home\localhost\www\protected\controllers\SiteController.php(81): SiteController->render()
+#6 unknown(0): SiteController->actionContent()
+#7 Z:\home\localhost\www\framework\yiilite.php(4039): ReflectionMethod->invokeArgs()
+#8 Z:\home\localhost\www\framework\yiilite.php(4056): CInlineAction->runWithParamsInternal()
+#9 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#10 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#11 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#12 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#13 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#14 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#15 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/favicon.ico
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/tivat3.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/tivat3.png')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/tivat3.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/antaliya2.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/antaliya2....')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/antaliya2.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/tivat2.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/tivat2.png')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/tivat2.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/bangkok3.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/bangkok3.p...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/bangkok3.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/antaliya3.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/antaliya3....')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/antaliya3.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/bangkok2.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/bangkok2.p...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/bangkok2.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/byrgas2.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/byrgas2.pn...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/byrgas2.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/byrgas3.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/byrgas3.pn...')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/byrgas3.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/iraklion2.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/iraklion2....')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/iraklion2.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 16:44:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pics/iraklion3.png".' in Z:\home\localhost\www\framework\yiilite.php:1750
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController('pics/iraklion3....')
+#1 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 Z:\home\localhost\www\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/pics/iraklion3.png
+HTTP_REFERER=http://localhost/
+---
+2014/06/18 17:27:28 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:27:30 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:27:32 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:27:34 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:27:36 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:27:38 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:42 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:44 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:46 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:48 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:50 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:52 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:28:55 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:15 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:17 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:20 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:22 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:24 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:26 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/
+2014/06/18 17:29:28 [error] [php] Undefined offset: 1 (Z:\home\localhost\www\protected\components\Api.php:144)
+Stack trace:
+#0 Z:\home\localhost\www\framework\yiilite.php(4058): SiteController->actionIndex()
+#1 Z:\home\localhost\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#2 Z:\home\localhost\www\framework\yiilite.php(3555): SiteController->runAction()
+#3 Z:\home\localhost\www\framework\yiilite.php(3545): SiteController->runActionWithFilters()
+#4 Z:\home\localhost\www\framework\yiilite.php(1746): SiteController->run()
+#5 Z:\home\localhost\www\framework\yiilite.php(1666): CWebApplication->runController()
+#6 Z:\home\localhost\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#7 Z:\home\localhost\www\index.php(22): CWebApplication->run()
+REQUEST_URI=/

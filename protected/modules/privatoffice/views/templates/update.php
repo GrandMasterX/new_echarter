@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Почта (шаблоны)'=>array('admin'),
+	'Шаблоны'=>array('admin'),
 	$model->name=>array('view','id'=>$model->id),
 	'Редактировать',
 );

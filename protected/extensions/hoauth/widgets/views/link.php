@@ -13,7 +13,7 @@ $invitation = '';//Yii::app()->user->isGuest ? HOAuthAction::t('Sign in with') :
     'Vkontakte' => 'vk',
 );?>
 <li>
-    <a href="<?php echo Yii::app()->createUrl($this->route . '/oauth', array('provider' => $provider)); ?>" class="<? echo $providers[$provider]?>"></a>
+    <a href="<?php echo Yii::app()->createUrl($this->route . '/oauth', array('provider' => $provider)); ?>" class="<? echo $providers[$provider]?>"><? if($providers[$provider] =='vk') echo $providers[$provider];?></a>
 </li>
 
 

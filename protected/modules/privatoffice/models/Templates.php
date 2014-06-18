@@ -14,7 +14,7 @@ class Templates extends CActiveRecord {
     public function rules()
     {
         return array(
-            array('id, firstName, lastName, middleName, birthdate, passport, psprt_date, citizenship, phone, email, user_id', 'safe'),
+            array('id, firstName, lastName, middleName, birthdate, passport, psprt_date, citizenship, gender, phone, email, user_id', 'safe'),
         );
     }
 
@@ -33,7 +33,6 @@ class Templates extends CActiveRecord {
     public function search()
     {
         $criteria = new CDbCriteria;
-
         $criteria->compare('id', $this->id, true);
         $criteria->compare('firstName', $this->firstName, true);
         $criteria->compare('lastName', $this->lastName, true);
@@ -50,7 +49,6 @@ class Templates extends CActiveRecord {
 
     protected function beforeSave(){
         if(parent::beforeSave()){
-
             if(!$this->user_id)
                 $this->user_id = Yii::app()->user->id;
         }
@@ -61,9 +59,16 @@ class Templates extends CActiveRecord {
     {
         return array(
             'id' => '#',
-            'name' => 'Название',
-            'subject' => 'Тема',
-            //'template' => 'Шаблон',
+            'firstName' => 'Название',
+            'middleName' => 'Фамилия',
+            'lastName' => 'Отчество',
+            'birthdate' => 'Дата рождения',
+            'passport' => 'Номер паспорта',
+            'psprt_date' => 'Дата выдачи паспорта',
+            'citizenship' => 'Гражданство',
+            'phone' => 'Телефон',
+            'email' => 'Емейл',
+            'gender' => 'Пол',
         );
     }
     /*

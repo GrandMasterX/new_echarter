@@ -23,19 +23,19 @@ return
                 "display" => "popup",
                 "access_type"     => "online",   // optional
                 "approval_prompt" => "auto",     // optional
-				"keys"    => array ( "id" => "328492189285-hr507tse7c2bq3ghnqm15338v4dgt82n@developer.gserviceaccount.com", "secret" => "nFuKJD-KCbQ-Pkac_Je7TJzf" )
+				"keys"    => array ( "id" => "71335442909-4j9n636td0t9kqmujpg7kv4rc1rqitp5@developer.gserviceaccount.com", "secret" => "7FZVSSQ3VaMuChJ4oTvYzcyg" )
 			),
 
 			"Facebook" => array ( 
 				"enabled" => true,
-				"keys"    => array ( "id" => "1623182461241115", "secret" => "1ff77a560aa4e83cadcdf05a464851fa" ),
+				"keys"    => array ( "id" => "1495994200615076", "secret" => "3f2e01415ad5a622f8593d936005918e" ),
                 "scope"   => "email, user_about_me, user_birthday, user_hometown, user_website, offline_access, read_stream, publish_stream, read_friendlists", // you can change the data, that will be asked from user
                 "display" => "popup" // <- this one
 			),
             "Vkontakte" => array (
                 "enabled" => true,
                 "display" => "popup",
-                "keys"    => array ( "id" => "4396889", "secret" => "dMXZByayRpqXAsGdjZYo" ),
+                "keys"    => array ( "id" => "4408632", "secret" => "fTIuJu5PraZkz0AV2wHk" ),
                 "scope"   => "notifications,offline,wall,first_name,friends,email,notify,mail,last_name,nickname,screen_name,sex,bdate,timezone,photo_rec,photo_big",
             ),
 		),

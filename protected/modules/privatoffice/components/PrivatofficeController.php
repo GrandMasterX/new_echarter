@@ -18,7 +18,7 @@ class PrivatofficeController extends Controller {
     {
         return array(
             array('allow',
-                'users'=>array('@'),
+                'users'=>array('*'),
             ),
             array('deny',
                 'users'=>array('*'),
