@@ -38,7 +38,6 @@
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-tivat-kiev">Подробнее</a>
-            <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-tivat-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
@@ -65,6 +64,10 @@
 
                                 </div>
                             </div>
+                            <div id="vk_like"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Like("vk_like", {type: "button", height: 18});
+                            </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-tivat-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 
                         </div>
@@ -116,7 +119,6 @@
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-antalia-kiev">Подробнее</a>
-            <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-antalia-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
@@ -143,6 +145,10 @@
 
                                 </div>
                             </div>
+                            <div id="vk_like1"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Like("vk_like1", {type: "button", height: 18});
+                            </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-antalia-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -190,7 +196,6 @@
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-bangkok-kiev">Подробнее</a>
-            <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-bangkok-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
@@ -217,7 +222,10 @@
 
                                 </div>
                             </div>
-
+                            <div id="vk_like2"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Like("vk_like2", {type: "button", height: 18});
+                            </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-bangkok-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -265,7 +273,6 @@
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-burgas-kiev">Подробнее</a>
-            <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-burgas-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
@@ -292,7 +299,10 @@
 
                                 </div>
                             </div>
-
+                            <div id="vk_like3"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Like("vk_like3", {type: "button", height: 18});
+                            </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-burgas-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -340,7 +350,6 @@
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-heraklion-kiev">Подробнее</a>
-            <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-heraklion-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
@@ -367,7 +376,10 @@
 
                                 </div>
                             </div>
-
+                            <div id="vk_like4"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Like("vk_like4", {type: "button", height: 18});
+                            </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -416,7 +428,6 @@
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-enfida-kiev">Подробнее</a>
-            <div id="vk_like"></div>
 
             <div class="popup order" style="display:none;">
                 <div class="popup_wrap">
@@ -443,7 +454,10 @@
 
                                 </div>
                             </div>
-
+                            <div id="vk_like5"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Like("vk_like5", {type: "button", height: 18});
+                            </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -460,6 +474,7 @@
 
 </div>
 </div>
+ <? $this->renderPartial('/static/ceo');?>
 <div class="social_block clearfix">
     <div class="vk left">
         <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>

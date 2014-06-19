@@ -26,7 +26,7 @@
     <script type="text/javascript" src="/static/js/ui.datepicker-ru.js"></script>
     <script type="text/javascript" src="/static/js/form.js"></script>
     <script type="text/javascript" src="/static/js/newformscripts.js"></script>
-
+    <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.datepicker').datepicker();

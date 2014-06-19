@@ -13,8 +13,8 @@
 <div class="form right clearfix">
 <div class="tabs clearfix">
     <div class="right menu_cont">
-        <div class="block active"><a href="javascript:;">Все рейсы</a></div>
-        <div class="block"><a href="javascript:;">Чартеры</a></div>
+        <div class="block active"><a href="javascript:;">Чартеры</a></div>
+        <div class="block"><a href="javascript:;">Все рейсы</a></div>
     </div>
 </div>
 

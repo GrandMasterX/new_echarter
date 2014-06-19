@@ -32,6 +32,12 @@
     <script type="text/javascript" src="static/js/form_all2.js?<?= mt_rand(1, 22222); ?>"></script>
     <script type="text/javascript" src="static/js/newformscripts.js"></script>
     <script type="text/javascript" src="static/js/discounts.js"></script>
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
+    <? $this->renderPartial('/static/google_analitics');?>
+    <script type="text/javascript">
+        VK.init({apiId: 4408632, onlyWidgets: true});
+    </script>
 
 </head>
     <body>
@@ -142,6 +148,14 @@
                         $(_target).closest('li').addClass('active');
                     }
                 });
+
+
+                $(document).ready(function() {
+                    $('.detail_toggle').click(function() {
+                        $(this).parent().children('.page').slideToggle(300);
+                    });
+                });
+
             });
         </script>
     </body>

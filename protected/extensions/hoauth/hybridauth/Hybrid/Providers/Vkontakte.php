@@ -76,22 +76,23 @@ class Hybrid_Providers_Vkontakte extends Hybrid_Provider_Model_OAuth2
 
 		// Vkontakte requires user id, not just token for api access
 		$params['uid'] = Hybrid_Auth::storage()->get( "hauth_session.{$this->providerId}.user_id" );
-		$params['fields'] = 'first_name,last_name,nickname,screen_name,sex,bdate,timezone,photo_rec,photo_big';
+		$params['fields'] = 'first_name,last_name,email,mail,nickname,screen_name,sex,bdate,timezone,photo_rec,photo_big';
 		// ask vkontakte api for user infos
 		$response = $this->api->api( "https://api.vk.com/method/getProfiles" , 'GET', $params);
-
 
 		if (!isset( $response->response[0] ) || !isset( $response->response[0]->uid ) || isset( $response->error ) ){
 			throw new Exception( "User profile request failed! {$this->providerId} returned an invalide response.", 6 );
 		}
 
 		$response = $response->response[0];
-		$this->user->profile->identifier    = (property_exists($response,'uid'))?$response->uid:"";
-		$this->user->profile->firstName     = (property_exists($response,'first_name'))?$response->first_name:"";
-		$this->user->profile->lastName      = (property_exists($response,'last_name'))?$response->last_name:"";
-		$this->user->profile->displayName   = (property_exists($response,'nickname'))?$response->nickname:"";
-		$this->user->profile->photoURL      = (property_exists($response,'photo_big'))?$response->photo_big:"";
-		$this->user->profile->profileURL    = (property_exists($response,'screen_name'))?"http://vk.com/" . $response->screen_name:"";
+		$this->user->profile->identifier    = (property_exists($response,'uid')) ? $response->uid:"";
+		$this->user->profile->firstName     = (property_exists($response,'first_name')) ? $response->first_name:"";
+		$this->user->profile->email     = (property_exists($response,'email')) ? $response->email:"";
+		$this->user->profile->mail     = (property_exists($response,'mail')) ? $response->mail:"";
+		$this->user->profile->lastName      = (property_exists($response,'last_name')) ? $response->last_name:"";
+		$this->user->profile->displayName   = (property_exists($response,'nickname')) ? $response->nickname:"";
+		$this->user->profile->photoURL      = (property_exists($response,'photo_big')) ? $response->photo_big:"";
+		$this->user->profile->profileURL    = (property_exists($response,'screen_name')) ? "http://vk.com/" . $response->screen_name:"";
 
 		if(property_exists($response,'sex')){
 			switch ($response->sex)

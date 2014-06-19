@@ -27,6 +27,7 @@
     <script type="text/javascript" src="static/js/ui.datepicker-ru.js"></script>
     <script type="text/javascript" src="static/js/form_all2.js?<?= mt_rand(1, 22222); ?>"></script>
     <script type="text/javascript" src="static/js/newformscripts.js"></script>
+    <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript" src="static/js/discounts.js"></script>
 </head>
 <body>
