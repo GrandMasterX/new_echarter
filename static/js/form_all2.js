@@ -625,18 +625,8 @@ $(document).ready(function () {
 
                 }
             )
-            /*api_request = $.post(url, params, function (json) {
-
-             if (checkError(json)) {
-             return;
-             }
-
-             callback(json);
-
-             }, type);*/
         }
         init(params);
-        //reLogin('avia_plus_charter','echarter2');
         reLogin('all','echarter2');
         //SEARCH BUTTON CLICK
 
@@ -748,7 +738,7 @@ $(document).ready(function () {
 
 
 
-            searchParams.SELECTED_MODES = "4;3;8";
+            searchParams.SELECTED_MODES = "1;4;3;8";
 
 //////////////
 
