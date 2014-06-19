@@ -21,14 +21,14 @@ class AdminController extends Controller {
     {
         return array(
             array('allow',
-                'roles'=>array('*'),//User::ROLE_ADMIN),
+                'roles'=>array(User::ROLE_ADMIN),//),
             ),
-            /*array('deny',
+            array('deny',
                 'users'=>array('*'),
                 'deniedCallback' => function() {
                         Yii::app()->controller->redirect('/');
                     }
-            ),*/
+            ),
         );
     }
 	

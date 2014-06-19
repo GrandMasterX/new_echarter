@@ -33,7 +33,7 @@ class SiteController extends Bus {
     }
 
     public function actionIndex() {
-        $form = $this->actionCreateSession($_POST);
+        $form = $this->actionCreateSession($_POST, '/api/form');
         $registration = new UserRegistration();
         $this->render('index', array('form' => $form, 'registration' => $registration ));
     }
@@ -61,7 +61,9 @@ class SiteController extends Bus {
 
     public function actionContacts() {
         $this->layout = '/layouts/contacts';
-        $this->render('contacts');
+        $form = $this->actionCreateSession($_POST, '/api/small_form');
+        $registration = new UserRegistration();
+        $this->render('contacts', array('form' => $form, 'registration' => $registration ));
     }
 
     public function actionReservation() {
@@ -120,7 +122,7 @@ class SiteController extends Bus {
         if (!isset($_GET['provider']))
         {
             $this->redirect('/site/index');
-            return;
+            //return;
         }
 
         try
@@ -147,16 +149,8 @@ class SiteController extends Bus {
         $this->redirect(Yii::app()->user->returnUrl);
     }
 
-    public function actionSocialLogin()
-    {
-        Yii::import('ext.components.HybridAuthIdentity');
-        $path = Yii::getPathOfAlias('ext.hoauth');
-        require_once $path . '\\hybridauth\\social.php';
-    }
-
     public function actionGetActionSalt() {
         $salt = $this->getActionSalt();
-
         echo json_encode($salt);
     }
 

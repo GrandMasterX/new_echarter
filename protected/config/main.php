@@ -107,6 +107,7 @@ return array(
                 'redemption' =>'site/redemption',
                 'blog' => 'site/blog',
                 'getActionSalt' =>'site/getActionSalt',
+                'contactsgetActionSalt' =>'site/getActionSalt',
                 '<alias>' => 'site/content',
                 //'privatoffice/<controller>/<action>' => 'privatoffice/<controller>/<action>',
                 '<controller>/<action>'=>'<controller>/<action>',

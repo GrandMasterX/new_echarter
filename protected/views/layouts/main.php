@@ -35,7 +35,7 @@
 
 </head>
     <body>
-        <div id="overlay" style="display: none;"></div>
+        <div id="overlay" style="display: <?if(isset($_GET['page'])){?>block<?}else{?>none<?}?>;"></div>
         <?php $this->renderPartial('/layouts/header');?>
         <div class="container">
             <div class="wrap">
@@ -117,18 +117,32 @@
                 });
 
                 $('a.moreTripInfo').live('click', function(){
-                    console.log($(this).find('div.popup.order'));
                     $(this).parent('div').find('div.popup.order').show();
                     $('body').find('#overlay').show();
+                    var stateObj = { page: $(this).attr('trip') };
+                    history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
+
                 });
 
-                $('.close_popup').live('click',function() {
+                $('.close_popup,#overlay').live('click',function() {
                     $('#overlay').hide();
-                    $(this).closest('.popup').hide();
+                    $('.close_popup').closest('.popup').hide();
+                    window.history.go(-1);
+                });
+
+                $('.lk_office li span').click(function(e) {
+                    var _target = e.target;
+                    if (!$(_target).parent().is('a.top_menu_item')) {
+                        return;
+                    }
+                    if ($(_target).closest('li').hasClass('active')) {
+                        $('.lk_office li').removeClass('active');
+                    } else {
+                        $('.lk_office li').removeClass('active');
+                        $(_target).closest('li').addClass('active');
+                    }
                 });
             });
         </script>
     </body>
-
-
 </html>

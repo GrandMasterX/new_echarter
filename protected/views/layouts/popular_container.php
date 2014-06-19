@@ -37,7 +37,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo">Подробнее</a>
+            <a name="more" class="moreTripInfo" trip="kiev-tivat-kiev">Подробнее</a>
             <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-tivat-kiev'){?>block<?}else{?>none<?}?>;">
@@ -65,9 +65,10 @@
 
                                 </div>
                             </div>
-
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-tivat-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 
                         </div>
+
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Тиват - Киев</h3>
 
@@ -114,7 +115,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo">Подробнее</a>
+            <a name="more" class="moreTripInfo" trip="kiev-antalia-kiev">Подробнее</a>
             <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-antalia-kiev'){?>block<?}else{?>none<?}?>;">
@@ -142,8 +143,7 @@
 
                                 </div>
                             </div>
-
-
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-antalia-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Анталия - Киев</h3>
@@ -189,7 +189,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo">Подробнее</a>
+            <a name="more" class="moreTripInfo" trip="kiev-bangkok-kiev">Подробнее</a>
             <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-bangkok-kiev'){?>block<?}else{?>none<?}?>;">
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
 
-
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-bangkok-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Бангкок - Киев</h3>
@@ -264,7 +264,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo">Подробнее</a>
+            <a name="more" class="moreTripInfo" trip="kiev-burgas-kiev">Подробнее</a>
             <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-burgas-kiev'){?>block<?}else{?>none<?}?>;">
@@ -293,7 +293,7 @@
                                 </div>
                             </div>
 
-
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-burgas-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Бургас - Киев</h3>
@@ -339,7 +339,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo">Подробнее</a>
+            <a name="more" class="moreTripInfo" trip="kiev-heraklion-kiev">Подробнее</a>
             <div id="vk_like"></div>
 
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-heraklion-kiev'){?>block<?}else{?>none<?}?>;">
@@ -368,7 +368,7 @@
                                 </div>
                             </div>
 
-
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Ираклион - Киев</h3>
@@ -415,7 +415,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo">Подробнее</a>
+            <a name="more" class="moreTripInfo" trip="kiev-enfida-kiev">Подробнее</a>
             <div id="vk_like"></div>
 
             <div class="popup order" style="display:none;">
@@ -444,7 +444,7 @@
                                 </div>
                             </div>
 
-
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Энфида - Киев</h3>

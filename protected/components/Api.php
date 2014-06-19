@@ -71,7 +71,7 @@ class Api extends Config {
         $_SESSION['xapi'][$this->_skey]['remoteUser']=$_GET['remoteUser'];
     }*/
 
-    public function actionCreateSession($post) {
+    public function actionCreateSession($post, $display_form) {
         $remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
 
         if (!empty($post)) {
@@ -95,7 +95,7 @@ class Api extends Config {
 
 
 
-        $form = $this->renderPartial('/api/form',array(),true);
+        $form = $this->renderPartial($display_form ,array(),true);
         return $form;
     }
 

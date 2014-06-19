@@ -26,11 +26,11 @@ $(document).ready(function () {
     $('body').on('mouseover', '.show_tooltip',function () {
         $(this).tooltip({ content: $(this).find('.tooltip').html() });
     }).on('mouseout', '.hide_tooltip', function () {
-            $(this).tooltip({ hide: { effect: "explode", duration: 200 } });
+        $(this).tooltip({ hide: { effect: "explode", duration: 200 } });
     });
     $.order();
 
-   // $('#new_form').load('http://dev.e-travels.com.ua/api/getForm.php');
+    // $('#new_form').load('http://dev.e-travels.com.ua/api/getForm.php');
 });
 
 (function ($) {
@@ -174,7 +174,7 @@ $(document).ready(function () {
                     .appendTo(ul);
             };
             input.focus(function(){
-               this.select();
+                this.select();
             });
             $("<a>")
                 .attr("tabIndex", -1)
@@ -381,8 +381,8 @@ $(document).ready(function () {
                 minDate: new Date()
                 //beforeShowDay: disableDays,
                 /*onSelect: function (d, i) {
-                    api_params.START_DATE = d;
-                }*/
+                 api_params.START_DATE = d;
+                 }*/
             });
 
         }
@@ -454,7 +454,7 @@ $(document).ready(function () {
 
         function api_post(url, params, callback, type, multiple) {
 
-             if(api_request && !multiple) api_request.abort();
+            if(api_request && !multiple) api_request.abort();
             api_request = $.post(url, params, function (json) {
 
                 if (checkError(json)) {
@@ -622,7 +622,7 @@ $(document).ready(function () {
 
 
 
-                           // window.location = '#s_results'
+                            // window.location = '#s_results'
                             var html = json.HTML;
                             for (var el in json.INFO) {
                                 data.trips[el] = json.INFO[el];
@@ -642,7 +642,7 @@ $(document).ready(function () {
                                 }, 500);
                             }
 
-                             /*objs.seatsContainers.click(function(){
+                            /*objs.seatsContainers.click(function(){
                              if ($(this).html()) {
                              $(this).slideUp(500, function(){
                              $(this).html('');
@@ -881,7 +881,7 @@ $(document).ready(function () {
             //alert('Booking');
         });
 
-        
+
 
         objs.firstCountry.change();
         objs.secondCountry.change();

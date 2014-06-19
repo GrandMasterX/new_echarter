@@ -2019,7 +2019,7 @@ td.tdhead {
 
 }
 
-/*.btn {
+#reservation_form .btn {
 
     font-weight: bold;
 
@@ -2051,7 +2051,7 @@ td.tdhead {
 
 }
 
-.btn:hover {
+#reservation_form .btn:hover {
 
     color: #ffffff;
 
@@ -2072,7 +2072,7 @@ td.tdhead {
     background-repeat: repeat-x;
 
 }
-*/
+
 .btn[disabled=disabled] {
     color: #ffffff;
 

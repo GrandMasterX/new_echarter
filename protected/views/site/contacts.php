@@ -1,3 +1,4 @@
+<? echo $form;?>
 <div class="popular_container">
     <div class="wrap">
         <div id="tripsResultContainer" style="display: none;"></div>
