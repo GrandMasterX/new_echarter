@@ -111,7 +111,7 @@ textarea {
 /* HEADER */
 header {background-color: #3b7db5;}
 header .wrap .top_header {width: 770px; padding-top: 10px;}
-header .wrap .top_header .dictum {font-size: 23px; color: #43566f; line-height: 23px;
+header .wrap .top_header .dictum {font-size: 23px; color: #fff; line-height: 23px;
     text-align: left;}
 header .wrap .top_header .lk_office {}
 header .wrap .top_header .lk_office ul {list-style-type: none; margin: 0px; padding: 0px;}
@@ -119,7 +119,7 @@ header .wrap .top_header .lk_office ul li {float: left; margin-right: 20px; posi
     z-index: 1000;}
 header .wrap .top_header .lk_office ul li:last-of-type {margin-right: 0px;}
 header .wrap .top_header .lk_office ul li a {text-decoration: none; font-size: 14px;
-    color: #cad8e8; height: 38px; position: relative; z-index: 2200;}
+    color: #eee; height: 38px; position: relative; z-index: 2200;}
 
 /* LOGIN */
 header .wrap .top_header .lk_office ul li a.top_menu_item span {padding: 5px;}
@@ -195,7 +195,7 @@ header .wrap .menu_header a.logo_header {background: url('../img/logo_header.png
 header .wrap .menu_header .nav {padding: 35px 0px 0px 193px;}
 header .wrap .menu_header .nav ul {list-style-type: none; margin: 0px; padding: 0px;}
 header .wrap .menu_header .nav ul li {float: left;}
-header .wrap .menu_header .nav ul li a {text-decoration: none; color: #fff; font-size: 18px; line-height: 25px;
+header .wrap .menu_header .nav ul li a {text-decoration: none; color: #eee; font-size: 18px; line-height: 25px;
     background: url('../img/border_nav.png') no-repeat transparent; height: 25px; display: block;
     padding: 0px 22px;}
 header .wrap .menu_header .nav ul li a.first {background: no-repeat; padding-left: 0px;}
@@ -316,7 +316,7 @@ input::-moz-placeholder {color: #505050; font-size: 14px; line-height: 18px;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards ul li a.card_3 {
     background-position: -140px 0px; width: 55px;}
 
-.popular_container {background-color: #fbfbfb;}
+.popular_container {background-color: #f6fffe;}
 .popular_container .wrap {padding: 45px 0px;}
 .popular_container .wrap .title_ {font-size: 36px; color: #565657; line-height: 36px; text-align: left;
     padding-bottom: 20px;}
