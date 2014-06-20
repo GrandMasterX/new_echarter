@@ -80,7 +80,7 @@ class Api extends Config {
             $type = empty($post['type']) ? 'avia_plus_charter' : $post['type'];
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 
-            $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
+            $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apitest2/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
 
             if($action != 'getActionSalt'){
                 $x = str_replace('/images/', '/static/images/form/', $x[1]);
@@ -89,7 +89,6 @@ class Api extends Config {
                 $data = array('salt' => $x[1]);
                 echo json_encode($data);
             }
-
             die;
         }
 
@@ -132,7 +131,6 @@ class Api extends Config {
         $data = curl_exec($ch);
 
         $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-        curl_close($ch);
 
         $r = preg_match('#PHPSESSID=([^;]+);#Umis', $data, $m);
 
@@ -141,7 +139,7 @@ class Api extends Config {
 
         $r = preg_match('#Content-Type: ([^;]+);#Umis', $data, $m);
 
-        $ct = $m[1];
+        $ct = (isset($m[1])) ? $m[1]: '';
 
         return array($ct, substr($data, $header_size));
     }

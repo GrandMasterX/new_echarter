@@ -168,7 +168,6 @@
                     }
                 });
 
-
                 $(document).ready(function() {
                     $('.detail_toggle').click(function() {
                         $(this).parent().children('.page').slideToggle(300);

@@ -627,7 +627,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('all','echarter2');
+        reLogin('echarter2','echarter2');
         //SEARCH BUTTON CLICK
 
 
@@ -1316,7 +1316,7 @@ $(document).ready(function () {
             var post = $.extend(data.searchParams, {'order_data': form.serialize()});
             post.TRIP = null;
             post.action = 'ticketsBooking';
-            post.url1 = 'http://vega-reisen.com.ua/orderSuccess.php';
+            post.url1 = 'http://echarter.com.ua/orderSuccess.php';
             /*
              var str = $("form[name=order_data]").serialize();
              var tickets = objs.tickets.val();
@@ -1389,7 +1389,7 @@ $(document).ready(function () {
             var post = $.extend(data.searchParams, {'order_data': form.serialize()});
             post.TRIP = null;
             post.action = 'abankCheckout';
-            post.url1 = 'http://vega-reisen.com.ua/orderSuccess.php';
+            post.url1 = 'http://echarter.com.ua/orderSuccess.php';
 
             /*
              var str = $("form[name=order_data]").serialize();
@@ -1442,7 +1442,7 @@ $(document).ready(function () {
             var str = $("form[name=order_data]").serialize();
             var post = {
                 'order_data': str,
-                'url1': 'http://vega-reisen.com.ua/orderSuccess.php',
+                'url1': 'http://echarter.com.ua/orderSuccess.php',
                 'check_discount': 1,
                 //    'discount_data': discount_data,
                 'TRIP': null,
@@ -1537,7 +1537,7 @@ $(document).ready(function () {
             var str = $("form[name=order_data]").serialize();
             var post = {
                 'order_data': str,
-                'url1': 'http://vega-reisen.com.ua/orderSuccess.php?r=1',
+                'url1': 'http://echarter.com.ua/orderSuccess.php?r=1',
                 'TRIP': null,
                 'action': 'reserveTickets'
             };

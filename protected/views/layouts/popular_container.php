@@ -42,7 +42,7 @@
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-tivat-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
-                        <div class="close_popup right">x</div>
+                        <div class="close_popup right"><span>Популярное направление</span></div>
                     </div>
                     <div class="center clearfix">
                         <div class="block_foto left">
@@ -89,6 +89,7 @@
                             <p><b>Полная стоимость перелета туда и обратно от 370 $ (включая все таксы и сборы). )</b></p>
                         </div>
                     </div>
+                    <div class="footer_popup"></div>
                 </div>
             </div>
         </div>
@@ -131,7 +132,7 @@
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-antalia-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
-                        <div class="close_popup right">x</div>
+                        <div class="close_popup right"><span>Популярное направление</span></div>
                     </div>
                     <div class="center clearfix">
                         <div class="block_foto left">
@@ -176,6 +177,7 @@
                             <p><b>Полная стоимость перелета туда и обратно от 335 $ (включая все таксы и сборы). </b> </p>
                         </div>
                     </div>
+                    <div class="footer_popup"></div>
                 </div>
             </div>
         </div>
@@ -217,7 +219,7 @@
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-bangkok-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
-                        <div class="close_popup right">x</div>
+                        <div class="close_popup right"><span>Популярное направление</span></div>
                     </div>
                     <div class="center clearfix">
                         <div class="block_foto left">
@@ -262,6 +264,7 @@
                             <p><b>Полная стоимость перелета туда и обратно от 650$ (включая все таксы и сборы).  </b></p>
                         </div>
                     </div>
+                    <div class="footer_popup"></div>
                 </div>
             </div>
         </div>
@@ -303,7 +306,7 @@
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-burgas-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
-                        <div class="close_popup right">x</div>
+                        <div class="close_popup right"><span>Популярное направление</span></div>
                     </div>
                     <div class="center clearfix">
                         <div class="block_foto left">
@@ -348,6 +351,7 @@
                             <p><b>Полная стоимость перелета туда и обратно от 3381.66 грн. (включая все таксы и сборы).  </b></p>
                         </div>
                     </div>
+                    <div class="footer_popup"></div>
                 </div>
             </div>
         </div>
@@ -389,7 +393,7 @@
             <div class="popup order" style="display: <?if(isset($_GET['page']) && $_GET['page']=='kiev-heraklion-kiev'){?>block<?}else{?>none<?}?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
-                        <div class="close_popup right">x</div>
+                        <div class="close_popup right"><span>Популярное направление</span></div>
                     </div>
                     <div class="center clearfix">
                         <div class="block_foto left">
@@ -435,6 +439,7 @@
                             <p><b>Полная стоимость перелета туда и обратно от 350$ (включая все таксы и сборы).  </b></p>
                         </div>
                     </div>
+                    <div class="footer_popup"></div>
                 </div>
             </div>
         </div>
@@ -476,7 +481,7 @@
             <div class="popup order" style="display:none;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
-                        <div class="close_popup right">x</div>
+                        <div class="close_popup right"><span>Популярное направление</span></div>
                     </div>
                     <div class="center clearfix">
                         <div class="block_foto left">
@@ -519,6 +524,7 @@
                             <p>Чартерные авиарейсы Киев-Энфида(Тунис)-Киев авиакомпании "Международные авиалинии Украины" вылетают из аэропорта Борисполь (Терминал Д) по четвергам и воскресеньям с 27.04.2014 по 28.09.2014. Билеты можно приобрести только туда и обратно до 90 дней. </p>
                         </div>
                     </div>
+                    <div class="footer_popup"></div>
                 </div>
             </div>
         </div>
