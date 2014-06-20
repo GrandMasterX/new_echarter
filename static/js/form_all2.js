@@ -1553,6 +1553,7 @@ $(document).ready(function () {
                     }
                     return;
                 }
+                console.log(json.url);
                 window.location = json.url;
 
             }, 'json');

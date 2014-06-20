@@ -81,9 +81,10 @@ class Api extends Config {
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 
             $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apitest2/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
-
+            if($x[1])
             if($action != 'getActionSalt'){
                 $x = str_replace('/images/', '/static/images/form/', $x[1]);
+                $x = str_replace('reservation.php?&', 'reservation?', $x);
                 echo $x;
             } else {
                 $data = array('salt' => $x[1]);

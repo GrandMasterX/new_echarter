@@ -108,6 +108,7 @@ return array(
                 'blog' => 'site/blog',
                 'getActionSalt' =>'site/getActionSalt',
                 'contactsgetActionSalt' =>'site/getActionSalt',
+                'reservation' =>'site/reservation',
                 '<alias>' => 'site/content',
                 //'privatoffice/<controller>/<action>' => 'privatoffice/<controller>/<action>',
                 '<controller>/<action>'=>'<controller>/<action>',

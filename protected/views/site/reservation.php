@@ -63,13 +63,13 @@
                 <tr>
                     <td>Номер Вашего бронирования:</td>
                     <td>
-                        <input type="text" value="<?=$_GET['tn']?>" <? if (!empty($_GET) && empty($_GET['tn'])) { ?>style="border:1px red solid;"<? } ?> name="tn" class="ac-autocomplete-input" id="reservation_id">
+                        <input type="text" value="<?=$tn?>" <? if (empty($tn)) { ?>style="border:1px red solid;"<? } ?> name="tn" class="ac-autocomplete-input" id="reservation_id">
                     </td>
                 </tr>
                 <tr>
                     <td>Дата отправления:</td>
                     <td>
-                        <input type="text" value="<?=$_GET['start_date'] ?>" <? if(!empty($_GET) && empty($_GET['start_date'])) {?>style="border:1px red solid;"<? } ?> name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
+                        <input type="text" value="<?=$start_date ?>" <? if(empty($start_date)) {?>style="border:1px red solid;"<? } ?> name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
                     </td>
                 </tr>
                 <tr>
@@ -89,7 +89,7 @@
         <br />
         <br />
 
-        <a class="btn" style="color: white; display: block; height: auto; width: 250px; margin: 15px auto 30px; padding: 10px;" target="_blank" href="/users/getTicket?on=<?= $data['reservs'][0]['ORDER_NUMBER'] ?>">Скачать Лист Бронирования</a>
+        <a class="btn" style="color: white; display: block; height: auto; width: 250px; margin: 15px auto 30px; padding: 10px;" target="_blank" href="http://echarter.com.ua/ticket.php?on=<?= $data['reservs'][0]['ORDER_NUMBER'] ?>">Скачать Лист Бронирования</a>
     </div>
 
     <?
@@ -156,18 +156,12 @@
 
                 <input type="hidden" name="<?=$k?>" value="<?=$v?>">
             <? } ?>
-
-
-
             <div style="clear:both;margin-top:10px"></div>
             <div style="margin:0 auto;width:500px">
-                <input type="submit" target="_blank" class="btn" style="float:left; width:230px;position:relative;" value="Оплатить Visa / MasterCard">
+                <input type="submit" target="_blank" class="btn visa" style="float:left; width:230px;position:relative;" value="Оплатить Visa / MasterCard">
                 <input type="button" target="_blank" class="btn morepvays" style="float:left;margin-left:10px;position:relative; width:230px;" value="Другие способы оплаты">
             </div>
             <div style="clear:both;margin-bottom:10px"></div>
-
-
-
         </form>
         <div style="margin: 0 auto 10px;width: 518px;display:none;" class="hidden-pways">
             <table width="500" cellspacing="0" cellpadding="0" border="0" align="center">

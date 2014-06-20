@@ -2019,7 +2019,8 @@ td.tdhead {
 
 }
 
-#reservation_form .btn {
+#reservation_form .btn,.info_date_to_pay .btn,
+.visa.btn,.morepvays.btn{
 
     font-weight: bold;
 
@@ -2051,7 +2052,8 @@ td.tdhead {
 
 }
 
-#reservation_form .btn:hover {
+#reservation_form .btn:hover, .info_date_to_pay .btn:hover,
+ .visa.btn:hover, .morepvays.info_date_to_pay .btn:hover {
 
     color: #ffffff;
 

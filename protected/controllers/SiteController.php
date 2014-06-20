@@ -67,7 +67,18 @@ class SiteController extends Bus {
     }
 
     public function actionReservation() {
-        $this->render('reservation');
+        if (!empty($_GET) && !empty($_GET['tn']) && !empty($_GET['start_date'])) {
+            $ticketsIds = array($_GET['tn']);
+            $ticketsDates = array($_GET['start_date']);
+
+            $_GET['url1'] = 'http://echarter.com.ua/orderSuccess.php?r=1';
+            $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/findReservation.php?', $_GET);
+            if (!empty ($x[1])) {
+                $data = json_decode($x[1], 1);
+            }
+        }
+        $this->layout = '/layouts/reservation';
+        $this->render('reservation',array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data));
     }
 
     public function actionRedemption() {
@@ -122,9 +133,7 @@ class SiteController extends Bus {
         if (!isset($_GET['provider']))
         {
             $this->redirect('/site/index');
-            //return;
         }
-
         try
         {
             Yii::import('ext.components.HybridAuthIdentity');
