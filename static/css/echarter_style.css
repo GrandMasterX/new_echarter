@@ -623,3 +623,11 @@ header .wrap .top_header .lk_office ul li .popup_login .block_login .social ul l
 #vk_like,#vk_like1,#vk_like2,#vk_like3,#vk_like4,#vk_like5{
     top:-10px;
 }
+
+.order_ticket {
+    padding: 0px 22px 0px 18px; border: none; outline: none;
+    font-size: 14px; color: #fff; line-height: 30px;
+    height: 30px; width: 157px; display: block; text-align: center; text-decoration: none;
+    background-color: #3b7db5; text-transform: uppercase;
+    margin-top: 10px; cursor: pointer;
+}

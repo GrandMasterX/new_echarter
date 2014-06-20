@@ -112,6 +112,20 @@
                     $('input#searchButton').click();
                 });
 
+                $('.order_ticket').on('click', function() {
+                    $('.close_popup').click();
+                    $('input#startCityId').val($(this).parent('div').find('input.promoStartCityId').val());
+                    $('input#from').val($(this).parent('div').find('input.promoStartCityName').val());
+                    $('input#endCityId').val($(this).parent('div').find('input.promoEndCityId').val());
+                    $('input#to').val($(this).parent('div').find('input.promoEndCityName').val());
+                    $('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
+                    //$('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
+                    $('input#searchButton').click();
+                    $('html, body').animate({
+                        scrollTop: $(".tabs_menu").offset().top
+                    }, 2000);
+                });
+
                 $('img.del').live('click',function(){
                     $(this).hide().closest('div').find('input').val('');
                 });
@@ -122,18 +136,23 @@
                     $(this).parent().addClass('active');
                 });
 
-                $('a.moreTripInfo').live('click', function(){
+                $('#tripsResultContainer a.moreTripInfo').live('click', function(){
+                    $(this).parent('div').find('div.popup.order').show();
+                    $('body').find('#overlay').show();
+                });
+
+                $('.populars a.moreTripInfo').live('click', function(){
                     $(this).parent('div').find('div.popup.order').show();
                     $('body').find('#overlay').show();
                     var stateObj = { page: $(this).attr('trip') };
                     history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
-
                 });
 
                 $('.close_popup,#overlay').live('click',function() {
                     $('#overlay').hide();
                     $('.close_popup').closest('.popup').hide();
-                    window.history.go(-1);
+                    if(window.history.state.page != null)
+                        window.history.go(-1);
                 });
 
                 $('.lk_office li span').click(function(e) {

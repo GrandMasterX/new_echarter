@@ -2,7 +2,7 @@
 <div class="wrap">
 <div id="tripsResultContainer" style="display: none;"></div>
 <div class="title_">Популярные направления</div>
-<div class="block clearfix">
+<div class="block clearfix populars">
 <div class="row_block left">
 
 
@@ -69,7 +69,15 @@
                                 VK.Widgets.Like("vk_like", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-tivat-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-
+                            <div>
+                                <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
+                                <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
+                                <input type="hidden" class="promoEndCityName" value="Тиват, Черногория" />
+                                <input type="hidden" class="promoEndCityId" value="C1E1CDA59082D9CAE040B859C1436099" />
+                                <input type="hidden" class="promoStartDate" value="28.06.2014" />
+                                <input type="hidden" class="promoEndDate" value="28.09.2014" />
+                                <input value="Забронировать" class="order_ticket" type="submit" >
+                            </div>
                         </div>
 
                         <div class="block_info right" style="text-align:justify;">
@@ -150,6 +158,15 @@
                                 VK.Widgets.Like("vk_like1", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-antalia-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                            <div>
+                                <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
+                                <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
+                                <input type="hidden" class="promoEndCityName" value="Анталья, Турция" />
+                                <input type="hidden" class="promoEndCityId" value="C4127300130E9B3FE040B859C1431FF7" />
+                                <input type="hidden" class="promoStartDate" value="28.06.2014" />
+                                <input type="hidden" class="promoEndDate" value="26.10.2014" />
+                                <input value="Забронировать" class="order_ticket" type="submit" >
+                            </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Анталия - Киев</h3>
@@ -227,6 +244,15 @@
                                 VK.Widgets.Like("vk_like2", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-bangkok-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                            <div>
+                                <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
+                                <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
+                                <input type="hidden" class="promoEndCityName" value="Таиланд, Бангкок" />
+                                <input type="hidden" class="promoEndCityId" value="DAB6A899A3EED17EE040B85960520A5D" />
+                                <input type="hidden" class="promoStartDate" value="28.06.2014" />
+                                <input type="hidden" class="promoEndDate" value="30.06.2014" />
+                                <input value="Забронировать" class="order_ticket" type="submit" >
+                            </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Бангкок - Киев</h3>
@@ -304,6 +330,15 @@
                                 VK.Widgets.Like("vk_like3", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-burgas-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                            <div>
+                                <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
+                                <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
+                                <input type="hidden" class="promoEndCityName" value="Бургас, Болгария" />
+                                <input type="hidden" class="promoEndCityId" value="D832C903F86618F1E040B859605270A9" />
+                                <input type="hidden" class="promoStartDate" value="28.06.2014" />
+                                <input type="hidden" class="promoEndDate" value="26.10.2014" />
+                                <input value="Забронировать" class="order_ticket" type="submit" >
+                            </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Бургас - Киев</h3>
@@ -381,6 +416,15 @@
                                 VK.Widgets.Like("vk_like4", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                            <div>
+                                <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
+                                <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
+                                <input type="hidden" class="promoEndCityName" value="Ираклион, Греция" />
+                                <input type="hidden" class="promoEndCityId" value="DB2BC65F9664925DE040B859605261DA" />
+                                <input type="hidden" class="promoStartDate" value="28.06.2014" />
+                                <input type="hidden" class="promoEndDate" value="18.10.2014" />
+                                <input value="Забронировать" class="order_ticket" type="submit" >
+                            </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Ираклион - Киев</h3>
@@ -459,6 +503,15 @@
                                 VK.Widgets.Like("vk_like5", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                            <div>
+                                <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
+                                <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
+                                <input type="hidden" class="promoEndCityName" value="Энфида, Тунис" />
+                                <input type="hidden" class="promoEndCityId" value="F73E9B9CCBAFA338E040B85960523C24" />
+                                <input type="hidden" class="promoStartDate" value="28.06.2014" />
+                                <input type="hidden" class="promoEndDate" value="28.09.2014" />
+                                <input value="Забронировать" class="order_ticket" type="submit" >
+                            </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
                             <h3>Киев - Энфида - Киев</h3>
