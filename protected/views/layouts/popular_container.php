@@ -66,7 +66,7 @@
                             </div>
                             <div id="vk_like"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like", {type: "button", height: 18});
+                                VK.Widgets.Like("vk_like", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-tivat-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 
@@ -147,7 +147,7 @@
                             </div>
                             <div id="vk_like1"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like1", {type: "button", height: 18});
+                                VK.Widgets.Like("vk_like1", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-antalia-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
@@ -224,7 +224,7 @@
                             </div>
                             <div id="vk_like2"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like2", {type: "button", height: 18});
+                                VK.Widgets.Like("vk_like2", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-bangkok-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
@@ -301,7 +301,7 @@
                             </div>
                             <div id="vk_like3"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like3", {type: "button", height: 18});
+                                VK.Widgets.Like("vk_like3", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-burgas-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
@@ -378,7 +378,7 @@
                             </div>
                             <div id="vk_like4"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like4", {type: "button", height: 18});
+                                VK.Widgets.Like("vk_like4", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
@@ -456,7 +456,7 @@
                             </div>
                             <div id="vk_like5"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like5", {type: "button", height: 18});
+                                VK.Widgets.Like("vk_like5", {type: "button", height: 20});
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         </div>
