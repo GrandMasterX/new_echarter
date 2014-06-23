@@ -124,7 +124,7 @@ header .wrap .top_header .lk_office ul li {float: left; margin-right: 20px; posi
     z-index: 1000;}
 header .wrap .top_header .lk_office ul li:last-of-type {margin-right: 0px;}
 header .wrap .top_header .lk_office ul li a {text-decoration: none; font-size: 14px;
-    color: #eee; height: 38px; position: relative; z-index: 2200;}
+    color: #eee; height: 30px; position: relative; z-index: 2200; line-height:30px;}
 
 /* LOGIN */
 header .wrap .top_header .lk_office ul li a.top_menu_item span {padding: 5px;}

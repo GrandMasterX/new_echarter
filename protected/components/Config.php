@@ -11,10 +11,10 @@ class Config extends Controller {
     public function init()
     {
         session_start();
-            /*
-            $config['api_key'] = 'ia+EqGd1sL7n4qA3ZI8qqg==';
-            $config['api_url'] = 'http://demo.gillbus.com/online2/';
-            $config['api_session_url'] = 'http://demo.gillbus.com/online2/';*/
+        /*
+        $config['api_key'] = 'ia+EqGd1sL7n4qA3ZI8qqg==';
+        $config['api_url'] = 'http://demo.gillbus.com/online2/';
+        $config['api_session_url'] = 'http://demo.gillbus.com/online2/';*/
 
         $config['api_key'] = 'srfzG8UAIFwoDSLEqR8Rdq6B6n6JHKkrmcdYGBzOMBDTg6tBAE+BUQ==';
         $config['api_train_key'] = 'srfzG8UAIFw48VRT+s37cCSPDt4c/KCAUj8EDXcm7cOL3e2bv0mqRQ==';

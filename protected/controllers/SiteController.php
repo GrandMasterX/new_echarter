@@ -164,6 +164,10 @@ class SiteController extends Bus {
         }
     }
 
+    public function actionFeedback() {
+        $this->render('feedback', array());
+    }
+
     public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->user->returnUrl);

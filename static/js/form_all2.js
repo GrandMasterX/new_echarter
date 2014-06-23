@@ -46,11 +46,9 @@ $(document).ready(function(){
     $( "input.town" ).keyup(function (e){
         var that = $(this);
         var text = that.val();
-//	if (e.which !== 0) 
         if((text.length >= 3)&&(e.keyCode > 40)){
             getCities(text, 'ru', that);
         }
-
     });
 
     $('body').click(function(){$('ul.autocmpl-ul').hide();});
@@ -64,10 +62,6 @@ $(document).ready(function(){
     $('.element.rt').click(function(){$('div.ret').show();});
 
 });
-
-
-
-
 
 var api_params = {};
 
@@ -121,9 +115,7 @@ function isset() {
 
 
 $(document).ready(function () {
-
     $.order();
-
 });
 
 (function ($) {
@@ -202,7 +194,6 @@ $(document).ready(function () {
             } else {
                 data.initParams = {};
             }
-//console.log(data.initParams);
 
 
             objs.roundTrip = $(params.roundTripS);
@@ -232,10 +223,7 @@ $(document).ready(function () {
             objs.disocuntPopup = $(params.discountsPopupS);
             objs.discountsPopupBtn = $(params.discountsPopupBtnS);
             objs.searchTripsInterval = null;
-            //objs.discountsForm = $(params.discountsFormS);
 
-
-            // data.roundTrip = !!parseInt(objs.roundTrip.filter(':checked').val());
             data.tickets_checked ={f:[], b:[]};
             data.searchParams = {};
             data.trips = {};
@@ -245,19 +233,12 @@ $(document).ready(function () {
                 .contentLoader = function () {
                 return objs.resultContainer.html('<div class="ajax-loader-line"><img src="/img/ajax-loader-line.gif" /></div>');
             };
-
-
-
-
-
-
-
             //**************//
 
 
 
 
-// установка городов по-умолчанию
+            // seting default cities
             var default_start_city_name = $('input#firstDefaultCityName').val();
             var default_end_city_name = $('input#secondDefaultCityName').val();
             var default_start_city_id = $('input#firstDefaultCityId').val();
@@ -269,13 +250,6 @@ $(document).ready(function () {
             if((default_start_city_name!='')&&(default_end_city_name!=''))
                 objs.searchButton.enable();
 
-            /*
-             var default_city2 = $('input#secondDefaultCity').val();
-             if(!default_city1) var default_city11 = ''; else var default_city11 = default_city1;
-             if(!default_city2) var default_city22 = ''; else var default_city22 = default_city2;
-             */
-
-
             objs.tripDate.datepicker({
 
                 numberOfMonths:[1,2],
@@ -283,20 +257,14 @@ $(document).ready(function () {
                 constrainInput: true,
                 onChangeMonthYear: function (y, m, o) {
 
-
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;"/></p>');
                     }, 0);
 
                     data.tripDates = null;
+
                     if (!data.initParams.loadDates) return;
                     contentLoaderE(objs.tripDate, 'dataBlockLoader');
-                    /*var date = new Date();
-                     alert(m);
-                     date.setMonth(m - 1);
-                     date.setFullYear(y);
-                     date.setDate(1);
-                     */
 
                     var date = Date.parseExact('01.' + m + '.' + y, 'dd.M.yyyy');
                     var str_date = date.toString('dd.MM.yyyy');
@@ -305,9 +273,9 @@ $(document).ready(function () {
                         'END_CITY_ID': objs.secondCity.val(),
                         'START_DATE': str_date,
                         'END_DATE': date.clone().add({ days: 62 }).toString('dd.MM.yyyy'),
-
                         'action': 'getDates'
                     };
+
                     if(data.roundTrip) {
                         params['onewayTripDate'] = Date.today().add({days: -1}).toString('dd.MM.yyyy');
                     }
@@ -317,7 +285,6 @@ $(document).ready(function () {
                         contentLoaderER(objs.tripDate);
                         data.tripDates = json.DATES;
                         objs.tripDate.datepicker('refresh');
-                        //if (!isEmptyObject(data.tripDates))
                         if (Object.keys(data.tripDates).length > 1)
                             setTimeout(function() {
                                 $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
@@ -325,18 +292,14 @@ $(document).ready(function () {
                     }, 'json', 0, 0);
                 },
                 beforeShow: function (field) {
-
-
-                    //alert(selectedTransportTypes);
-
                     data.tripDates = null;
                     setTimeout(function() {
                         $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
                     if (!data.initParams.loadDates) return;
-                    //getNowDate();
+
                     var dateVal = $(field).val()? $(field).val() : getNowDate();
-                    //	alert(dateVal);
+
                     var date = Date.parseExact(dateVal, 'dd.MM.yyyy');
                     var str_date = $.datepicker.formatDate('01.mm.yy', date);
                     var params = {
@@ -344,7 +307,6 @@ $(document).ready(function () {
                         'END_CITY_ID': objs.secondCity.val(),
                         'START_DATE': str_date,
                         'END_DATE': date.clone().add({ days: 62 }).toString('dd.MM.yyyy'),
-                        // 'onewayTripDate': Date.today().add({days: -1}).toString('dd.MM.yyyy'),
                         'action': 'getDates'
                     };
                     contentLoaderE(objs.tripDate, 'dataBlockLoader');
@@ -353,10 +315,7 @@ $(document).ready(function () {
                         contentLoaderER(objs.tripDate);
                         data.tripDates = json.DATES;
                         objs.tripDate.datepicker('refresh');
-                        //	console.log(Object.keys(data.tripDates).length);
-                        //alert(Object.keys(data.tripDates).length > 1);
 
-                        //	if (!isEmptyObject(data.tripDates))
                         if (Object.keys(data.tripDates).length > 1)
                             setTimeout(function() {
                                 $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
@@ -367,12 +326,11 @@ $(document).ready(function () {
                 onClose: function () {
                     var data1=$(this).val();
                     var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
+
                     if(my_pattern.test(data1))
                     {
                         $(this).closest('div').find('img.data-check').show();
-                    }
-                    else
-                    {
+                    } else {
                         $(this).closest('div').find('img.data-check').hide();
                     }
 
@@ -390,12 +348,9 @@ $(document).ready(function () {
                     if (!data.tripDates) {
                         return [ true, "", "" ];
                     } else {
-
                         if ($.inArray(str_date, data.tripDates) != -1) {
                             return [ true, "calendar_actdate_charter", "" ];
-
                         } else {
-                            // return [ false, "", "" ];
                             return [ true, "", "" ];
                         }
                     }
@@ -403,14 +358,8 @@ $(document).ready(function () {
                     return true;
                 }
             }).change(function () {
-
                 var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
                 var cfdate = Date.parseExact(objs.backTripDate.val() ? objs.backTripDate.val() : $(this).val(), 'dd.MM.yyyy');
-                //objs.searchButton.enable();
-                /*   if ((data.roundTrip && !objs.backTripDate.val()) || cfdate.compareTo(date) < 0) {
-                 date.add(7).days();
-                 objs.backTripDate.val(date.toString('dd.MM.yyyy'));
-                 }*/
             });
 
             objs.backTripDate.datepicker({
@@ -475,7 +424,7 @@ $(document).ready(function () {
                         contentLoaderER(objs.backTripDate);
                         data.tripBackDates = json.DATES;
                         objs.backTripDate.datepicker('refresh');
-                        //	if (!isEmptyObject(data.tripBackDates))
+
                         if (Object.keys(data.tripBackDates).length > 1)
                             setTimeout(function() {
                                 $('#ui-datepicker-div').append('<p style="font-weight:normal;color: #ad0b31;font-size: 13px;text-align: center;padding-bottom: 10px;padding-top: 5px;">На выделенных датах - чартерные рейсы или спецпредложения</p>');
@@ -486,12 +435,11 @@ $(document).ready(function () {
 
                     var data1=$(this).val();
                     var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
+
                     if(my_pattern.test(data1))
                     {
                         $(this).closest('div').find('img.data-check').show();
-                    }
-                    else
-                    {
+                    } else {
                         $(this).closest('div').find('img.data-check').hide();
                     }
 
@@ -523,24 +471,19 @@ $(document).ready(function () {
             }).change(function () {
                 var date = Date.parseExact($(this).val(), 'dd.MM.yyyy');
                 var cfdate = Date.parseExact(objs.tripDate.val() ? objs.tripDate.val() : Date.today(), 'dd.MM.yyyy');
-                //console.log(cfdate.compareTo(date));
-                //   if (cfdate.compareTo(date) <= 0) return;
 
                 objs.backTripDate.val(cfdate.toString('dd.MM.yyyy'));
 
             });
 
-
-
-
-
         }
         function uniqID(idlength) {
-            var charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+            var charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split(''),
+                uniqid = '';
+
             if (!idlength) {
                 idlength = Math.floor(Math.random() * charstoformid.length);
             }
-            var uniqid = '';
 
             for (var i = 0; i < idlength; i++) {
                 uniqid += charstoformid[Math.floor(Math.random() * charstoformid.length)];
@@ -554,7 +497,7 @@ $(document).ready(function () {
 
         function contentLoader(obj, loader) {
             if (!loader) loader = 'ajax-loader-line.gif';
-            return obj.html('<div class="ajax-loader-line"><img src="/img/' + loader + '" /></div>');
+                return obj.html('<div class="ajax-loader-line"><img src="/img/' + loader + '" /></div>');
         }
 
         function reLogin(PageType, PageRes) {
@@ -575,7 +518,6 @@ $(document).ready(function () {
         function contentLoaderE(obj, objClass) {
 
             var loader = $('<div class="ajax-loader-line '+objClass+'" />');
-            loader.html('<img src="/img/ajax-loader-line.gif" />');
             loader.css({
                 position: 'absolute', top: obj.offset().top + obj.height() / 4, left: obj.offset().left + obj.width() / 4, width: obj.width() / 2, height: obj.height() / 2, 'z-index': 500
 
@@ -773,18 +715,11 @@ $(document).ready(function () {
             data.searchParams = searchParams;
             searchParams.action = 'searchTrips';
             objs.resultContainer.slideUp(500, function () {
-
                 contentLoader(objs.resultContainer, 'ajax-big-loader.gif').slideDown(500, function () {
-
                     api_post(api_url, searchParams, function (json) {
                         objs.searchButton.enable();
 
                         objs.resultContainer.slideUp(200, function () {
-
-
-
-
-                            // window.location = '#s_results'
                             var html = json.HTML;
                             for (var el in json.INFO) {
                                 data.trips[el] = json.INFO[el];
@@ -793,20 +728,18 @@ $(document).ready(function () {
                             objs.resultContainer
                                 .html(html)
                                 .slideDown(200);
+
                             objs.seatsContainers = objs.resultContainer
                                 .find(params.seatsContainerS)
                                 .slideUp()
                                 .html('');
-                            // objs.resultContainer.find(params.showSeatsButtonS).enable();
+
                             if (json.success) {
 
                                 $('html, body').animate({
                                     scrollTop: objs.resultContainer.offset().top
                                 }, 500);
                             }
-                            /*else{
-                             getTimeTable2(searchParams.START_CITY_ID, searchParams.END_CITY_ID);
-                             } */
 
                             var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();//.first().hide();
                             objs.resultContainer.find('table.filters').find('td').first().html('<div>' + fhtml + '</div>').find('div').hide();
@@ -816,13 +749,10 @@ $(document).ready(function () {
                                 objs.resultContainer
                                     .find('div#loadOtherTrips')
                                     .before('<div class="ajax-loader-line"><img src="/img/ajax-big-loader.gif" /></div>');
-                            } else {
-                                // initFilters();
                             }
                         });
 
                         if (!json.COMPLETED) {
-
 
                             objs.searchTripsInterval = setTimeout(
                                 function () {
@@ -837,10 +767,7 @@ $(document).ready(function () {
             });
         });
 
-        // поиск рейсов на ближайшую дату
-        // direction - направление поиска: forward - вперед, back - назад
-        // iteration - количество циклов поиска
-
+        // search of trips for nearest date
 
         function initSort() {
             var list = objs.resultContainer.find('.srpp');
@@ -862,7 +789,6 @@ $(document).ready(function () {
             var sorts = objs.resultContainer.find('.sort');
             filters.unbind('change');
             sorts.unbind('click');
-            //alert(filters.size());
             filters.change(function () {
                 var show_params = {};
                 filters.each(function () {
@@ -896,8 +822,8 @@ $(document).ready(function () {
                     }
                 });
 
-
                 list.show();
+
                 list.each(function () {
                     var no_hide = 0;
                     var filters = 0;
@@ -981,7 +907,6 @@ $(document).ready(function () {
             } catch (e) {
 
             }
-
 
         }
 
@@ -1071,8 +996,57 @@ $(document).ready(function () {
                 $(this).html('');
             });
 
-            loadSeats(tripId, obj);
+            openReserv(tripId, obj);
         });
+
+        function openReserv(tripId, obj, carraige_id, segment){
+            data.tickets_checked = {f: [], b: [], segment0: [], segment1: [], segment2: [], segment3: [], segment4: [], segment5: [], segment6: [], segment7: [], segment8: [], segment9: []};
+            var post_params = {ID: tripId};
+
+            if ((carraige_id)&&(!segment)) {
+                post_params['CARRIAGE_ID'] = carraige_id;
+            } else {
+                post_params['segment'+segment+'CarriageId'] = carraige_id;
+            }
+
+            obj.find('input').each(function () {
+                post_params[$(this).attr('name')] = $(this).val();
+            });
+
+            var seatsContainer = objs.seatsContainers.filter(function () {
+                return !!($(this).attr('rel') == tripId);
+            });
+
+            contentLoader(seatsContainer, 'ajax-big-loader.gif').slideDown(200, function () {
+                post_params.action = 'getTripSeats';
+                api_post(api_url, post_params, function (json) {
+                    $(this).html('');
+
+                    seatsContainer.html(json.html).slideDown(500);
+                    seatsContainer.find('.seats-tabs').tabs(
+                        {
+                            show: { effect: "fade", duration: 100 },
+                            hide: { effect: "fade", duration: 100 }
+                        }
+                    );
+                    objs.lockSeats = seatsContainer.find(params.lockSeatsS);
+                    objs.lockSeats.enable();
+                    objs.buyContainer = seatsContainer.find(params.buyContainerS);
+
+                    //loading of finded trips
+                     $("#ch_seats_" + tripId)
+
+                    data.noSelectSeats = false;
+
+                    if (json.trip.NO_SEATS || json.trip.NO_SELECT_SEATS) {
+                        data.noSelectSeats = true;
+                        lockSeats();
+                    }
+
+                    $(params.showSeatsButtonS).enable();
+                }, 'json', 1);
+            });
+        }
 
         function loadSeats(tripId, obj, carraige_id, segment) {
             data.tickets_checked = {f: [], b: [], segment0: [], segment1: [], segment2: [], segment3: [], segment4: [], segment5: [], segment6: [], segment7: [], segment8: [], segment9: []};
@@ -1096,7 +1070,6 @@ $(document).ready(function () {
                 api_post(api_url, post_params, function (json) {
 
                     seatsContainer.slideUp(200, function () {
-
                         $(this).html('');
 
                         seatsContainer.html(json.html).slideDown(500);
@@ -1108,9 +1081,9 @@ $(document).ready(function () {
                         );
                         objs.lockSeats = seatsContainer.find(params.lockSeatsS);
                         objs.lockSeats.enable();
-                        //objs.lockSeats.disable();
                         objs.buyContainer = seatsContainer.find(params.buyContainerS);
 
+                        //loading of finded trips
                         $('html, body').animate({
                             scrollTop: $("#ch_seats_" + tripId).offset().top
                         }, 500);

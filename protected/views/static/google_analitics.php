@@ -5,6 +5,7 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-51910940-1', 'echarter.com.ua');
+    ga('require', 'displayfeatures');
     ga('send', 'pageview');
 
 </script>

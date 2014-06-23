@@ -95,6 +95,7 @@ return array(
                 'contacts' => 'site/contacts',
                 'register' => 'site/register',
                 'reservation' => 'site/reservation',
+                'feedback' => 'site/feedback',
                 'mobile' => 'mobile/default/index',
                 'privatoffice' => 'privatoffice/default/index',
                 'admin'=> 'admin/default/index',
