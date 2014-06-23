@@ -80,7 +80,7 @@ class Api extends Config {
             $type = empty($post['type']) ? 'avia_plus_charter' : $post['type'];
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 
-            $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apitest2/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
+            $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
             if($x[1])
             if($action != 'getActionSalt'){
                 $x = str_replace('/images/', '/static/images/form/', $x[1]);

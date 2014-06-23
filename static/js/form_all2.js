@@ -627,7 +627,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('echarter2','echarter2');
+        reLogin('all','echarter2');
         //SEARCH BUTTON CLICK
 
 

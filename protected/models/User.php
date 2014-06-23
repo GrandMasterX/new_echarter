@@ -67,4 +67,11 @@ class User extends CActiveRecord {
             'criteria'=>$criteria,
         ));
     }
+
+    public function getDisplayName() {
+        //if (empty(Yii::app()->user->name))
+            return preg_replace('/([^@]*).*/', '$1', $this->email);
+        //else
+            //return Yii::app()->user->name;
+    }
 } 

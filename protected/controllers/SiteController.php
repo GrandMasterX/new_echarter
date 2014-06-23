@@ -35,7 +35,8 @@ class SiteController extends Bus {
     public function actionIndex() {
         $form = $this->actionCreateSession($_POST, '/api/form');
         $registration = new UserRegistration();
-        $this->render('index', array('form' => $form, 'registration' => $registration ));
+        $user = User::model()->findByPk(Yii::app()->user->getId());
+        $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user ));
     }
 
     public function actionRegister() {
@@ -82,8 +83,18 @@ class SiteController extends Bus {
     }
 
     public function actionRedemption() {
+        if (!empty($_GET) && !empty($_GET['tn']) && !empty($_GET['start_date'])) {
+            $ticketsIds = array($_GET['tn']);
+            $ticketsDates = array($_GET['start_date']);
+
+            $_GET['url1'] = 'http://echarter.com.ua/orderSuccess.php?r=1';
+            $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/findReservation.php?', $_GET);
+            if (!empty ($x[1])) {
+                $data = json_decode($x[1], 1);
+            }
+        }
         $this->layout = '/layouts/redemption';
-        $this->render('redemption_order');
+        $this->render('redemption_order',array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data));
     }
 
     public function actionContent($alias) {
