@@ -37,7 +37,6 @@
 <?php $this->renderPartial('/layouts/footer');?>
 <script src="static/js/wSelect.js"></script>
 <script>
-
     jQuery.fn.topLink = function(settings) {
         settings = jQuery.extend({
             min: 1,
@@ -69,8 +68,6 @@
     };
 
     $(document).ready(function() {
-        $.fn.wSelect.defaults.changeWidth = false;
-        $('select:not(".transport_details")').wSelect();
         //set the link
         $('#back-top').topLink({
             min: 400,
@@ -101,6 +98,20 @@
             $('input#searchButton').click();
         });
 
+        $('.order_ticket').on('click', function() {
+            $('.close_popup').click();
+            $('input#startCityId').val($(this).parent('div').find('input.promoStartCityId').val());
+            $('input#from').val($(this).parent('div').find('input.promoStartCityName').val());
+            $('input#endCityId').val($(this).parent('div').find('input.promoEndCityId').val());
+            $('input#to').val($(this).parent('div').find('input.promoEndCityName').val());
+            $('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
+            //$('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
+            $('input#searchButton').click();
+            $('html, body').animate({
+                scrollTop: $(".tabs_menu").offset().top
+            }, 2000);
+        });
+
         $('img.del').live('click',function(){
             $(this).hide().closest('div').find('input').val('');
         });
@@ -111,18 +122,31 @@
             $(this).parent().addClass('active');
         });
 
-        $('a.moreTripInfo').live('click', function(){
+        $('#tripsResultContainer a.moreTripInfo').live('click', function(){
             $(this).parent('div').find('div.popup.order').show();
             $('body').find('#overlay').show();
-            var stateObj = { page: $(this).attr('trip') };
-            history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
-
         });
+
+        $('.populars a.moreTripInfo').live('click', function(){
+            $(this).parent('div').find('div.popup.order').show();
+            $('body').find('#overlay').show();
+            if($(this).attr('trip') !='') {
+                var stateObj = { page: $(this).attr('trip') };
+                history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
+            }
+        });
+
+        $('.check_seats').live('click', function() {
+            $(this).parent('div').find('.check_seats_container').show();
+            $('body').find('#overlay').show();
+        })
 
         $('.close_popup,#overlay').live('click',function() {
             $('#overlay').hide();
             $('.close_popup').closest('.popup').hide();
-            window.history.go(-1);
+            $('.close_popup_block').parent('div').hide();
+            if(window.history.state != null && window.history.state.page != null)
+                window.history.go(-1);
         });
 
         $('.lk_office li span').click(function(e) {
@@ -138,6 +162,12 @@
             }
         });
 
+        $(document).ready(function() {
+            $('.detail_toggle').click(function() {
+                $(this).parent().children('.page').slideToggle(300);
+            });
+        });
+
         $(document).click(function(event) {
             if(!$(event.target).closest('.top_menu_item').length) {
                 if($('.top_menu_item').parent('li').hasClass('active')) {
@@ -145,6 +175,7 @@
                 }
             }
         })
+
     });
 </script>
 </body>

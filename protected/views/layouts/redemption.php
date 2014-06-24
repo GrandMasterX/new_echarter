@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.editable-select.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
     <script type="text/javascript" src="/static/js/jquery-latest.js"></script>
-    <script type="text/javascript" src="/static/js/functions.js"></script>
     <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="/static/css/form/form.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.editable-select.css">
@@ -22,8 +21,6 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
     <script type="text/javascript" src="/static/js/date.js"></script>
     <script type="text/javascript" src="/static/js/ui.datepicker-ru.js"></script>
-    <script type="text/javascript" src="/static/js/form.js"></script>
-    <script type="text/javascript" src="/static/js/newformscripts.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
 <body>
 <?php $this->renderPartial('/layouts/header');?>

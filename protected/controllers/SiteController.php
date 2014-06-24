@@ -36,7 +36,8 @@ class SiteController extends Bus {
         $form = $this->actionCreateSession($_POST, '/api/form');
         $registration = new UserRegistration();
         $user = User::model()->findByPk(Yii::app()->user->getId());
-        $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user ));
+        //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
+        $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user));
     }
 
     public function actionRegister() {
