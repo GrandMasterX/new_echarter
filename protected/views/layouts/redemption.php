@@ -1,6 +1,5 @@
 <html>
 <head>
-
     <title>Выкуп забронированных билетов</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +14,10 @@
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
     <script type="text/javascript" src="/static/js/jquery-latest.js"></script>
     <script type="text/javascript" src="/static/js/functions.js"></script>
-    <link rel="shortcut icon" href="favicon.png">    <link rel="stylesheet" type="text/css" href="/static/css/form/form.css">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="/static/css/form/form.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.editable-select.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
-
-
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
     <script type="text/javascript" src="/static/js/date.js"></script>
@@ -27,15 +25,6 @@
     <script type="text/javascript" src="/static/js/form.js"></script>
     <script type="text/javascript" src="/static/js/newformscripts.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.datepicker').datepicker();
-        });
-    </script>
-
-
-
-    <script type="text/javascript" src="http://plugins.old-ice.ru/free/resources/js/LoadEvent.js" charset="utf-8"></script></head>
 <body>
 <?php $this->renderPartial('/layouts/header');?>
 <div class="popular_container">
@@ -49,6 +38,29 @@
     $(document).ready(function() {
         $.fn.wSelect.defaults.changeWidth = false;
         $('select:not(".transport_details")').wSelect();
+
+        $('.datepicker').datepicker();
+
+        $('.lk_office li span').click(function(e) {
+            var _target = e.target;
+            if (!$(_target).parent().is('a.top_menu_item')) {
+                return;
+            }
+            if ($(_target).closest('li').hasClass('active')) {
+                $('.lk_office li').removeClass('active');
+            } else {
+                $('.lk_office li').removeClass('active');
+                $(_target).closest('li').addClass('active');
+            }
+        });
+
+        $(document).click(function(event) {
+            if(!$(event.target).closest('.top_menu_item').length) {
+                if($('.top_menu_item').parent('li').hasClass('active')) {
+                    $('.top_menu_item').parent('li').removeClass('active');
+                }
+            }
+        })
     });
 </script>
 </body>

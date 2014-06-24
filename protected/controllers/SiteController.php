@@ -84,6 +84,7 @@ class SiteController extends Bus {
 
     public function actionRedemption() {
         if (!empty($_GET) && !empty($_GET['tn']) && !empty($_GET['start_date'])) {
+
             $ticketsIds = array($_GET['tn']);
             $ticketsDates = array($_GET['start_date']);
 
@@ -93,15 +94,16 @@ class SiteController extends Bus {
                 $data = json_decode($x[1], 1);
             }
         }
+
+        $get = (isset($_GET['tn'])) ? array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data) : '';
+
         $this->layout = '/layouts/redemption';
-        $this->render('redemption_order',array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data));
+        $this->render('redemption_order',$get);
     }
 
     public function actionContent($alias) {
-
         $model = Content::model()->findByAttributes(array('alias'=>$alias));
         $form = $this->actionCreateSession($_POST, '/api/small_form');
-        //http://www.yiiframework.com/extension/yii-curl/
         $this->render('index',array('model'=>$model,'form'=>$form));
     }
 
