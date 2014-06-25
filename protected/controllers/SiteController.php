@@ -167,8 +167,13 @@ class SiteController extends Bus {
         }
     }
 
+    public function actionAbout() {
+        $form = $this->actionCreateSession($_POST, '/api/small_form');
+        $this->render('about',array('form'=>$form));
+    }
+
     public function actionFeedback() {
-        $this->render('feedback', array());
+        $this->render('feedback', array('form'));
     }
 
     public function actionLogout() {

@@ -42,12 +42,17 @@
 </head>
     <body>
         <div id="overlay" style="display: <?if(isset($_GET['page'])){?>block<?}else{?>none<?}?>;"></div>
-        <?php $this->renderPartial('/layouts/header');?>
-        <div class="container">
-            <div class="wrap">
-                <? echo $content;?>
+
+        <header>
+            <div class="wrap clearfix">
+                <?php $this->renderPartial('/layouts/header');?>
+                <div class="container">
+                    <div class="wrap">
+                        <? echo $content;?>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
         <?php $this->renderPartial('/layouts/popular_container');?>
         <?php $this->renderPartial('/layouts/footer');?>
         <script>

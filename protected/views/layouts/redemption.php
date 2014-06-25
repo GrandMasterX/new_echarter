@@ -23,12 +23,18 @@
     <script type="text/javascript" src="/static/js/ui.datepicker-ru.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
 <body>
-<?php $this->renderPartial('/layouts/header');?>
-<div class="popular_container">
-    <div class="wrap">
-        <? echo $content;?>
+<div id="overlay" style="display: <?if(isset($_GET['page'])){?>block<?}else{?>none<?}?>;"></div>
+
+<header>
+    <div class="wrap clearfix">
+        <?php $this->renderPartial('/layouts/header');?>
+        <div class="container">
+            <div class="wrap">
+                <? echo $content;?>
+            </div>
+        </div>
     </div>
-</div>
+</header>
 <?php $this->renderPartial('/layouts/footer');?>
 <script src="static/js/wSelect.js"></script>
 <script>

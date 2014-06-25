@@ -157,6 +157,7 @@ $(document).ready(function () {
             tripDateS: '#tripDate',
             backTripDateS: '#backTripDate',
             resultContainerS: '#tripsResultContainer',
+            ajaxLoaders: '#loader',
             closeContainerS: '.close_popup_block',
             showSeatsButtonS: '.check_seats',
             seatsContainerS: '.check_seats_container',
@@ -216,6 +217,7 @@ $(document).ready(function () {
             objs.tripDate = $(params.tripDateS);
             objs.backTripDate = $(params.backTripDateS);
             objs.resultContainer = $(params.resultContainerS);
+            objs.ajaxLoader = $(params.ajaxLoaders);
             objs.closeContainer = $(params.closeContainerS);
             objs.searchButton = $(params.searchButtonS);
             objs.searchPlusOneDay = $(params.searchPlusOneDayS);
@@ -229,8 +231,8 @@ $(document).ready(function () {
             data.searchParams = {};
             data.trips = {};
 
-            objs.resultContainer.contentLoader = function () {
-                return objs.resultContainer.html('<div class="ajax-loader-line"><img src="/img/ajax-loader-line.gif" /></div>');
+            objs.ajaxLoader = function () {
+                return objs.ajaxLoader.html('<div class="ajax-loader-line"><img src="/img/ajax-loader-line.gif" /></div>');
             };
             //**************//
 
@@ -494,9 +496,9 @@ $(document).ready(function () {
                 return uniqID(idlength)
         }
 
-        function contentLoader(obj, loader) {
-            if (!loader) loader = 'ajax-loader-line.gif';
-                return obj.html('<div class="ajax-loader-line"><img src="/img/' + loader + '" /></div>');
+        function contentLoader(obj, loader_image) {
+            if (!loader_image) loader_image = 'ajax-loader(1).gif';
+                return $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif" /></div>');
         }
 
         function reLogin(PageType, PageRes) {
@@ -522,7 +524,6 @@ $(document).ready(function () {
 
             }).hide();
 
-            //alert(obj.attr('id'));
             if (!obj.attr('id')) {
                 obj.attr('id', uniqID());
             }
@@ -630,9 +631,9 @@ $(document).ready(function () {
                             if (!json.COMPLETED) {
 
                                 initFilters()
-                                objs.resultContainer
-                                    .find('div#loadOtherTrips')
-                                    .before('<div class="ajax-loader-line"><img src="/img/'+loader_image+'"/></div>');
+                                $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif"/></div>');
+
+
                             }
                         });
 
@@ -825,9 +826,7 @@ $(document).ready(function () {
 
                 if((!json.COMPLETED)&&(searchIteration<7)) {
 
-                    objs.resultContainer
-                        .find('div#loadOtherTrips')
-                        .before('<div class="ajax-loader-line"><img src="/img/'+loader_image+'" /></div>');
+                    $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif" /></div>');
 
                     objs.searchTripsInterval = setTimeout(
                         function () {

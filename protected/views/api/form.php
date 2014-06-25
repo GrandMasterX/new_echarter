@@ -271,12 +271,12 @@
         <div class="dep item_1 clearfix">
             <label>Дата отправки</label>
             <input type="text" id="tripDate" name="dep_date" class="dep_date hdata" placeholder="" value="" />
-            <img src="/images/data-check.png" alt="" class="data-check" style="display: none;">
+            <img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 149px;">
         </div>
         <div class="ret item_1  clearfix">
             <label>Обратно</label>
             <input type="text" name="ret_date" id="backTripDate" class="ret_date hdata" placeholder="" value="" />
-            <img src="/images/data-check.png" alt="" class="data-check" style="display: none;">
+            <img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 149px;">
         </div>
     </div>
 

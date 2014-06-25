@@ -32,8 +32,54 @@
 </head>
 <body>
 <div id="overlay" style="display: none;"></div>
-<?php $this->renderPartial('/layouts/header');?>
-<? echo $content;?>
+
+<header>
+    <div class="wrap clearfix">
+        <?php $this->renderPartial('/layouts/header');?>
+        <? echo $content;?>
+    </div>
+</header>
+<div class="popular_container">
+    <div class="wrap">
+        <div id="tripsResultContainer" style="display: none;"></div>
+        <div class="block clearfix">
+            <div class="row_block left maintext">
+                <h3 style="text-align:left;">Контакты</h3>
+                <div style="min-height:273px;">
+                    <center>
+                        <img src="images/contacts.png" class="left" style="padding-right: 40px;"/>
+                        <div class="form left">
+                            <form class="clearfix" id="register-form" action="/register" method="post">
+                                <div class="item">
+                                    <label>ФИО</label>
+                                    <input placeholder="name" class="name_user" name="name_user" id="name_user" type="text">
+                                </div>
+                                <div class="item">
+                                    <label>Електронная почта:</label>
+                                    <input placeholder="email" class="enter_email" name="enter_email" id="enter_email" type="text">
+                                </div>
+                                <div class="btn clearfix">
+                                    <input class="enter_sign" value="Отправить" id="sign" type="submit" name="yt0">
+                                </div>
+                            </form>
+                        </div>
+                    </center>
+                </div>
+                <br><br>
+
+                Контакты:<br>
+
+                При бронировании билетов на сайте Вы получите по e-mail - контакты службы поддержки.
+                Если у Вас возникли вопросы по работе с сайтом, можете перезвонить специалисту авиационного отдела, по телефону: +38 (050) 416-42-80.
+
+
+                <br>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</div>
 <?php $this->renderPartial('/layouts/footer');?>
 <script src="static/js/wSelect.js"></script>
 <script>

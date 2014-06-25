@@ -29,7 +29,7 @@
                 <div class="cell_town foto left">
                     <img alt="" src="images/town_foto.png" />
                 </div>
-                <div class="cell_town text left">Киев - Анталья</div>
+                <div class="cell_town text left">Киев - Анталья - Киев</div>
                 <div class="cell_town price left">2628.37 грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
@@ -42,7 +42,7 @@
                 <div class="cell_town foto left">
                     <img alt="" src="images/town_foto.png" />
                 </div>
-                <div class="cell_town text left">Киев - Бургас</div>
+                <div class="cell_town text left">Киев - Бургас - Киев</div>
                 <div class="cell_town price left">1809.86 грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
@@ -55,7 +55,7 @@
                 <div class="cell_town foto left">
                     <img alt="" src="images/town_foto.png" />
                 </div>
-                <div class="cell_town text left">Киев - Ираклион</div>
+                <div class="cell_town text left">Киев - Ираклион - Киев</div>
                 <div class="cell_town price left">4062.13  грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
@@ -68,7 +68,7 @@
                 <div class="cell_town foto left">
                     <img alt="" src="images/town_foto.png" />
                 </div>
-                <div class="cell_town text left">Киев - Салоники</div>
+                <div class="cell_town text left">Киев - Салоники - Киев</div>
                 <div class="cell_town price left">4062.13  грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />

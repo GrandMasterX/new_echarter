@@ -1,19 +1,5 @@
-<div class="container page_2">
-<div class="wrap" style="padding: 40px 0px 5px 122px;">
-<style>
-    .hdata{background: url('/static/images/u28.png') no-repeat!important;
-        background-color: white!important;
-        border: 1px solid #BEB8B8;
-        background-position: 5px center!important;
-        background-size: 15px!important;
-        width: 114px!important;
-        padding-left: 26px!important;}
-    div.container_form.clearfix.new div.element{position: relative; float:left;margin-right: 50px; top:-25px;}
-    div.container_form.clearfix.new label{top: -24px; display: block;}
-    input.town{width: 192px;
-        padding: 2px 5px;
-        border: 1px solid #BEB8B8;}
-</style>
+<div class="container page_2" style="margin: 0px auto;text-align: center;">
+<div class="wrap" style="padding: 40px 0px 5px 90px;">
 <div class="container_form clearfix new">
     <form class="clearfix">
         <?php
@@ -45,18 +31,18 @@
 
         <div class="element dep item_1 clearfix">
             <label>Дата отправления</label>
-            <input type="text" id="tripDate" name="dep_date" class="dep_date hdata" placeholder="" value="" />
+            <input type="text" id="tripDate" name="dep_date" class="dep_date hdata contacts" placeholder="" value="" />
             <img src="/images/data-check.png" alt="" class="data-check">
         </div>
 
         <div class="element ret item_1  clearfix">
             <label>Обратно</label>
-            <input type="text" name="ret_date" id="backTripDate" class="ret_date hdata" placeholder="" value="" />
-            <img src="/images/data-check.png" alt="" class="data-check del">
+            <input type="text" name="ret_date" id="backTripDate" class="ret_date hdata contacts" placeholder="" value="" />
+            <img src="/images/data-check.png" alt="" class="data-check del contacts">
         </div>
 
         <div class="block buttons right">
-            <input id="searchButton" class="sbm" type="submit" value="Поиск рейсов" style=" margin-right: 143px; margin-top: -7px; margin-bottom: 12px; " />
+            <input id="searchButton" class="sbm" type="submit" value="Поиск рейсов" style=" margin-right: 76px; margin-top: -7px; margin-bottom: 12px; " />
         </div>
 
         <div class="selectblock" style=" position: absolute; margin: 0px; margin-top: 39px; " style= >
