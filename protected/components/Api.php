@@ -76,7 +76,7 @@ class Api extends Config {
 
         if (!empty($post)) {
 
-            $action = $post['action'];
+            $action = $post['action'];//.'OnlyJson';
             $type = empty($post['type']) ? 'avia_plus_charter' : $post['type'];
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 

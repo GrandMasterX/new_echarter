@@ -270,13 +270,13 @@
     <div class="block date clearfix right">
         <div class="dep item_1 clearfix">
             <label>Дата отправки</label>
-            <input type="text" id="tripDate" name="dep_date" class="dep_date" placeholder="" value="" />
-            <span class="calendar"></span>
+            <input type="text" id="tripDate" name="dep_date" class="dep_date hdata" placeholder="" value="" />
+            <img src="/images/data-check.png" alt="" class="data-check" style="display: none;">
         </div>
         <div class="ret item_1  clearfix">
             <label>Обратно</label>
-            <input type="text" name="ret_date" id="backTripDate" class="ret_date" placeholder="" value="" />
-            <span class="calendar"></span>
+            <input type="text" name="ret_date" id="backTripDate" class="ret_date hdata" placeholder="" value="" />
+            <img src="/images/data-check.png" alt="" class="data-check" style="display: none;">
         </div>
     </div>
 

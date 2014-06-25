@@ -143,11 +143,12 @@ $(document).ready(function () {
 
 (function ($) {
     $.order = function (params) {
-        var data = {};
-        var objs = {};
-        var api_url = window.location.href;
-        var api_request = null;
-        var el_loaders = {};
+        var data = {},
+            objs = {},
+            api_url = window.location.href,
+            api_request = null,
+            el_loaders = {},
+            loader_image = 'ajax-loader(1).gif';
 
         var def_params = {
             searchButtonS: '#searchButton',
@@ -228,9 +229,7 @@ $(document).ready(function () {
             data.searchParams = {};
             data.trips = {};
 
-            objs.resultContainer.html('')
-                .slideUp()
-                .contentLoader = function () {
+            objs.resultContainer.contentLoader = function () {
                 return objs.resultContainer.html('<div class="ajax-loader-line"><img src="/img/ajax-loader-line.gif" /></div>');
             };
             //**************//
@@ -581,119 +580,14 @@ $(document).ready(function () {
             }
             $(this).disable();
             var searchParams = {};
-/////////
-            /* установка параметров ЖД фильтров - начало*/
-            /*
-             searchParams.TRAIN_TYPES_SEARCH_FILTER = '';
-             $("div.selectArea3Target.trainFilters input:checkbox").each(function(){
-             if($(this).prop('checked')){
-             searchParams.TRAIN_TYPES_SEARCH_FILTER += $(this).val()+';';
-             }});
-             */
-            /* установка параметров ЖД фильтров  - конец*/
-            /* установка параметров авиа фильтров - начало*/
-            /*      var depFlagString = '';
-             var arrFlagString = '';
-             $("div#segmentTimeDep input:checkbox").each(function(){
-             if($(this).prop('checked')){
-             depFlagString += $(this).val();
-             }
-             });
-             $("div#segmentTimeArr input:checkbox").each(function(){
-             if($(this).prop('checked')){
-             arrFlagString += $(this).val();
-             }
-             });
-             searchParams.DEP_FLAG_STRING = depFlagString;
-             searchParams.ARR_FLAG_STRING = arrFlagString;
-             */
+
             /* установка параметров авиа фильтров  - конец*/
             searchParams.SELECTED_MODES = "";
-            /*
-             if($("div.transports").hasClass("active")){
-             if((!$("div.transports #buscheck").prop("checked"))&&(!$("div.transports #traincheck").prop("checked"))&&(!$("div.transports #aviacheck").prop("checked")))
-             {
-             var waiter;
-             $('div.messageAlert p').html('Выберите тип транспортного средства<br /> <img style="margin-top:10px;" src="http://e-travels.com.ua/images/form/transports.png" alt="" />');
-             $('div.messageAlert').fadeIn(300, function(){
-             // создаём таймер и запоминаем ссылку на него
-             waiter=setTimeout(function(){
-             // когда таймер отработает будут запущен fadeOut
-             $('div.messageAlert').fadeOut(400);
-             },5000);
-             })
-             $('div.messageAlert').live('click', function () {
-             clearTimeout(waiter);
-             $('div.messageAlert').fadeOut(400);
-             });
-             // щелчок унечтожит таймер и обьект не исчезнет
-             $(this).enable();
-             return false;
-             }}
-             */
-            /******
-             if($("#buscheck").prop("checked")){
-		searchParams.SELECTED_MODES = objs.busCheck.val();
-	}
-
-
-             if($("#traincheck").prop("checked")){
-	if(searchParams.SELECTED_MODES != "")
-		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.trainCheck.val();
-	else
-		searchParams.SELECTED_MODES = objs.trainCheck.val();
-	}
-             if($("#exchangecheck").prop("checked")){
-	if(searchParams.SELECTED_MODES != ""){
-			if(transferPointVal>3)
-				searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + 9;
-			else
-				searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.exchangeCheck.val();
-		}
-	else
-		searchParams.SELECTED_MODES = objs.exchangeCheck.val();
-	}
-             if(($("#aviacheckbusines").prop("checked"))&&($("#aviacheck").prop("checked"))){
-	if(searchParams.SELECTED_MODES != "")
-		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.aviaCheckBusines.val();
-	else
-		searchParams.SELECTED_MODES = objs.aviaCheckBusines.val();
-	}
-             if(($("#aviacheckeconom").prop("checked"))&&($("#aviacheck").prop("checked"))){
-	if(searchParams.SELECTED_MODES != "")
-		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.aviaCheckEconom.val();
-	else
-		searchParams.SELECTED_MODES = objs.aviaCheckEconom.val();
-	}
-             if(($("#aviacheck").prop("checked")) && !($("#aviacheckeconom").prop("checked")) && !($("#aviacheckbusines").prop("checked"))){
-	if(searchParams.SELECTED_MODES != "")
-		searchParams.SELECTED_MODES = searchParams.SELECTED_MODES + ";" + objs.aviaCheck.val();
-	else
-		searchParams.SELECTED_MODES = objs.aviaCheck.val();
-	}
-
-             if(searchParams.SELECTED_MODES == "")
-             searchParams.SELECTED_MODES = "1;3;51";
-
-             *********/
-
-
-
-
             searchParams.SELECTED_MODES = "1;4;3;8";
-
-//////////////
-
-
-
-
-//alert(searchParams.SELECTED_MODES);
             searchParams.START_CITY_ID = objs.firstCity.val();
             searchParams.END_CITY_ID = objs.secondCity.val();
             searchParams.START_CITY_NAME = $('input.from.town').val();
             searchParams.END_CITY_NAME = $('input.to.town').val();
-
-
             searchParams.TRIP_DATE = objs.tripDate.val();
             searchParams.BACK_TRIP_DATE = objs.backTripDate.val();
             var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
@@ -702,20 +596,15 @@ $(document).ready(function () {
             else
                 searchParams.ROUND_TRIP = false;
 
-            //  searchParams.TICKETS = objs.tickets.val();
             searchParams.TICKETS = '1';
-            //  searchParams.TRIP_ID = '';
-            //  searchParams.discount = objs.disocuntPopup.getData();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
             }
 
-
             data.searchParams = searchParams;
             searchParams.action = 'searchTrips';
-            objs.resultContainer.slideUp(500, function () {
-                contentLoader(objs.resultContainer, 'ajax-big-loader.gif').slideDown(500, function () {
+                contentLoader(objs.resultContainer, loader_image)
                     api_post(api_url, searchParams, function (json) {
                         objs.searchButton.enable();
 
@@ -729,26 +618,21 @@ $(document).ready(function () {
                                 .html(html)
                                 .slideDown(200);
 
-                            objs.seatsContainers = objs.resultContainer
-                                .find(params.seatsContainerS)
-                                .slideUp()
-                                .html('');
+                            objs.seatsContainers = objs.resultContainer.find(params.seatsContainerS);
 
                             if (json.success) {
-
                                 $('html, body').animate({
                                     scrollTop: objs.resultContainer.offset().top
                                 }, 500);
                             }
 
-                            var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();//.first().hide();
-                            objs.resultContainer.find('table.filters').find('td').first().html('<div>' + fhtml + '</div>').find('div').hide();
+                            var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();
                             if (!json.COMPLETED) {
 
                                 initFilters()
                                 objs.resultContainer
                                     .find('div#loadOtherTrips')
-                                    .before('<div class="ajax-loader-line"><img src="/img/ajax-big-loader.gif" /></div>');
+                                    .before('<div class="ajax-loader-line"><img src="/img/'+loader_image+'"/></div>');
                             }
                         });
 
@@ -763,8 +647,6 @@ $(document).ready(function () {
 
                         }
                     }, 'json');
-                });
-            });
         });
 
         // search of trips for nearest date
@@ -945,7 +827,7 @@ $(document).ready(function () {
 
                     objs.resultContainer
                         .find('div#loadOtherTrips')
-                        .before('<div class="ajax-loader-line"><img src="/img/ajax-big-loader.gif" /></div>');
+                        .before('<div class="ajax-loader-line"><img src="/img/'+loader_image+'" /></div>');
 
                     objs.searchTripsInterval = setTimeout(
                         function () {
@@ -959,16 +841,8 @@ $(document).ready(function () {
             }, 'json', 1);
         }
 
-        $('.close_popup_block').live('click', function () {
-            $(this).closest('div.check_seats_container').hide().html('');
-            $('body').find('#overlay').hide();
-        });
-
         // SHOW SEATS
         objs.resultContainer.on('click', params.showSeatsButtonS, function () {
-
-            $('div.popup.order').hide();
-            $('body').find('#overlay').show();
 
             var obj = $(this);
             objs.currTripBtn = obj;
@@ -981,20 +855,7 @@ $(document).ready(function () {
                 return !!($(this).attr('rel') == tripId);
             });
 
-            if (seatsContainer.html()) {
-                seatsContainer.stop(true, true).slideUp(500, function () {
-                    $(this).html('');
-                });
-                data.searchParams.TRIP_ID = '';
-                $(params.showSeatsButtonS).enable();
-                return;
-            }
-
             data.searchParams.TRIP_ID = tripId;
-
-            objs.seatsContainers.stop(true, true).slideUp(500, function () {
-                $(this).html('');
-            });
 
             openReserv(tripId, obj);
         });
@@ -1017,12 +878,11 @@ $(document).ready(function () {
                 return !!($(this).attr('rel') == tripId);
             });
 
-            contentLoader(seatsContainer, 'ajax-big-loader.gif').slideDown(200, function () {
+            contentLoader(seatsContainer, loader_image).slideDown(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
-                    $(this).html('');
 
-                    seatsContainer.html(json.html).slideDown(500);
+                    seatsContainer.html(json.html).show();
                     seatsContainer.find('.seats-tabs').tabs(
                         {
                             show: { effect: "fade", duration: 100 },
@@ -1044,6 +904,7 @@ $(document).ready(function () {
                     }
 
                     $(params.showSeatsButtonS).enable();
+
                 }, 'json', 1);
             });
         }
@@ -1065,12 +926,11 @@ $(document).ready(function () {
             var seatsContainer = objs.seatsContainers.filter(function () {
                 return !!($(this).attr('rel') == tripId);
             });
-            contentLoader(seatsContainer, 'ajax-big-loader.gif').slideDown(200, function () {
+            contentLoader(seatsContainer, loader_image).slideDown(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
                     seatsContainer.slideUp(200, function () {
-                        $(this).html('');
 
                         seatsContainer.html(json.html).slideDown(500);
                         seatsContainer.find('.seats-tabs').tabs(
@@ -1233,7 +1093,7 @@ $(document).ready(function () {
             post_params = $.extend(data.searchParams, post_params);
             post_params.action = 'lockSeats';
             data.searchParams.decline = '';
-            contentLoader(objs.buyContainer, 'ajax-big-loader.gif');
+            contentLoader(objs.buyContainer, loader_image);
             api_post(api_url, post_params, function (json) {
 
                 if (!json.success) {

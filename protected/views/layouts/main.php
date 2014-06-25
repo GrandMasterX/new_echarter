@@ -144,14 +144,22 @@
                 $('.populars a.moreTripInfo').live('click', function(){
                     $(this).parent('div').find('div.popup.order').show();
                     $('body').find('#overlay').show();
-                    var stateObj = { page: $(this).attr('trip') };
-                    history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
+                    if($(this).attr('trip') !='') {
+                        var stateObj = { page: $(this).attr('trip') };
+                        history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
+                    }
                 });
+
+                $('.check_seats').live('click', function() {
+                    $(this).parent('div').find('.check_seats_container').show();
+                    $('body').find('#overlay').show();
+                })
 
                 $('.close_popup,#overlay').live('click',function() {
                     $('#overlay').hide();
                     $('.close_popup').closest('.popup').hide();
-                    if(window.history.state.page != null)
+                    $('.close_popup_block').parent('div').hide();
+                    if(window.history.state != null && window.history.state.page != null)
                         window.history.go(-1);
                 });
 
@@ -173,6 +181,14 @@
                         $(this).parent().children('.page').slideToggle(300);
                     });
                 });
+
+                $(document).click(function(event) {
+                    if(!$(event.target).closest('.top_menu_item').length) {
+                        if($('.top_menu_item').parent('li').hasClass('active')) {
+                            $('.top_menu_item').parent('li').removeClass('active');
+                        }
+                    }
+                })
 
             });
         </script>

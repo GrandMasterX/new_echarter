@@ -71,7 +71,7 @@
                                 <tr>
                                     <td>Дата отправления:</td>
                                     <td>
-                                        <input type="text" value="" name="start_date" class="ac-autocomplete-input datepicker hasDatepicker" id="start_date">
+                                        <input type="text" value="" name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
                                     </td>
                                 </tr>
                                 <tr>
