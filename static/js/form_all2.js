@@ -623,7 +623,7 @@ $(document).ready(function () {
 
                             if (json.success) {
                                 $('html, body').animate({
-                                    scrollTop: objs.resultContainer.offset().top
+                                    scrollTop: objs.resultContainer
                                 }, 500);
                             }
 
@@ -821,8 +821,6 @@ $(document).ready(function () {
                 objs.seatsContainers = objs.resultContainer
                     .find(params.seatsContainerS)
 
-                // objs.resultContainer.find(params.showSeatsButtonS).enable();
-
 
                 if((!json.COMPLETED)&&(searchIteration<7)) {
 
@@ -859,6 +857,8 @@ $(document).ready(function () {
             openReserv(tripId, obj);
         });
 
+
+        //resservation form
         function openReserv(tripId, obj, carraige_id, segment){
             data.tickets_checked = {f: [], b: [], segment0: [], segment1: [], segment2: [], segment3: [], segment4: [], segment5: [], segment6: [], segment7: [], segment8: [], segment9: []};
             var post_params = {ID: tripId};
@@ -1149,16 +1149,7 @@ $(document).ready(function () {
             post.TRIP = null;
             post.action = 'ticketsBooking';
             post.url1 = 'http://echarter.com.ua/orderSuccess.php';
-            /*
-             var str = $("form[name=order_data]").serialize();
-             var tickets = objs.tickets.val();
-             var post = {
-             'order_data': str,
-             'url1': 'http://e-travels.com.ua/orderSuccess.php',
-             'TICKETS': tickets
-             'action': 'ticketsBooking'
-             };
-             */
+
             api_post(api_url, post, function (json) {
                 objs.buyContainer.find('.field_error').removeClass('field_error');$("span.alertCheckMessage").hide();
                 p.html(obj);
@@ -1185,7 +1176,6 @@ $(document).ready(function () {
 
                 }
                 form.appendTo(objs.buyContainer);
-                //p.html(obj);
                 form.submit();
 
             }, 'json');
@@ -1312,9 +1302,7 @@ $(document).ready(function () {
 
                 data.searchParams.decline = json.order_id;
 
-
                 discount_data.find('.ecquiring_fields').html(form);
-
                 discount_data.find('.discount_cost').html(json.amount);
                 discount_data.find('.buy_order_discount').click(function () {
                     form.submit();

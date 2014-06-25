@@ -14,7 +14,7 @@
 <div class="tabs clearfix">
     <div class="right menu_cont">
         <div class="block active"><a href="javascript:;">Чартеры</a></div>
-        <div class="block"><a href="javascript:;">Все рейсы</a></div>
+        <!--<div class="block"><a href="javascript:;">Все рейсы</a></div>-->
     </div>
 </div>
 
@@ -250,7 +250,7 @@
 
 
 <div class="clearfix">
-    <div class="checkbox left">
+    <div class="checkbox left" style="display: none;">
         <ul class="clearfix">
             <li class="clearfix">
                 <div class="element rt">

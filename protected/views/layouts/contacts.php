@@ -18,6 +18,7 @@
     <!--<link rel="stylesheet" type="text/css" href="static/css/style.css"/>-->
     <link rel="stylesheet" type="text/css" href="static/css/jquery.editable-select.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/jquery-ui.css"/>
+    <link rel="stylesheet" href="static/css/wSelect_search.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
@@ -27,6 +28,7 @@
     <script type="text/javascript" src="static/js/ui.datepicker-ru.js"></script>
     <script type="text/javascript" src="static/js/form_all2.js?<?= mt_rand(1, 22222); ?>"></script>
     <script type="text/javascript" src="static/js/newformscripts.js"></script>
+    <script type="text/javascript" src="static/js/wSelect.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript" src="static/js/discounts.js"></script>
 </head>
@@ -48,21 +50,33 @@
                 <div style="min-height:273px;">
                     <center>
                         <img src="images/contacts.png" class="left" style="padding-right: 40px;"/>
-                        <div class="form left">
+                        <!--<div class="form right" style="margin-right: 50px;">
                             <form class="clearfix" id="register-form" action="/register" method="post">
                                 <div class="item">
-                                    <label>ФИО</label>
+                                    <label class="feedback">ФИО</label>
                                     <input placeholder="name" class="name_user" name="name_user" id="name_user" type="text">
                                 </div>
                                 <div class="item">
-                                    <label>Електронная почта:</label>
+                                    <label class="feedback">Електронная почта:</label>
                                     <input placeholder="email" class="enter_email" name="enter_email" id="enter_email" type="text">
                                 </div>
-                                <div class="btn clearfix">
+                                <div class="item">
+                                    <label class="feedback" style="margin-bottom: 15px;">Електронная почта:</label>
+                                    <select name="name[type1]" class="filter_price" size="4">
+                                        <option selected="" value="">----------Выберите группу----------</option>
+                                        <option value="2">Price</option>
+                                        <option value="3">Price</option>
+                                        <option value="3">Price</option>
+                                    </select>
+                                </div>
+                                <div class="item">
+                                    <textarea name="comment" placeholder="Комментарий"></textarea>
+                                </div>
+                                <div class="btn clearfix right">
                                     <input class="enter_sign" value="Отправить" id="sign" type="submit" name="yt0">
                                 </div>
                             </form>
-                        </div>
+                        </div>-->
                     </center>
                 </div>
                 <br><br>
@@ -81,7 +95,6 @@
     </div>
 </div>
 <?php $this->renderPartial('/layouts/footer');?>
-<script src="static/js/wSelect.js"></script>
 <script>
     jQuery.fn.topLink = function(settings) {
         settings = jQuery.extend({
@@ -181,6 +194,9 @@
                 history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
             }
         });
+
+        $.fn.wSelect.defaults.changeWidth = false;
+        $('select:not(".transport_details")').wSelect();
 
         $('.check_seats').live('click', function() {
             $(this).parent('div').find('.check_seats_container').show();
