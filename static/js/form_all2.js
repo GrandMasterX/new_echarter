@@ -834,7 +834,7 @@ $(document).ready(function () {
                         }, 2000
                     );
                 } else {
-                    objs.resultContainer.find('table.filters').find('td').first().find('.ajax-loader-line').remove();
+                    $('#loader').html('');
                     initFilters();
                 }
             }, 'json', 1);
