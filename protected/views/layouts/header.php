@@ -1,7 +1,7 @@
 <div class="wrap_top clearfix">
     <a name="top" id="top"></a>
     <div class="top_header clearfix right">
-        <div class="dictum left">Удобный заказ чартеров</div>
+        <div class="dictum left">Акционные авиабилеты</div>
         <div class="lk_office right">
             <ul class="clearfix">
                 <li><a href="/redemption">Выкуп заказа</a></li>

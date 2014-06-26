@@ -4,7 +4,7 @@
             <td class="left_border">
                 <div class="item"></div>
             </td>
-            <td class="text_table"><span>Горячие направления</span></td>
+            <td class="text_table"><span>Спецпредложения на лето</span></td>
             <td class="right_border">
                 <div class="item"></div>
             </td>
