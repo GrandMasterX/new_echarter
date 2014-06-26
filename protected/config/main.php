@@ -48,10 +48,10 @@ return array(
 		),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=bestcarp.mysql.ukraine.com.ua;dbname=bestcarp_avia',
+			'connectionString' => 'mysql:host=localhost;dbname=e-travels',
 			'emulatePrepare' => true,
-			'username' => 'bestcarp_avia',
-			'password' => 'qeyg8h4w',
+			'username' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
         'mail' => array(

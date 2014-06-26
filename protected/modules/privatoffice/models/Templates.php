@@ -14,7 +14,7 @@ class Templates extends CActiveRecord {
     public function rules()
     {
         return array(
-            array('id, firstName, lastName, middleName, birthdate, passport, psprt_date, citizenship, gender, phone, email, user_id', 'safe'),
+            array('id, firstName, lastName, middleName, birthdate, passport, psprt_date, citizenship, gender, phone, email, group_id, user_id', 'safe'),
         );
     }
 
@@ -37,6 +37,7 @@ class Templates extends CActiveRecord {
         $criteria->compare('firstName', $this->firstName, true);
         $criteria->compare('lastName', $this->lastName, true);
         $criteria->compare('email', $this->email, true);
+        $criteria->compare('gender', $this->gender, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -59,7 +60,8 @@ class Templates extends CActiveRecord {
     {
         return array(
             'id' => '#',
-            'firstName' => 'Название:',
+            'title' => 'Название:',
+            'firstName' => 'Имя:',
             'middleName' => 'Фамилия:',
             'lastName' => 'Отчество:',
             'birthdate' => 'Дата рождения:',
