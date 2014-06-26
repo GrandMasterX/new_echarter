@@ -21,7 +21,7 @@
 	
 	<?php $this->widget('bootstrap.widgets.TbButton', array(
 		'type'=>'danger',
-		'url' => array('/admin/mail/admin'),
+		'url' => array('/privatoffice/groups/all'),
 		'label'=>'Отмена',
 		'htmlOptions' =>array(
 			'class' => 'cancel-button'

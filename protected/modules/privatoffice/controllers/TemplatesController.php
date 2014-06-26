@@ -64,15 +64,14 @@ class TemplatesController extends PrivatofficeController {
      */
     public function actionDelete($id)
     {
-        if(Yii::app()->request->isPostRequest)
+        if($id)
         {
             // we only allow deletion via POST request
             $this->loadModel($id)->delete();
-
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if(!isset($_GET['ajax'])) {
                 Yii::app()->user->setFlash('success', 'Запись успешно удалена');
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                $this->redirect('/privatoffice/templates/all');
             }
         }
         else

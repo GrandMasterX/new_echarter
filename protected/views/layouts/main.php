@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>HOME</title>
+    <title>Чартеры. Авиабилеты и спецпредложения на чартерные рейсы - Echarter.com.ua</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -160,7 +160,7 @@
                     $('body').find('#overlay').show();
                 })
 
-                $('.close_popup,#overlay').live('click',function() {
+                $('.close_popup,#overlay,.close_popup_block.right').live('click',function() {
                     $('#overlay').hide();
                     $('.close_popup').closest('.popup').hide();
                     $('.close_popup_block').parent('div').hide();

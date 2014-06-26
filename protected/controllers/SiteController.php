@@ -34,8 +34,8 @@ class SiteController extends Bus {
 
     public function actionIndex() {
         $form = $this->actionCreateSession($_POST, '/api/form');
-        $registration = new UserRegistration();
-        $user = User::model()->findByPk(Yii::app()->user->getId());
+        $registration = '';new UserRegistration();
+        $user = '';//User::model()->findByPk(Yii::app()->user->getId());
         //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
         $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user));
     }
@@ -103,9 +103,9 @@ class SiteController extends Bus {
     }
 
     public function actionContent($alias) {
-        $model = Content::model()->findByAttributes(array('alias'=>$alias));
+        //$model = Content::model()->findByAttributes(array('alias'=>$alias));
         $form = $this->actionCreateSession($_POST, '/api/small_form');
-        $this->render('index',array('model'=>$model,'form'=>$form));
+        $this->render('index',array(/*'model'=>$model,*/'form'=>$form));
     }
 
 	/**

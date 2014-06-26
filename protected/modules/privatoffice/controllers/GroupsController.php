@@ -64,7 +64,7 @@ class GroupsController extends PrivatofficeController {
      */
     public function actionDelete($id)
     {
-        if(Yii::app()->request->isPostRequest)
+        if($id)
         {
             // we only allow deletion via POST request
             $this->loadModel($id)->delete();
@@ -72,7 +72,7 @@ class GroupsController extends PrivatofficeController {
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if(!isset($_GET['ajax'])) {
                 Yii::app()->user->setFlash('success', 'Запись успешно удалена');
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('privatoffice'));
+                $this->redirect('/privatoffice/groups/all');
             }
         }
         else
@@ -97,7 +97,7 @@ class GroupsController extends PrivatofficeController {
      */
     public function loadModel($id)
     {
-        $model=Groups::model()->findByPk($id);
+        $model = Groups::model()->findByPk($id);
         if($model===null)
             throw new CHttpException(404,'The requested page does not exist.');
         return $model;

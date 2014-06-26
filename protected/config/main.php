@@ -111,6 +111,7 @@ return array(
                 'contactsgetActionSalt' =>'site/getActionSalt',
                 'reservation' =>'site/reservation',
                 '<alias>' => 'site/content',
+                'regular-flights/<alias>' => 'site/content',
                 //'privatoffice/<controller>/<action>' => 'privatoffice/<controller>/<action>',
                 '<controller>/<action>'=>'<controller>/<action>',
 			),

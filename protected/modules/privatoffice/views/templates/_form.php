@@ -18,6 +18,12 @@
 	<?php echo $form->textFieldRow($model,'psprt_date',array('class'=>'span5','maxlength'=>60)); ?>
 	<?php echo $form->textFieldRow($model,'citizenship',array('class'=>'span5','maxlength'=>60)); ?>
 	<?php echo $form->textFieldRow($model,'phone',array('class'=>'span5','maxlength'=>60)); ?>
+    <label for="grous">Группа:</label>
+<?php
+    echo CHtml::activeDropDownList($model, 'id',
+        Chtml::listData(Groups::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id)), 'id', 'title'),
+        array('empty'=>'Выберите категорию'),array('class'=>'span5'))
+?>
 
 	<hr class="clear" />
 	

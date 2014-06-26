@@ -248,7 +248,7 @@ $(document).ready(function () {
             $('input#cityId_search1').attr('value', default_end_city_id);
             $('input#search').attr('value', default_start_city_name);
             $('input#search1').attr('value', default_end_city_name);
-            if((default_start_city_name!='')&&(default_end_city_name!=''))
+            if((default_start_city_name!='')&&(default_end_city_name!='') && $('#tripDate').val()!='' && $('#backTripDate').val()!='')
                 objs.searchButton.enable();
 
             objs.tripDate.datepicker({
@@ -877,7 +877,7 @@ $(document).ready(function () {
                 return !!($(this).attr('rel') == tripId);
             });
 
-            contentLoader(seatsContainer, loader_image).slideDown(200, function () {
+            contentLoader(seatsContainer).slideDown(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
