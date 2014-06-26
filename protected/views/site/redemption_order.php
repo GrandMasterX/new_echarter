@@ -30,11 +30,11 @@
                     <div class="order_hf_content">Выкуп забронированных билетов</div>
                 </div>
                 <div class="order_separator_top"></div>
-                <div style="padding: 25px 13px;">
+                <div style="padding: 10px 13px;">
                     <div class="info_date_to_pay">
                         <span style="color:#780C0C;">Обратите внимание</span> на срок выкупа, указанный в листе бронирования <br>Оплата должна быть произведена до этого времени
                     </div>
-                    <div style="margin-top:30px;margin-bottom:10px;font-size:14px;">
+                    <div style="margin-top:15px;margin-bottom:10px;font-size:14px;">
                         <b class="msgb">Обязательно скачивайте лист бронирования!
                         </b>
                         <br>
@@ -43,12 +43,8 @@
                         <b>Варианты оплаты:</b>
                         <ol start="1" style="margin-top:10px;margin-bottom:10px;margin-left:30px;">
                             <li>Банковской платежной картой <a href="#payvisa">онлайн оплата &gt;</a></li>
-
                             <li>В Киевском офисе компании</li>
-                            <li>Через платежные терминалы - bnk.ua</li>
                             <li>Через банки на территории Украины</li>
-
-
                         </ol>
                         <b>Для справок: <img src="/images/tels.png" alt="">. Режим работы: Понедельник-Пятница с 9:00 до 19:00.</b>
                     </div>
@@ -58,7 +54,7 @@
 
 
 
-                    <div class="order_content">
+                    <div class="order_content" style="padding: 15px 13px;">
                         <a name="payvisa"></a><b>Модуль поиска забронированных билетов</b><br><br>
                         <form method="get">
                             <table id="reservation_form" cellpadding="5" cellspacing="5">

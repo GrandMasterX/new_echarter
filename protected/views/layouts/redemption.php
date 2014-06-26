@@ -28,13 +28,13 @@
 <header>
     <div class="wrap clearfix">
         <?php $this->renderPartial('/layouts/header');?>
-        <div class="container">
-            <div class="wrap">
-                <? echo $content;?>
-            </div>
-        </div>
     </div>
 </header>
+<div class="container" style="padding-top: 20px;background-color: #0088db;">
+    <div class="wrap">
+        <? echo $content;?>
+    </div>
+</div>
 <?php $this->renderPartial('/layouts/footer');?>
 <script src="static/js/wSelect.js"></script>
 <script>
