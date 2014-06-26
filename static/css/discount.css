@@ -63,6 +63,7 @@ div.countFrameSet{
 	font-weight: normal;
 	font-size: 13px;
 	width: 184px;
+    text-align: left;
 }
 div.countFrameSet span{font-size: 11px; margin-left:17px;}
 

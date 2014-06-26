@@ -59,16 +59,16 @@ class Templates extends CActiveRecord {
     {
         return array(
             'id' => '#',
-            'firstName' => 'Название',
-            'middleName' => 'Фамилия',
-            'lastName' => 'Отчество',
-            'birthdate' => 'Дата рождения',
-            'passport' => 'Номер паспорта',
-            'psprt_date' => 'Дата выдачи паспорта',
-            'citizenship' => 'Гражданство',
-            'phone' => 'Телефон',
-            'email' => 'Емейл',
-            'gender' => 'Пол',
+            'firstName' => 'Название:',
+            'middleName' => 'Фамилия:',
+            'lastName' => 'Отчество:',
+            'birthdate' => 'Дата рождения:',
+            'passport' => 'Номер паспорта:',
+            'psprt_date' => 'Дата выдачи паспорта:',
+            'citizenship' => 'Гражданство:',
+            'phone' => 'Телефон:',
+            'email' => 'Емейл:',
+            'gender' => 'Пол:',
         );
     }
     /*
