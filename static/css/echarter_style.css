@@ -115,8 +115,8 @@ textarea {
 
 
 /* HEADER */
-header {background: url('../../img/image_slider.png') no-repeat transparent;
-		border-bottom: 1px solid #3b7db5; background-size: cover; padding-bottom: 20px;}
+header {background: url('../../img/image_slider_1.png') no-repeat transparent;
+		border-bottom: 1px solid #fff; background-size: cover; padding-bottom: 20px;}
 header .wrap .top_header {width: 770px; padding-top: 10px;}
 header .wrap .top_header .dictum {font-size: 20px; color: #fff; line-height: 23px;
     text-align: left;}
@@ -305,8 +305,8 @@ div.row_block.left.maintext {background-color: #fefefe; border: 1px solid #bbbbb
     margin: 15px 3% 10px 19px; position: relative; z-index: 200;}
 .container .wrap .slider .form .container_form .tabs_menu .block .element.to {margin-left: 0px;}
 .container .wrap .slider .form .container_form .tabs_menu .block .element label,
-.container .wrap .slider .form .container_form .tabs_menu .block.date .item_1 label {font-size: 16px; color: #fff;
-    line-height: 16px; text-align: left; display: block; padding-bottom: 7px;}
+.container .wrap .slider .form .container_form .tabs_menu .block.date .item_1 label {font-size: 12px; color: #fff;
+    line-height: 16px; text-align: left; display: block;}
 .container .wrap .slider .form .container_form .tabs_menu .block .element input,
 .container .wrap .slider .form .container_form .tabs_menu .passen input {width: 260px; height: 30px;
 		outline: none; padding: 5px 30px 5px 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
@@ -364,14 +364,14 @@ input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box
 .container .wrap .slider .form .container_form .tabs_menu .checkbox ul {margin: 0; padding: 0; list-style-type: none;}
 .container .wrap .slider .form .container_form .tabs_menu .checkbox ul li .element {padding: 5px 0px;}
 
-.container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons {margin: 15px 25px 0px 0px;}
+.container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons {margin: 15px 0px 0px 19px;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons input {
-    color: #3c3c3c; font-size: 18px; height: 36px; line-height: 36px; background-color: #eaeaea;
+    color: #3c3c3c; font-size: 18px; height: 40px; line-height: 40px; background-color: #eaeaea;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-    padding: 0px 44px; border: none; outline: none;
+    padding: 0px 55px; border: none; outline: none;
     border-right: 1px solid #1a374f; border-bottom: 1px solid #1a374f}
-.container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards {margin-left: 19px; margin-top: 15px;}
+.container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards {margin-right: 19px; margin-top: 15px;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards ul {padding: 0px;
     margin: 0px; list-style-type: none;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards ul li {float: left; margin-right: 7px;}
@@ -385,9 +385,9 @@ input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box
     background-position: -140px 0px; width: 55px;}
 div.block.clearfix {margin-bottom: 15px;}
 
-.popular_container {background: url('../../img/bg_main-container_11.png') repeat;}
+.popular_container {background-color: #0088db;}
 .popular_container .wrap {padding: 10px 0px;}
-.popular_container .wrap .title_ {font-size: 36px; color: #001f55; line-height: 36px; text-align: left;
+.popular_container .wrap .title_ {font-size: 36px; color: #fff; line-height: 36px; text-align: left;
     padding-bottom: 20px;}
 .popular_container .wrap .block .row_block {width: 100%; margin-bottom: 13px; margin: 0px -4px 0px -8px;
 		}
@@ -547,7 +547,7 @@ footer a{color: rgb(191, 213, 241);}
 div.container_form.clearfix.new div.element{position: relative; float:left;margin-right: 50px; top:-25px;}
 div.container_form.clearfix.new label{top: -24px; display: block;color:#fff;text-align: left; font-weight: normal;
     text-shadow: #afafaf 1px 0px, #afafaf 1px 1px, #afafaf 0px 1px, #afafaf -1px 1px, #afafaf -1px 0px, #afafaf -1px -1px, #afafaf 0px -1px, #afafaf 1px -1px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px;
-}
+    font-size: 12px;}
 input.town{width: 192px;
     padding: 2px 5px;
     border: 1px solid #BEB8B8;}
