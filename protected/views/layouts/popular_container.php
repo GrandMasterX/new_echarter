@@ -8,7 +8,7 @@
 <div class="row_block left">
 
 
-<div class="cell_block clearfix" style="background: url('../../static/images/pics/tivat3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('../../static/images/pics/tivat3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Тиват - Киев</span>
@@ -36,7 +36,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
-            <a name="more" class="moreTripInfo" trip="kiev-tivat-kiev" >Подробнее</a>
+            <a name="more" class="moreTripInfo populars" trip="kiev-tivat-kiev" >Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-tivat-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -92,7 +92,7 @@
 </div>
 
 
-<div class="cell_block clearfix" style="background: url('../../static/images/pics/antaliya3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('../../static/images/pics/antaliya3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Анталия - Киев</span>
@@ -119,7 +119,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
-            <a name="more" class="moreTripInfo" trip="kiev-antalia-kiev">Подробнее</a>
+            <a name="more" class="moreTripInfo populars" trip="kiev-antalia-kiev">Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-antalia-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -167,7 +167,7 @@
     </div>
 </div>
 
-<div class="cell_block clearfix" style="background: url('../../static/images/pics/bangkok3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('../../static/images/pics/bangkok3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Бангкок - Киев</span>
@@ -203,7 +203,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
-            <a name="more" class="moreTripInfo" trip="kiev-bangkok-kiev">Подробнее</a>
+            <a name="more" class="moreTripInfo populars" trip="kiev-bangkok-kiev">Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-bangkok-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -249,7 +249,7 @@
     </div>
 </div>
 
-<div class="cell_block clearfix" style="background: url('../../static/images/pics/byrgas3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('../../static/images/pics/byrgas3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Бургас - Киев</span>
@@ -277,7 +277,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
-            <a name="more" class="moreTripInfo" trip="kiev-burgas-kiev" >Подробнее</a>
+            <a name="more" class="moreTripInfo populars" trip="kiev-burgas-kiev" >Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-burgas-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -325,7 +325,7 @@
     </div>
 </div>
 
-<div class="cell_block clearfix" style="background: url('../../static/images/pics/iraklion3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('../../static/images/pics/iraklion3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Ираклион - Киев</span>
@@ -336,7 +336,7 @@
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo" trip="kiev-heraklion-kiev">Подробнее</a>
+            <a name="more" class="moreTripInfo populars" trip="kiev-heraklion-kiev">Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-heraklion-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -384,7 +384,7 @@
 </div>
 
 
-<div class="cell_block clearfix" style="background: url('../../static/images/pics/enfida.jpg') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('../../static/images/pics/enfida.jpg') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Энфида - Киев</span>
@@ -396,7 +396,7 @@
 
     <div class="bottom_btn clearfix">
         <div class="more item left">
-            <a name="more" class="moreTripInfo" trip="kiev-enfida-kiev">Подробнее</a>
+            <a name="more" class="moreTripInfo populars" trip="kiev-enfida-kiev">Подробнее</a>
 
             <div class="popup order" style="display:none;">
                 <div class="popup_wrap">

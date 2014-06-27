@@ -30,7 +30,7 @@
         <?php $this->renderPartial('/layouts/header');?>
     </div>
 </header>
-<div class="container" style="padding-top: 20px;background-color: #0088db;">
+<div class="container" style="padding-top: 20px;">
     <div class="wrap">
         <? echo $content;?>
     </div>
