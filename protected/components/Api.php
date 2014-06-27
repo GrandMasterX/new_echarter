@@ -77,7 +77,7 @@ class Api extends Config {
         if (!empty($post)) {
 
             $action = $post['action'];//.'OnlyJson';
-            $type = empty($post['type']) ? 'avia_plus_charter' : $post['type'];
+            $type = empty($post['type']) ? 'charter' : $post['type'];
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 
             $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);

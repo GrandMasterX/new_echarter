@@ -114,7 +114,15 @@
                     $('input#to').val(promoEndCityName);
                     $('input#tripDate').val(promoStartDate);
                     $('input#backTripDate').val(promoEndDate);
-                    $('input#searchButton').click();
+                });
+
+                $('#clearForm').click(function(e) {
+                    e.preventDefault();
+                    $('.last_name').val('');
+                    $('.international').val();
+                    $('.birthdate').val();
+                    $('.passport').val();
+                    $('.passportExpireDate').val();
                 });
 
                 $('.order_ticket').on('click', function() {
@@ -123,12 +131,12 @@
                     $('input#from').val($(this).parent('div').find('input.promoStartCityName').val());
                     $('input#endCityId').val($(this).parent('div').find('input.promoEndCityId').val());
                     $('input#to').val($(this).parent('div').find('input.promoEndCityName').val());
-                    $('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
+                    //$('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
                     //$('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
-                    $('input#searchButton').click();
                     $('html, body').animate({
                         scrollTop: $(".tabs_menu").offset().top
                     }, 2000);
+                    $('#tripDate').datepicker('show');
                 });
 
                 $('img.del').live('click',function(){

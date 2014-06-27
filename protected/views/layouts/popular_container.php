@@ -8,18 +8,16 @@
 <div class="row_block left">
 
 
-<div class="cell_block clearfix">
+<div class="cell_block clearfix" style="background: url('../../static/images/pics/tivat3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
-        <div class="foto_block left">
-            <div class="images">
-                <img alt="" src="static/images/pics/tivat2.png"/>
-
-                <div class="price_">
-                    <span>3639.79 грн</span>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="departue">Киев - Тиват - Киев</span>
         </div>
-        <div class="text_block left">
+        <div class="price_">
+            <span class="price_holder">от </br>3639.79 грн</span>
+        </div>
+
+        <!--<div class="text_block left">
             <div class="text">
                 <div>
                     <p><b>Киев -</b></p>
@@ -34,11 +32,11 @@
                     <p>Украина</p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="bottom_btn clearfix">
-        <div class="more item left">
-            <a name="more" class="moreTripInfo" trip="kiev-tivat-kiev">Подробнее</a>
+        <div class="more item left" >
+            <a name="more" class="moreTripInfo" trip="kiev-tivat-kiev" >Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-tivat-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -94,18 +92,15 @@
 </div>
 
 
-<div class="cell_block clearfix">
+<div class="cell_block clearfix" style="background: url('../../static/images/pics/antaliya3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
-        <div class="foto_block left">
-            <div class="images">
-                <img alt="" src="static/images/pics/antaliya2.png"/>
-
-                <div class="price_">
-                    <span>2628.37 грн</span>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="departue">Киев - Анталия - Киев</span>
         </div>
-        <div class="text_block left">
+        <div class="price_">
+            <span class="price_holder">от </br>2628.37 грн</span>
+        </div>
+        <!--<div class="text_block left">
             <div class="text">
                 <div>
                     <p><b>Киев -</b></p>
@@ -120,10 +115,10 @@
                     <p>Украина</p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="bottom_btn clearfix">
-        <div class="more item left">
+        <div class="more item left" >
             <a name="more" class="moreTripInfo" trip="kiev-antalia-kiev">Подробнее</a>
 
             <div class="popup order"
@@ -172,9 +167,15 @@
     </div>
 </div>
 
-<div class="cell_block clearfix">
+<div class="cell_block clearfix" style="background: url('../../static/images/pics/bangkok3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
-        <div class="foto_block left">
+        <div class="price_">
+            <span class="departue">Киев - Бангкок - Киев</span>
+        </div>
+        <div class="price_">
+            <span class="price_holder">от </br>8850 грн</span>
+        </div>
+        <!--<div class="foto_block left">
             <div class="images">
                 <img alt="" src="static/images/pics/bangkok2.png"/>
 
@@ -198,10 +199,10 @@
                     <p>Украина</p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="bottom_btn clearfix">
-        <div class="more item left">
+        <div class="more item left" >
             <a name="more" class="moreTripInfo" trip="kiev-bangkok-kiev">Подробнее</a>
 
             <div class="popup order"
@@ -248,17 +249,15 @@
     </div>
 </div>
 
-<div class="cell_block clearfix">
+<div class="cell_block clearfix" style="background: url('../../static/images/pics/byrgas3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
-        <div class="foto_block left">
-            <div class="images">
-                <img alt="" src="static/images/pics/byrgas2.png"/>
-
-                <div class="price_">
-                    <span>1809.86 грн</span>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="departue">Киев - Бургас - Киев</span>
         </div>
+        <div class="price_">
+            <span class="price_holder">от </br>8850 грн</span>
+        </div>
+        <!--
         <div class="text_block left">
             <div class="text">
                 <div>
@@ -274,11 +273,11 @@
                     <p>Украина</p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="bottom_btn clearfix">
-        <div class="more item left">
-            <a name="more" class="moreTripInfo" trip="kiev-burgas-kiev">Подробнее</a>
+        <div class="more item left" >
+            <a name="more" class="moreTripInfo" trip="kiev-burgas-kiev" >Подробнее</a>
 
             <div class="popup order"
                  style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-burgas-kiev') { ?>block<? } else { ?>none<? } ?>;">
@@ -326,35 +325,13 @@
     </div>
 </div>
 
-<div class="cell_block clearfix">
+<div class="cell_block clearfix" style="background: url('../../static/images/pics/iraklion3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
-        <div class="foto_block left">
-            <div class="images">
-                <img alt="" src="static/images/pics/iraklion2.png"/>
-
-                <div class="price_">
-                    <span>4062.13 грн</span>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="departue">Киев - Ираклион - Киев</span>
         </div>
-        <div class="text_block left">
-            <div class="text">
-                <div>
-                    <p><b>Киев -</b></p>
-
-                    <p>Украина</p>
-                </div>
-                <div>
-                    <p><b>Ираклион -</b></p>
-
-                    <p>Греция</p>
-                </div>
-                <div>
-                    <p><b>Киев</b></p>
-
-                    <p>Украина</p>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="price_holder">от </br>4062.13 грн</span>
         </div>
     </div>
     <div class="bottom_btn clearfix">
@@ -406,37 +383,17 @@
     </div>
 </div>
 
-<div class="cell_block clearfix">
+
+<div class="cell_block clearfix" style="background: url('../../static/images/pics/enfida.jpg') no-repeat;background-size: cover;">
     <div class="clearfix">
-        <div class="foto_block left">
-            <div class="images">
-                <img alt="" src="static/images/foto_popul.png"/>
-
-                <div class="price_">
-                    <span>5184.15 грн</span>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="departue">Киев - Энфида - Киев</span>
         </div>
-        <div class="text_block left">
-            <div class="text">
-                <div>
-                    <p><b>Киев -</b></p>
-
-                    <p>Украина</p>
-                </div>
-                <div>
-                    <p><b>Энфида -</b></p>
-
-                    <p>Тунис</p>
-                </div>
-                <div>
-                    <p><b>Киев</b></p>
-
-                    <p>Украина</p>
-                </div>
-            </div>
+        <div class="price_">
+            <span class="price_holder">от </br>5184.15 грн</span>
         </div>
     </div>
+
     <div class="bottom_btn clearfix">
         <div class="more item left">
             <a name="more" class="moreTripInfo" trip="kiev-enfida-kiev">Подробнее</a>

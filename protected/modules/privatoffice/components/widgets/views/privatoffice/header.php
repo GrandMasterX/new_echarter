@@ -4,7 +4,15 @@
     'fluid' => true,
     'brandUrl'=>'/privatoffice',
     'collapse'=>true, // requires bootstrap-responsive.css
-    /*'items'=>array(
+    'items'=>array(
+        array(
+            'class'=>'bootstrap.widgets.TbMenu',
+            'items'=>array(
+                array('label'=>'На сайт', 'icon'=>'cog white','url'=>'/'),
+            ),
+        ),
+    ),
+    /* 'items'=>array(
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(

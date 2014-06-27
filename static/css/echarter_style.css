@@ -257,7 +257,7 @@ header .wrap .menu_header .number {font-size: 24px; color: #fff; line-height: 24
 
 .container .wrap .slider .popular .table_town {margin: 20px 7px 0px 7px;}
 .container .wrap .slider .popular .table_town .row_town {background-color: #fff;
-		margin-bottom: 5px; padding: 3px 3px;
+		margin-bottom: 5px; padding: 6px 3px;
 		-moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 		box-sizing:  border-box; border: 1px solid #405775;
 		-moz-border-radius: 4px; -webkit-border-radius: 4px;
@@ -385,16 +385,18 @@ input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box
     background-position: -140px 0px; width: 55px;}
 div.block.clearfix {margin-bottom: 15px;}
 
-.popular_container {background-color: #0088db;}
+.popular_container {background-color: #fff;}
 .popular_container .wrap {padding: 10px 0px;}
-.popular_container .wrap .title_ {font-size: 36px; color: #fff; line-height: 36px; text-align: left;
+.popular_container .wrap .title_ {font-size: 36px; color: #565657; line-height: 36px; text-align: left;
     padding-bottom: 20px;}
 .popular_container .wrap .block .row_block {width: 100%; margin-bottom: 13px; margin: 0px -4px 0px -8px;
 		}
 .popular_container .wrap .block .row_block .cell_block {width: 32%; margin: 0px 4px 0px 8px;
     margin-bottom: 10px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
     float: left; border: 1px solid #bbbbbb; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
-    box-sizing: border-box; background-color: #fefefe; padding: 10px 10px 15px 10px;}
+    box-sizing: border-box; background-color: #fefefe; padding: 10px 10px 15px 10px;
+    background-size: cover;
+    height: 200px;}
 .popular_container .wrap .block .row_block .cell_block .foto_block {width: 50%;}
 .popular_container .wrap .block .row_block .cell_block .foto_block .images {width: 139px; height: 140px;
     background-color: #eee;position: relative; z-index: 80;
@@ -409,6 +411,21 @@ div.block.clearfix {margin-bottom: 15px;}
     white-space: nowrap; -moz-opacity: 0.9; opacity: 0.9;}
 .popular_container .wrap .block .row_block .cell_block .bottom_btn {margin-top: 35px;
 		}
+.price_ {
+    text-align: center;
+}
+.departue {
+    text-transform: uppercase;
+    text-shadow: #000 1px 0px, #000 1px 1px, #000 0px 1px, #000 -1px 1px, #000 -1px 0px, #000 -1px -1px, #000 0px -1px, #000 1px -1px, #000 0 0 2px, #000 0 0 2px, #000 0 0 2px, #000 0 0 2px, #000 0 0 2px, #000 0 0 2px, #000 0 0 2px, #000 0 0 2px;
+    font-size: 20px;
+    color: #fff;
+}
+.price_holder {
+    font-weight: 100;
+    font-size: 37px;
+    color: #fff;
+    line-height: 40px;
+}
 .popular_container .wrap .block .row_block .cell_block .bottom_btn .item a,
 a.detail_toggle {font-size: 14px; color: #fff;
 		line-height: 30px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
@@ -424,8 +441,8 @@ a.detail_toggle {font-size: 14px; color: #fff;
 .popular_container .wrap .block a.more_text {text-align: center; display: inline;
     background: url('../img/border_more.png') repeat-x bottom; text-decoration: none;
     color: #565657; font-size: 16px; line-height: 18px; padding-top: 3px; padding-bottom: 2px;}
-div.more{cursor:pointer;}
-
+div.more{cursor:pointer;margin-left: 68px;}
+.moreTripInfo {display: inline-block; height: 40px; line-height: 40px; font-size: 18px;background-color: #f3b52e!important;}
 /* SOCIAL_BLOCK (EDIT)*/
 .popular_container .wrap .social_block .vk,
 .popular_container .wrap .social_block .fb {width: 47%; height: 280px; margin: 0 0 0 2%;

@@ -336,6 +336,7 @@ $(document).ready(function () {
                     }
 
                     contentLoaderER(objs.tripDate);
+                    $('#backTripDate').datepicker('show');
                 },
                 onSelect: function () {
                     contentLoaderER(objs.tripDate);
@@ -569,7 +570,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('all','echarter2');
+        reLogin('echarter','echarter2');
         //SEARCH BUTTON CLICK
 
 
@@ -584,7 +585,7 @@ $(document).ready(function () {
 
             /* установка параметров авиа фильтров  - конец*/
             searchParams.SELECTED_MODES = "";
-            searchParams.SELECTED_MODES = "1;4;3;8";
+            searchParams.SELECTED_MODES = "4;3;8";
             searchParams.START_CITY_ID = objs.firstCity.val();
             searchParams.END_CITY_ID = objs.secondCity.val();
             searchParams.START_CITY_NAME = $('input.from.town').val();
@@ -592,11 +593,13 @@ $(document).ready(function () {
             searchParams.TRIP_DATE = objs.tripDate.val();
             searchParams.BACK_TRIP_DATE = objs.backTripDate.val();
             var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
+            searchParams.ROUND_TRIP = true;
+            /* disabling of one-way triping, only round-trip.
             if(my_pattern.test(searchParams.BACK_TRIP_DATE))
                 searchParams.ROUND_TRIP = true;
             else
                 searchParams.ROUND_TRIP = false;
-
+            */
             searchParams.TICKETS = '1';
 
             if (objs.searchTripsInterval) {
@@ -881,7 +884,7 @@ $(document).ready(function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
-                    seatsContainer.html(json.html).show();
+                    seatsContainer.html(json.html).slideDown(200, function () {});
                     seatsContainer.find('.seats-tabs').tabs(
                         {
                             show: { effect: "fade", duration: 100 },
@@ -905,6 +908,10 @@ $(document).ready(function () {
                     $(params.showSeatsButtonS).enable();
 
                 }, 'json', 1);
+                setTimeout(function() {
+                    $('#loader').html('');
+                }, 2000);
+
             });
         }
 

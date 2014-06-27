@@ -4,7 +4,7 @@
             <td class="left_border">
                 <div class="item"></div>
             </td>
-            <td class="text_table"><span>Спецпредложения на лето</span></td>
+            <td class="text_table"><span>Спецпредложения лето 2014</span></td>
             <td class="right_border">
                 <div class="item"></div>
             </td>
@@ -64,7 +64,7 @@
                 <input type="hidden" class="promoStartDate" value="18.07.2014" />
                 <input type="hidden" class="promoEndDate" value="" />
             </div>
-            <div class="row_town clearfix">
+            <!--<div class="row_town clearfix">
                 <div class="cell_town foto left">
                     <img alt="" src="images/town_foto.png" />
                 </div>
@@ -76,7 +76,7 @@
                 <input type="hidden" class="promoEndCityId" value="93713AC594A88BFCE040A8C01E02723D" />
                 <input type="hidden" class="promoStartDate" value="18.07.2014" />
                 <input type="hidden" class="promoEndDate" value="" />
-            </div>
+            </div>-->
         </form>
     </div>
 </div>
