@@ -68,6 +68,14 @@ class SiteController extends Bus {
         $this->render('contacts', array('form' => $form, 'registration' => $registration ));
     }
 
+    public function actionGetTemplates() {
+        $model = Groups::model()->with('templates')->findAll();
+        $empty = Templates::model()->findAllByAttributes(array('group_id'=>0));
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        $tpl = $this->renderPartial('/forms/plus_container',array('model'=>$model,'user'=>$user,'empty'=>$empty),true);
+        echo ($tpl);
+    }
+
     public function actionReservation() {
         if (!empty($_GET) && !empty($_GET['tn']) && !empty($_GET['start_date'])) {
             $ticketsIds = array($_GET['tn']);

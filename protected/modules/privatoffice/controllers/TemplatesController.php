@@ -16,14 +16,15 @@ class TemplatesController extends PrivatofficeController {
     public function actionCreate()
     {
         $model=new Templates();
-        $this->performAjaxValidation($model);
+        $this->performAjaxTemplateValidation($model);
 
         if(isset($_POST['Templates']))
         {
             $model->attributes=$_POST['Templates'];
             if($model->save()) {
                 Yii::app()->user->setFlash('success', 'Запись успешно добавлена.');
-                $this->redirect(array('view','id'=>$model->id));
+                $this->redirect('/privatoffice/templates/all');
+                //$this->redirect(array('view','id'=>$model->id));
             }
         }
 
@@ -41,7 +42,7 @@ class TemplatesController extends PrivatofficeController {
     {
         $model=$this->loadModel($id);
 
-        $this->performAjaxValidation($model);
+        $this->performAjaxTemplateValidation($model);
 
         if(isset($_POST['Templates']))
         {
@@ -105,7 +106,7 @@ class TemplatesController extends PrivatofficeController {
      * Performs the AJAX validation.
      * @param CModel the model to be validated
      */
-    protected function performAjaxValidation($model)
+    protected function performAjaxTemplateValidation($model)
     {
         if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
         {

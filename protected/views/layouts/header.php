@@ -5,8 +5,7 @@
         <div class="lk_office right">
             <ul class="clearfix">
                 <li><a href="/redemption">Выкуп заказа</a></li>
-                <!--<li><a href="#">Партнерам</a></li>-->
-                <? //$this->widget('widgets.SocialHeaderWidget');?>
+                <? $this->widget('widgets.SocialHeaderWidget');?>
             </ul>
         </div>
     </div>

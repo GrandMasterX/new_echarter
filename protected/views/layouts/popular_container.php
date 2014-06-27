@@ -14,7 +14,7 @@
             <span class="departue">Киев - Тиват - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder">от </br>3639.79 грн</span>
+            <span class="price_holder"><span class="from">от</span></br>3200 грн</span>
         </div>
 
         <!--<div class="text_block left">
@@ -98,7 +98,7 @@
             <span class="departue">Киев - Анталия - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder">от </br>2628.37 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>2628.37 грн</span>
         </div>
         <!--<div class="text_block left">
             <div class="text">
@@ -173,7 +173,7 @@
             <span class="departue">Киев - Бангкок - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder">от </br>8850 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>8850 грн</span>
         </div>
         <!--<div class="foto_block left">
             <div class="images">
@@ -255,7 +255,7 @@
             <span class="departue">Киев - Бургас - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder">от </br>8850 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>8850 грн</span>
         </div>
         <!--
         <div class="text_block left">
@@ -331,7 +331,7 @@
             <span class="departue">Киев - Ираклион - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder">от </br>4062.13 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>4062.13 грн</span>
         </div>
     </div>
     <div class="bottom_btn clearfix">
@@ -390,7 +390,7 @@
             <span class="departue">Киев - Энфида - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder">от </br>5184.15 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>5184.15 грн</span>
         </div>
     </div>
 

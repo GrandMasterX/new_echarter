@@ -116,15 +116,6 @@
                     $('input#backTripDate').val(promoEndDate);
                 });
 
-                $('#clearForm').click(function(e) {
-                    e.preventDefault();
-                    $('.last_name').val('');
-                    $('.international').val();
-                    $('.birthdate').val();
-                    $('.passport').val();
-                    $('.passportExpireDate').val();
-                });
-
                 $('.order_ticket').on('click', function() {
                     $('.close_popup').click();
                     $('input#startCityId').val($(this).parent('div').find('input.promoStartCityId').val());

@@ -45,11 +45,12 @@
     <div class="wrap">
         <div id="tripsResultContainer" style="display: none;"></div>
         <div class="block clearfix">
-            <div class="row_block left maintext">
+            <div class="row_block left maintext" style="background-color: #fffea2;">
                 <h3 style="text-align:left;">Контакты</h3>
                 <div style="min-height:273px;">
                     <center>
                         <img src="images/contacts.png" class="left" style="padding-right: 40px;"/>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5080.891845751276!2d30.476464896830034!3d50.45142042535276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce8650d8309f%3A0xa5c30c1d222c114c!2z0LLRg9C7LiDQqNC-0LvRg9C00LXQvdC60LAsIDHQkQ!5e0!3m2!1sru!2sru!4v1403872434397" width="450" height="300" frameborder="0" style="border:0"></iframe>
                         <!--<div class="form right" style="margin-right: 50px;">
                             <form class="clearfix" id="register-form" action="/register" method="post">
                                 <div class="item">

@@ -30,6 +30,13 @@ class Templates extends CActiveRecord {
         );
     }
 
+    public function relations()
+    {
+        return array(
+            'templates' => array(self::HAS_MANY, 'Templates', 'group_id'),
+        );
+    }
+
     public function search()
     {
         $criteria = new CDbCriteria;

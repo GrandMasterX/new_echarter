@@ -381,7 +381,7 @@ class HOAuthAction extends CAction
 			if(!$user->save())
 				throw new Exception("Error, while saving {$this->model} model:\n\n" . var_export($user->errors, true));
 
-            $adminEmail = Yii::app()->config->get('adminEmail');
+            /*$adminEmail = Yii::app()->config->get('adminEmail');
             $mailFrom = Yii::app()->config->get('mailFrom');
 
             //Отправляем сообщение пользователю о успешной регистрации
@@ -391,7 +391,7 @@ class HOAuthAction extends CAction
             ));
 
 			// trying to send activation email
-			$this->sendActivationEmail($user);
+			$this->sendActivationEmail($user);*/
 
 			if($this->useYiiUser)
 			{

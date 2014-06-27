@@ -16,14 +16,14 @@ class GroupsController extends PrivatofficeController {
     public function actionCreate()
     {
         $model=new Groups();
-        $this->performAjaxValidation($model);
+        $this->performAjaxGroupsValidation($model);
 
         if(isset($_POST['Groups']))
         {
             $model->attributes=$_POST['Groups'];
             if($model->save()) {
                 Yii::app()->user->setFlash('success', 'Запись успешно добавлена.');
-                $this->redirect(array('view','id'=>$model->id));
+                $this->redirect('/privatoffice/groups/all');
             }
         }
 
@@ -41,7 +41,7 @@ class GroupsController extends PrivatofficeController {
     {
         $model=$this->loadModel($id);
 
-        $this->performAjaxValidation($model);
+        $this->performAjaxGroupsValidation($model);
 
         if(isset($_POST['Groups']))
         {
@@ -107,7 +107,7 @@ class GroupsController extends PrivatofficeController {
      * Performs the AJAX validation.
      * @param CModel the model to be validated
      */
-    protected function performAjaxValidation($model)
+    protected function performAjaxGroupsValidation($model)
     {
         if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
         {

@@ -908,9 +908,78 @@ $(document).ready(function () {
                     $(params.showSeatsButtonS).enable();
 
                 }, 'json', 1);
+
                 setTimeout(function() {
                     $('#loader').html('');
+                    $.ajax({
+                        url: 'site/getTemplates',
+                        type: "POST",
+                        success: function(tpl) {
+                            $('.for_templates').html(tpl);
+                            $('.tiered_menu > li > a').live('click',function() {
+                                menu.openSubLvlv($(this));
+                            });
+                            $(document).live('click',function(event) {
+                                if (!$(event.target).closest('.ul_block.tiered_menu').length) {
+                                    menu.closeDeeper(0);
+                                }
+                            });
+                            $('.fill-in').live('click', function() {
+                               var $parent = $(this).parent('li');
+                                    $('.last_name').val($parent.find('.middleName').val());
+                                    $('.international').val($parent.find('.firstName').val());
+                                    $('.birthdate').val($parent.find('.birthdateFiller').val());
+                                    $('.passport').val($parent.find('.passport').val());
+                                    $('.passportExpireDate').val($parent.find('.psprt_date').val());
+                                    $('.trip_phone').val($parent.find('.phone').val());
+                                    $('.danni_drona.email').val($parent.find('.email').val());
+                               $('.main_ul_dropdown').hide();
+                            });
+                        }
+                    });
+
                 }, 2000);
+
+                $('#clearForm').live('click',function(e) {
+                    e.preventDefault();
+                    $('.last_name').val('');
+                    $('.international').val('');
+                    $('.birthdate').val('');
+                    $('.passport').val('');
+                    $('.passportExpireDate').val('');
+                });
+
+
+                var menu = {
+                    openSubLvlv: function(el)
+                    {
+                        var _parent = $(el).parent();
+                        var _lvl = $(el).closest('ul').data('lvl');
+
+                        this.closeDeeper(_lvl);
+                        if ($(_parent).children('.tiered_menu').length > 0) {
+                            $(_parent).children('.tiered_menu').show();
+                        }
+                        return true;
+                    },
+                    closeDeeper: function(depth)
+                    {
+                        var _menu = this;
+                        $.each($('.tiered_menu'), function(counter, el) {
+                            if ($(el).data('lvl') > depth) {
+                                _menu.closeEl($(el));
+                            }
+                        });
+                        return true;
+                    },
+                    closeEl: function(el)
+                    {
+                        if ($(el).length > 0) {
+                            $(el).hide();
+                        }
+                        return true;
+                    }
+                };
 
             });
         }

@@ -17,7 +17,7 @@
                     <img alt="" src="images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Тиват - Киев</div>
-                <div class="cell_town price left">4768.15 грн</div>
+                <div class="cell_town price left"> от 3200 грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                 <input type="hidden" class="promoEndCityName" value="Тиват, Черногория" />
@@ -30,7 +30,7 @@
                     <img alt="" src="images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Анталья - Киев</div>
-                <div class="cell_town price left">2628.37 грн</div>
+                <div class="cell_town price left"> от 2628.37 грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                 <input type="hidden" class="promoEndCityName" value="Анталья, Турция" />
@@ -43,7 +43,7 @@
                     <img alt="" src="images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Бургас - Киев</div>
-                <div class="cell_town price left">1809.86 грн</div>
+                <div class="cell_town price left"> от 1809.86 грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                 <input type="hidden" class="promoEndCityName" value="Бургас, Болгария" />
@@ -56,7 +56,7 @@
                     <img alt="" src="images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Ираклион - Киев</div>
-                <div class="cell_town price left">4062.13  грн</div>
+                <div class="cell_town price left"> от 4062.13грн</div>
                 <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                 <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                 <input type="hidden" class="promoEndCityName" value="Ираклион, Греция" />

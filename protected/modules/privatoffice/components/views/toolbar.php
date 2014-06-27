@@ -59,7 +59,7 @@
 		)); ?>
 	<?php endif ?>
 
-	<?php $this->widget('bootstrap.widgets.TbButton', array(
+	<?php /*$this->widget('bootstrap.widgets.TbButton', array(
 		'label'=>'Удалить',
 		'type'=>'danger',
         //'url'=> Yii::app()->createUrl('/admin/toolbar/delete', array('modelName' => get_class($model))),
@@ -67,7 +67,7 @@
 		'htmlOptions' =>array(
 			'class' => 'remove-button'
 		)
-	)); ?>
+	)); */?>
 </div>
 
 <?php $this->beginWidget('bootstrap.widgets.TbModal', array(

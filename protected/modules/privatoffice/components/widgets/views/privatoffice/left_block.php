@@ -27,7 +27,7 @@
                     array('label'=>'Все группы', 'url'=>'/privatoffice/groups/all'),
                 )
             ),
-            array(
+            /*array(
                 'label'=>'
 						<i class="icon-signal icon-white"></i>
 						<span class="link-title">Статистика</span>
@@ -39,7 +39,7 @@
                     array('label'=>'Активность в системе', 'url'=>'/admin/logger/admin'),
                     array('label'=>'Продажи', 'url'=>'#'),
                 )
-            ),
+            ),*/
         ),
         'htmlOptions' =>array(
             'id' => 'menu'

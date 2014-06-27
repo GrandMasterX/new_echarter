@@ -73,7 +73,6 @@ class Api extends Config {
 
     public function actionCreateSession($post, $display_form) {
         $remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
-
         if (!empty($post)) {
 
             $action = $post['action'];//.'OnlyJson';
