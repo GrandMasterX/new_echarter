@@ -9,4 +9,4 @@
         </div>
     </div>
 </header>
-<?php $this->renderPartial('/layouts/popular_container',array('page'=>$page));?>
+<?php $this->renderPartial('/layouts/popular_container',array('page'=>(!empty($page)) ? $page: ''));?>

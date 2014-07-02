@@ -331,7 +331,7 @@ $(document).ready(function () {
                     if(my_pattern.test(data1))
                     {
                         $(this).closest('div').find('img.data-check').show();
-                        $('#backTripDate').datepicker('show');
+                        //$('#backTripDate').datepicker('show');
                     } else {
                         $(this).closest('div').find('img.data-check').hide();
                     }

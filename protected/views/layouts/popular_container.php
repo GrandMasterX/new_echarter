@@ -55,6 +55,7 @@
                                 <input type="hidden" class="promoStartDate" value="28.06.2014"/>
                                 <input type="hidden" class="promoEndDate" value="28.09.2014"/>
                                 <input value="Забронировать" class="order_ticket" type="submit">
+                                <? $this->renderPartial('/forms/popup_selectors');?>
                             </div>
                         </div>
 
@@ -129,6 +130,7 @@
                                 <input type="hidden" class="promoStartDate" value="28.06.2014"/>
                                 <input type="hidden" class="promoEndDate" value="26.10.2014"/>
                                 <input value="Забронировать" class="order_ticket" type="submit">
+                                <? $this->renderPartial('/forms/popup_selectors');?>
                             </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -196,6 +198,7 @@
                                 <input type="hidden" class="promoStartDate" value="28.06.2014"/>
                                 <input type="hidden" class="promoEndDate" value="30.06.2014"/>
                                 <input value="Забронировать" class="order_ticket" type="submit">
+                                <? $this->renderPartial('/forms/popup_selectors');?>
                             </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -261,6 +264,7 @@
                                 <input type="hidden" class="promoStartDate" value="28.06.2014"/>
                                 <input type="hidden" class="promoEndDate" value="26.10.2014"/>
                                 <input value="Забронировать" class="order_ticket" type="submit">
+                                <? $this->renderPartial('/forms/popup_selectors');?>
                             </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -328,6 +332,7 @@
                                 <input type="hidden" class="promoStartDate" value="28.06.2014"/>
                                 <input type="hidden" class="promoEndDate" value="18.10.2014"/>
                                 <input value="Забронировать" class="order_ticket" type="submit">
+                                <? $this->renderPartial('/forms/popup_selectors');?>
                             </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">
@@ -395,6 +400,7 @@
                                 <input type="hidden" class="promoStartDate" value="28.06.2014"/>
                                 <input type="hidden" class="promoEndDate" value="28.09.2014"/>
                                 <input value="Забронировать" class="order_ticket" type="submit">
+                                <? $this->renderPartial('/forms/popup_selectors');?>
                             </div>
                         </div>
                         <div class="block_info right" style="text-align:justify;">

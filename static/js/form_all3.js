@@ -610,7 +610,7 @@ $(document).ready(function () {
             searchParams.action = 'searchTrips';
             //var url = api_url.split('/');
             //if(url[3])
-            api_url = 'http://localhost/';
+            api_url = 'http://echarter.com.ua/';
             contentLoader(objs.resultContainer, loader_image)
             api_post(api_url, searchParams, function (json) {
                 objs.searchButton.enable();

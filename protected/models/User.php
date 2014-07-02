@@ -30,9 +30,10 @@ class User extends CActiveRecord {
     public function rules()
     {
         return array(
-            array('password, email', 'required', 'on' => 'registration,signin'),
+            array('password, email', 'required', 'on' => 'signin'),
             array('email', 'email', 'on' => 'registration'),
             array('email', 'unique', 'message' => "Email address already exists", 'on' => 'registration'),
+            array('password', 'compare', 'compareAttribute'=>'password_retype'),
             array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Incorrect password (minimal length 4 symbols)", 'on' => 'registration'),
             array('id, firstName, lastName, email, password', 'safe'),
         );

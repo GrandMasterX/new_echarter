@@ -40,11 +40,9 @@ class SiteController extends Bus {
         $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user,'page'=>$page));
     }
 
-    public function actionRegister() {
-        var_dump(isset($_POST['User']));die;
+    public function actionRegistration() {
+        $registration = new User;
         if(isset($_POST['User'])) {
-
-            $model = new User('registration');
             $model->attributes = $_POST['User'];
 
             if($model->validate() && $model->save()) {
@@ -60,6 +58,11 @@ class SiteController extends Bus {
                 Yii::app()->request->redirect(Yii::app()->user->returnUrl);
             }
         }
+        $this->render('registration', array('registration' => $registration));
+    }
+
+    public function actionRemind() {
+        die('123');
     }
 
     public function actionContacts() {
@@ -195,13 +198,5 @@ class SiteController extends Bus {
         echo json_encode($salt);
     }
 
-    protected function performAjaxValidation($model)
-    {
-        if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
-        {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
-    }
 
 }

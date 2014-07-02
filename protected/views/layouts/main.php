@@ -22,6 +22,7 @@
     <!--<link rel="stylesheet" type="text/css" href="static/css/style.css"/>-->
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.editable-select.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/skins/tango/skin.css" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
@@ -32,6 +33,7 @@
     <script type="text/javascript" src="/static/js/form_all2.js?<?= mt_rand(1, 22222); ?>"></script>
     <script type="text/javascript" src="/static/js/newformscripts.js"></script>
     <script type="text/javascript" src="/static/js/discounts.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.jcarousel.js"></script>
     <!-- Put this script tag to the <head> of your page -->
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
     <? $this->renderPartial('/static/google_analitics');?>
@@ -121,6 +123,8 @@
                     }, 2000);
                 });
 
+                $('#there_trip,#back_trip').datepicker();
+
                 $('.row_town').live('click', function(e) {
                     var promoStartCityName = $(this).find('input.promoStartCityName').val();
                     var promoStartCityId = $(this).find('input.promoStartCityId').val();
@@ -138,17 +142,19 @@
                 });
 
                 $('.order_ticket').on('click', function() {
-                    $('.close_popup').click();
+                    $(this).parent('div').find('.elaboration').toggle();
+                    /*$('.close_popup').click();
                     $('input#startCityId').val($(this).parent('div').find('input.promoStartCityId').val());
                     $('input#from').val($(this).parent('div').find('input.promoStartCityName').val());
                     $('input#endCityId').val($(this).parent('div').find('input.promoEndCityId').val());
                     $('input#to').val($(this).parent('div').find('input.promoEndCityName').val());
-                    //$('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
-                    //$('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
+                    $('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
+                    $('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
                     $('html, body').animate({
                         scrollTop: $(".tabs_menu").offset().top
                     }, 2000);
-                    $('#tripDate').datepicker('show');
+                    $('#tripDate').datepicker('show');*/
+                    //$('.get_ticket').
                 });
 
                 $('img.del').live('click',function(){
@@ -213,6 +219,15 @@
                             $('.top_menu_item').parent('li').removeClass('active');
                         }
                     }
+                });
+
+                $('#mycarousel').jcarousel({
+                    auto: 5,
+//				wrap: 'last',
+                    wrap: 'both',
+                    vertical : true,
+//				size : 5,
+                    scroll : 1
                 });
 
             });

@@ -22,6 +22,6 @@
         </ul>
     </div>
     <div class="number">
-        <img alt="" src="/static/img/phone_big_1.png" />
+        <img alt="" style="padding-top: 5px;" src="/static/img/phone_big.png" />
     </div>
 </div>
