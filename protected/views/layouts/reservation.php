@@ -141,6 +141,14 @@
                 $(_target).closest('li').addClass('active');
             }
         });
+
+        $(document).click(function(event) {
+            if(!$(event.target).closest('.top_menu_item').length) {
+                if($('.top_menu_item').parent('li').hasClass('active') && !$(event.target).parents('.block_login').length) {
+                    $('.top_menu_item').parent('li').removeClass('active');
+                }
+            }
+        });
     });
 </script>
 </body>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/yii.css">
 
-    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/themes/indast/js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery.yiiactiveform.js"></script>
     <script type="text/javascript" src="/static/js/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="/static/js/editMe.min.js"></script>
@@ -22,9 +22,11 @@
     <script type="text/javascript" src="/static/js/ru.js"></script>
     <script type="text/javascript" src="/static/js/config.js"></script>
     <script type="text/javascript" src="/themes/admin/js/scripts.js"></script>
-
     <script type="text/javascript" src="/themes/admin/js/styles.js"></script>
     <style id="cke_ui_color" type="text/css"></style>
+    <script type="text/javascript">
+        jQuery('#Templates_birthdate,#Templates_psprt_date').datepicker(jQuery.extend({showMonthAfterYear:false},jQuery.datepicker.regional['ru'],{'showAnim':'fold','dateFormat':'yy-mm-dd'}));
+    </script>
 </head>
 
 <body>
@@ -40,6 +42,4 @@
     </div>
 </div>
 </body>
-
-
 </html>

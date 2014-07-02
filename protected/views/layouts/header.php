@@ -4,7 +4,7 @@
         <div class="dictum left">Акционные авиабилеты</div>
         <div class="lk_office right">
             <ul class="clearfix">
-                <li><a href="/redemption">Выкуп заказа</a></li>
+                <li><a href="/reservation">Выкуп заказа</a></li>
                 <? $this->widget('widgets.SocialHeaderWidget');?>
             </ul>
         </div>

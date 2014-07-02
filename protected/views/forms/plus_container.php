@@ -1,3 +1,4 @@
+<? if(!empty($model)) {?>
 <div class="route clearfix">
     <ul class="ul_block clearfix tiered_menu" data-lvl="0">
         <li class="li_block no_hover">
@@ -51,3 +52,4 @@
         </li>
     </ul>
 </div>
+<?}?>

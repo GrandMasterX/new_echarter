@@ -23,7 +23,7 @@
 </style>
 
 
-<div class="order_block">
+<div class="order_block" style="margin: 0px;">
 <div class="order_header">
     <div class="order_hf_content">Выкуп забронированных билетов</div>
 </div>
@@ -63,13 +63,13 @@
                 <tr>
                     <td>Номер Вашего бронирования:</td>
                     <td>
-                        <input type="text" value="<?=$tn?>" <? if (empty($tn)) { ?>style="border:1px red solid;"<? } ?> name="tn" class="ac-autocomplete-input" id="reservation_id">
+                        <input type="text" value="<?if(!empty($tn)){echo $tn;} ?>" <? if (empty($tn)) { ?>style="border:1px red solid;"<? } ?> name="tn" class="ac-autocomplete-input" id="reservation_id">
                     </td>
                 </tr>
                 <tr>
                     <td>Дата отправления:</td>
                     <td>
-                        <input type="text" value="<?=$start_date ?>" <? if(empty($start_date)) {?>style="border:1px red solid;"<? } ?> name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
+                        <input type="text" value="<?if(!empty($tn)){echo $start_date;} ?>" <? if(empty($start_date)) {?>style="border:1px red solid;"<? } ?> name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
                     </td>
                 </tr>
                 <tr>
@@ -189,10 +189,10 @@
 <div class="order_separator_bottom"></div>
 <div class="order_footer"></div>
 
-    <div>
+    <div style="padding: 0px 20px;">
 
         <p>&nbsp;</p>
-        <p><img src="/static/images/contacts.png" align="right"></p>
+        <p><img src="/static/images/contacts.png" align="center"></p>
         <h2>Оплата билетов банковской картой</h2>
         <p>Оплатить билеты на сайте с помощью платежной карты Visa или
             Mastercard (любого банка) вы сможете онлайн, а также выкупить позже (по условиям бронирования

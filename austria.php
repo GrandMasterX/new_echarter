@@ -1,4 +1,3 @@
-<?php include ('inc/form.php'); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,10 +8,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Чартеры в Австрию. Авиабилеты на чартерные рейсы в Австрию</title>
 		<meta name="description" content="">
-		<?php include ('inc/scripts.php'); ?>	
+        <?php include ('scripts_likns.php'); ?>
 	</head>
 	<body>
-		<?php include('inc/header2.php');?>
+    <?php include ('search_form.php'); ?>
 		<div class="popular_container">
 			<div class="wrap">
 				<div id="tripsResultContainer"></div>
@@ -130,6 +129,7 @@
 				</div>
 			</div>
 		</div>
-		<?php include('inc/footer.php');?>
+        <?php include ('footer_scripts.php'); ?>
+    <?php include ('footer.php'); ?>
 	</body>
 </html>

@@ -32,12 +32,12 @@ class SiteController extends Bus {
         );
     }
 
-    public function actionIndex() {
+    public function actionIndex($page = '') {
         $form = $this->actionCreateSession($_POST, '/api/form');
         $registration = '';new UserRegistration();
         $user = '';//User::model()->findByPk(Yii::app()->user->getId());
         //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
-        $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user));
+        $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user,'page'=>$page));
     }
 
     public function actionRegister() {
@@ -87,11 +87,14 @@ class SiteController extends Bus {
                 $data = json_decode($x[1], 1);
             }
         }
-        $this->layout = '/layouts/reservation';
-        $this->render('reservation',array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data));
+        $get = (isset($_GET['tn'])) ? array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data) : '';
+        //$this->layout = '/layouts/reservation';
+        $this->layout = '/layouts/redemption_header';
+        $this->render('reservation',$get);
     }
 
     public function actionRedemption() {
+        $this->layout = '/layouts/redemption_header';
         if (!empty($_GET) && !empty($_GET['tn']) && !empty($_GET['start_date'])) {
 
             $ticketsIds = array($_GET['tn']);
@@ -106,7 +109,7 @@ class SiteController extends Bus {
 
         $get = (isset($_GET['tn'])) ? array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data) : '';
 
-        $this->layout = '/layouts/redemption';
+        //$this->layout = '/layouts/redemption';
         $this->render('redemption_order',$get);
     }
 
@@ -115,10 +118,6 @@ class SiteController extends Bus {
         $form = $this->actionCreateSession($_POST, '/api/small_form');
         $this->render('index',array(/*'model'=>$model,*/'form'=>$form));
     }
-
-	/**
-	 * This is the action to handle external exceptions.
-	 */
 
     public function actionGetCities() {
         $results = Yii::app()->db->createCommand()
@@ -176,6 +175,7 @@ class SiteController extends Bus {
     }
 
     public function actionAbout() {
+        $this->layout = '/layouts/about';
         $form = $this->actionCreateSession($_POST, '/api/small_form');
         $this->render('about',array('form'=>$form));
     }

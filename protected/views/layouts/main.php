@@ -36,6 +36,39 @@
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
     <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript">
+        $('.moreTripInfo ').live('click',function(e){
+            var name = $(this).parents('.cell_block.background.clearfix').find('.departue').text(),
+                alt_name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text(),
+                popular = 'Популярное направление',
+                in_search = 'Выдача';
+            if(name != '') {
+                _gaq.push(['_trackEvent', popular, 'Просмотр', name, 1]);
+            } else {
+                _gaq.push(['_trackEvent', in_search, 'Просмотр', alt_name, 1]);
+            }
+        });
+
+        $('.reserve,.rezer.item.right.check_seats').click(function(){
+            var name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text(),
+                button_name = $(this).text();
+            _gaq.push(['_trackEvent', button_name, 'Выбран', name, 1]);
+        });
+
+        $('.booking_order').click(function(e){
+            _gaq.push(['_trackEvent', 'Забронировать бесплатно', 'Нажатие', 'оформление заказа', 1]);
+        });
+
+        $('.row_town').click(function(e){
+            var name = $(this).find('.promoStartCityName').val()+' '+$(this).find('.promoEndCityName').val();
+            _gaq.push(['_trackEvent', 'Горячие направления', 'Выбран', name, 1]);
+        });
+
+        $('#searchButton').click(function(){
+            _gaq.push(['_trackEvent', 'Заказы', 'Поиск рейсов', $('#from').val()+' '+$('#to').val()+', дата: '+$('#tripDate').val()+'-'+$('#backTripDate').val(), 1]);
+        });
+    </script>
+
+    <script type="text/javascript">
         VK.init({apiId: 4408632, onlyWidgets: true});
     </script>
 
@@ -188,11 +221,11 @@
 
                 $(document).click(function(event) {
                     if(!$(event.target).closest('.top_menu_item').length) {
-                        if($('.top_menu_item').parent('li').hasClass('active')) {
+                        if($('.top_menu_item').parent('li').hasClass('active') && !$(event.target).parents('.block_login').length) {
                             $('.top_menu_item').parent('li').removeClass('active');
                         }
                     }
-                })
+                });
 
             });
         </script>

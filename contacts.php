@@ -1,4 +1,3 @@
-<?php include ('inc/form.php'); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,7 +8,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Контакты. Информация по добавлению чартерных рейсов в онлайн систему - Echarter.com.ua</title>
 		<meta name="description" content="">
-		<?php include ('inc/scripts.php'); ?>	
 	</head>
 	<body>
 		<?php include('inc/header2.php');?>
@@ -39,6 +37,5 @@
 				</div>
 			</div>
 		</div>
-		<?php include('inc/footer.php');?>
 	</body>
 </html>

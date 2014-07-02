@@ -16,23 +16,6 @@
         <div class="price_">
             <span class="price_holder"><span class="from">от</span></br>3200 грн</span>
         </div>
-
-        <!--<div class="text_block left">
-            <div class="text">
-                <div>
-                    <p><b>Киев -</b></p>
-                    <p>Украина</p>
-                </div>
-                <div>
-                    <p><b>Тиват -</b></p>
-                    <p>Черногория</p>
-                </div>
-                <div>
-                    <p><b>Киев</b></p>
-                    <p>Украина</p>
-                </div>
-            </div>
-        </div>-->
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
@@ -51,7 +34,15 @@
                             </div>
                             <div id="vk_like"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like", {type: "button", height: 20});
+                                VK.Widgets.Like("vk_like", {
+                                    type: "button",
+                                    height: 20,
+                                    pageUrl: 'http://echarter.com.ua/?page=kiev-tivat-kiev',
+                                    pageTitle:'Киев - Тиват - Киев от 3200 грн',
+                                    pageDescription:'Прямой чартерный авиарейс с 08.06.2014 по 29.09.2014 из Киева. Рейс выполняется из международного аэропорта Киев ("Жуляны", Терминал А) каждое ВОСКРЕСЕНИЕ в 11:00 вмеждународный аэропорт «Тиват». Обратно вылет в 13:30.',
+                                    pageImage: 'http://echarter.com.ua/static/images/pics/tivat3.png',
+                                    text:'Прямой чартерный авиарейс с 08.06.2014 по 29.09.2014 из Киева. Рейс выполняется из международного аэропорта Киев ("Жуляны", Терминал А) каждое ВОСКРЕСЕНИЕ в 11:00 вмеждународный аэропорт «Тиват». Обратно вылет в 13:30.'
+                                    }, '1741423617');
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-tivat-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true">
@@ -100,29 +91,13 @@
         <div class="price_">
             <span class="price_holder"><span class="from">от</span> </br>2628.37 грн</span>
         </div>
-        <!--<div class="text_block left">
-            <div class="text">
-                <div>
-                    <p><b>Киев -</b></p>
-                    <p>Украина</p>
-                </div>
-                <div>
-                    <p><b>Анталия -</b></p>
-                    <p>Турция</p>
-                </div>
-                <div>
-                    <p><b>Киев</b></p>
-                    <p>Украина</p>
-                </div>
-            </div>
-        </div>-->
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
             <a name="more" class="moreTripInfo populars" trip="kiev-antalia-kiev">Подробнее</a>
 
             <div class="popup order"
-                 style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-antalia-kiev') { ?>block<? } else { ?>none<? } ?>;">
+                 style="display: <? if (isset($page) && $page == 'kiev-antalia-kiev') { ?>block<? } else { ?>none<? } ?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
                         <div class="close_popup right"><span>Популярное направление</span></div>
@@ -134,7 +109,15 @@
                             </div>
                             <div id="vk_like1"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like1", {type: "button", height: 20});
+                                VK.Widgets.Like("vk_like1", {
+                                    type: "button",
+                                    height: 20,
+                                    pageUrl: 'http://echarter.com.ua/?page=kiev-antalia-kiev',
+                                    pageTitle:'Киев - Анталия - Киев от 2628.37 грн',
+                                    pageDescription:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, средам, четвергам, субботам и воскресеньям в международный аэропорт «Анталья». Вылет из Киева утром в 06:00. Из Антальи в 10:00.',
+                                    pageImage: 'http://echarter.com.ua/static/images/pics/antaliya3.png',
+                                    text:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, средам, четвергам, субботам и воскресеньям в международный аэропорт «Анталья». Вылет из Киева утром в 06:00. Из Антальи в 10:00.'
+                                }, '1841423617');
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-antalia-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -175,38 +158,13 @@
         <div class="price_">
             <span class="price_holder"><span class="from">от</span> </br>8850 грн</span>
         </div>
-        <!--<div class="foto_block left">
-            <div class="images">
-                <img alt="" src="static/images/pics/bangkok2.png"/>
-
-                <div class="price_">
-                    <span>8850 грн</span>
-                </div>
-            </div>
-        </div>
-        <div class="text_block left">
-            <div class="text">
-                <div>
-                    <p><b>Киев -</b></p>
-                    <p>Украина</p>
-                </div>
-                <div>
-                    <p><b>Бангкок -</b></p>
-                    <p>Таиланд</p>
-                </div>
-                <div>
-                    <p><b>Киев -</b></p>
-                    <p>Украина</p>
-                </div>
-            </div>
-        </div>-->
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
             <a name="more" class="moreTripInfo populars" trip="kiev-bangkok-kiev">Подробнее</a>
 
             <div class="popup order"
-                 style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-bangkok-kiev') { ?>block<? } else { ?>none<? } ?>;">
+                 style="display: <? if (isset($page) && $page == 'kiev-bangkok-kiev') { ?>block<? } else { ?>none<? } ?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
                         <div class="close_popup right"><span>Популярное направление</span></div>
@@ -218,7 +176,15 @@
                             </div>
                             <div id="vk_like2"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like2", {type: "button", height: 20});
+                                VK.Widgets.Like("vk_like2", {
+                                    type: "button",
+                                    height: 20,
+                                    pageUrl: 'http://echarter.com.ua/?page=kiev-bangkok-kiev',
+                                    pageTitle:'Киев - Бангкок - Киев от 8850.37 грн',
+                                    pageDescription:'Прямой чартерный авиарейс с 07.12.2013 по 30.06.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по средам и субботам. По направлению Бангкок-Киев рейсы вылетают по понедельникам и пятницам.',
+                                    pageImage: 'http://echarter.com.ua/static/images/pics/bangkok3.png',
+                                    text:'Прямой чартерный авиарейс с 07.12.2013 по 30.06.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по средам и субботам. По направлению Бангкок-Киев рейсы вылетают по понедельникам и пятницам.'
+                                }, '1541423617');
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-bangkok-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -257,23 +223,6 @@
         <div class="price_">
             <span class="price_holder"><span class="from">от</span> </br>8850 грн</span>
         </div>
-        <!--
-        <div class="text_block left">
-            <div class="text">
-                <div>
-                    <p><b>Киев -</b></p>
-                    <p>Украина</p>
-                </div>
-                <div>
-                    <p><b>Бургас -</b></p>
-                    <p>Болгария</p>
-                </div>
-                <div>
-                    <p><b>Киев</b></p>
-                    <p>Украина</p>
-                </div>
-            </div>
-        </div>-->
     </div>
     <div class="bottom_btn clearfix">
         <div class="more item left" >
@@ -292,7 +241,15 @@
                             </div>
                             <div id="vk_like3"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like3", {type: "button", height: 20});
+                                VK.Widgets.Like("vk_like3", {
+                                    type: "button",
+                                    height: 20,
+                                    pageUrl: 'http://echarter.com.ua/?page=kiev-burgas-kiev',
+                                    pageTitle:'Киев - Бургас - Киев от 8850 грн',
+                                    pageDescription:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, пятницам и воскресеньям в международный аэропорт «Сарафово». Вылет из Киева утром в 11:00. Из Бургаса в 08:05.',
+                                    pageImage: 'http://echarter.com.ua/static/images/pics/byrgas3.png',
+                                    text:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, пятницам и воскресеньям в международный аэропорт «Сарафово». Вылет из Киева утром в 11:00. Из Бургаса в 08:05.'
+                                }, '1241023617');
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-burgas-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -351,7 +308,15 @@
                             </div>
                             <div id="vk_like4"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like4", {type: "button", height: 20});
+                                VK.Widgets.Like("vk_like4", {
+                                    type: "button",
+                                    height: 20,
+                                    pageUrl: 'http://echarter.com.ua/?page=kiev-heraklion-kiev',
+                                    pageTitle:'Киев - Ираклион - Киев от 4062.13 грн',
+                                    pageDescription:'Прямой чартерный авиарейс с 26.04.2014 по 18.10.2014из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, четвергам, субботам и воскресеньям. Вылет Киева в 14:00, прибытие на остров Крит - в Ираклион 17:00. Время вылета самолета Ираклион - Киев, в 18:00, прилет в Киев 21:00.',
+                                    pageImage: 'http://echarter.com.ua/static/images/pics/iraklion3.png',
+                                    text:'Прямой чартерный авиарейс с 26.04.2014 по 18.10.2014из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, четвергам, субботам и воскресеньям. Вылет Киева в 14:00, прибытие на остров Крит - в Ираклион 17:00. Время вылета самолета Ираклион - Киев, в 18:00, прилет в Киев 21:00.'
+                                }, '1041423617');
                             </script>
                             <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -410,9 +375,17 @@
                             </div>
                             <div id="vk_like5"></div>
                             <script type="text/javascript">
-                                VK.Widgets.Like("vk_like5", {type: "button", height: 20});
+                                VK.Widgets.Like("vk_like5", {
+                                    type: "button",
+                                    height: 20,
+                                    pageUrl: 'http://echarter.com.ua/?page=kiev-enfida-kiev',
+                                    pageTitle:'Киев - Энфида - Киев от 5184.15 грн',
+                                    pageDescription:'Чартерные авиарейсы Киев-Энфида(Тунис)-Киев авиакомпании "Международные авиалинии Украины" вылетают из аэропорта Борисполь (Терминал Д) по четвергам и воскресеньям с 27.04.2014 по 28.09.2014. Билеты можно приобрести только туда и обратно до 90 дней.',
+                                    pageImage: 'http://echarter.com.ua/static/images/pics/enfida.jpg',
+                                    text:'Чартерные авиарейсы Киев-Энфида(Тунис)-Киев авиакомпании "Международные авиалинии Украины" вылетают из аэропорта Борисполь (Терминал Д) по четвергам и воскресеньям с 27.04.2014 по 28.09.2014. Билеты можно приобрести только туда и обратно до 90 дней.'
+                                }, '1101403617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-enfida-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                             <div>
                                 <input type="hidden" class="promoStartCityName" value="Киев, Украина"/>
