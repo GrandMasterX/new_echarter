@@ -54,7 +54,7 @@
         </div>
     </div>
 </header>
-<?php $this->renderPartial('/layouts/popular_container');?>
+<?php $this->renderPartial('/layouts/reservation_footer');?>
 <?php $this->renderPartial('/layouts/footer');?>
 <script>
     jQuery.fn.topLink = function(settings) {

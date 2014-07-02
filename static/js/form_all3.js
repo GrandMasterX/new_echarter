@@ -259,7 +259,7 @@ $(document).ready(function () {
                 onChangeMonthYear: function (y, m, o) {
 
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;"/></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;"/></p>');
                     }, 0);
 
                     data.tripDates = null;
@@ -295,7 +295,7 @@ $(document).ready(function () {
                 beforeShow: function (field) {
                     data.tripDates = null;
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
                     if (!data.initParams.loadDates) return;
 
@@ -331,12 +331,12 @@ $(document).ready(function () {
                     if(my_pattern.test(data1))
                     {
                         $(this).closest('div').find('img.data-check').show();
+                        $('#backTripDate').datepicker('show');
                     } else {
                         $(this).closest('div').find('img.data-check').hide();
                     }
 
                     contentLoaderER(objs.tripDate);
-                    $('#backTripDate').datepicker('show');
                 },
                 onSelect: function () {
                     contentLoaderER(objs.tripDate);
@@ -371,7 +371,7 @@ $(document).ready(function () {
                 onChangeMonthYear: function (y, m, o) {
 
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
 
                     data.tripBackDates = null;
@@ -404,7 +404,7 @@ $(document).ready(function () {
 
                     data.tripBackDates = null;
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
                     if (!data.initParams.loadDates) return;
                     var dateVal = $(field).val()? $(field).val() : getNowDate();

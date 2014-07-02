@@ -2,7 +2,7 @@
 
 class SiteController extends Bus {
 
-    public $layout = 'main';
+    public $layout = '/layouts/main';
 	/**
 	 * Declares class-based actions.
 	 */
