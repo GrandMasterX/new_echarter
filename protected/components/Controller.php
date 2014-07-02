@@ -31,8 +31,6 @@ class Controller extends CController
 			
 			$this->layout = '//layouts/ajax';
 		}
-            
-			
 		$this->pageTitle = 'Aminka';
     }
 	

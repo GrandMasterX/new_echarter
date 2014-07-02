@@ -41,6 +41,7 @@ class SiteController extends Bus {
     }
 
     public function actionRegister() {
+        var_dump(isset($_POST['User']));die;
         if(isset($_POST['User'])) {
 
             $model = new User('registration');
@@ -192,6 +193,15 @@ class SiteController extends Bus {
     public function actionGetActionSalt() {
         $salt = $this->getActionSalt();
         echo json_encode($salt);
+    }
+
+    protected function performAjaxValidation($model)
+    {
+        if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
     }
 
 }

@@ -8,7 +8,7 @@
 <div class="row_block left">
 
 
-<div class="cell_block background clearfix" style="background: url('../../static/images/pics/tivat3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('/../../static/images/pics/tivat3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Тиват - Киев</span>
@@ -22,7 +22,7 @@
             <a name="more" class="moreTripInfo populars" trip="kiev-tivat-kiev" >Подробнее</a>
 
             <div class="popup order"
-                 style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-tivat-kiev') { ?>block<? } else { ?>none<? } ?>;">
+                 style="display: <? if (isset($page) && $page == 'kiev-tivat-kiev') { ?>block<? } else { ?>none<? } ?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
                         <div class="close_popup right"><span>Популярное направление</span></div>
@@ -30,21 +30,21 @@
                     <div class="center clearfix">
                         <div class="block_foto left">
                             <div class="img">
-                                <img alt="" src="static/images/pics/tivat3.png"/>
+                                <img alt="" src="/static/images/pics/tivat3.png"/>
                             </div>
                             <div id="vk_like"></div>
                             <script type="text/javascript">
                                 VK.Widgets.Like("vk_like", {
                                     type: "button",
                                     height: 20,
-                                    pageUrl: 'http://echarter.com.ua/?page=kiev-tivat-kiev',
+                                    pageUrl: 'http://echarter.com.ua/page/kiev-tivat-kiev',
                                     pageTitle:'Киев - Тиват - Киев от 3200 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 08.06.2014 по 29.09.2014 из Киева. Рейс выполняется из международного аэропорта Киев ("Жуляны", Терминал А) каждое ВОСКРЕСЕНИЕ в 11:00 вмеждународный аэропорт «Тиват». Обратно вылет в 13:30.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/tivat3.png',
                                     text:'Прямой чартерный авиарейс с 08.06.2014 по 29.09.2014 из Киева. Рейс выполняется из международного аэропорта Киев ("Жуляны", Терминал А) каждое ВОСКРЕСЕНИЕ в 11:00 вмеждународный аэропорт «Тиват». Обратно вылет в 13:30.'
                                     }, '1741423617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-tivat-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/page/kiev-tivat-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true">
                             </div>
                             <div>
@@ -83,7 +83,7 @@
 </div>
 
 
-<div class="cell_block background clearfix" style="background: url('../../static/images/pics/antaliya3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('/../../static/images/pics/antaliya3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Анталия - Киев</span>
@@ -105,21 +105,21 @@
                     <div class="center clearfix">
                         <div class="block_foto left">
                             <div class="img">
-                                <img alt="" src="static/images/pics/antaliya3.png"/>
+                                <img alt="" src="/static/images/pics/antaliya3.png"/>
                             </div>
                             <div id="vk_like1"></div>
                             <script type="text/javascript">
                                 VK.Widgets.Like("vk_like1", {
                                     type: "button",
                                     height: 20,
-                                    pageUrl: 'http://echarter.com.ua/?page=kiev-antalia-kiev',
+                                    pageUrl: 'http://echarter.com.ua/page/kiev-antalia-kiev',
                                     pageTitle:'Киев - Анталия - Киев от 2628.37 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, средам, четвергам, субботам и воскресеньям в международный аэропорт «Анталья». Вылет из Киева утром в 06:00. Из Антальи в 10:00.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/antaliya3.png',
                                     text:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, средам, четвергам, субботам и воскресеньям в международный аэропорт «Анталья». Вылет из Киева утром в 06:00. Из Антальи в 10:00.'
                                 }, '1841423617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-antalia-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/page/kiev-antalia-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                             <div>
                                 <input type="hidden" class="promoStartCityName" value="Киев, Украина"/>
@@ -150,7 +150,7 @@
     </div>
 </div>
 
-<div class="cell_block background clearfix" style="background: url('../../static/images/pics/bangkok3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('/../../static/images/pics/bangkok3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Бангкок - Киев</span>
@@ -172,21 +172,21 @@
                     <div class="center clearfix">
                         <div class="block_foto left">
                             <div class="img">
-                                <img alt="" src="static/images/pics/bangkok3.png"/>
+                                <img alt="" src="/static/images/pics/bangkok3.png"/>
                             </div>
                             <div id="vk_like2"></div>
                             <script type="text/javascript">
                                 VK.Widgets.Like("vk_like2", {
                                     type: "button",
                                     height: 20,
-                                    pageUrl: 'http://echarter.com.ua/?page=kiev-bangkok-kiev',
+                                    pageUrl: 'http://echarter.com.ua/page/kiev-bangkok-kiev',
                                     pageTitle:'Киев - Бангкок - Киев от 8850.37 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 07.12.2013 по 30.06.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по средам и субботам. По направлению Бангкок-Киев рейсы вылетают по понедельникам и пятницам.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/bangkok3.png',
                                     text:'Прямой чартерный авиарейс с 07.12.2013 по 30.06.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по средам и субботам. По направлению Бангкок-Киев рейсы вылетают по понедельникам и пятницам.'
                                 }, '1541423617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-bangkok-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/page/kiev-bangkok-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                             <div>
                                 <input type="hidden" class="promoStartCityName" value="Киев, Украина"/>
@@ -215,7 +215,7 @@
     </div>
 </div>
 
-<div class="cell_block background clearfix" style="background: url('../../static/images/pics/byrgas3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('/../../static/images/pics/byrgas3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Бургас - Киев</span>
@@ -229,7 +229,7 @@
             <a name="more" class="moreTripInfo populars" trip="kiev-burgas-kiev" >Подробнее</a>
 
             <div class="popup order"
-                 style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-burgas-kiev') { ?>block<? } else { ?>none<? } ?>;">
+                 style="display: <? if (isset($page) && $page == 'kiev-burgas-kiev') { ?>block<? } else { ?>none<? } ?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
                         <div class="close_popup right"><span>Популярное направление</span></div>
@@ -237,21 +237,21 @@
                     <div class="center clearfix">
                         <div class="block_foto left">
                             <div class="img">
-                                <img alt="" src="static/images/pics/byrgas3.png"/>
+                                <img alt="" src="/static/images/pics/byrgas3.png"/>
                             </div>
                             <div id="vk_like3"></div>
                             <script type="text/javascript">
                                 VK.Widgets.Like("vk_like3", {
                                     type: "button",
                                     height: 20,
-                                    pageUrl: 'http://echarter.com.ua/?page=kiev-burgas-kiev',
+                                    pageUrl: 'http://echarter.com.ua/page/kiev-burgas-kiev',
                                     pageTitle:'Киев - Бургас - Киев от 8850 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, пятницам и воскресеньям в международный аэропорт «Сарафово». Вылет из Киева утром в 11:00. Из Бургаса в 08:05.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/byrgas3.png',
                                     text:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, пятницам и воскресеньям в международный аэропорт «Сарафово». Вылет из Киева утром в 11:00. Из Бургаса в 08:05.'
                                 }, '1241023617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-burgas-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/page/kiev-burgas-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                             <div>
                                 <input type="hidden" class="promoStartCityName" value="Киев, Украина"/>
@@ -282,7 +282,7 @@
     </div>
 </div>
 
-<div class="cell_block background clearfix" style="background: url('../../static/images/pics/iraklion3.png') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('/../../static/images/pics/iraklion3.png') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Ираклион - Киев</span>
@@ -296,7 +296,7 @@
             <a name="more" class="moreTripInfo populars" trip="kiev-heraklion-kiev">Подробнее</a>
 
             <div class="popup order"
-                 style="display: <? if (isset($_GET['page']) && $_GET['page'] == 'kiev-heraklion-kiev') { ?>block<? } else { ?>none<? } ?>;">
+                 style="display: <? if (isset($page) && $page == 'kiev-heraklion-kiev') { ?>block<? } else { ?>none<? } ?>;">
                 <div class="popup_wrap">
                     <div class="top clearfix">
                         <div class="close_popup right"><span>Популярное направление</span></div>
@@ -304,21 +304,21 @@
                     <div class="center clearfix">
                         <div class="block_foto left">
                             <div class="img">
-                                <img alt="" src="static/images/pics/iraklion3.png"/>
+                                <img alt="" src="/static/images/pics/iraklion3.png"/>
                             </div>
                             <div id="vk_like4"></div>
                             <script type="text/javascript">
                                 VK.Widgets.Like("vk_like4", {
                                     type: "button",
                                     height: 20,
-                                    pageUrl: 'http://echarter.com.ua/?page=kiev-heraklion-kiev',
+                                    pageUrl: 'http://echarter.com.ua/page/kiev-heraklion-kiev',
                                     pageTitle:'Киев - Ираклион - Киев от 4062.13 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 26.04.2014 по 18.10.2014из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, четвергам, субботам и воскресеньям. Вылет Киева в 14:00, прибытие на остров Крит - в Ираклион 17:00. Время вылета самолета Ираклион - Киев, в 18:00, прилет в Киев 21:00.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/iraklion3.png',
                                     text:'Прямой чартерный авиарейс с 26.04.2014 по 18.10.2014из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, четвергам, субботам и воскресеньям. Вылет Киева в 14:00, прибытие на остров Крит - в Ираклион 17:00. Время вылета самолета Ираклион - Киев, в 18:00, прилет в Киев 21:00.'
                                 }, '1041423617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-heraklion-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/page/kiev-heraklion-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                             <div>
                                 <input type="hidden" class="promoStartCityName" value="Киев, Украина"/>
@@ -349,7 +349,7 @@
 </div>
 
 
-<div class="cell_block background clearfix" style="background: url('../../static/images/pics/enfida.jpg') no-repeat;background-size: cover;">
+<div class="cell_block background clearfix" style="background: url('/../../static/images/pics/enfida.jpg') no-repeat;background-size: cover;">
     <div class="clearfix">
         <div class="price_">
             <span class="departue">Киев - Энфида - Киев</span>
@@ -371,21 +371,21 @@
                     <div class="center clearfix">
                         <div class="block_foto left">
                             <div class="img">
-                                <img alt="" src="static/images/popup_more.png"/>
+                                <img alt="" src="/images/popup_more.png"/>
                             </div>
                             <div id="vk_like5"></div>
                             <script type="text/javascript">
                                 VK.Widgets.Like("vk_like5", {
                                     type: "button",
                                     height: 20,
-                                    pageUrl: 'http://echarter.com.ua/?page=kiev-enfida-kiev',
+                                    pageUrl: 'http://echarter.com.ua/page/kiev-enfida-kiev',
                                     pageTitle:'Киев - Энфида - Киев от 5184.15 грн',
                                     pageDescription:'Чартерные авиарейсы Киев-Энфида(Тунис)-Киев авиакомпании "Международные авиалинии Украины" вылетают из аэропорта Борисполь (Терминал Д) по четвергам и воскресеньям с 27.04.2014 по 28.09.2014. Билеты можно приобрести только туда и обратно до 90 дней.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/enfida.jpg',
                                     text:'Чартерные авиарейсы Киев-Энфида(Тунис)-Киев авиакомпании "Международные авиалинии Украины" вылетают из аэропорта Борисполь (Терминал Д) по четвергам и воскресеньям с 27.04.2014 по 28.09.2014. Билеты можно приобрести только туда и обратно до 90 дней.'
                                 }, '1101403617');
                             </script>
-                            <div class="fb-like" data-href="http://echarter.com.ua/?page=kiev-enfida-kiev"
+                            <div class="fb-like" data-href="http://echarter.com.ua/page/kiev-enfida-kiev"
                                  data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                             <div>
                                 <input type="hidden" class="promoStartCityName" value="Киев, Украина"/>

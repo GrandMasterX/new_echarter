@@ -27,6 +27,6 @@
 <?}else{?>
     <li>
         <a href="/privatoffice">Личный кабинет</a>
-        <a href="javascript:;">(<? echo $user->displayName;?>)</a>
+        <a href="javascript:;" style="font-weight: bold;">(<? echo $user->displayName;?>)</a>
     </li>
 <?}?>

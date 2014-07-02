@@ -14,7 +14,7 @@ class LogInWidget extends CWidget
     protected function renderBlock()
     {
         $model = new User('signin');
-        return $this->render('signin', array('model'=>$model),true);
+        return $this->render('/user/signin', array('model'=>$model));
     }
 
 

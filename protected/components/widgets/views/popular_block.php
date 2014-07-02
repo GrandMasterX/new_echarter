@@ -14,7 +14,7 @@
         <form>
             <div class="row_town clearfix">
                 <div class="cell_town foto left">
-                    <img alt="" src="images/town_foto.png" />
+                    <img alt="" src="/images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Тиват - Киев</div>
                 <div class="cell_town price left"> от 3200 грн</div>
@@ -27,7 +27,7 @@
             </div>
             <div class="row_town clearfix">
                 <div class="cell_town foto left">
-                    <img alt="" src="images/town_foto.png" />
+                    <img alt="" src="/images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Анталья - Киев</div>
                 <div class="cell_town price left"> от 2628.37 грн</div>
@@ -40,7 +40,7 @@
             </div>
             <div class="row_town clearfix">
                 <div class="cell_town foto left">
-                    <img alt="" src="images/town_foto.png" />
+                    <img alt="" src="/images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Бургас - Киев</div>
                 <div class="cell_town price left"> от 1809.86 грн</div>
@@ -53,7 +53,7 @@
             </div>
             <div class="row_town clearfix">
                 <div class="cell_town foto left">
-                    <img alt="" src="images/town_foto.png" />
+                    <img alt="" src="/images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Ираклион - Киев</div>
                 <div class="cell_town price left"> от 4062.13грн</div>
@@ -66,7 +66,7 @@
             </div>
             <!--<div class="row_town clearfix">
                 <div class="cell_town foto left">
-                    <img alt="" src="images/town_foto.png" />
+                    <img alt="" src="/images/town_foto.png" />
                 </div>
                 <div class="cell_town text left">Киев - Салоники - Киев</div>
                 <div class="cell_town price left">4062.13  грн</div>

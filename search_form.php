@@ -67,7 +67,7 @@
         </ul>
     </div>
     <div class="number">
-        <img alt="" src="static/img/phone_big_1.png">
+        <img alt="" src="/static/img/phone_big_1.png">
     </div>
 </div>        <div class="container page_2" style="margin: 0px auto;text-align: center;">
     <div class="wrap" style="padding: 40px 0px 5px 90px;">
