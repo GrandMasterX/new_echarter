@@ -39,7 +39,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 
 							<label style="margin-left: 19px; color: #fff; line-height: 16px; 
 								 text-align: left; display: block; padding-bottom: 3px;">Категории пассажиров</label>
-							<div class="selectblock" style="" style= >
+							<div class="selectblock header" style="" style= >
 								<input type="hidden" class="TiketsCounter input" id="ticketAmount" value="<?= isset($_POST['totalTicketsAmount']) ? $_POST['totalTicketsAmount'] : 1 ?>" />
 								<span id="ticketCountNew"><?= isset($_POST['totalTicketsAmount']) ? $_POST['totalTicketsAmount'] : 1 ?></span>
 								<span id="passengerTitle">
@@ -48,10 +48,10 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 									?>
 								</span>
 							</div>
-							<div class="disocuntBlock">
+							<div class="disocuntBlock header">
 								<input type="hidden" id="totalTicketsAmount" value="1" />
 								<input type="hidden" id="discTicketsAmount" value="0" />
-								<div class="countFrameSet" style="border-bottom: 1px solid grey;margin-bottom: 7px;">
+								<div class="countFrameSet header" style="border-bottom: 1px solid grey;margin-bottom: 7px;">
 									<img src="http://e-travels.com.ua/images/form/ask5.png" alt="" class="ask-info" />
 									<div class="ask-content" style="margin-top:-76px;"><div><?= $static_na_adult_lgnd3 ?></div></div>
 									Взрослые<br />
@@ -63,7 +63,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 									</div>
 								</div>
 								<div style="color: grey;font-size: 13px;padding-left: 17px;">Возможные скидки</div>
-								<div class="countFrameSet" style="">
+								<div class="countFrameSet header" style="">
 									<img src="http://e-travels.com.ua/images/form/ask5.png" alt="" class="ask-info" />
 									<div class="ask-content" style="margin-top:-76px;"><div><?= $static_na_adult_lgnd3 ?></div></div>
 									Дети<br />
@@ -74,7 +74,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 										<div class="countFrameRight" id="discGroupe1" data-target="disc1"> </div>
 									</div>
 								</div>
-								<div class="countFrameSet" style="">
+								<div class="countFrameSet header" style="">
 									<img src="http://e-travels.com.ua/images/form/ask5.png" alt="" class="ask-info" />
 									<div class="ask-content" style="margin-top:-76px;"><div><?= $static_na_kids_no_seats_lgnd3 ?></div></div>
 									Дети без места<br />
@@ -85,7 +85,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 										<div class="countFrameRight" id="discGroupe2" data-target="disc2"> </div>
 									</div>
 								</div>
-								<div class="countFrameSet" style="">
+								<div class="countFrameSet header" style="">
 									<img src="http://e-travels.com.ua/images/form/ask5.png" alt="" class="ask-info" />
 									<div class="ask-content" style="margin-top:-76px;"><div><?= $static_na_students_legnd3 ?></div></div>
 									Студенты<br />
@@ -96,7 +96,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 										<div class="countFrameRight" id="discGroupe3" data-target="disc3"> </div>
 									</div>
 								</div>
-								<div class="countFrameSet" style="">
+								<div class="countFrameSet header" style="">
 									<img src="http://e-travels.com.ua/images/form/ask5.png" alt="" class="ask-info" />
 									<div class="ask-content" style="margin-top:-76px;"><div><?= $static_na_adult_lgnd3 ?></div></div>
 									Молодежь<br />
@@ -107,7 +107,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 										<div class="countFrameRight" id="discGroupe4" data-target="disc4"> </div>
 									</div>
 								</div>
-								<div class="countFrameSet" style="">
+								<div class="countFrameSet header" style="">
 									<img src="http://e-travels.com.ua/images/form/ask5.png" alt="" class="ask-info" />
 									<div class="ask-content" style="margin-top:-76px;"><div><?= $static_na_adult_lgnd3 ?></div></div>
 									Пожилые<br />
@@ -268,16 +268,16 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 										</li>
 									</ul>
 								</div>
-								<div class="block date clearfix right" style="padding-top: 0; margin-top: -35px;">
+								<div class="block date clearfix right" style="padding-top: 0; margin-top: -56px;">
 									<div class="dep item_1 clearfix">
 										<label>Дата отправки</label>
-										<input type="text" id="tripDate" name="dep_date" class="dep_date hdata" placeholder="" value="" />
-										<img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 149px;">
+										<input type="text" id="tripDate" name="dep_date" class="dep_date hdata" placeholder="--/--/----" value="" />
+										<img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 25px;">
 									</div>
 									<div class="ret item_1  clearfix">
 										<label>Дата обратно</label>
-										<input type="text" name="ret_date" id="backTripDate" class="ret_date hdata" placeholder="" value="" />
-										<img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 149px;">
+										<input type="text" name="ret_date" id="backTripDate" class="ret_date hdata" placeholder="--/--/----" value="" />
+										<img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 25px;">
 									</div>
 								</div>
 							</div>
