@@ -189,12 +189,12 @@
 <div class="order_separator_bottom"></div>
 <div class="order_footer"></div>
 
-    <div style="padding: 0px 20px;">
+    <div style="padding: 0px 20px 15px;">
 
         <p>&nbsp;</p>
         <p><img src="/static/images/contacts.png" align="center"></p>
-        <h2>Оплата билетов банковской картой</h2>
-        <p>Оплатить билеты на сайте с помощью платежной карты Visa или
+        <h2 style="font-size: 14px;">Оплата билетов банковской картой</h2>
+        <p style="font-size: 14px;">Оплатить билеты на сайте с помощью платежной карты Visa или
             Mastercard (любого банка) вы сможете онлайн, а также выкупить позже (по условиям бронирования
             в срок) либо
             воспользоваться другими способами оплаты, например, банковским платежом на счет,

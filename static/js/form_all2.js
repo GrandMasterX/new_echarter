@@ -498,8 +498,10 @@ $(document).ready(function () {
         }
 
         function contentLoader(obj, loader_image) {
-            if (!loader_image) loader_image = 'ajax-loader(1).gif';
+            if (!loader_image) {
+                loader_image = 'ajax-loader(1).gif';
                 return $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif" /></div>');
+            }
         }
 
         function reLogin(PageType, PageRes) {
@@ -594,7 +596,7 @@ $(document).ready(function () {
             searchParams.BACK_TRIP_DATE = objs.backTripDate.val();
             var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
             searchParams.ROUND_TRIP = true;
-            /* disabling of one-way triping, only round-trip.*/
+            /* disabling or enabling tripings*/
             if(my_pattern.test(searchParams.BACK_TRIP_DATE))
                 searchParams.ROUND_TRIP = true;
             else
@@ -632,23 +634,18 @@ $(document).ready(function () {
 
                             var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();
                             if (!json.COMPLETED) {
-
-                                initFilters()
+                                initFilters();
                                 $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif"/></div>');
-
-
                             }
                         });
 
                         if (!json.COMPLETED) {
-
                             objs.searchTripsInterval = setTimeout(
                                 function () {
                                     var searchIteration = 0;
                                     loadOtherTrips(searchIteration);
                                 }, 2000
                             );
-
                         }
                     }, 'json');
         });

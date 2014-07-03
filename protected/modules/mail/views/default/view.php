@@ -11,7 +11,7 @@
 				<tr>
 					<td align="center" valign="top">
 						<div style="margin-top:0; background-color:#5ABCE4; width: 560px;border: 20px solid #5ABCE4;">
-							<img style="margin-left: -397px;" src="<?php echo Yii::app()->request->hostInfo . Yii::app()->theme->baseUrl ?>/img/logo.png">
+							<img style="margin-left: -397px;" src="<?php //echo Yii::app()->request->hostInfo . Yii::app()->theme->baseUrl ?>/img/logo.png">
 						</div>
 			<table border="0" cellpadding="0" cellspacing="0" width="600" style="background: #DEEFF7;">
 				<tbody>
@@ -46,12 +46,12 @@
 																	<br>
 																	<span style="padding-top: 10px;display: block;font-weight: normal;padding-right: 9px;">
 																		<?php
-																			$phoneNumbers = Yii::app()->config->get('phoneNumbers');
-																			$phoneNumbers = explode(', ', $phoneNumbers);
+																			//$phoneNumbers = Yii::app()->config->get('phoneNumbers');
+																			//$phoneNumbers = explode(', ', $phoneNumbers);
 																		?>
-																		Тел.:&nbsp; <?php echo implode('<br>', $phoneNumbers) ?>
+																		Тел.:&nbsp; <?php //echo implode('<br>', $phoneNumbers) ?>
 																	</span>
-																	<a target="_blank" href="<?php echo Yii::app()->request->hostInfo ?>" style="padding-top: 10px;display: block;font-weight: normal;padding-right: 9px;"><?php echo Yii::app()->request->hostInfo ?></a>
+																	<a target="_blank" href="<?php //echo Yii::app()->request->hostInfo ?>" style="padding-top: 10px;display: block;font-weight: normal;padding-right: 9px;"><?php echo Yii::app()->request->hostInfo ?></a>
 																</p>
 															</td>
 														</tr>

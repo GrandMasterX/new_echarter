@@ -14,7 +14,7 @@
             <span class="departue">Киев - Тиват - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder"><span class="from">от</span></br>3200 грн</span>
+            <span class="price_holder"><span class="from">от</span></br>3200.00 грн</span>
         </div>
     </div>
     <div class="bottom_btn clearfix">
@@ -38,7 +38,7 @@
                                     type: "button",
                                     height: 20,
                                     pageUrl: 'http://echarter.com.ua/page/kiev-tivat-kiev',
-                                    pageTitle:'Киев - Тиват - Киев от 3200 грн',
+                                    pageTitle:'Киев - Тиват - Киев от 3200.00 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 08.06.2014 по 29.09.2014 из Киева. Рейс выполняется из международного аэропорта Киев ("Жуляны", Терминал А) каждое ВОСКРЕСЕНИЕ в 11:00 вмеждународный аэропорт «Тиват». Обратно вылет в 13:30.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/tivat3.png',
                                     text:'Прямой чартерный авиарейс с 08.06.2014 по 29.09.2014 из Киева. Рейс выполняется из международного аэропорта Киев ("Жуляны", Терминал А) каждое ВОСКРЕСЕНИЕ в 11:00 вмеждународный аэропорт «Тиват». Обратно вылет в 13:30.'
@@ -158,7 +158,7 @@
             <span class="departue">Киев - Бангкок - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder"><span class="from">от</span> </br>8850 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>8850.37 грн</span>
         </div>
     </div>
     <div class="bottom_btn clearfix">
@@ -224,7 +224,7 @@
             <span class="departue">Киев - Бургас - Киев</span>
         </div>
         <div class="price_">
-            <span class="price_holder"><span class="from">от</span> </br>8850 грн</span>
+            <span class="price_holder"><span class="from">от</span> </br>8850.00 грн</span>
         </div>
     </div>
     <div class="bottom_btn clearfix">
@@ -248,7 +248,7 @@
                                     type: "button",
                                     height: 20,
                                     pageUrl: 'http://echarter.com.ua/page/kiev-burgas-kiev',
-                                    pageTitle:'Киев - Бургас - Киев от 8850 грн',
+                                    pageTitle:'Киев - Бургас - Киев от 8850.00 грн',
                                     pageDescription:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, пятницам и воскресеньям в международный аэропорт «Сарафово». Вылет из Киева утром в 11:00. Из Бургаса в 08:05.',
                                     pageImage: 'http://echarter.com.ua/static/images/pics/byrgas3.png',
                                     text:'Прямой чартерный авиарейс с 25.05.2014 по 26.10.2014 из Киева. Рейс выполняется из международного аэропорта Борисполь (Терминал D) по вторникам, пятницам и воскресеньям в международный аэропорт «Сарафово». Вылет из Киева утром в 11:00. Из Бургаса в 08:05.'

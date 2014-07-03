@@ -35,7 +35,7 @@
     <script type="text/javascript" src="/static/js/discounts.js"></script>
     <script type="text/javascript" src="/static/js/jquery.jcarousel.js"></script>
     <!-- Put this script tag to the <head> of your page -->
-    <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
+    <script type="text/javascript" src="/static/js/vk.js?113"></script>
     <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript">
         $('.moreTripInfo ').live('click',function(e){
@@ -133,10 +133,11 @@
                     var promoStartDate = $(this).find('input.promoStartDate').val();
                     var promoEndDate = $(this).find('input.promoEndDate').val();
 
+
                     $('input#startCityId').val(promoStartCityId);
-                    $('input#from').val(promoStartCityName);
+                    $('input#from').val(promoStartCityName).addClass('check_out');
                     $('input#endCityId').val(promoEndCityId);
-                    $('input#to').val(promoEndCityName);
+                    $('input#to').val(promoEndCityName).addClass('check_out');
                     $('input#tripDate').val(promoStartDate);
                     $('input#backTripDate').val(promoEndDate);
                 });
@@ -220,6 +221,10 @@
                         }
                     }
                 });
+
+                $('.check_seats .reserve').live('click', function() {
+                    $(this).closest('div.popup.order').hide();
+                })
 
                 $('#mycarousel').jcarousel({
                     auto: 5,

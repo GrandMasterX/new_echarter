@@ -92,8 +92,6 @@ class Api extends Config {
             die;
         }
 
-
-
         $form = $this->renderPartial($display_form ,array(),true);
         return $form;
     }

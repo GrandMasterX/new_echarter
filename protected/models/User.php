@@ -17,6 +17,7 @@ class User extends CActiveRecord {
     public  $unhashed_password;
     public  $auth_role;
     const ROLE_ADMIN = 'admin@admin';
+    const SALT = 'ckFdFErhf}yS';
     public static function model($className = __CLASS__)
     {
         return parent::model($className);
@@ -30,12 +31,20 @@ class User extends CActiveRecord {
     public function rules()
     {
         return array(
+            /* REMIN*/
+            array('email', 'email', 'on' => 'remind','message'=>'Неправильный формат емейл адреса.'),
+            array('email', 'required', 'on' => 'remind'),
+
+            /* SIGNIN*/
             array('password, email', 'required', 'on' => 'signin'),
-            array('email', 'email', 'on' => 'registration'),
-            array('email', 'unique', 'message' => "Email address already exists", 'on' => 'registration'),
-            array('password', 'compare', 'compareAttribute'=>'password_retype'),
-            array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Incorrect password (minimal length 4 symbols)", 'on' => 'registration'),
-            array('id, firstName, lastName, email, password', 'safe'),
+            array('email', 'email', 'on' => 'signin','message'=>'Неправильный формат емейл адреса.'),
+
+
+            array('email', 'email', 'on' => 'registration','message'=>'Неправильный формат емейл адреса.'),
+            array('email', 'unique', 'message' => "Этот емейл уже занят", 'on' => 'registration'),
+            array('password', 'compare', 'compareAttribute'=>'password_retype', 'message'=>'Пароли должны совпадать!'),
+            array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Минимальная длинна пароля - 4 символа", 'on' => 'registration'),
+            array('id, firstName, lastName, email, password,password_retype', 'safe'),
         );
     }
 
@@ -74,5 +83,36 @@ class User extends CActiveRecord {
             return preg_replace('/([^@]*).*/', '$1', $this->email);
         //else
             //return Yii::app()->user->name;
+    }
+
+    protected function beforeSave(){
+        if(parent::beforeSave()){
+            if($this->password)
+                $this->password = $this->hashPassword($this->password);
+        }
+        return true;
+    }
+
+    public function hashPassword($password)
+    {
+        return md5(self::SALT . $password);
+    }
+
+    public function validatePassword($password)
+    {
+        return $this->hashPassword($password) === $this->password;
+    }
+
+    public static function generatePassword($length = 6)
+    {
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $count = mb_strlen($chars);
+
+        for ($i = 0, $result = ''; $i < $length; $i++) {
+            $index = rand(0, $count - 1);
+            $result .= mb_substr($chars, $index, 1);
+        }
+
+        return $result;
     }
 } 

@@ -4,6 +4,7 @@
             <span>Личный кабинет</span>
             <span class="ico"></span>
         </a>
+
         <div class="popup_login clearfix">
             <div class="top"></div>
             <div class="block_login clearfix">
@@ -12,8 +13,10 @@
                     <ul class="clearfix">
                         <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
                     </ul>
-                    <h5>Регистрация</h5>
-                    <p>Зарегистрированные пользователи получают возможность заказывать быстрее и удобнее. <a style="color: black;" href="#">Регистрация</a> бесплатная и занимает не более 1 минуты Вашего времени.</p>
+                    <h5>
+                        <a style="color: black;text-decoration: underline;" href="/registration">Регистрация</a>
+                    </h5>
+                    <p>Зарегистрированные пользователи получают возможность заказывать быстрее и удобнее. Регистрация бесплатная и занимает не более 1 минуты Вашего времени.</p>
                 </div>
                 <div class="form_block right">
                     <div class="form">
@@ -28,5 +31,7 @@
     <li>
         <a href="/privatoffice">Личный кабинет</a>
         <a href="javascript:;" style="font-weight: bold;">(<? echo $user->displayName;?>)</a>
+
     </li>
+    <li> <a href="/logout" style="background: url('/img/logout.png') no-repeat; heigth:18px; width:18px; padding-left:19px; display:block;margin-top:6px;"> </a></li>
 <?}?>

@@ -29,6 +29,6 @@
     <div class="btn clearfix" style="margin-top: 16px;">
         <?php echo CHtml::submitButton('',array('class'=>'enter_sign','value'=>'Вход','id'=>'sign')); ?>
         <? //echo CHtml::ajaxSubmitButton('sign up', 'site/register', array('beforeSend'=>'js:$.yii.fix.ajaxSubmit.beforeSend("#register-form")'),array('class'=>'enter_sign','value'=>'Вход','id'=>'sign'));?>
-        <a class="forgot" href="#">Забыли пароль?</a>
+        <a class="forgot" href="/remind">Забыли пароль?</a>
     </div>
 <? $this->endWidget(); ?>

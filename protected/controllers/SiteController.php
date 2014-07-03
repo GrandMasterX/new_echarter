@@ -34,27 +34,28 @@ class SiteController extends Bus {
 
     public function actionIndex($page = '') {
         $form = $this->actionCreateSession($_POST, '/api/form');
-        $registration = '';new UserRegistration();
+        $small_form = $this->actionCreateSession($_POST, '/api/small_form');
         $user = '';//User::model()->findByPk(Yii::app()->user->getId());
         //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
-        $this->render('index', array('form' => $form, 'registration' => $registration, 'user'=>$user,'page'=>$page));
+        $this->render('index', array('form' => $form, 'small_form'=>$small_form, 'user'=>$user,'page'=>$page));
     }
 
     public function actionRegistration() {
-        $registration = new User;
-        if(isset($_POST['User'])) {
-            $model->attributes = $_POST['User'];
 
-            if($model->validate() && $model->save()) {
-                Yii::app()->user->setFlash('registration_ok','Thank you for registration! Check your email and for now you could log in');
+        $registration = new User('registration');
+        if(isset($_POST) && !empty($_POST)) {
+            $registration->attributes = $_POST;
+            if($registration->validate()) {
+                $registration->save();
+                Yii::app()->user->setFlash('registration_ok','Спасибо Вам за регистрацию! Теперь Вы можете залогиниться.');
 
                 //Отправляем сообщение пользователю о успешной регистрации
-                Yii::app()->getModule('mail')->send($model->email, 'zgrandmasterz@gmail.com', 'successRegister', array(
+                /*Yii::app()->getModule('mail')->send($registration->email, 'zgrandmasterz@gmail.com', 'successRegister', array(
                     'siteNameLink' => CHtml::link('localhost', Yii::app()->createAbsoluteUrl(Yii::app()->homeUrl)),
-                    'username' => $model->email,
-                    'password' => $model->password,
-                    'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$model->confirm_code))
-                ));
+                    'username' => $registration->email,
+                    'password' => $_POST['password'],
+                    'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
+                ));*/
                 Yii::app()->request->redirect(Yii::app()->user->returnUrl);
             }
         }
@@ -62,7 +63,28 @@ class SiteController extends Bus {
     }
 
     public function actionRemind() {
-        die('123');
+        $remind = new User;
+        $remind->scenario = 'remind';
+        if(isset($_POST) && !empty($_POST)) {
+            $remind->attributes = $_POST;
+            if($remind->validate()) {
+                $model = User::model()->findByAttributes(array('email'=>$_POST['email']));
+                if(!empty($model)) {
+                    $password = User::generatePassword();
+                    Yii::app()->getModule('mail')->send($_POST['email'], 'zgrandmasterz@gmail.com', 'successRegister', array(
+                        'siteNameLink' => CHtml::link('localhost', Yii::app()->createAbsoluteUrl(Yii::app()->homeUrl)),
+                        'username' => $_POST['email'],
+                        'password' => $password,
+                        //'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
+                    ));
+                    $model->password = $password;
+                    $model->save();
+                    Yii::app()->request->render('success_remind');
+                    //r4Hhqu
+                }
+            }
+        }
+        $this->render('remind', array('remind' => $remind));
     }
 
     public function actionContacts() {
@@ -155,23 +177,23 @@ class SiteController extends Bus {
 	}
 
     public function actionLogin() {
-        if (!isset($_GET['provider']))
-        {
-            $this->redirect('/site/index');
+        if(isset($_POST) && !empty($_POST)) {
+            var_dump($_POST);die;
         }
-        try
-        {
+
+        if (!isset($_GET['provider'])) {
+            $this->redirect('/site/index');
+        } try {
             Yii::import('ext.components.HybridAuthIdentity');
             $haComp = new HybridAuthIdentity();
+
             if (!$haComp->validateProviderName($_GET['provider']))
                 throw new CHttpException ('500', 'Invalid Action. Please try again.');
 
             $haComp->adapter = $haComp->hybridAuth->authenticate($_GET['provider']);
             $haComp->userProfile = $haComp->adapter->getUserProfile();
             $haComp->login();  //further action based on successful login or re-direct user to the required url
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             //process error message as required or as mentioned in the HybridAuth 'Simple Sign-in script' documentation
             $this->redirect('/site/index');
             return;
