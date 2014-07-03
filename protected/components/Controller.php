@@ -8,6 +8,7 @@ class Controller extends CController
     public $layout = '//layouts/main';
 	public $pageTitle;
 	public $title;
+    const NOT_AJAX_REDIRECT = '/';
 
 
 	/**
@@ -42,4 +43,45 @@ class Controller extends CController
             Yii::app()->end();
         }
 	}
+
+    public function renderAjaxError($error = null) {
+        $this->renderAjax(false, !empty($error) ? $error : Yii::t('app', 'Your request is invalid.'));
+        return true;
+    }
+
+    public function renderAjax($result, $error = false, $message = false, $redirect = false)
+    {
+        if (!Yii::app()->getRequest()->getIsAjaxRequest())
+            $this->redirect(self::NOT_AJAX_REDIRECT);
+
+        if(is_array($redirect)) {
+            $route = isset($redirect[0]) ? $redirect[0] : '';
+            $redirect = $this->createUrl($route, array_splice($redirect, 1));
+        }
+        if (is_array($error)) {
+            $tmp = '<ul>';
+            foreach ($error as $err) {
+                if (is_array($err))
+                    foreach ($err as $er)
+                        $tmp .= '<li>'.htmlspecialchars($er).'</li>';
+                else
+                    $tmp .= '<li>'.htmlspecialchars($err).'</li>';
+            }
+
+            $tmp .= '</ul>';
+            $error = $tmp;
+        }
+
+        $data = array(
+            'error' => $error,
+            'result' => $result,
+            'message' => $message,
+            'redirect' => $redirect
+        );
+
+        echo CJavaScript::jsonEncode($data);
+        Yii::app()->end();
+
+        return true;
+    }
 }

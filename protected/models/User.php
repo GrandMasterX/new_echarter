@@ -42,7 +42,7 @@ class User extends CActiveRecord {
 
             array('email', 'email', 'on' => 'registration','message'=>'Неправильный формат емейл адреса.'),
             array('email', 'unique', 'message' => "Этот емейл уже занят", 'on' => 'registration'),
-            array('password', 'compare', 'compareAttribute'=>'password_retype', 'message'=>'Пароли должны совпадать!'),
+            array('password', 'compare', 'compareAttribute'=>'password_retype', 'on'=>'registration', 'message'=>'Пароли должны совпадать!'),
             array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Минимальная длинна пароля - 4 символа", 'on' => 'registration'),
             array('id, firstName, lastName, email, password,password_retype', 'safe'),
         );
@@ -93,14 +93,14 @@ class User extends CActiveRecord {
         return true;
     }
 
-    public function hashPassword($password)
+    static public function hashPassword($password)
     {
         return md5(self::SALT . $password);
     }
 
     public function validatePassword($password)
     {
-        return $this->hashPassword($password) === $this->password;
+        return self::hashPassword($password) === $this->password;
     }
 
     public static function generatePassword($length = 6)

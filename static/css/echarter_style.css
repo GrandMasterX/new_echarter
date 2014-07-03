@@ -215,7 +215,7 @@ header .wrap .top_header .lk_office ul li .popup_login .block_login .form_block 
     line-height: 24px; color: #000; margin: 0; padding-bottom: 20px; font-weight: normal;}
 header .wrap .top_header .lk_office ul li .popup_login .block_login .form_block .form .item {}
 header .wrap .top_header .lk_office ul li .popup_login .block_login .form_block .form .item label,
-.form .item label {font-size: 14px; color: #000; line-height: 14px; display: block;}
+.form .item label {font-size: 13px; color: #000; line-height: 13px; display: block;}
 header .wrap .top_header .lk_office ul li .popup_login .block_login .form_block .form .item input,
 input.town,
 .form .item input.name_user,
@@ -298,7 +298,8 @@ header .wrap .menu_header .number {font-size: 24px; color: #fff; line-height: 24
 		box-sizing:  border-box; border: 1px solid #405775;
 		-moz-border-radius: 4px; -webkit-border-radius: 4px;
 		border-radius: 4px;
-        cursor: pointer;}
+		cursor: pointer;
+		background: url('../../img/opacity_bg.png') repeat;}
 .container .wrap .slider .popular .table_town .row_town .cell_town.foto {background-color: #000;
     height: 39px; width: 52px; margin-right: 8px;}
 .container .wrap .slider .popular .table_town .row_town .cell_town.text {width: 130px; color: #494949;
@@ -357,14 +358,15 @@ div.row_block.left.maintext {background-color: #fff; border: 1px solid #bbbbbb;
 .container .wrap .slider .form .container_form .tabs_menu .passen span.arrow {width: 30px; display: block;
     height: 30px; background: url('../img/arrow_form.png') no-repeat center center #dadada;
     position: absolute; z-index: 201; top: 23px; right: 7px; cursor: pointer;}
-input::-webkit-input-placeholder {color: #505050; font-size: 14px; line-height: 18px;}
-input::-moz-placeholder {color: #505050; font-size: 14px; line-height: 18px;}
+input::-webkit-input-placeholder {color: #a3a3a3; font-size: 14px; line-height: 18px;}
+input::-moz-placeholder {color: #a3a3a3; font-size: 14px; line-height: 18px;}
 
 .container .wrap .slider .form .container_form .tabs_menu .block.date {width: 47%; float: right;
     padding-top: 11px;}
 .container .wrap .slider .form .container_form .tabs_menu .block.date .item_1 {position: relative; z-index: 10;}
-.container .wrap .slider .form .container_form .tabs_menu .block.date .item_1 label {display: inline-block;
-    padding-right: 5px; padding-bottom: 0; margin-top: 6px;}
+.container .wrap .slider .form .container_form .tabs_menu .block.date .item_1 label {
+	padding-bottom: 0; margin-top: 6px; display: block;
+	margin-left: 85px;}
 .container .wrap .slider .form .container_form .tabs_menu .block.date .item_1 input{width: 145px;
     height: 20px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
     padding: 2px 32px 2px 10px; outline: none; border: none; float: right; margin: 5px 9% 5px 0px;
@@ -378,8 +380,8 @@ input::-moz-placeholder {color: #505050; font-size: 14px; line-height: 18px;}
     background: url('/images/u28.png') no-repeat 3px 2px #fff;}
 input#tripDate,
 input#backTripDate {width: 145px;
-    height: 20px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-    padding: 2px 10px 2px 25px; outline: none; border: none; float: right; margin: 5px 9% 5px 0px;
+    height: 30px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    padding: 2px 25px 2px 10px; outline: none; border: none; float: right; margin: 5px 9% 5px 0px;
 	-moz-border-radius: 4px; -webkit-border-radius: 4px;
 		border-radius: 4px;
 		-webkit-box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.75);
@@ -389,7 +391,7 @@ input#backTripDate {width: 145px;
 input#tripDate,
 input#backTripDate,
 input#ticketAmount{-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;
-    border: 1px solid #BEB8B8;}
+    border: 1px solid #BEB8B8; padding-left: 5px!important;}
 input#tripDate.contacts,
 input#backTripDate.contacts,
 input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;
@@ -406,7 +408,7 @@ input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box
     color: #3c3c3c; font-size: 18px; height: 40px; line-height: 40px; background-color: #eaeaea;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-    padding: 0px 55px; border: none; outline: none;
+    padding: 0px 72px 0px 73px; border: none; outline: none;
     border-right: 1px solid #1a374f; border-bottom: 1px solid #1a374f}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards {margin-right: 19px; margin-top: 15px;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards ul {padding: 0px;
@@ -420,7 +422,7 @@ input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box
     background-position: -70px 0px; width: 49px;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards ul li a.card_3 {
     background-position: -140px 0px; width: 55px;}
-div.block.clearfix {margin-bottom: 15px;}
+div.block.clearfix {margin-bottom: 0;}
 
 .popular_container {background-color: #ffe5b4;}
 .popular_container .wrap {padding: 10px 0px;}
@@ -513,8 +515,8 @@ div.more{cursor:pointer;margin-left: 68px;}
 .container.page_2 .wrap .container_form .block .element span.arrow {width: 30px; display: block;
     height: 28px; background: url('../img/arrow_form.png') no-repeat center center #dadada;
     position: absolute; z-index: 201; top: 1px; right: 1px; cursor: pointer;}
-input::-webkit-input-placeholder {color: #505050; font-size: 14px; line-height: 18px;}
-input::-moz-placeholder {color: #505050; font-size: 14px; line-height: 18px;}
+input::-webkit-input-placeholder {color: #a3a3a3; font-size: 14px; line-height: 18px;}
+input::-moz-placeholder {color: #a3a3a3; font-size: 14px; line-height: 18px;}
 
 .container.page_2 .wrap .container_form .block .checkbox {margin-bottom: 5px;}
 .container.page_2 .wrap .container_form .block .checkbox ul {margin: 0; padding: 0; list-style-type: none;}
@@ -605,11 +607,11 @@ footer .wrap .logo_footer a.fot_logo span {background: url('/../../img/logo.png'
 .hdata{background: url('/static/images/u28.png') no-repeat!important;
     background-color: white!important;
     border: 1px solid #BEB8B8;
-    background-position: 5px center!important;
+    background-position: 153px center!important;
     background-size: 15px!important;
-    width: 145px!important;
+    width: 175px!important;
     padding-left: 26px!important;}
-div.container_form.clearfix.new div.element{position: relative; float:left;margin-right: 50px; top:-25px;}
+div.container_form.clearfix.new div.element{position: relative; float:left;margin-right: 41px; top:-25px;}
 div.container_form.clearfix.new label{top: -24px; display: block;color:#fff;text-align: left; font-weight: normal;
     text-shadow: #afafaf 1px 0px, #afafaf 1px 1px, #afafaf 0px 1px, #afafaf -1px 1px, #afafaf -1px 0px, #afafaf -1px -1px, #afafaf 0px -1px, #afafaf 1px -1px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px;
     font-size: 12px;}
@@ -776,7 +778,7 @@ header .wrap .top_header .lk_office ul li .popup_login .block_login .social ul l
     background-color: #356bdb; color: #fff; font-weight: bold; line-height: 35px;}
 
 .element.dep.item_1 .data-check,.del{
-    display:none; cursor: pointer; position: absolute; width: 15px; top: 22px;left: 7px;
+    display:none; cursor: pointer; position: absolute; width: 15px; top: 22px; right: 20px;
 }
 #vk_like,#vk_like1,#vk_like2,#vk_like3,#vk_like4,#vk_like5{
     top:-10px;

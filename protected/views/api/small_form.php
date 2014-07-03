@@ -31,13 +31,13 @@
 
         <div class="element dep item_1 clearfix">
             <label>Дата отправления</label>
-            <input type="text" id="tripDate" name="dep_date" class="dep_date hdata contacts" placeholder="" value="" />
+            <input type="text" id="tripDate" name="dep_date" class="dep_date hdata contacts" placeholder="--/--/----" value="" />
             <img src="/images/data-check.png" alt="" class="data-check">
         </div>
 
         <div class="element ret item_1  clearfix">
             <label>Обратно</label>
-            <input type="text" name="ret_date" id="backTripDate" class="ret_date hdata contacts" placeholder="" value="" />
+            <input type="text" name="ret_date" id="backTripDate" class="ret_date hdata contacts" placeholder="--/--/----" value="" />
             <img src="/images/data-check.png" alt="" class="data-check del contacts">
         </div>
 

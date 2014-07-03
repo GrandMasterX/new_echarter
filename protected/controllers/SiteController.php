@@ -177,8 +177,20 @@ class SiteController extends Bus {
 	}
 
     public function actionLogin() {
+        //r4Hhqu
         if(isset($_POST) && !empty($_POST)) {
-            var_dump($_POST);die;
+            $user = new User('signin');
+            $user->attributes = $_POST;
+            $model = User::model()->findByAttributes(array('email'=>$user->email,'password'=>User::hashPassword($user->password)));
+            if($user->validate() && !empty($model)) {
+                $identity = new UserIdentity($user->email, User::hashPassword($user->password));
+                $identity->authenticate();
+                Yii::app()->user->login($identity, $duration = 3600);
+                //Session::model()->startSession(Yii::app()->user->getId());
+                return json_encode('ok');
+            } else {
+                return $this->renderAjaxError($user->getErrors());
+            }
         }
 
         if (!isset($_GET['provider'])) {
