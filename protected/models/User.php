@@ -31,19 +31,29 @@ class User extends CActiveRecord {
     public function rules()
     {
         return array(
+
+            /* REGISTRATION*/
+            array('email', 'email', 'on' => 'registration','message'=>'Неправильный формат электронной почты.'),
+            array('email', 'unique', 'on' => 'registration', 'message' => "Эта электронная почта уже занята"),
+            array('email', 'required', 'on' => 'registration','message'=>'Электронная почта обязательна для заполнения.'),
+            array('password', 'required', 'on'=>'registration', 'message'=>'Пароль обязателен для заполнения!'),
+            array('password', 'compare', 'compareAttribute'=>'password_retype', 'on'=>'registration', 'message'=>'Пароли должны совпадать.'),
+            array('password_retype', 'required', 'on'=>'registration', 'message'=>'Повторный пароль обязателен для заполнения.'),
+            array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Минимальная длинна пароля - 4 символа", 'on' => 'registration'),
+            array('email, password, password_retype', 'required','on' => 'registration'),
+
             /* REMIN*/
             array('email', 'email', 'on' => 'remind','message'=>'Неправильный формат емейл адреса.'),
-            array('email', 'required', 'on' => 'remind'),
+            array('email', 'required', 'on' => 'remind','message'=>'Электронная почта обязательна для заполнения'),
 
             /* SIGNIN*/
-            array('password, email', 'required', 'on' => 'signin'),
             array('email', 'email', 'on' => 'signin','message'=>'Неправильный формат емейл адреса.'),
+            array('password', 'required', 'on' => 'signin', 'message'=>'Заполните пожайлуста пароль'),
+            array('email', 'required', 'on' => 'signin', 'message'=>'Заполните пожайлуста електронную почту'),
+            array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Минимальная длинна пароля - 4 символа", 'on' => 'signin'),
 
 
-            array('email', 'email', 'on' => 'registration','message'=>'Неправильный формат емейл адреса.'),
-            array('email', 'unique', 'message' => "Этот емейл уже занят", 'on' => 'registration'),
-            array('password', 'compare', 'compareAttribute'=>'password_retype', 'on'=>'registration', 'message'=>'Пароли должны совпадать!'),
-            array('password', 'length', 'max' => 128, 'min' => 4, 'message' => "Минимальная длинна пароля - 4 символа", 'on' => 'registration'),
+
             array('id, firstName, lastName, email, password,password_retype', 'safe'),
         );
     }

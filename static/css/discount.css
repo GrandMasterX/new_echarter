@@ -192,4 +192,8 @@ input.ISIC, input.studentTicket{border: 1px solid grey!important;
 					  margin-bottom: 2px;
 					  position: relative!important;
 					  float: left!important;
-}	
+}
+
+div.countFrameSet.window {
+    width: 175px;
+}

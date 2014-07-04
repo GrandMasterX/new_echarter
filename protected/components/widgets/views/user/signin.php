@@ -27,10 +27,11 @@
                 'data'=>'js:$("#signin-form").serialize()',
                 'dataType'=>'json',
                 'success'=>'js:function(data){
-                   console.log(data)
                    if(data.result==="success"){
-                      // do something on success, like redirect
-                   }else{$("#some-container").html(data.msg);}
+                        location.reload();
+                   }else{
+                        $("#signin_error").html(data.error);
+                   }
                 }',
             ),
             array(
@@ -40,4 +41,7 @@
         ?>
         <a class="forgot" href="/remind">Забыли пароль?</a>
     </div>
+<div id="signin_error">
+
+</div>
 <? $this->endWidget(); ?>

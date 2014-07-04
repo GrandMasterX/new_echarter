@@ -5,9 +5,6 @@
         <div class="container">
             <div class="wrap">
                 <? echo $form;?>
-                <div style="display: none;">
-                    <? //echo $small_form;?>
-                </div>
             </div>
         </div>
     </div>

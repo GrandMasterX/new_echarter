@@ -5,20 +5,37 @@
             yearRange: Date.today().add({years: -120}).toString('yyyy') + ":" + Date.today().toString('yyyy')
         }).mask('99.99.9999');
     });
-	
-	$('div.selectblock').live('click', function(e){
-        $('div.disocuntBlock').show(0);
+
+
+    /* selectors for search form */
+	$('.container_form .selectblock').live('click', function(e){
+        $('.container_form .disocuntBlock').show(0);
         $(this).addClass('active');
         e.stopPropagation();
     });
-    $('div.selectblock.active').live('click', function(){
-        $('div.disocuntBlock').hide(0);
+    $('.container_form .selectblock.active').live('click', function(){
+        $('.container_form .disocuntBlock').hide(0);
         $(this).removeClass('active');
     });
-
-    $('div.disocuntBlockClose').live('click', function(){
-        $('div.disocuntBlock').hide(0);$('div.selectblock').removeClass('active');
+    $('.container_form  .disocuntBlockClose').live('click', function(){
+        $('.container_form  .disocuntBlock').hide(0);
+        $('.container_form  .selectblock').removeClass('active');
     });
+    /* selectors for search form end*/
+
+
+    /* selectors for popup*/
+    $('.popup.order').find('.selectblock').live('click', function(e){
+        $('.popup.order').find('.disocuntBlock').toggle();
+        $(this).toggleClass('active');
+        e.stopPropagation();
+    });
+
+    $('.popup.order').find('.disocuntBlockClose').live('click', function(){
+        $('.popup.order').find('.disocuntBlock').hide();
+        $('.popup.order').find('.selectblock').removeClass('active');
+    });
+    /* selectors for popup end*/
 
 	var maxTickets = 10; //максимальное количество билетов, которое может быть выбрано
     var passangers_rus =['пассажиров','пассажир','пассажира','пассажира','пассажира','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажир','пассажира','пассажира','пассажира','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров','пассажиров'];
@@ -58,6 +75,7 @@
         }
         $('input#discTicketsAmount').attr({value:discTicketsAmount});
         var number = parseInt(inputObj.val(), 10);
+        console.log('всего пасажиров:'+totalTicketsAmount);
         if(totalTicketsAmount<maxTickets)
         {number++; totalTicketsAmount++;
             var targetTDtoShow = $(this).attr('data-target');
@@ -65,13 +83,11 @@
             var targetID = $(this).attr('id');
             if(targetID == 'discGroupe3')
             {
-
                 $('td.'+targetID+'').append('<div class="studBlock" style="margin-left: 4px;"><input type="text" value="" style="top:10px;left:4px;width: 85px!important;" class="ISIC" id="ISIC" placeholder="'+ISICPlaseholder+'" /><span class="andor">'+andor+'</span><input type="text" value="" style="top:10px;left:3px;width: 85px!important;" class="studentTicket" id="studentTicket" placeholder="'+StudentPlaseholder+'" /></div>');
             }
             else
             {
                 $('td.'+targetID+'').append('<div class="studBlock"><input type="text" value="" style="position: relative; top:10px;left:4px; float:left;" class="birthdayData" id="birthdayData" placeholder="'+bdatePlaseholder1+'" /></div>');
-
             }
             var countInpts = 1;
 
@@ -100,18 +116,15 @@
                             thisClassName=thisClassName.split(" ")[0];
                             if(thisClassName == 'birthdayData'){
                                 var curITM = $(this);
-
                                 $(this).datepicker({
                                     changeMonth: true,
                                     changeYear: true,
                                     yearRange: Date.today().add({years: -120}).toString('yyyy') + ":" + Date.today().toString('yyyy')
                                 }).change(function () {
+                                    var date = Date.parseExact($(this).val(), 'dd.MM.yyyy').toString('dd.MM.yyyy');
+                                    curITM.val(date);
 
-                                            var date = Date.parseExact($(this).val(), 'dd.MM.yyyy').toString('dd.MM.yyyy');
-                                            curITM.val(date);
-
-                                        });
-
+                                });
                             }
                         }
                 );
@@ -125,13 +138,20 @@
         $('input#totalTicketsAmount').attr({value:totalTicketsAmount});
         $('input#ticketAmount').attr({value:totalTicketsAmount});
         $('#ticketCountNew').html(totalTicketsAmount);
-        if(lang=='ua')
-            $('#passengerTitle').html(passangers_ukr[totalTicketsAmount]);
-        else if(lang=='en')
-            $('#passengerTitle').html(passangers_eng[totalTicketsAmount]);
-        else
-            $('#passengerTitle').html(passangers_rus[totalTicketsAmount]);
-
+        $('.popup.order').find('input#ticketAmount').attr({value:totalTicketsAmount});
+        $('.popup.order').find('#ticketCountNew').html(totalTicketsAmount);
+        if(lang=='ua') {
+            $('.selectblock').find('#passengerTitle').html(passangers_ukr[totalTicketsAmount]);
+            $('.popup.order').find('#passengerTitle').html(passangers_ukr[totalTicketsAmount]);
+        }
+        else if(lang=='en') {
+            $('.selectblock').find('#passengerTitle').html(passangers_eng[totalTicketsAmount]);
+            $('.popup.order').find('#passengerTitle').html(passangers_eng[totalTicketsAmount]);
+        }
+        else {
+            $('.selectblock').find('#passengerTitle').html(passangers_rus[totalTicketsAmount]);
+            $('.popup.order').find('#passengerTitle').html(passangers_rus[totalTicketsAmount]);
+        }
     });
 
 

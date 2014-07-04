@@ -56,7 +56,7 @@ return array(
 		),
         'mail' => array(
             'class' => 'mail.extensions.yii-mail.YiiMail',
-            //'transportType' => 'smtp',
+            //'transportType' => 'sendmail',
             /*'transportOptions' => array(
                 'host' => 'smtp.gmail.com',
                 'username' => 'xxx@gmail.com',
@@ -95,6 +95,7 @@ return array(
                 'contacts' => 'site/contacts',
                 'registration' => 'site/registration',
                 'remind' => 'site/remind',
+                'success_remind' => 'site/successRemind',
                 'reservation' => 'site/reservation',
                 'mobile' => 'mobile/default/index',
                 'privatoffice' => 'privatoffice/default/index',
@@ -105,8 +106,10 @@ return array(
                 'terms&conditions' => 'site/termscond',
                 'policy' => 'site/policy',
                 'about' => 'site/about',
+                'success_registration' => 'site/successRegistration',
                 'redemption' =>'site/redemption',
                 'blog' => 'site/blog',
+                'page/<page>' => 'site/index',
                 'getActionSalt' =>'site/getActionSalt',
                 'contactsgetActionSalt' =>'site/getActionSalt',
                 'reservation' =>'site/reservation',

@@ -61,22 +61,22 @@
         <form method="get">
             <table id="reservation_form" cellpadding=5 cellspacing=5>
                 <tr>
-                    <td>Номер Вашего бронирования:</td>
                     <td>
-                        <input type="text" value="<?if(!empty($tn)){echo $tn;} ?>" <? if (empty($tn)) { ?>style="border:1px red solid;"<? } ?> name="tn" class="ac-autocomplete-input" id="reservation_id">
+                        <label style="display: block;">Номер Вашего бронирования:</label>
+                        <input type="text" value="<?if(!empty($tn)){echo $tn;} ?>" <? if (empty($tn)) { ?>style="border: 1px red solid; height: 30px; line-height: 20px;outline: none;"<? } ?> name="tn" placeholder="введите номер" class="ac-autocomplete-input" id="reservation_id">
+                    </td>
+                    <td>
+                        <label style="display: block;">Дата отправления:</label>
+                        <input type="text" value="<?if(!empty($tn)){echo $start_date;} ?>" <? if(empty($start_date)) {?>style="border: 1px red solid; height: 30px; line-height: 20px;outline: none;"<? } ?> placeholder="--/--/----" name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
                     </td>
                 </tr>
                 <tr>
-                    <td>Дата отправления:</td>
-                    <td>
-                        <input type="text" value="<?if(!empty($tn)){echo $start_date;} ?>" <? if(empty($start_date)) {?>style="border:1px red solid;"<? } ?> name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
+                    <td >
                         <input type="submit" target="_blank" class="btn" style=" border:1px solid transparent; border-radius:3px; height:35px;  font-size: 15px;" value="Поиск"/>
                     </td>
-
+                    <td>
+                    <a href="javascript:;" class="detail_toggle reservation">подробнее &gt;</a>
+                    </td>
                 </tr>
             </table>
         </form>
@@ -188,7 +188,7 @@
 
 <div class="order_separator_bottom"></div>
 <div class="order_footer"></div>
-
+    <div class="page clearfix" style="display: none;">
     <div style="padding: 0px 20px 15px;">
 
         <p>&nbsp;</p>
@@ -199,8 +199,7 @@
             в срок) либо
             воспользоваться другими способами оплаты, например, банковским платежом на счет,
             в платежных терминалах либо в центральном офисе.</p>
-        <a href="javascript:;" class="detail_toggle">подробнее &gt;</a>
-        <div class="page clearfix" style="display: none;">
+
 
             <div class="container_page page0">
         <p>Для оплаты банковской картой необходима пластиковая платежная карта и
@@ -246,8 +245,9 @@
 
     </div>
     </div>
-    </div>
 
+
+</div>
 </div>
 
 

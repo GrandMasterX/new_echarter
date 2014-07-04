@@ -3,7 +3,7 @@
     <div class="wrap clearfix">
         <div class="clearfix">
         <div class="list_menu left">
-            <div class="left">
+            <!--<div class="left">
                 <div class="title_footer">регулярные рейсы</div>
                 <ul class="clearfix left">
                     <li><a href="#">Австрию</a></li>
@@ -26,7 +26,7 @@
                     <li><a href="#">Австрию</a></li>
                     <li><a href="#">Австрию</a></li>
                 </ul>
-            </div>
+            </div>-->
             <div class="left">
                 <div class="title_footer">чартерные рейсы</div>
                 <ul class="clearfix left">
@@ -65,9 +65,9 @@
             </div>
         </div>
         <div class="logo_footer right">
-            <a href="#" class="fot_logo"><span></span>ECHARTER</a>
+            <a href="/" class="fot_logo"><span></span>ECHARTER</a>
         </div>
         </div>
-        <div class="copy" style="text-align: right; font-size: 12px; color: #fff; line-height: 12px;">© 2014 echarter.com.ua All rights reserved.</div>
+        <div class="copy" style="text-align: right; font-size: 11px; color: #fff; line-height: 11px;">© 2014 echarter.com.ua All rights reserved.</div>
     </div>
 </footer>

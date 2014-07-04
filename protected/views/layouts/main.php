@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/static/css/discount.css">
 
     <link rel="stylesheet" href="/static/css/radio.css">
+    <link rel="stylesheet" href="/static/css/checkbox.css">
     <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/static/css/form/form.css"/>
@@ -38,36 +39,60 @@
     <script type="text/javascript" src="/static/js/vk.js?113"></script>
     <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript">
-        $('.moreTripInfo ').live('click',function(e){
+
+        /* moreInfo blocks*/
+        $('.moreTripInfo').live('click',function(e){
             var name = $(this).parents('.cell_block.background.clearfix').find('.departue').text(),
                 alt_name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text(),
                 popular = 'Популярное направление',
-                in_search = 'Выдача';
+                in_search = 'Выдача',
+                more = 'Клик';
             if(name != '') {
-                _gaq.push(['_trackEvent', popular, 'Просмотр', name, 1]);
+                _gaq.push(['_trackEvent', popular, more, name, 1]);
             } else {
-                _gaq.push(['_trackEvent', in_search, 'Просмотр', alt_name, 1]);
+                _gaq.push(['_trackEvent', in_search, more, alt_name, 1]);
             }
         });
+        /* end moreInfo blocks*/
 
-        $('.reserve,.rezer.item.right.check_seats').click(function(){
-            var name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text(),
-                button_name = $(this).text();
-            _gaq.push(['_trackEvent', button_name, 'Выбран', name, 1]);
+        /* reservation button from search results*/
+        $('.rezer.item.right.check_seats').click(function(){
+            var name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text();
+            _gaq.push(['_trackEvent', 'Зарезервировать из найденых', 'Клик', name, 1]);
         });
+        /* end reservation button from search results*/
 
+        /* reservation button from search results via moreinfo*/
+        $('.btn_popup .reserve').click(function(){
+            var name = $(this).parents('.popup.order').find('.block_info.right p:eq(1)').text();
+            _gaq.push(['_trackEvent', 'Зарезервировать из найденых через подробнее', 'Клик', name, 1]);
+        });
+        /* end reservation button from search results via moreinfo*/
+
+        /* free reservation button click*/
         $('.booking_order').click(function(e){
             _gaq.push(['_trackEvent', 'Забронировать бесплатно', 'Нажатие', 'оформление заказа', 1]);
         });
+        /* end free reservation button click*/
 
+        /* reservation/order button click*/
+        $('.order_ticket').click(function(e){
+            _gaq.push(['_trackEvent', 'Рассписание/Бронь', 'Клик', 'рысскрытие формы', 1]);
+        });
+        /* end reservation/order button click*/
+
+        /* slider hot tickets*/
         $('.row_town').click(function(e){
             var name = $(this).find('.promoStartCityName').val()+' '+$(this).find('.promoEndCityName').val();
-            _gaq.push(['_trackEvent', 'Горячие направления', 'Выбран', name, 1]);
+            _gaq.push(['_trackEvent', 'Горячие направления', 'Клик', name, 1]);
         });
+        /* end slider hot tickets*/
 
+        /* search button click*/
         $('#searchButton').click(function(){
-            _gaq.push(['_trackEvent', 'Заказы', 'Поиск рейсов', $('#from').val()+' '+$('#to').val()+', дата: '+$('#tripDate').val()+'-'+$('#backTripDate').val(), 1]);
+            _gaq.push(['_trackEvent', 'Поиск рейсов', 'Клик', $('#from').val()+' '+$('#to').val()+', дата: '+$('#tripDate').val()+'-'+$('#backTripDate').val(), 1]);
         });
+        /* end search button click*/
     </script>
 
     <script type="text/javascript">
@@ -123,39 +148,44 @@
                     }, 2000);
                 });
 
-                $('#there_trip,#back_trip').datepicker();
+                $('.dep_date').datepicker().change(function () {
+                    $('.dep_date').val($(this).val());
+                });
+                $('.ret_date').datepicker().change(function () {
+                    $('.ret_date').val($(this).val());
+                });
 
                 $('.row_town').live('click', function(e) {
                     var promoStartCityName = $(this).find('input.promoStartCityName').val();
                     var promoStartCityId = $(this).find('input.promoStartCityId').val();
                     var promoEndCityName = $(this).find('input.promoEndCityName').val();
                     var promoEndCityId = $(this).find('input.promoEndCityId').val();
-                    var promoStartDate = $(this).find('input.promoStartDate').val();
-                    var promoEndDate = $(this).find('input.promoEndDate').val();
 
 
                     $('input#startCityId').val(promoStartCityId);
                     $('input#from').val(promoStartCityName).addClass('check_out');
                     $('input#endCityId').val(promoEndCityId);
                     $('input#to').val(promoEndCityName).addClass('check_out');
-                    $('input#tripDate').val(promoStartDate);
-                    $('input#backTripDate').val(promoEndDate);
+                    //$('input#tripDate').val(promoStartDate);
+                    //$('input#backTripDate').val(promoEndDate);
                 });
 
                 $('.order_ticket').on('click', function() {
                     $(this).parent('div').find('.elaboration').toggle();
-                    /*$('.close_popup').click();
-                    $('input#startCityId').val($(this).parent('div').find('input.promoStartCityId').val());
-                    $('input#from').val($(this).parent('div').find('input.promoStartCityName').val());
-                    $('input#endCityId').val($(this).parent('div').find('input.promoEndCityId').val());
-                    $('input#to').val($(this).parent('div').find('input.promoEndCityName').val());
-                    $('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
-                    $('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
+                });
+
+                $('.get_ticket').on('click',function(){
+                    $('input#startCityId').val($(this).parents('.popup').find('.hidden_data input.promoStartCityId').val());
+                    $('input#from').val($(this).parents('.popup').find('.hidden_data input.promoStartCityName').val());
+                    $('input#endCityId').val($(this).parents('.popup').find('.hidden_data input.promoEndCityId').val());
+                    $('input#to').val($(this).parents('.popup').find('.hidden_data input.promoEndCityName').val());
+                    $('input#tripDate').val($(this).parents('.popup').find('.dep_date').val());
+                    $('input#backTripDate').val($(this).parents('.popup').find('.ret_date').val());
+                    $('.close_popup').click();
                     $('html, body').animate({
                         scrollTop: $(".tabs_menu").offset().top
                     }, 2000);
-                    $('#tripDate').datepicker('show');*/
-                    //$('.get_ticket').
+                    $('#searchButton').click();
                 });
 
                 $('img.del').live('click',function(){
@@ -180,6 +210,9 @@
                         var stateObj = { page: $(this).attr('trip') };
                         history.pushState(stateObj, $(this).attr('trip'), 'page/'+$(this).attr('trip'));
                     }
+                    $('html, body').animate({
+                        scrollTop: $(".tabs_menu").offset().top
+                    }, 2000);
                 });
 
                 $('.check_seats').live('click', function() {
@@ -209,8 +242,8 @@
                 });
 
                 $(document).ready(function() {
-                    $('.detail_toggle').click(function() {
-                        $(this).parent().children('.page').slideToggle(300);
+                    $('.detail_toggle').live('click',function() {
+                        $(this).closest('.order_block').find('.page').slideToggle(300);
                     });
                 });
 
@@ -228,10 +261,8 @@
 
                 $('#mycarousel').jcarousel({
                     auto: 5,
-//				wrap: 'last',
                     wrap: 'both',
                     vertical : true,
-//				size : 5,
                     scroll : 1
                 });
 

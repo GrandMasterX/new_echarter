@@ -579,11 +579,30 @@ $(document).ready(function () {
 
         objs.searchButton.click(function () {
 
-            if ($(this).disabled()) {
+            /*if ($(this).disabled()) {
                 return false;
             }
-            $(this).disable();
+            $(this).disable();*/
             var searchParams = {};
+
+            if($('input#from.town').val() == '') {
+                $('#tripsResultContainer').html('');
+                $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите пункт отправления</span></div>')
+                $('#tripsResultContainer').show();
+                return false;
+            }
+            if($('input#to.town').val() == '') {
+                $('#tripsResultContainer').html('');
+                $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите пункт назначения</span></div>')
+                $('#tripsResultContainer').show();
+                return false;
+            }
+            if(!objs.tripDate.val()) {
+                $('#tripsResultContainer').html('');
+                $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите хотя бы одну дату</span></div>')
+                $('#tripsResultContainer').show();
+                return false;
+            }
 
             /* установка параметров авиа фильтров  - конец*/
             searchParams.SELECTED_MODES = "";
@@ -602,7 +621,7 @@ $(document).ready(function () {
             else
                 searchParams.ROUND_TRIP = false;
 
-            searchParams.TICKETS = '1';
+            searchParams.TICKETS = objs.tickets.val();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
@@ -1230,8 +1249,15 @@ $(document).ready(function () {
 
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if (!$('#check_personal_data').prop('checked')) {
+                            $('#check_personal_data').parent().addClass('field_error');
+                        }
+
+                        if (!$('#check_terms').prop('checked')) {
+                            $('#check_terms').parent().addClass('field_error');
+                        }
                     }
                     return;
                 }
@@ -1301,7 +1327,7 @@ $(document).ready(function () {
 
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
@@ -1351,7 +1377,7 @@ $(document).ready(function () {
 
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
@@ -1385,12 +1411,12 @@ $(document).ready(function () {
                 discount_data.fadeIn(200);
                 objs.resultContainer.find('.buy_order').unbind('click').click(function () {
                     var errors = 0;
-                    if (!$('#check_personal_data').attr('checked')) {
+                    if (!$('#check_personal_data').prop('checked')) {
                         $('#check_personal_data').parent().addClass('field_error');
                         errors++;
                     }
 
-                    if (!$('#check_terms').attr('checked')) {
+                    if (!$('#check_terms').prop('checked')) {
                         $('#check_terms').parent().addClass('field_error');
                         errors++;
                     }
@@ -1441,8 +1467,15 @@ $(document).ready(function () {
                     p.html(obj);
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if (!$('#check_personal_data').prop('checked')) {
+                            $('#check_personal_data').parent().addClass('field_error');
+                        }
+
+                        if (!$('#check_terms').prop('checked')) {
+                            $('#check_terms').parent().addClass('field_error');
+                        }
                     }
                     return;
                 }

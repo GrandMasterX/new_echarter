@@ -577,10 +577,28 @@ $(document).ready(function () {
 
         objs.searchButton.click(function () {
 
-            if ($(this).disabled()) {
+            /*if ($(this).disabled()) {
                 return false;
             }
-            $(this).disable();
+            $(this).disable();*/
+            if($('input#from.town').val() == '') {
+                $('#tripsResultContainer').html('');
+                $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите пункт отправления</span></div>')
+                $('#tripsResultContainer').show();
+                return false;
+            }
+            if($('input#to.town').val() == '') {
+                $('#tripsResultContainer').html('');
+                $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите пункт назначения</span></div>')
+                $('#tripsResultContainer').show();
+                return false;
+            }
+            if(!objs.tripDate.val()) {
+                $('#tripsResultContainer').html('');
+                $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите хотя бы одну дату</span></div>')
+                $('#tripsResultContainer').show();
+                return false;
+            }
             var searchParams = {};
 
             /* установка параметров авиа фильтров  - конец*/
@@ -600,7 +618,7 @@ $(document).ready(function () {
              else
              searchParams.ROUND_TRIP = false;
              */
-            searchParams.TICKETS = '1';
+            searchParams.TICKETS = objs.tickets.val();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);

@@ -45,7 +45,7 @@ class Controller extends CController
 	}
 
     public function renderAjaxError($error = null) {
-        $this->renderAjax(false, !empty($error) ? $error : Yii::t('app', 'Your request is invalid.'));
+        $this->renderAjax(false, !empty($error) ? $error : Yii::t('app', 'Проверьте правильность введеных данных'));
         return true;
     }
 

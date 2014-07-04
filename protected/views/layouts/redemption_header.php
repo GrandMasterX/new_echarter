@@ -43,7 +43,7 @@
 <body>
 <div id="overlay" style="display: <?if(isset($_GET['page'])){?>block<?}else{?>none<?}?>;"></div>
 
-<header>
+<header style="background: url('/images/image_slider_1.png') no-repeat #ffe5b4;background-size: cover;background-size: contain;">
     <div class="wrap clearfix">
         <div id="overlay" style="display: none;"></div>
         <?php $this->renderPartial('/layouts/header');?>
@@ -184,7 +184,7 @@
 
         $(document).ready(function() {
             $('.detail_toggle').click(function() {
-                $(this).parent().children('.page').slideToggle(300);
+                $(this).closest('.order_block').find('.page').slideToggle(300);
             });
         });
 

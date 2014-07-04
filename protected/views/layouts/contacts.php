@@ -43,9 +43,11 @@
 </header>
 <div class="popular_container">
     <div class="wrap">
+        <div id="loader" style="position:relative;z-index:1000;top:-1px;">
+        </div>
         <div id="tripsResultContainer" style="display: none;"></div>
         <div class="block clearfix">
-            <div class="row_block left maintext" style="background-color: #fffea2;">
+            <div class="row_block left maintext" style="background-color: #fff6c6;">
                 <h3 style="text-align:left;">Контакты</h3>
                 <div style="min-height:273px;">
                     <center>

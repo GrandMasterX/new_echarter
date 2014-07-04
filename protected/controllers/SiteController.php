@@ -33,6 +33,7 @@ class SiteController extends Bus {
     }
 
     public function actionIndex($page = '') {
+        $this->layout = '/layouts/main';
         $form = $this->actionCreateSession($_POST, '/api/form');
         $small_form = $this->actionCreateSession($_POST, '/api/small_form');
         $user = '';//User::model()->findByPk(Yii::app()->user->getId());
@@ -42,7 +43,8 @@ class SiteController extends Bus {
 
     public function actionRegistration() {
 
-        $registration = new User('registration');
+        $registration = new User;
+        $registration->setScenario('registration');
         if(isset($_POST) && !empty($_POST)) {
             $registration->attributes = $_POST;
             if($registration->validate()) {
@@ -50,18 +52,21 @@ class SiteController extends Bus {
                 Yii::app()->user->setFlash('registration_ok','Спасибо Вам за регистрацию! Теперь Вы можете залогиниться.');
 
                 //Отправляем сообщение пользователю о успешной регистрации
-                /*Yii::app()->getModule('mail')->send($registration->email, 'zgrandmasterz@gmail.com', 'successRegister', array(
+                Yii::app()->getModule('mail')->send($registration->email, 'zakaz@echarter.com.ua', 'successRegister', array(
                     'siteNameLink' => CHtml::link('localhost', Yii::app()->createAbsoluteUrl(Yii::app()->homeUrl)),
                     'username' => $registration->email,
                     'password' => $_POST['password'],
-                    'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
-                ));*/
-                Yii::app()->request->redirect(Yii::app()->user->returnUrl);
+                    //'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
+                ));
+                Yii::app()->request->redirect('success_registration');
             }
         }
         $this->render('registration', array('registration' => $registration));
     }
-
+    public function actionSuccessRegistration() {
+        $this->layout = '/layouts/main';
+        $this->render('success_registration');
+    }
     public function actionRemind() {
         $remind = new User;
         $remind->scenario = 'remind';
@@ -80,10 +85,10 @@ class SiteController extends Bus {
                     $model->password = $password;
                     $model->save();
                     Yii::app()->request->render('success_remind');
-                    //r4Hhqu
                 }
             }
         }
+        $this->layout = '/layouts/remind';
         $this->render('remind', array('remind' => $remind));
     }
 
@@ -187,7 +192,7 @@ class SiteController extends Bus {
                 $identity->authenticate();
                 Yii::app()->user->login($identity, $duration = 3600);
                 //Session::model()->startSession(Yii::app()->user->getId());
-                return json_encode('ok');
+                return $this->renderAjax('success', false, 'ok', Yii::app()->user->returnUrl);
             } else {
                 return $this->renderAjaxError($user->getErrors());
             }
@@ -220,6 +225,9 @@ class SiteController extends Bus {
 
     public function actionFeedback() {
         $this->render('feedback', array('form'));
+    }
+    public function actionSuccessRemind() {
+        $this->render('success_remind');
     }
 
     public function actionLogout() {
