@@ -85,6 +85,7 @@ class Hybrid_Providers_Vkontakte extends Hybrid_Provider_Model_OAuth2
 		}
 
 		$response = $response->response[0];
+
 		$this->user->profile->identifier    = (property_exists($response,'uid')) ? $response->uid:"";
 		$this->user->profile->firstName     = (property_exists($response,'first_name')) ? $response->first_name:"";
 		$this->user->profile->email     = (property_exists($response,'email')) ? $response->email:"";

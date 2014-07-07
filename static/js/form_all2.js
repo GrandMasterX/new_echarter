@@ -523,7 +523,7 @@ $(document).ready(function () {
 
             var loader = $('<div class="ajax-loader-line '+objClass+'" />');
             loader.css({
-                position: 'absolute', top: obj.offset().top + obj.height() / 4, left: obj.offset().left + obj.width() / 4, width: obj.width() / 2, height: obj.height() / 2, 'z-index': 500
+                position: 'absolute', top: obj + obj.height() / 4, left: obj.offset().left + obj.width() / 4, width: obj.width() / 2, height: obj.height() / 2, 'z-index': 500
 
             }).hide();
 
@@ -645,11 +645,11 @@ $(document).ready(function () {
 
                             objs.seatsContainers = objs.resultContainer.find(params.seatsContainerS);
 
-                            if (json.success) {
+                            /*if (json.success) {
                                 $('html, body').animate({
                                     scrollTop: objs.resultContainer
                                 }, 500);
-                            }
+                            }*/
 
                             var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();
                             if (!json.COMPLETED) {
@@ -681,7 +681,7 @@ $(document).ready(function () {
             var container = objs.resultContainer.find('.rezpoisk2');
             var container_header = objs.resultContainer.find('.rezpoisk2 .shapka');
             var shapka = container_header.find('table.filters');
-            var shapka_top = objs.resultContainer.offset().top;
+            var shapka_top = objs.resultContainer;
             var shapkaniz_top = shapka_top + objs.resultContainer.height() - 150;
             container_header.find('td').first().find('div').fadeIn(200);
 
@@ -1036,7 +1036,7 @@ $(document).ready(function () {
 
                         //loading of finded trips
                         $('html, body').animate({
-                            scrollTop: $("#ch_seats_" + tripId).offset().top
+                            scrollTop: $("#ch_seats_" + tripId)
                         }, 500);
 
                         data.noSelectSeats = false;
@@ -1201,7 +1201,7 @@ $(document).ready(function () {
 
                 //tooltip.m_tooltip();
                 $('html, body').animate({
-                    scrollTop: objs.buyContainer.offset().top - 100
+                    scrollTop: objs.buyContainer
                 }, 500);
 
             }, 'json');
@@ -1479,7 +1479,6 @@ $(document).ready(function () {
                     }
                     return;
                 }
-                console.log(json.url);
                 window.location = json.url;
 
             }, 'json');

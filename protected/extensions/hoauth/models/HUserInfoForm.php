@@ -48,8 +48,8 @@ class HUserInfoForm extends CFormModel {
 	{
 		return array(
 			array('username', 'required', 'on' =>'username, both'), //, username_pass, both, both_pass'),
-			array('email', 'required', 'on' =>'email, email_pass, both, both_pass, username_pass'),
-			array('email', 'email', 'on' =>'email, email_pass, both, both_pass, username_pass'),
+			array('email', 'required', 'on' =>'email, email_pass, both, both_pass, username_pass','message'=>'Электронный адрес обязательный для заполнения'),
+			array('email', 'email', 'on' =>'email, email_pass, both, both_pass, username_pass','message'=>'неправильный формат электронного адреса'),
 			array('password', 'validatePassword', 'on' => 'email_pass, username_pass, both_pass'),
 			array('password', 'unsafe', 'on' => 'email, username, both'),
 		);
@@ -63,7 +63,7 @@ class HUserInfoForm extends CFormModel {
 	public function __construct($model, $emailAtt, $nameAtt = null, $scenario = 'both')
 	{
 		if(empty($emailAtt))
-			throw new CException('$emailAtt can not be empty! Please specify email attribute name.');
+			throw new CException('$emailAtt не может быть пустым! Пожайлуста, укажите Ваш емейл.');
 
 		$this->email = $model->$emailAtt;
 
@@ -91,7 +91,7 @@ class HUserInfoForm extends CFormModel {
 	public function attributeLabels()
 	{
 		return array(
-			'email'=>$this->_model->getAttributeLabel($this->emailAtt),
+			'email'=>'Электронная почта',
 			'username'=>$this->_model->getAttributeLabel($this->nameAtt),
 			'password'=>HOAuthAction::t('Password'),
 			);
@@ -353,8 +353,9 @@ class HUserInfoForm extends CFormModel {
 			$header = HOAuthAction::t('Please specify your '.$this->getAttributeLabel('username').' to end with registration.');
 			break;
 			case 'email':
-			$header = HOAuthAction::t('Please specify your '.$this->getAttributeLabel('email').' to end with registration.');
+			$header = HOAuthAction::t('Пожайлуста, укажите адрес электронной почты для завершения регистрации.');
 			break;
+            //'.$this->getAttributeLabel('email').' to end with registration.
 		}
 
 		return "<p class=\"hFormHeader\">$header</p>";

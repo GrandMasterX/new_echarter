@@ -23,7 +23,7 @@ class MailModule extends CWebModule
             $defaultVariables['siteNameLink'] = CHtml::link(Yii::app()->params['siteName'], Yii::app()->createAbsoluteUrl('/site/index'));
         }
         if (isset(Yii::app()->params['adminEmail']))
-            $defaultVariables['adminEmail'] = Yii::app()->params['adminEmail'];
+            $defaultVariables['adminEmail'] = 'zakaz@echarter.com.ua';
 
         $this->variables = CMap::mergeArray($defaultVariables, $this->variables);
     }
@@ -69,7 +69,6 @@ class MailModule extends CWebModule
             $message->addTo(trim($v));
 
         $message->from = $from;
-
         return Yii::app()->mail->send($message);
     }
 

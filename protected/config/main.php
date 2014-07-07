@@ -56,16 +56,6 @@ return array(
 		),
         'mail' => array(
             'class' => 'mail.extensions.yii-mail.YiiMail',
-            //'transportType' => 'sendmail',
-            /*'transportOptions' => array(
-                'host' => 'smtp.gmail.com',
-                'username' => 'xxx@gmail.com',
-                'password' => 'XXXX',
-                'port' => '465',
-                'encryption'=>'tls',
-            ),*/
-            //'logging' => true   ,
-            //'dryRun' => false
         ),
         'session' => array (
             'autoStart' => true,
@@ -107,6 +97,7 @@ return array(
                 'policy' => 'site/policy',
                 'about' => 'site/about',
                 'success_registration' => 'site/successRegistration',
+                'success_remind' => 'site/successRemind',
                 'redemption' =>'site/redemption',
                 'blog' => 'site/blog',
                 'page/<page>' => 'site/index',

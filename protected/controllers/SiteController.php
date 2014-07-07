@@ -58,15 +58,20 @@ class SiteController extends Bus {
                     'password' => $_POST['password'],
                     //'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
                 ));
+                $identity = new UserIdentity($_POST['email'], User::hashPassword($_POST['password']));
+                $identity->authenticate();
+                Yii::app()->user->login($identity, $duration = 3600);
                 Yii::app()->request->redirect('success_registration');
             }
         }
         $this->render('registration', array('registration' => $registration));
     }
+
     public function actionSuccessRegistration() {
         $this->layout = '/layouts/main';
         $this->render('success_registration');
     }
+
     public function actionRemind() {
         $remind = new User;
         $remind->scenario = 'remind';
@@ -84,7 +89,7 @@ class SiteController extends Bus {
                     ));
                     $model->password = $password;
                     $model->save();
-                    Yii::app()->request->render('success_remind');
+                    Yii::app()->request->redirect('success_remind');
                 }
             }
         }
@@ -226,7 +231,9 @@ class SiteController extends Bus {
     public function actionFeedback() {
         $this->render('feedback', array('form'));
     }
+
     public function actionSuccessRemind() {
+        $this->layout = '/layouts/main';
         $this->render('success_remind');
     }
 

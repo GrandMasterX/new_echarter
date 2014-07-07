@@ -123,7 +123,7 @@ class HOAuthAction extends CAction
 	protected $_avaibleAtts = array('profileURL','photoURL', 'displayName','firstName', 'lastName', 'gender', 'language', 'age', 'birthDay', 'birthMonth', 'birthYear', 'email', 'emailVerified', 'phone', 'address', 'country', 'region', 'city', 'zip', 'birthDate', 'genderShort');
 
 	public function run()
-	{		
+	{
 		// openId login
 		if($this->enabled)
 		{

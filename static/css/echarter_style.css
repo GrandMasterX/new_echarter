@@ -439,27 +439,42 @@ div.block.clearfix {margin-bottom: 0;}
 .popular_container .wrap .block .row_block {width: 100%; margin-bottom: 13px; margin: 0px -4px 13px -8px;
 		}
 .popular_container .wrap .block .row_block .cell_block.background,
-.popular_container .wrap .block .row_block .cell_block{width: 32%; margin: 0px 4px 0px 8px;
+.popular_container .wrap .block .row_block .cell_block{
+    width: 32%; margin: 0px 4px 0px 8px;
     margin-bottom: 10px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
     float: left; border: 1px solid #bbbbbb; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
-    box-sizing: border-box; background-color: #f4f4f4; padding: 10px 10px 15px 10px;}
+    box-sizing: border-box; background-color: #f4f4f4; padding: 10px 10px 15px 10px;
+}
 .popular_container .wrap .block .row_block .cell_block.background {height: 200px; background-size: cover;}
-.popular_container .wrap .block .row_block .cell_block .foto_block {width: 50%;}
-.popular_container .wrap .block .row_block .cell_block .foto_block .images {width: 139px; height: 140px;
+.popular_container .wrap .block .row_block .cell_block .foto_block {width: 20%;}
+.popular_container .wrap .block .row_block .cell_block .foto_block .images {width: 50px; height: 50px;
     background-color: #eee;position: relative; z-index: 80;
 	-webkit-box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.75);
 		-moz-box-shadow:    0px 1px 10px 0px rgba(50, 50, 50, 0.75);
 		box-shadow:         0px 1px 10px 0px rgba(50, 50, 50, 0.75);}
-.popular_container .wrap .block .row_block .cell_block .foto_block .images img {-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.popular_container .wrap .block .row_block .cell_block .foto_block .images img {-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;width:50px;}
 .popular_container .wrap .block .row_block .cell_block .foto_block .price_ {background-color: #e1f2ff;
     width: 100%; height: 30px; position: absolute; z-index: 81;
     height: 30px; bottom: 0; text-align: center; font-size: 18px; font-weight: bold;
     line-height: 30px; color: #3a3a3a; border-top: 1px solid #3a3a3a;
     white-space: nowrap; -moz-opacity: 0.9; opacity: 0.9;}
-.popular_container .wrap .block .row_block .cell_block .bottom_btn {margin-top: 35px;
+.popular_container .wrap .block .row_block .cell_block .bottom_btn {margin-top: 10px;
 		}
 .price_ {
     text-align: center;
+}
+
+.price_1 {
+    padding-bottom: 10px;
+}
+.price_1 span {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+.price_1 span span {
+    text-transform: uppercase;
+    font-weight: normal;
 }
 .departue {
     text-transform: uppercase;
@@ -506,7 +521,7 @@ a.detail_toggle.reservation {
     -moz-box-shadow:    none;
     box-shadow:         none;
 }
-.popular_container .wrap .block .row_block .cell_block .text_block {width: 47%; margin-left: 3%;
+.popular_container .wrap .block .row_block .cell_block .text_block {width: 77%; margin-left: 3%;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 .popular_container .wrap .block .row_block .cell_block .text_block .text div p {margin: 0px; color: #3a3a3a;
     font-size: 16px; line-height: 18px; text-align: left;}
