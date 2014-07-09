@@ -123,8 +123,8 @@ class SiteController extends Bus {
                 $data = json_decode($x[1], 1);
             }
         }
-        $get = (isset($_GET['tn'])) ? array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date'],'data'=>$data) : '';
-        //$this->layout = '/layouts/reservation';
+        $get = (isset($_GET['tn'])) ? array('tn'=>$_GET['tn'], 'start_date'=>$_GET['start_date']) : '';
+        $get['data'] = (isset($data)) ?  $data : '';
         $this->layout = '/layouts/redemption_header';
         $this->render('reservation',$get);
     }

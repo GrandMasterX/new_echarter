@@ -57,9 +57,9 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 									Взрослые<br />
 									<span>(25-60 лет)</span>
 									<div class="countFrame">
-										<div class="countFrameLeft" id="discGroupe0"> </div>
+										<div class="countFrameLeft" id="discGroupe0" data-target="disc0"> </div>
 										<input type="text" value="1"  class="birthday" id="discGroupe0" maxlength="2" readonly />
-										<div class="countFrameRight" id="discGroupe0"> </div>
+										<div class="countFrameRight" id="discGroupe0" data-target="disc0"> </div>
 									</div>
 								</div>
 								<div style="color: grey;font-size: 13px;padding-left: 17px;">Возможные скидки</div>
@@ -243,31 +243,49 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 									</tr>
 									<tr>
 										<td colspan="5" style="border-top:1px solid grey;">
-											<div class="disocuntBlockClose" style="position: relative;float: right;margin-right: -5px;"><img src="http://e-travels.com.ua/images/form/close_new.png" alt="" />применить</div>
+                                            <div class="disocuntBlockAccept" ><img style="width: 10px;margin-left: -11px;" src="http://e-travels.com.ua/images/form/data-check.png" alt="" />&nbsp<!--Применить--></div>
+											<div class="disocuntBlockClose" style="float: right;"><img src="http://e-travels.com.ua/images/form/close_new.png" alt="" />&nbsp</div>
 										</td>
 									</tr>
 								</table>
 							</div>
 
-
-
 							<div class="clearfix">
-								<div class="checkbox left" style="display: none;">
-									<ul class="clearfix">
-										<li class="clearfix">
-											<div class="element rt">
-												<input name="from_ch" type="radio" id="from_ch" class="transport" value="" checked="" />
-												<label for="from_ch" class="label_text">Рейс туда и обратно</label>
-											</div>
-										</li>
-										<li class="clearfix">
-											<div class="element oneway">
-												<input name="from_ch" type="radio" id="to_ch" class="transport" value="" />
-												<label for="to_ch" class="label_text">В одну сторону</label>
-											</div>
-										</li>
-									</ul>
-								</div>
+                                <div class="checkbox left" style="z-index: 1000000;">
+                                    <ul class="clearfix">
+                                        <li class="clearfix" >
+                                            <!--<span style="display:none;color: #fff; line-height: 11px;font-size: 10px; text-align: left; display: block; padding-bottom: 3px;">Пассажиры:</span>-->
+                                            <div style="float:left;">
+                                                <div class="element" style="padding: 0px;">
+                                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Взрослые:</span>
+                                                    <span class="disc0" style="color: #fff;line-height: 11px;font-size: 10px;">1</span>
+                                                </div>
+                                                <div class="element" style="padding: 0px;display: none;">
+                                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Дети:</span>
+                                                    <span class="disc1" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                                </div>
+                                                <div class="element" style="padding: 0px;display: none;">
+                                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Дети без места:</span>
+                                                    <span class="disc2" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                                </div>
+                                            </div>
+                                            <div style="float:left;margin-left: 30px;">
+                                                <div class="element" style="padding: 0px; display: none;">
+                                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Студенты:</span>
+                                                    <span class="disc3" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                                </div>
+                                                <div class="element" style="padding: 0px;display: none;">
+                                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Молодежь:</span>
+                                                    <span class="disc4" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                                </div>
+                                                <div class="element" style="padding-top: 8px;display: none;">
+                                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Пожилые: </span>
+                                                    <span class="disc5" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
 								<div class="block date clearfix right" style="padding-top: 0; margin-top: -56px;">
 									<div class="dep item_1 clearfix">
 										<label>Дата отправки</label>

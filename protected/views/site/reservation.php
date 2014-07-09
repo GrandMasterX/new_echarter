@@ -61,14 +61,27 @@
         <form method="get">
             <table id="reservation_form" cellpadding=5 cellspacing=5>
                 <tr>
-                    <td>
-                        <label style="display: block;">Номер Вашего бронирования:</label>
-                        <input type="text" value="<?if(!empty($tn)){echo $tn;} ?>" <? if (empty($tn)) { ?>style="border: 1px red solid; height: 30px; line-height: 20px;outline: none;"<? } ?> name="tn" placeholder="введите номер" class="ac-autocomplete-input" id="reservation_id">
-                    </td>
-                    <td>
-                        <label style="display: block;">Дата отправления:</label>
-                        <input type="text" value="<?if(!empty($tn)){echo $start_date;} ?>" <? if(empty($start_date)) {?>style="border: 1px red solid; height: 30px; line-height: 20px;outline: none;"<? } ?> placeholder="--/--/----" name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
-                    </td>
+                    <?if(!empty($tn)){ ?>
+                        <td>
+                            <label style="display: block;">Номер Вашего бронирования:</label>
+                            <input type="text" value="<? echo $tn; ?>" style="height: 30px; line-height: 20px;outline: none;" name="tn" placeholder="введите номер" class="ac-autocomplete-input" id="reservation_id">
+                        </td>
+                        <td>
+                            <label style="display: block;">Дата отправления:</label>
+                            <input type="text" value="<?echo $start_date;?>" style="height: 30px; line-height: 20px;outline: none;" placeholder="--/--/----" name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
+                        </td>
+
+                    <?} else {?>
+                        <td>
+                            <label style="display: block;">Номер Вашего бронирования:</label>
+                            <input type="text" value="" style="border: 1px red solid; height: 30px; line-height: 20px;outline: none;" name="tn" placeholder="введите номер" class="ac-autocomplete-input" id="reservation_id">
+                        </td>
+                        <td>
+                            <label style="display: block;">Дата отправления:</label>
+                            <input type="text" value="" style="border: 1px red solid; height: 30px; line-height: 20px;outline: none;" placeholder="--/--/----" name="start_date" class="ac-autocomplete-input datepicker" id="start_date">
+                        </td>
+
+                    <?}?>
                 </tr>
                 <tr>
                     <td >

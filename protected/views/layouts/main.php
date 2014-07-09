@@ -99,6 +99,33 @@
             _gaq.push(['_trackEvent', 'Поиск рейсов', 'Клик', $('#from').val()+' '+$('#to').val()+', дата: '+$('#tripDate').val()+'-'+$('#backTripDate').val(), 1]);
         });
         /* end search button click*/
+
+        /* buy throw visa/mastercard */
+        $('.buy_order_alfa').live('click',function(){
+            _gaq.push(['_trackEvent', 'VISA / MasterCard', 'Клик', 'Покупка через Альфабанк', 1]);
+        });
+        $('.buy_order').live('click',function(){
+            _gaq.push(['_trackEvent', 'VISA / MasterCard', 'Клик', 'Покупка через Приватбанк', 1]);
+        });
+        /* end buy throw visa?mastercard */
+
+        /*  Скачать Лист Бронирования*/
+        $('.info_date_to_pay').live('click',function(){
+            _gaq.push(['_trackEvent', 'Скачать Лист Бронирования', 'Клик','', 1]);
+        });
+        /* end Скачать Лист Бронирования*/
+
+        /*  Оплатить Visa / MasterCard*/
+        $('.btn.visa').live('click',function(){
+            _gaq.push(['_trackEvent', 'Оплатить Visa / MasterCard', 'Клик','', 1]);
+        });
+        /* end Оплатить Visa / MasterCard*/
+
+        /*  Другие способы оплаты*/
+        $('.btn.morepvays').live('click',function(){
+            _gaq.push(['_trackEvent', 'Другие способы оплаты', 'Клик','', 1]);
+        });
+        /* end Другие способы оплаты*/
     </script>
 
     <script type="text/javascript">
@@ -110,6 +137,13 @@
         <? echo $content;?>
         <?php $this->renderPartial('/layouts/footer');?>
         <script>
+            $.fn.alignCenterScreen = function() {
+                this.css("position", "absolute");
+                this.css("top", ($(window).height() - this.outerHeight()) / 2 + $(window).scrollTop() + "px");
+                //this.css("left", ($(window).width() - this.outerWidth()) / 2 + $(window).scrollLeft() + "px");
+                //this.css('display','block');
+                return this
+            };
             jQuery.fn.topLink = function(settings) {
                 settings = jQuery.extend({
                     min: 1,
@@ -205,20 +239,19 @@
                 });
 
                 $('#tripsResultContainer a.moreTripInfo').live('click', function(){
-                    $(this).parent('div').find('div.popup.order').show();
+                    $(this).parent('div').find('div.popup').show();
+                    $(this).parent('div').find('div.popup').alignCenterScreen();
                     $('body').find('#overlay').show();
                 });
 
                 $('.populars a.moreTripInfo').live('click', function(){
-                    $(this).parent('div').find('div.popup.order').show();
                     $('body').find('#overlay').show();
                     if($(this).attr('trip') !='') {
                         var stateObj = { page: $(this).attr('trip') };
                         history.pushState(stateObj, $(this).attr('trip'), 'page/'+$(this).attr('trip'));
                     }
-                    $('html, body').animate({
-                        scrollTop: $(".tabs_menu").offset().top
-                    }, 2000);
+                    $(this).parent('div').find('div.popup.order').show();
+                    $('div.popup.order').alignCenterScreen();
                 });
 
                 $('.check_seats').live('click', function() {
@@ -249,7 +282,7 @@
 
                 $(document).ready(function() {
                     $('.detail_toggle').live('click',function() {
-                        $(this).closest('.order_block').find('.page').slideToggle(300);
+                        $(this).closest('.row_block').find('.page').slideToggle(300);
                     });
                 });
 

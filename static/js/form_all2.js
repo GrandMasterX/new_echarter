@@ -236,7 +236,30 @@ $(document).ready(function () {
             };
             //**************//
 
+            objs.disocuntPopup.getData = function () {
+                var data = [];
+                var stud = 0;
+                objs.disocuntPopup.find('input').each(function () {
+                    var a = {};
+                    var discountType = $(this).attr('class');
+                    discountType=discountType.split(" ")[0];
+                    if(discountType == 'birthdayData'){
+                        discountType = 'birthday';
+                    }
+                    if((discountType=='studentTicket')&&(stud == 1)){
+                        stud = 0;
+                        $(this).val('');
+                    }
+                    if($(this).val()!=''){
+                        if(discountType=='ISIC')
+                            stud = 1;
+                        a[discountType] = $(this).val();
+                        data.push(a);
+                    }
+                });
 
+                return data;
+            };
 
 
             // seting default cities
@@ -615,13 +638,17 @@ $(document).ready(function () {
             searchParams.BACK_TRIP_DATE = objs.backTripDate.val();
             var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
             searchParams.ROUND_TRIP = true;
+
             /* disabling or enabling tripings*/
-            if(my_pattern.test(searchParams.BACK_TRIP_DATE))
+            if(my_pattern.test(searchParams.BACK_TRIP_DATE)) {
                 searchParams.ROUND_TRIP = true;
-            else
+            } else {
                 searchParams.ROUND_TRIP = false;
+            }
 
             searchParams.TICKETS = objs.tickets.val();
+            searchParams.TICKETS_INFO = tickets_obj;
+            searchParams.discount = objs.disocuntPopup.getData();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
@@ -639,9 +666,7 @@ $(document).ready(function () {
                                 data.trips[el] = json.INFO[el];
                             }
 
-                            objs.resultContainer
-                                .html(html)
-                                .slideDown(200);
+                            objs.resultContainer.html(html).slideDown(200);
 
                             objs.seatsContainers = objs.resultContainer.find(params.seatsContainerS);
 
@@ -652,6 +677,7 @@ $(document).ready(function () {
                             }*/
 
                             var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();
+
                             if (!json.COMPLETED) {
                                 initFilters();
                                 $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif"/></div>');
@@ -673,7 +699,6 @@ $(document).ready(function () {
 
         function initSort() {
             var list = objs.resultContainer.find('.srpp');
-
         }
 
         function initFilters() {
@@ -764,10 +789,7 @@ $(document).ready(function () {
                                 }
                             }
                         }
-
-
                     }
-
                     if (no_hide < filters) {
                         $(this).hide();
                     }
@@ -819,6 +841,7 @@ $(document).ready(function () {
             var searchParams = {};
             searchParams.action = 'getTrips';
             searchParams.TICKETS = objs.tickets.val();
+            searchParams.discount = objs.disocuntPopup.getData();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
@@ -1151,9 +1174,6 @@ $(document).ready(function () {
             data.tickets_checked[direction].push(s);
             obj.addClass('seat-reserved');
 
-            /*  if (data.tickets_checked.length == parseInt(data.searchParams.TICKETS)) {
-             objs.lockSeats.enable();
-             }*/
         });
 
         objs.resultContainer.on('click', '.unlock-seats', function () {
