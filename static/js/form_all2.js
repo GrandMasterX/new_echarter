@@ -145,10 +145,12 @@ $(document).ready(function () {
     $.order = function (params) {
         var data = {},
             objs = {},
-            api_url = window.location.href,
+            api_request_url = window.location.href.split('/'),
             api_request = null,
             el_loaders = {},
             loader_image = 'ajax-loader(1).gif';
+
+        var api_url = api_request_url[0]+'//'+api_request_url[2]+'/';
 
         var def_params = {
             searchButtonS: '#searchButton',
@@ -595,7 +597,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('echarter','echarter2');
+        reLogin('all','echarter2');
         //SEARCH BUTTON CLICK
 
 
@@ -645,8 +647,7 @@ $(document).ready(function () {
             } else {
                 searchParams.ROUND_TRIP = false;
             }
-
-            searchParams.TICKETS = objs.tickets.val();
+            searchParams.TICKETS = tickets_obj['all'];
             searchParams.TICKETS_INFO = tickets_obj;
             searchParams.discount = objs.disocuntPopup.getData();
 
@@ -660,13 +661,13 @@ $(document).ready(function () {
                     api_post(api_url, searchParams, function (json) {
                         objs.searchButton.enable();
 
-                        objs.resultContainer.slideUp(200, function () {
+                        objs.resultContainer.show(200, function () {
                             var html = json.HTML;
                             for (var el in json.INFO) {
                                 data.trips[el] = json.INFO[el];
                             }
 
-                            objs.resultContainer.html(html).slideDown(200);
+                            objs.resultContainer.html(html).show(200);
 
                             objs.seatsContainers = objs.resultContainer.find(params.seatsContainerS);
 
@@ -919,11 +920,11 @@ $(document).ready(function () {
                 return !!($(this).attr('rel') == tripId);
             });
 
-            contentLoader(seatsContainer).slideDown(200, function () {
+            contentLoader(seatsContainer).show(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
-                    seatsContainer.html(json.html).slideDown(200, function () {});
+                    seatsContainer.html(json.html).show(200, function () {}).alignCenterScreen();
                     seatsContainer.find('.seats-tabs').tabs(
                         {
                             show: { effect: "fade", duration: 100 },
@@ -1040,13 +1041,13 @@ $(document).ready(function () {
             var seatsContainer = objs.seatsContainers.filter(function () {
                 return !!($(this).attr('rel') == tripId);
             });
-            contentLoader(seatsContainer, loader_image).slideDown(200, function () {
+            contentLoader(seatsContainer, loader_image).show(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
-                    seatsContainer.slideUp(200, function () {
+                    seatsContainer.show(200, function () {
 
-                        seatsContainer.html(json.html).slideDown(500);
+                        seatsContainer.html(json.html).show(500);
                         seatsContainer.find('.seats-tabs').tabs(
                             {
                                 show: { effect: "fade", duration: 100 },
@@ -1058,9 +1059,9 @@ $(document).ready(function () {
                         objs.buyContainer = seatsContainer.find(params.buyContainerS);
 
                         //loading of finded trips
-                        $('html, body').animate({
+                        /*$('html, body').animate({
                             scrollTop: $("#ch_seats_" + tripId)
-                        }, 500);
+                        }, 500);*/
 
                         data.noSelectSeats = false;
 
@@ -1206,7 +1207,6 @@ $(document).ready(function () {
             data.searchParams.decline = '';
             contentLoader(objs.buyContainer, loader_image);
             api_post(api_url, post_params, function (json) {
-
                 if (!json.success) {
                     alert('Ошибка при выборе мест. Повторите попытку');
                     // loadSeats(data.searchParams.TRIP_ID, objs.currTripBtn);
@@ -1220,9 +1220,9 @@ $(document).ready(function () {
                 var tooltip = objs.buyContainer.find('.show_tooltip');
 
                 //tooltip.m_tooltip();
-                $('html, body').animate({
+                /*$('html, body').animate({
                     scrollTop: objs.buyContainer
-                }, 500);
+                }, 500);*/
 
             }, 'json');
 

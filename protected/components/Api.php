@@ -72,11 +72,18 @@ class Api extends Config {
     }*/
 
     public function actionCreateSession($post, $display_form) {
+
+        if(!isset($_SESSION['sid'])) {
+            $session = Yii::app()->session;
+            $session->open();
+        }
+
+
         $remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
         if (!empty($post)) {
 
             $action = $post['action'];//.'OnlyJson';
-            $type = empty($post['type']) ? 'charter' : $post['type'];
+            $type = empty($post['type']) ? 'all' : $post['type'];
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 
             $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
@@ -121,7 +128,7 @@ class Api extends Config {
         curl_setopt($ch, CURLOPT_HEADER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 2);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 100);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 600);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $sparams);
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 GTB5');

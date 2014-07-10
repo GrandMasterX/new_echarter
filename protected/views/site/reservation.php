@@ -40,7 +40,7 @@
         <br /><br />
         <b>Варианты оплаты:</b>
         <ol start="1" style="margin-top:10px;margin-bottom:10px;margin-left:30px;">
-            <li>Банковской платежной картой <a href="#payvisa">онлайн оплата &gt;</a></li>
+            <li>Банковской платежной картой <a href="javascript:;" class="online_pay">онлайн оплата &gt;</a></li>
 
             <li>В Киевском офисе компании</li>
             <li>Через платежные терминалы - bnk.ua</li>

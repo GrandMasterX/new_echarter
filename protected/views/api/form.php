@@ -25,23 +25,23 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 							<div class="block clearfix">
 								<div class="element left from pointCheck">
 									<label>Откуда</label>
-									<input id="from" type="text" name="from" class="town" placeholder="Введите страну или город" value="" />
+									<input id="from" type="text" name="from" autocomplete="off" class="town" placeholder="Введите страну или город" value="" />
 									<input id="startCityId" type="hidden" name="startCityId" class="hid_city_id" value="" />
 									<div class="autocompl-block" style="position:absolute;z-index: 10000!important;"></div>
 								</div>
 								<div class="element right to pointCheck">
 									<label>Куда</label>
-									<input id="to" type="text" name="to" class="town" placeholder="Введите страну или город" value="" />
+									<input id="to" type="text" name="to" autocomplete="off" class="town" placeholder="Введите страну или город" value="" />
 									<input id="endCityId" type="hidden" name="endCityId" class="hid_city_id" value="" />
 									<div class="autocompl-block" style="position:absolute;z-index: 10000!important;"></div>
 								</div>
 							</div>
 
-							<label style="margin-left: 19px; color: #fff; line-height: 16px; 
+							<label style="margin-left: 19px; color: #fff; line-height: 16px;
 								 text-align: left; display: block; padding-bottom: 3px;">Категории пассажиров</label>
 							<div class="selectblock header" style="" style= >
 								<input type="hidden" class="TiketsCounter input" id="ticketAmount" value="<?= isset($_POST['totalTicketsAmount']) ? $_POST['totalTicketsAmount'] : 1 ?>" />
-								<span id="ticketCountNew"><?= isset($_POST['totalTicketsAmount']) ? $_POST['totalTicketsAmount'] : 1 ?></span>
+								<span class="ticketCountNew"><?= isset($_POST['totalTicketsAmount']) ? $_POST['totalTicketsAmount'] : 1 ?></span>
 								<span id="passengerTitle">
 									<?
 									$index = isset($_POST['totalTicketsAmount'])?intval($_POST['totalTicketsAmount']):1; echo $passangers_rus[$index];
@@ -254,7 +254,6 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
                                 <div class="checkbox left" style="z-index: 1000000;">
                                     <ul class="clearfix">
                                         <li class="clearfix" >
-                                            <!--<span style="display:none;color: #fff; line-height: 11px;font-size: 10px; text-align: left; display: block; padding-bottom: 3px;">Пассажиры:</span>-->
                                             <div style="float:left;">
                                                 <div class="element" style="padding: 0px;">
                                                     <span style="color: #fff;line-height: 11px;font-size: 10px;">Взрослые:</span>
@@ -290,7 +289,7 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 									<div class="dep item_1 clearfix">
 										<label>Дата отправки</label>
 										<input type="text" id="tripDate" name="dep_date" class="dep_date hdata" placeholder="--/--/----" value="" />
-										<img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 25px;">
+                                        <img src="/images/data-check.png" alt="" class="data-check" style="display:none;position: absolute;right: 25px;">
 									</div>
 									<div class="ret item_1  clearfix">
 										<label>Дата обратно</label>
@@ -299,10 +298,6 @@ $passangers_rus =array('пассажиров','пассажир','пассажи
 									</div>
 								</div>
 							</div>
-
-
-
-
 					</div>
 
 					<div class="clearfix right" style="width: 100%;">

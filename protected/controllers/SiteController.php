@@ -35,10 +35,8 @@ class SiteController extends Bus {
     public function actionIndex($page = '') {
         $this->layout = '/layouts/main';
         $form = $this->actionCreateSession($_POST, '/api/form');
-        $small_form = $this->actionCreateSession($_POST, '/api/small_form');
-        $user = '';//User::model()->findByPk(Yii::app()->user->getId());
         //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
-        $this->render('index', array('form' => $form, 'small_form'=>$small_form, 'user'=>$user,'page'=>$page));
+        $this->render('index', array('form' => $form, 'page'=>$page));
     }
 
     public function actionRegistration() {
@@ -53,9 +51,11 @@ class SiteController extends Bus {
 
                 //Отправляем сообщение пользователю о успешной регистрации
                 Yii::app()->getModule('mail')->send($registration->email, 'zakaz@echarter.com.ua', 'successRegister', array(
-                    'siteNameLink' => CHtml::link('localhost', Yii::app()->createAbsoluteUrl(Yii::app()->homeUrl)),
+                    'siteNameLink' => '<a href="http://echarter.com.ua/remind">E-charter</a>',
                     'username' => $registration->email,
                     'password' => $_POST['password'],
+                    'remindUrl' => '<a href="http://echarter.com.ua/remind">Восстановление пароля</a>',
+                    'feedBack' => '<a href="mailto:zakaz@echarter.com.ua">zakaz@echarter.com.ua</a>',
                     //'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
                 ));
                 $identity = new UserIdentity($_POST['email'], User::hashPassword($_POST['password']));
@@ -81,11 +81,12 @@ class SiteController extends Bus {
                 $model = User::model()->findByAttributes(array('email'=>$_POST['email']));
                 if(!empty($model)) {
                     $password = User::generatePassword();
-                    Yii::app()->getModule('mail')->send($_POST['email'], 'zgrandmasterz@gmail.com', 'successRegister', array(
-                        'siteNameLink' => CHtml::link('localhost', Yii::app()->createAbsoluteUrl(Yii::app()->homeUrl)),
-                        'username' => $_POST['email'],
+                    @Yii::app()->getModule('mail')->send($model->email, 'zakaz@echarter.com.ua', 'remindPassword', array(
+                        'siteNameLink' => '<a href="http://echarter.com.ua/remind">E-charter</a>',
+                        //'username' => $_POST['email'],
                         'password' => $password,
-                        //'confirmLink'=>Yii::app()->createAbsoluteUrl('/user/auth/activation', array('code'=>$registration->confirm_code))
+                        'remindUrl' => '<a href="http://echarter.com.ua/remind">Восстановление пароля</a>',
+                        'feedBack' => '<a href="mailto:zakaz@echarter.com.ua">zakaz@echarter.com.ua</a>',
                     ));
                     $model->password = $password;
                     $model->save();
@@ -105,11 +106,15 @@ class SiteController extends Bus {
     }
 
     public function actionGetTemplates() {
-        $model = Groups::model()->with('templates')->findAll();
-        $empty = Templates::model()->findAllByAttributes(array('group_id'=>0));
-        $user = User::model()->findByPk(Yii::app()->user->id);
-        $tpl = $this->renderPartial('/forms/plus_container',array('model'=>$model,'user'=>$user,'empty'=>$empty),true);
-        echo ($tpl);
+        if(!Yii::app()->user->isGuest) {
+            $model = Groups::model()->with('templates')->findAll();
+            $empty = Templates::model()->findAllByAttributes(array('group_id'=>0));
+            $user = User::model()->findByPk(Yii::app()->user->id);
+            $tpl = $this->renderPartial('/forms/plus_container',array('model'=>$model,'user'=>$user,'empty'=>$empty),true);
+            echo ($tpl);
+        } else {
+            echo ('');
+        }
     }
 
     public function actionReservation() {
@@ -247,5 +252,8 @@ class SiteController extends Bus {
         echo json_encode($salt);
     }
 
+    public function actionGetTimeTable() {
+
+    }
 
 }

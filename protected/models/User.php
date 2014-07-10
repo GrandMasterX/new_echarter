@@ -97,8 +97,9 @@ class User extends CActiveRecord {
 
     protected function beforeSave(){
         if(parent::beforeSave()){
-            if($this->password)
+            if($this->password) {
                 $this->password = self::hashPassword($this->password);
+            }
         }
         return true;
     }

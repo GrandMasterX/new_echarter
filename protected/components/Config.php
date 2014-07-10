@@ -10,7 +10,9 @@ class Config extends Controller {
 
     public function init()
     {
-        session_start();
+        /*if(!isset($_SESSION['sid'])) {
+            session_start();
+        }*/
         /*
         $config['api_key'] = 'ia+EqGd1sL7n4qA3ZI8qqg==';
         $config['api_url'] = 'http://demo.gillbus.com/online2/';

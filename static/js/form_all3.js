@@ -145,10 +145,12 @@ $(document).ready(function () {
     $.order = function (params) {
         var data = {},
             objs = {},
-            api_url = window.location.href,
+            api_request_url = window.location.href.split('/'),
             api_request = null,
             el_loaders = {},
             loader_image = 'ajax-loader(1).gif';
+
+        var api_url = api_request_url[0]+'//'+api_request_url[2]+'/';
 
         var def_params = {
             searchButtonS: '#searchButton',
@@ -236,7 +238,30 @@ $(document).ready(function () {
             };
             //**************//
 
+            objs.disocuntPopup.getData = function () {
+                var data = [];
+                var stud = 0;
+                objs.disocuntPopup.find('input').each(function () {
+                    var a = {};
+                    var discountType = $(this).attr('class');
+                    discountType=discountType.split(" ")[0];
+                    if(discountType == 'birthdayData'){
+                        discountType = 'birthday';
+                    }
+                    if((discountType=='studentTicket')&&(stud == 1)){
+                        stud = 0;
+                        $(this).val('');
+                    }
+                    if($(this).val()!=''){
+                        if(discountType=='ISIC')
+                            stud = 1;
+                        a[discountType] = $(this).val();
+                        data.push(a);
+                    }
+                });
 
+                return data;
+            };
 
 
             // seting default cities
@@ -259,7 +284,7 @@ $(document).ready(function () {
                 onChangeMonthYear: function (y, m, o) {
 
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;"/></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px!important;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;"/></p>');
                     }, 0);
 
                     data.tripDates = null;
@@ -295,7 +320,7 @@ $(document).ready(function () {
                 beforeShow: function (field) {
                     data.tripDates = null;
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px!important;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
                     if (!data.initParams.loadDates) return;
 
@@ -331,7 +356,7 @@ $(document).ready(function () {
                     if(my_pattern.test(data1))
                     {
                         $(this).closest('div').find('img.data-check').show();
-                        $('#backTripDate').datepicker('show');
+                        //$('#backTripDate').datepicker('show');
                     } else {
                         $(this).closest('div').find('img.data-check').hide();
                     }
@@ -371,7 +396,7 @@ $(document).ready(function () {
                 onChangeMonthYear: function (y, m, o) {
 
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin:0px!important;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
 
                     data.tripBackDates = null;
@@ -404,7 +429,7 @@ $(document).ready(function () {
 
                     data.tripBackDates = null;
                     setTimeout(function() {
-                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin: 0px;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
+                        $('#ui-datepicker-div').prepend('<p style="position:relative;margin:0px!important;"><img style="position: absolute;margin-top: 8px;margin-left: 180px;z-index: 2000;" src="/images/form/ajax-loader-line.gif" /></p>');
                     }, 0);
                     if (!data.initParams.loadDates) return;
                     var dateVal = $(field).val()? $(field).val() : getNowDate();
@@ -498,8 +523,10 @@ $(document).ready(function () {
         }
 
         function contentLoader(obj, loader_image) {
-            if (!loader_image) loader_image = 'ajax-loader(1).gif';
-            return $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif" /></div>');
+            if (!loader_image) {
+                loader_image = 'ajax-loader(1).gif';
+                return $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif" /></div>');
+            }
         }
 
         function reLogin(PageType, PageRes) {
@@ -521,7 +548,7 @@ $(document).ready(function () {
 
             var loader = $('<div class="ajax-loader-line '+objClass+'" />');
             loader.css({
-                position: 'absolute', top: obj.offset().top + obj.height() / 4, left: obj.offset().left + obj.width() / 4, width: obj.width() / 2, height: obj.height() / 2, 'z-index': 500
+                position: 'absolute', top: obj + obj.height() / 4, left: obj.offset().left + obj.width() / 4, width: obj.width() / 2, height: obj.height() / 2, 'z-index': 500
 
             }).hide();
 
@@ -570,7 +597,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('echarter','echarter2');
+        reLogin('all','echarter2');
         //SEARCH BUTTON CLICK
 
 
@@ -578,9 +605,11 @@ $(document).ready(function () {
         objs.searchButton.click(function () {
 
             /*if ($(this).disabled()) {
-                return false;
-            }
-            $(this).disable();*/
+             return false;
+             }
+             $(this).disable();*/
+            var searchParams = {};
+
             if($('input#from.town').val() == '') {
                 $('#tripsResultContainer').html('');
                 $('#tripsResultContainer').html('<div style="text-align: center"><span class="systemMessage">Пожайлуста, выберите пункт отправления</span></div>')
@@ -599,7 +628,6 @@ $(document).ready(function () {
                 $('#tripsResultContainer').show();
                 return false;
             }
-            var searchParams = {};
 
             /* установка параметров авиа фильтров  - конец*/
             searchParams.SELECTED_MODES = "";
@@ -612,13 +640,17 @@ $(document).ready(function () {
             searchParams.BACK_TRIP_DATE = objs.backTripDate.val();
             var my_pattern=/^([0-9]{2})+\.([0-9]{2})+\.([0-9]{4})$/;
             searchParams.ROUND_TRIP = true;
-            /* disabling of one-way triping, only round-trip.
-             if(my_pattern.test(searchParams.BACK_TRIP_DATE))
-             searchParams.ROUND_TRIP = true;
-             else
-             searchParams.ROUND_TRIP = false;
-             */
-            searchParams.TICKETS = objs.tickets.val();
+
+            /* disabling or enabling tripings*/
+            if(my_pattern.test(searchParams.BACK_TRIP_DATE)) {
+                searchParams.ROUND_TRIP = true;
+            } else {
+                searchParams.ROUND_TRIP = false;
+            }
+
+            searchParams.TICKETS = tickets_obj['all'];
+            searchParams.TICKETS_INFO = tickets_obj;
+            searchParams.discount = objs.disocuntPopup.getData();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
@@ -626,50 +658,41 @@ $(document).ready(function () {
 
             data.searchParams = searchParams;
             searchParams.action = 'searchTrips';
-            //var url = api_url.split('/');
-            //if(url[3])
-            api_url = 'http://echarter.com.ua/';
             contentLoader(objs.resultContainer, loader_image)
             api_post(api_url, searchParams, function (json) {
                 objs.searchButton.enable();
 
-                objs.resultContainer.slideUp(200, function () {
+                objs.resultContainer.show(200, function () {
                     var html = json.HTML;
                     for (var el in json.INFO) {
                         data.trips[el] = json.INFO[el];
                     }
 
-                    objs.resultContainer
-                        .html(html)
-                        .slideDown(200);
+                    objs.resultContainer.html(html).show(200);
 
                     objs.seatsContainers = objs.resultContainer.find(params.seatsContainerS);
 
-                    if (json.success) {
-                        $('html, body').animate({
-                            scrollTop: objs.resultContainer
-                        }, 500);
-                    }
+                    /*if (json.success) {
+                     $('html, body').animate({
+                     scrollTop: objs.resultContainer
+                     }, 500);
+                     }*/
 
                     var fhtml = objs.resultContainer.find('table.filters').find('td').first().html();
+
                     if (!json.COMPLETED) {
-
-                        initFilters()
+                        initFilters();
                         $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif"/></div>');
-
-
                     }
                 });
 
                 if (!json.COMPLETED) {
-
                     objs.searchTripsInterval = setTimeout(
                         function () {
                             var searchIteration = 0;
                             loadOtherTrips(searchIteration);
                         }, 2000
                     );
-
                 }
             }, 'json');
         });
@@ -678,7 +701,6 @@ $(document).ready(function () {
 
         function initSort() {
             var list = objs.resultContainer.find('.srpp');
-
         }
 
         function initFilters() {
@@ -686,7 +708,7 @@ $(document).ready(function () {
             var container = objs.resultContainer.find('.rezpoisk2');
             var container_header = objs.resultContainer.find('.rezpoisk2 .shapka');
             var shapka = container_header.find('table.filters');
-            var shapka_top = objs.resultContainer.offset().top;
+            var shapka_top = objs.resultContainer;
             var shapkaniz_top = shapka_top + objs.resultContainer.height() - 150;
             container_header.find('td').first().find('div').fadeIn(200);
 
@@ -769,10 +791,7 @@ $(document).ready(function () {
                                 }
                             }
                         }
-
-
                     }
-
                     if (no_hide < filters) {
                         $(this).hide();
                     }
@@ -824,6 +843,7 @@ $(document).ready(function () {
             var searchParams = {};
             searchParams.action = 'getTrips';
             searchParams.TICKETS = objs.tickets.val();
+            searchParams.discount = objs.disocuntPopup.getData();
 
             if (objs.searchTripsInterval) {
                 clearTimeout(objs.searchTripsInterval);
@@ -901,11 +921,11 @@ $(document).ready(function () {
                 return !!($(this).attr('rel') == tripId);
             });
 
-            contentLoader(seatsContainer).slideDown(200, function () {
+            contentLoader(seatsContainer).show(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
-                    seatsContainer.html(json.html).slideDown(200, function () {});
+                    seatsContainer.html(json.html).show(200, function () {}).alignCenterScreen();
                     seatsContainer.find('.seats-tabs').tabs(
                         {
                             show: { effect: "fade", duration: 100 },
@@ -1022,13 +1042,13 @@ $(document).ready(function () {
             var seatsContainer = objs.seatsContainers.filter(function () {
                 return !!($(this).attr('rel') == tripId);
             });
-            contentLoader(seatsContainer, loader_image).slideDown(200, function () {
+            contentLoader(seatsContainer, loader_image).show(200, function () {
                 post_params.action = 'getTripSeats';
                 api_post(api_url, post_params, function (json) {
 
-                    seatsContainer.slideUp(200, function () {
+                    seatsContainer.show(200, function () {
 
-                        seatsContainer.html(json.html).slideDown(500);
+                        seatsContainer.html(json.html).show(500);
                         seatsContainer.find('.seats-tabs').tabs(
                             {
                                 show: { effect: "fade", duration: 100 },
@@ -1040,9 +1060,9 @@ $(document).ready(function () {
                         objs.buyContainer = seatsContainer.find(params.buyContainerS);
 
                         //loading of finded trips
-                        $('html, body').animate({
-                            scrollTop: $("#ch_seats_" + tripId).offset().top
-                        }, 500);
+                        /*$('html, body').animate({
+                         scrollTop: $("#ch_seats_" + tripId)
+                         }, 500);*/
 
                         data.noSelectSeats = false;
 
@@ -1156,9 +1176,6 @@ $(document).ready(function () {
             data.tickets_checked[direction].push(s);
             obj.addClass('seat-reserved');
 
-            /*  if (data.tickets_checked.length == parseInt(data.searchParams.TICKETS)) {
-             objs.lockSeats.enable();
-             }*/
         });
 
         objs.resultContainer.on('click', '.unlock-seats', function () {
@@ -1205,9 +1222,9 @@ $(document).ready(function () {
                 var tooltip = objs.buyContainer.find('.show_tooltip');
 
                 //tooltip.m_tooltip();
-                $('html, body').animate({
-                    scrollTop: objs.buyContainer.offset().top - 100
-                }, 500);
+                /*$('html, body').animate({
+                 scrollTop: objs.buyContainer
+                 }, 500);*/
 
             }, 'json');
 
@@ -1254,8 +1271,15 @@ $(document).ready(function () {
 
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if (!$('#check_personal_data').prop('checked')) {
+                            $('#check_personal_data').parent().addClass('field_error');
+                        }
+
+                        if (!$('#check_terms').prop('checked')) {
+                            $('#check_terms').parent().addClass('field_error');
+                        }
                     }
                     return;
                 }
@@ -1325,7 +1349,7 @@ $(document).ready(function () {
 
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
@@ -1375,7 +1399,7 @@ $(document).ready(function () {
 
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
                     }
                     return;
@@ -1409,12 +1433,12 @@ $(document).ready(function () {
                 discount_data.fadeIn(200);
                 objs.resultContainer.find('.buy_order').unbind('click').click(function () {
                     var errors = 0;
-                    if (!$('#check_personal_data').attr('checked')) {
+                    if (!$('#check_personal_data').prop('checked')) {
                         $('#check_personal_data').parent().addClass('field_error');
                         errors++;
                     }
 
-                    if (!$('#check_terms').attr('checked')) {
+                    if (!$('#check_terms').prop('checked')) {
                         $('#check_terms').parent().addClass('field_error');
                         errors++;
                     }
@@ -1465,12 +1489,18 @@ $(document).ready(function () {
                     p.html(obj);
                     var ferrors = json.errors.fields;
                     for (var el in ferrors) {
-                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').parent().addClass('field_error');
+                        objs.buyContainer.find('[name="' + ferrors[el] + '"]').addClass('field_error');
                         if((!$('input#check_personal_data').prop('checked'))||(!$('input#check_terms').prop('checked'))) $("span.alertCheckMessage").show();
+                        if (!$('#check_personal_data').prop('checked')) {
+                            $('#check_personal_data').parent().addClass('field_error');
+                        }
+
+                        if (!$('#check_terms').prop('checked')) {
+                            $('#check_terms').parent().addClass('field_error');
+                        }
                     }
                     return;
                 }
-                console.log(json.url);
                 window.location = json.url;
 
             }, 'json');

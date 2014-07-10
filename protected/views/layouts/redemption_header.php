@@ -22,6 +22,7 @@
     <!--<link rel="stylesheet" type="text/css" href="static/css/style.css"/>-->
     <link rel="stylesheet" type="text/css" href="static/css/jquery.editable-select.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/jquery-ui.css"/>
+    <link rel="icon" type="image/png" href="/images/img/favicon.ico" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
@@ -274,6 +275,9 @@
         $(document).ready(function() {
             $('.detail_toggle').click(function() {
                 $(this).closest('.order_block').find('.page').slideToggle(300);
+            });
+            $('.online_pay').click(function() {
+                $('.container').find('.page').slideToggle(300);
             });
         });
 

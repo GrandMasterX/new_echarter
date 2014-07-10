@@ -158,8 +158,13 @@ header .wrap .top_header .dictum {font-size: 20px; color: #fff; line-height: 30p
     text-align: left;}
 header .wrap .top_header .lk_office {}
 header .wrap .top_header .lk_office ul {list-style-type: none; margin: 0px; padding: 0px;}
-header .wrap .top_header .lk_office ul li {float: left; margin-right: 20px; position: relative;
+header .wrap .top_header .lk_office ul li {
+    float: left; margin-right: 20px; position: relative;
     z-index: 1000;}
+
+header .wrap .top_header .lk_office ul li a:hover {text-decoration: underline;}
+header .wrap .menu_header .nav ul li a:hover {text-decoration: underline;}
+
 header .wrap .top_header .lk_office ul li:last-of-type {margin-right: 0px;}
 header .wrap .top_header .lk_office ul li a {text-decoration: none; font-size: 14px;
     color: #fff; height: 30px; position: relative; z-index: 2200; line-height:30px;}
@@ -412,12 +417,20 @@ input#ticketAmount.contacts{-webkit-box-shadow: none; -moz-box-shadow: none; box
 .container .wrap .slider .form .container_form .tabs_menu .checkbox ul li .element {padding: 5px 0px;}
 
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons {margin: 15px 0px 0px 19px;}
-.container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons input {
+.container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons input,
+.container.page_2 .wrap .container_form .block.buttons input {
     color: #3c3c3c; font-size: 18px; height: 40px; line-height: 40px; background-color: #eaeaea;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
     padding: 0px 72px 0px 73px; border: none; outline: none;
-    border-right: 1px solid #1a374f; border-bottom: 1px solid #1a374f}
+    border-bottom: 1px solid #1a374f;
+    background-color: #eaeaea; background: linear-gradient(to bottom, #d6d6d6, #eaeaea);}
+.container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons input:hover,
+.container.page_2 .wrap .container_form .block.buttons input:hover {background: #dadada; color: #000;}
+.container .wrap .slider .form .container_form .tabs_menu .btn_cards .block.buttons input:active,
+.container.page_2 .wrap .container_form .block.buttons input:active {
+    border-top: 1px solid #1a374f; background-color: #eaeaea; border-bottom: none;
+    background: linear-gradient(to bottom, #eaeaea, #d6d6d6);}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards {margin-right: 19px; margin-top: 15px;}
 .container .wrap .slider .form .container_form .tabs_menu .btn_cards .cards ul {padding: 0px;
     margin: 0px; list-style-type: none;}
@@ -529,7 +542,10 @@ a.detail_toggle.reservation {
     background: url('../img/border_more.png') repeat-x bottom; text-decoration: none;
     color: #565657; font-size: 16px; line-height: 18px; padding-top: 3px; padding-bottom: 2px;}
 div.more{cursor:pointer;margin-left: 68px;}
-.moreTripInfo.populars {display: inline-block; height: 40px; line-height: 40px; font-size: 18px;background-color: #f3b52e!important;}
+.moreTripInfo.populars {display: inline-block; height: 40px; line-height: 40px; font-size: 18px; background-color: #f3b52e!important;
+    border-bottom: 1px solid #000;}
+.moreTripInfo.populars:hover {background-color: #ffcc5c!important;}
+.moreTripInfo.populars:active { border-bottom: none; border-top: 1px solid #000;}
 /* SOCIAL_BLOCK (EDIT)*/
 .popular_container .wrap .social_block .vk,
 .popular_container .wrap .social_block .fb {width: 47%; height: 280px; margin: 0 0 0 2%;
@@ -577,12 +593,8 @@ input::-moz-placeholder {color: #a3a3a3; font-size: 14px; line-height: 18px;}
 .container.page_2 .wrap .container_form .block .element.item_1 label {line-height: 20px;}
 
 /*.container.page_2 .wrap .container_form .block.buttons {margin: 21px 0px 0px 0px;}*/
-.container.page_2 .wrap .container_form .block.buttons input {
-    color: #3c3c3c; font-size: 18px; height: 36px; line-height: 36px; background-color: #eaeaea;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-    padding: 0px 44px; border: none; outline: none;
-    border-right: 1px solid #1a374f; border-bottom: 1px solid #1a374f;}
+.container.page_2 .wrap .container_form .block.buttons input {height: 36px; line-height: 36px;
+    padding: 0px 44px;}
 
 .popular_container .wrap {padding-bottom: 20px;}
 .popular_container .wrap .title.select {padding-bottom: 20px;}
@@ -829,12 +841,24 @@ header .wrap .top_header .lk_office ul li .popup_login .block_login .social ul l
     top:-10px;
 }
 
-.order_ticket {
-    padding: 0px 22px 0px 18px; border: none; outline: none;
-    font-size: 14px; color: #fff; line-height: 30px;
+.order_ticket,
+input.get_ticket,
+a.detail_toggle {
+    padding: 0px 22px 0px 18px; border: none; outline: none; font-size: 14px; color: #fff; line-height: 30px;
     height: 30px; width: 157px; display: block; text-align: center; text-decoration: none;
-    background-color: #3b7db5; text-transform: uppercase;
-    margin-top: 10px; cursor: pointer;
+    text-transform: uppercase; margin-top: 10px; cursor: pointer;
+    background: linear-gradient(to bottom, #539fdf, #3b7db5); border-bottom: 1px solid #092f50;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;}
+.order_ticket:hover,
+input.get_ticket:hover,
+a.detail_toggle:hover {background: #2f8ddc;}
+.order_ticket:active,
+input.get_ticket:active,
+a.detail_toggle:active {background-color: #3b7db5; background: linear-gradient(to bottom, #3b7db5, #539fdf); border-top: 1px solid #092f50;
+    border-bottom: none;}
+input.get_ticket {width: 135px;}
+
+a.detail_toggle {width: 140px; text-transform: none; padding: 0px;
 }
 
 .feedback{
@@ -869,4 +893,18 @@ input.check_out {
 #signin_error {
     font-size: 12px;
     color: red;
+}
+
+.error_fields_discount {
+    border: 1px solid red!important;
+}
+
+.additional_data {
+    top: -24px;
+    display: block;
+    color: #fff;
+    text-align: left;
+    font-weight: normal;
+    text-shadow: #afafaf 1px 0px, #afafaf 1px 1px, #afafaf 0px 1px, #afafaf -1px 1px, #afafaf -1px 0px, #afafaf -1px -1px, #afafaf 0px -1px, #afafaf 1px -1px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px;
+    font-size: 12px;
 }

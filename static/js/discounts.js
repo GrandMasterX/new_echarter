@@ -27,7 +27,130 @@
     /* selectors for search form end*/
 
     $('.disocuntBlockClose').live('click',function(){
-        $(this).closest('.discountsTbl').hide();
+
+        $('.discountsTbl').find('.birthdayData').each(function(){
+			if($(this).val() == ''){
+					$(this).closest('.studBlock').remove();
+				}
+        });
+
+        $('.discountsTbl').find('.ISIC').each(function(){
+			var ISIC_val = $(this).val();
+			var STDticket_val = $(this).closest('div.studBlock').find('input.studentTicket').val();
+			if( (ISIC_val == '') && (STDticket_val == '') ){
+					$(this).closest('.studBlock').remove();
+				}
+        });
+		
+		var discGroupe1_amount = parseInt($('td.discGroupe1 div.studBlock').length);
+		var discGroupe2_amount = parseInt($('td.discGroupe2 div.studBlock').length);
+		var discGroupe3_amount = parseInt($('td.discGroupe3 div.studBlock').length);
+		var discGroupe4_amount = parseInt($('td.discGroupe4 div.studBlock').length);
+		var discGroupe5_amount = parseInt($('td.discGroupe5 div.studBlock').length);
+		
+		var discTicketsAmount = discGroupe1_amount+discGroupe2_amount+discGroupe3_amount+discGroupe4_amount+discGroupe5_amount;
+		
+		tickets_obj['disc1'] = discGroupe1_amount;
+		tickets_obj['disc2'] = discGroupe2_amount;
+		tickets_obj['disc3'] = discGroupe3_amount;
+		tickets_obj['disc4'] = discGroupe4_amount;
+		tickets_obj['disc5'] = discGroupe5_amount;
+		
+		$('input#discGroupe1').val(discGroupe1_amount);
+		$('input#discGroupe2').val(discGroupe2_amount);
+		$('input#discGroupe3').val(discGroupe3_amount);
+		$('input#discGroupe4').val(discGroupe4_amount);
+		$('input#discGroupe5').val(discGroupe5_amount);
+
+		
+		console.log(discGroupe1_amount);
+		console.log(discGroupe2_amount);
+		console.log(discGroupe3_amount);
+		console.log(discGroupe4_amount);
+		console.log(discGroupe5_amount);
+
+       /* for(i=1;i<=5;i++) {
+            $('#discGroupe'+i+'.birthday').val(0);
+            tickets_obj['disc'+i+''] = 0;
+            tickets_obj['disc0'] = 0;
+        } */
+
+		$('input#discTicketsAmount').val(discTicketsAmount);
+		var newTotalTM = parseInt($('input#discGroupe0').val());
+		
+		tickets_obj['disc0'] = newTotalTM;
+		$('span.disc0').html(newTotalTM);
+		if(newTotalTM == 0) {$('span.disc0').closest('div').hide();}
+		$('span.disc1').html(discGroupe1_amount);
+		
+		if(discGroupe1_amount == 0) {$('span.disc1').closest('div').hide(); $('td.disc1').hide();}
+		$('span.disc2').html(discGroupe2_amount);
+		if(discGroupe2_amount == 0) {$('span.disc2').closest('div').hide(); $('td.disc2').hide();}
+		$('span.disc3').html(discGroupe3_amount);
+		if(discGroupe3_amount == 0) {$('span.disc3').closest('div').hide(); $('td.disc3').hide();}
+		$('span.disc4').html(discGroupe4_amount);
+		if(discGroupe4_amount == 0) {$('span.disc4').closest('div').hide(); $('td.disc4').hide();}
+		$('span.disc5').html(discGroupe5_amount);
+		if(discGroupe5_amount == 0) {$('span.disc5').closest('div').hide(); $('td.disc5').hide();}
+		
+		if(discTicketsAmount ==0) {$('table.discountsTbl').hide();}
+		
+		$('input#totalTicketsAmount').val(newTotalTM+discTicketsAmount);
+		
+		tickets_obj['all'] = newTotalTM+discTicketsAmount;
+		
+     //   reloadTicketsData(1,5, newTotalTM);
+	 
+	 
+	         $('.ticketCountNew').html(tickets_obj['all']);
+        if(lang=='ua') {
+            $('.selectblock').find('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
+        }
+        else if(lang=='en') {
+            $('.selectblock').find('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
+        }
+        else {
+            $('.selectblock').find('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
+        }
+		
+	 
+
+       // $(this).closest('.discountsTbl').hide();
+	   $('div.selectblock.header').click();
+    });
+
+    $('.disocuntBlockAccept').live('click',function(){
+
+        var hasErrors = 0;
+
+        $('.discountsTbl').find('.birthdayData').each(function(){
+            if(($(this).val() =='')&&($(this).is(":visible"))) {
+                $(this).css('border','1px solid red');
+                hasErrors = 1;
+            } else {
+                $(this).css('border','1px solid grey');
+            }
+        });
+
+        $('.discountsTbl').find('.ISIC').each(function(){
+            if(($(this).val() == '') && ($(this).closest('.studBlock').find('.studentTicket').val() == '') && ($(this).is(":visible")) ){
+                $(this).css('border','1px solid red');
+                $(this).closest('.studBlock').find('.studentTicket').css('border','1px solid red');
+                hasErrors = 1;
+            } else {
+                $(this).css('border','1px solid grey');
+                $(this).closest('.studBlock').find('.studentTicket').css('border','1px solid grey');
+            }
+        });
+        if(hasErrors>0) {
+            return
+        } else {
+		//$('.discountsTbl').hide();
+            $(this).closest('.discountsTbl').hide();
+        }
     });
 
     /* selectors for popup*/
@@ -48,9 +171,40 @@
     var passangers_ukr =['пасажирів','пасажир','пасажира','пасажира','пасажира','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів' ,'пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажир','пасажира','пасажира','пасажира','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів','пасажирів'];
     var passangers_eng =['passengers','passenger','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers','passengers'];
 
-    var totalTicketsAmount = parseInt($('input#totalTicketsAmount').val(), 10);
+    var totalTicketsAmount = parseInt($('input#totalTicketsAmount').val(), 10),
+        lang = $('input#formlang').val();
+
+    /*minus ticket data */
+    $('.countFrameLeft').live('click',function(){
+        if(tickets_obj[$(this).data('target')] >0 && tickets_obj['all'] >1) {
+            tickets_obj[$(this).data('target')] = tickets_obj[$(this).data('target')]-1;
+            tickets_obj['all']--;
+            var group_data = $('.container_form').find('.checkbox.left').find("."+$(this).data('target'));
+            if(tickets_obj[$(this).data('target')] ==0) {
+                group_data.html('0');
+                group_data.parent('.element').hide();
+            } else {
+                group_data.html(tickets_obj[$(this).data('target')]);
+                group_data.show();
+            }
+        }
+    });
+    /*minus ticket data */
+
+    /*plus ticket data */
+    $('.countFrameRight').live('click',function(){
+        if(tickets_obj['all'] <10 && tickets_obj['all'] >0) {
+            tickets_obj[$(this).data('target')] = tickets_obj[$(this).data('target')]+1;
+            tickets_obj['all']++;
+            var group_data = $('.container_form').find('.checkbox.left').find("."+$(this).data('target'));
+            group_data.html(tickets_obj[$(this).data('target')]);
+            group_data.parent().show();
+        }
+    });
+    /*end plus ticket data */
+
+
     $("div.countFrameRight").live('click', function(){
-        var lang = $('input#formlang').val();
         var ISICPlaseholder = 'номер ISIC';
         var StudentPlaseholder = '№ студен.';
         var bdatePlaseholder1 = 'дата рождения';
@@ -137,28 +291,27 @@
             });
 
         }
-
-        if(totalTicketsAmount<1) {
-            totalTicketsAmount=1;
+        if(tickets_obj['all']<1) {
+            tickets_obj['all']=1;
         }
 
         inputObj.attr({value:number});
-        $('input#totalTicketsAmount').attr({value:totalTicketsAmount});
-        $('input#ticketAmount').attr({value:totalTicketsAmount});
-        $('#ticketCountNew').html(totalTicketsAmount);
-        $('.popup.order').find('input#ticketAmount').attr({value:totalTicketsAmount});
-        $('.popup.order').find('#ticketCountNew').html(totalTicketsAmount);
+        $('input#totalTicketsAmount').attr({value:tickets_obj['all']});
+        $('input#ticketAmount').attr({value:tickets_obj['all']});
+        $('.ticketCountNew').html(tickets_obj['all']);
+        $('.popup.order').find('input#ticketAmount').attr({value:tickets_obj['all']});
+        $('.popup.order').find('.ticketCountNew').html(tickets_obj['all']);
         if(lang=='ua') {
-            $('.selectblock').find('#passengerTitle').html(passangers_ukr[totalTicketsAmount]);
-            $('.popup.order').find('#passengerTitle').html(passangers_ukr[totalTicketsAmount]);
+            $('.selectblock').find('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
         }
         else if(lang=='en') {
-            $('.selectblock').find('#passengerTitle').html(passangers_eng[totalTicketsAmount]);
-            $('.popup.order').find('#passengerTitle').html(passangers_eng[totalTicketsAmount]);
+            $('.selectblock').find('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
         }
         else {
-            $('.selectblock').find('#passengerTitle').html(passangers_rus[totalTicketsAmount]);
-            $('.popup.order').find('#passengerTitle').html(passangers_rus[totalTicketsAmount]);
+            $('.selectblock').find('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
         }
     });
 
@@ -212,16 +365,16 @@
 
         inputObj.attr({value:number});
 
-        $('input#totalTicketsAmount').attr({value:totalTicketsAmount});
-        $('#ticketCountNew').html(totalTicketsAmount);
-        $('input#ticketAmount').attr({value:totalTicketsAmount});
+        $('input#totalTicketsAmount').attr({value:tickets_obj['all']});
+        $('.ticketCountNew').html(tickets_obj['all']);
+        $('input#ticketAmount').attr({value:tickets_obj['all']});
 
         if(lang=='ua')
-            $('#passengerTitle').html(passangers_ukr[totalTicketsAmount]);
+            $('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
         else if(lang=='en')
-            $('#passengerTitle').html(passangers_eng[totalTicketsAmount]);
+            $('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
         else
-            $('#passengerTitle').html(passangers_rus[totalTicketsAmount]);
+            $('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
     });
      $('div.disocuntBlock').live('click',function(e){e.stopPropagation();})
     $('div.ui-datepicker').live('click',function(e){e.stopPropagation();})
@@ -232,31 +385,42 @@
     });
 
 
-    //minus ticket data
-    $('.countFrameLeft').live('click',function(){
-        if(tickets_obj[$(this).data('target')] >0 && tickets_obj['all'] >1) {
-            tickets_obj[$(this).data('target')] = tickets_obj[$(this).data('target')]-1;
-            tickets_obj['all']--;
-            var group_data = $('.container_form').find('.checkbox.left').find("."+$(this).data('target'));
-            if(tickets_obj[$(this).data('target')] ==0) {
-                    group_data.html('0');
-                    group_data.parent('.element').hide();
+
+
+    var reloadTicketsData = function(start,end, newTotalTM) {
+
+        var firstTr =$('.discountsTbl').find('tr:eq(1)'),
+            secondTr =$('.discountsTbl').find('tr:eq(2)'),
+            thirdTr =$('.discountsTbl').find('tr:eq(3)');
+
+        for(i=start;i<=end;i++) {
+            group_data = $('.container_form').find('.checkbox.left').find(".disc"+i);
+            group_data.html(tickets_obj[".disc"+i]);
+            if(tickets_obj[".disc"+i]>0) {
+                group_data.parent().show();
             } else {
-                group_data.html(tickets_obj[$(this).data('target')]);
-                group_data.show();
+                group_data.parent().hide();
+                firstTr.find('.disc'+i).hide();
+                secondTr.find('.disc'+i).hide();
+                thirdTr.find('.disc'+i).hide();
             }
         }
-    });
 
-    //plus ticket data
-    $('.countFrameRight').live('click',function(){
-        if(tickets_obj['all'] <10 && tickets_obj['all'] >0) {
-            tickets_obj[$(this).data('target')] = tickets_obj[$(this).data('target')]+1;
-            tickets_obj['all']++;
-            var group_data = $('.container_form').find('.checkbox.left').find("."+$(this).data('target'));
-            group_data.html(tickets_obj[$(this).data('target')]);
-            group_data.parent().show();
+        tickets_obj['all'] = newTotalTM;
+        tickets_obj['disc0'] = newTotalTM;
+        $('.ticketCountNew').html(tickets_obj['all']);
+        if(lang=='ua') {
+            $('.selectblock').find('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_ukr[tickets_obj['all']]);
         }
-    });
+        else if(lang=='en') {
+            $('.selectblock').find('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_eng[tickets_obj['all']]);
+        }
+        else {
+            $('.selectblock').find('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
+            $('.popup.order').find('#passengerTitle').html(passangers_rus[tickets_obj['all']]);
+        }
+    }
 
     //$('.container_form').find('.discountsTbl').find('.birthdayData').each(function(){console.log($(this))})

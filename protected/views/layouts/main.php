@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="/static/css/echarter_style.css">
     <link rel="stylesheet" href="/static/css/autocomplete.css">
     <link rel="stylesheet" href="/static/css/discount.css">
-
+    <link rel="icon" type="image/png" href="/images/img/favicon.ico" />
     <link rel="stylesheet" href="/static/css/radio.css">
+
     <link rel="stylesheet" href="/static/css/checkbox.css">
     <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
 
@@ -139,7 +140,12 @@
         <script>
             $.fn.alignCenterScreen = function() {
                 this.css("position", "absolute");
-                this.css("top", ($(window).height() - this.outerHeight()) / 2 + $(window).scrollTop() + "px");
+                if(this.outerHeight() == 1) {
+                    this.css("top", ($(window).height() - 621) / 2 + $(window).scrollTop()+ "px");
+                } else {
+                    this.css("top", ($(window).height() - this.outerHeight()) / 2 + $(window).scrollTop()+ "px");
+                }
+
                 //this.css("left", ($(window).width() - this.outerWidth()) / 2 + $(window).scrollLeft() + "px");
                 //this.css('display','block');
                 return this
@@ -215,17 +221,24 @@
                 });
 
                 $('.get_ticket').on('click',function(){
-                    $('input#startCityId').val($(this).parents('.popup').find('.hidden_data input.promoStartCityId').val());
-                    $('input#from').val($(this).parents('.popup').find('.hidden_data input.promoStartCityName').val());
-                    $('input#endCityId').val($(this).parents('.popup').find('.hidden_data input.promoEndCityId').val());
-                    $('input#to').val($(this).parents('.popup').find('.hidden_data input.promoEndCityName').val());
-                    $('input#tripDate').val($(this).parents('.popup').find('.dep_date').val());
-                    $('input#backTripDate').val($(this).parents('.popup').find('.ret_date').val());
-                    $('.close_popup').click();
-                    $('html, body').animate({
-                        scrollTop: $(".tabs_menu").offset().top
-                    }, 2000);
-                    $('#searchButton').click();
+                    if($(this).closest('.elaboration').find('.dep_date').val() =='') {
+                        $(this).closest('.elaboration').find('.dep_date').css('border','1px solid red')
+                        $(this).closest('.popup_wrap').find('.footer_popup').html('<span style="margin: 0 0 0 20px;color: red;">Выберите хотя бы одну дату</span>');
+                        return false;
+                    } else {
+                        $('input#startCityId').val($(this).parents('.popup').find('.hidden_data input.promoStartCityId').val());
+                        $('input#from').val($(this).parents('.popup').find('.hidden_data input.promoStartCityName').val());
+                        $('input#endCityId').val($(this).parents('.popup').find('.hidden_data input.promoEndCityId').val());
+                        $('input#to').val($(this).parents('.popup').find('.hidden_data input.promoEndCityName').val());
+                        $('input#tripDate').val($(this).parents('.popup').find('.dep_date').val());
+                        $('input#backTripDate').val($(this).parents('.popup').find('.ret_date').val());
+                        $('.close_popup').click();
+                        $(this).closest('.popup_wrap').find('.footer_popup').html('');
+                        $('html, body').animate({
+                            scrollTop: $(".tabs_menu").offset().top
+                        }, 2000);
+                        $('#searchButton').click();
+                    }
                 });
 
                 $('img.del').live('click',function(){

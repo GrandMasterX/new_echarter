@@ -1,29 +1,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Indast</title>
+        <title>E-charter</title>
 	</head>
 <body>
 
-	<div style="background-color: #5ABCE4; font-family:Arial, Helvetica, sans-serif;width:100%;-webkit-text-size-adjust:none !important;margin:0;padding: 70px 0 70px 0;">
+	<div style="background-color: #5ABCE4; font-family:Arial, Helvetica, sans-serif;width:100%;-webkit-text-size-adjust:none !important;margin:0;">
        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
 			<tbody>
 				<tr>
 					<td align="center" valign="top">
-						<div style="margin-top:0; background-color:#5ABCE4; width: 560px;border: 20px solid #5ABCE4;">
-							<img style="margin-left: -397px;" src="<?php //echo Yii::app()->request->hostInfo . Yii::app()->theme->baseUrl ?>/img/logo.png">
-						</div>
-			<table border="0" cellpadding="0" cellspacing="0" width="600" style="background: #DEEFF7;">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background: #DEEFF7;">
 				<tbody>
-					<tr>
-						<td align="center" valign="top">
-                       	</td>
-                    </tr>
 						<tr>
 							<td align="center" valign="top">
-                               	<table border="0" cellpadding="0" cellspacing="0" width="600">
-									<tbody>
-										<tr>
+                               	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+									<tbody style="width: 100%;">
+										<tr style="width: 100%;">
 											<td valign="top" style="background-color: #DEEFF7;-webkit-border-radius:6px !important;border-radius:6px !important; padding: 10px;">
 												<?php echo $content; ?>
 											</td>
@@ -45,13 +38,7 @@
 																<p style="font-family: Arial;line-height: 18.2px;font-weight: bold;font-size: 18px;color: #000000;text-align: right;margin-bottom: 40px;">
 																	<br>
 																	<span style="padding-top: 10px;display: block;font-weight: normal;padding-right: 9px;">
-																		<?php
-																			//$phoneNumbers = Yii::app()->config->get('phoneNumbers');
-																			//$phoneNumbers = explode(', ', $phoneNumbers);
-																		?>
-																		Тел.:&nbsp; <?php //echo implode('<br>', $phoneNumbers) ?>
 																	</span>
-																	<a target="_blank" href="<?php //echo Yii::app()->request->hostInfo ?>" style="padding-top: 10px;display: block;font-weight: normal;padding-right: 9px;"><?php echo Yii::app()->request->hostInfo ?></a>
 																</p>
 															</td>
 														</tr>

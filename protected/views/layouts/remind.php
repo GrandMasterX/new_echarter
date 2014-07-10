@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/static/css/echarter_style.css">
     <link rel="stylesheet" href="/static/css/autocomplete.css">
     <link rel="stylesheet" href="/static/css/discount.css">
-
+    <link rel="icon" type="image/png" href="/images/img/favicon.ico" />
     <link rel="stylesheet" href="/static/css/radio.css">
     <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
 

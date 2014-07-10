@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="static/css/echarter_style.css">
     <link rel="stylesheet" href="static/css/autocomplete.css">
     <link rel="stylesheet" href="static/css/discount.css">
-
+    <link rel="icon" type="image/png" href="/images/img/favicon.ico" />
     <link rel="stylesheet" href="static/css/radio.css">
     <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
 
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="static/js/date.js"></script>
     <script type="text/javascript" src="static/js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="static/js/ui.datepicker-ru.js"></script>
-    <script type="text/javascript" src="static/js/form_all2.js?<?= mt_rand(1, 22222); ?>"></script>
+    <script type="text/javascript" src="static/js/form_all3.js?<?= mt_rand(1, 22222); ?>"></script>
     <script type="text/javascript" src="static/js/newformscripts.js"></script>
     <script type="text/javascript" src="static/js/wSelect.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
@@ -99,6 +99,20 @@
 </div>
 <?php $this->renderPartial('/layouts/footer');?>
 <script>
+
+    $.fn.alignCenterScreen = function() {
+        this.css("position", "absolute");
+        if(this.outerHeight() == 1) {
+            this.css("top", ($(window).height() - 621) / 2 + $(window).scrollTop()+ "px");
+        } else {
+            this.css("top", ($(window).height() - this.outerHeight()) / 2 + $(window).scrollTop()+ "px");
+        }
+
+        //this.css("left", ($(window).width() - this.outerWidth()) / 2 + $(window).scrollLeft() + "px");
+        //this.css('display','block');
+        return this
+    };
+
     jQuery.fn.topLink = function(settings) {
         settings = jQuery.extend({
             min: 1,

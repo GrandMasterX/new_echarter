@@ -17,13 +17,13 @@
         ?>
         <div class="element from pointCheck">
             <label>Откуда</label>
-            <input id="from" type="text" name="from" class="town" placeholder="Введите страну или город" value="<?=$startCityName?>" />
+            <input id="from" type="text" autocomplete="off" name="from" class="town" placeholder="Введите страну или город" value="<?=$startCityName?>" />
             <input id="startCityId" type="hidden" name="startCityId" class="hid_city_id" value="<?=$startCityId?>" />
             <div class="autocompl-block" style="position:absolute;z-index: 10000!important;"></div>
         </div>
         <div class="element to pointCheck">
             <label>Куда</label>
-            <input id="to" type="text" name="to" class="town" placeholder="Введите страну или город" value="<?=$endCityName?>" />
+            <input id="to" type="text" name="to" autocomplete="off" class="town" placeholder="Введите страну или город" value="<?=$endCityName?>" />
             <input id="endCityId" type="hidden" name="endCityId" class="hid_city_id" value="<?=$endCityId?>" />
             <div class="autocompl-block" style="position:absolute;z-index: 10000!important;"></div>
         </div>
@@ -47,7 +47,7 @@
 
         <div class="selectblock" style=" position: absolute; margin: 0px; margin-top: 39px; " style= >
             <input type="hidden" class="TiketsCounter input" id="ticketAmount" value="1" />
-            <span id="ticketCountNew">1</span>
+            <span class="ticketCountNew">1</span>
             <span id="passengerTitle"> Пассажир</span>
         </div>
         <div class="disocuntBlock" style="margin-left: 0px;margin-top: 69px;">
@@ -198,10 +198,50 @@
                 </tr>
                 <tr>
                     <td colspan="5" style="border-top:1px solid grey;">
-                        <div class="disocuntBlockClose" style="position: relative;float: right;margin-right: -5px;"><img src="http://e-travels.com.ua/images/form/close_new.png" alt="" />применить</div>
+                        <div class="disocuntBlockAccept" ><img style="width: 10px;margin-left: -11px;" src="http://e-travels.com.ua/images/form/data-check.png" alt="" />&nbsp<!--Применить--></div>
+                        <div class="disocuntBlockClose" style="float: right;"><img src="http://e-travels.com.ua/images/form/close_new.png" alt="" />&nbsp</div>
                     </td>
                 </tr>
             </table>
+        </div>
+
+        <div class="clearfix">
+            <div class="checkbox left" style="z-index: 1000000;margin-top: 43px;">
+                <ul class="clearfix" style="list-style-type: none;margin: 0px;padding: 0px;">
+                    <li class="clearfix" >
+                        <div class="clearfix">
+                            <div style="float:left;width: 135px;">
+                                <div class="element additional_data" style="padding: 0px;">
+                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Взрослые:</span>
+                                    <span class="disc0" style="color: #fff;line-height: 11px;font-size: 10px;">1</span>
+                                </div>
+                                <div class="element additional_data" style="padding: 0px;display: none;">
+                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Дети:</span>
+                                    <span class="disc1" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                </div>
+                                <div class="element additional_data" style="padding: 0px;display: none;">
+                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Дети без места:</span>
+                                    <span class="disc2" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                </div>
+                            </div>
+                            <div style="float:left;margin-left: 30px;width: 135px;height: 100px;">
+                                <div class="element additional_data" style="padding: 0px; display: none;">
+                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Студенты:</span>
+                                    <span class="disc3" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                </div>
+                                <div class="element additional_data" style="padding: 0px;display: none;">
+                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Молодежь:</span>
+                                    <span class="disc4" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                </div>
+                                <div class="element additional_data" style="padding-top: 8px;display: none;">
+                                    <span style="color: #fff;line-height: 11px;font-size: 10px;">Пожилые: </span>
+                                    <span class="disc5" style="color: #fff;line-height: 11px;font-size: 10px;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
 

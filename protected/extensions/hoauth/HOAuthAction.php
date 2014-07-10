@@ -381,17 +381,14 @@ class HOAuthAction extends CAction
 			if(!$user->save())
 				throw new Exception("Error, while saving {$this->model} model:\n\n" . var_export($user->errors, true));
 
-            /*$adminEmail = Yii::app()->config->get('adminEmail');
-            $mailFrom = Yii::app()->config->get('mailFrom');
+            /*registerViaSocial send email*/
 
-            //Отправляем сообщение пользователю о успешной регистрации
-            @Yii::app()->getModule('mail')->send($user->email, $mailFrom, 'successRegister', array(
-                'siteNameLink' => CHtml::link(Yii::app()->config->get('siteName'), Yii::app()->createAbsoluteUrl(Yii::app()->homeUrl)),
-                'username' => $user->email,
+            @Yii::app()->getModule('mail')->send($user->email, 'zakaz@echarter.com.ua', 'registerViaSocial', array(
+                'siteNameLink' => '<a href="http://echarter.com.ua/remind">E-charter</a>',
+                'remindUrl' => '<a href="http://echarter.com.ua/remind">Восстановление пароля</a>',
+                'feedBack' => '<a href="mailto:zakaz@echarter.com.ua">zakaz@echarter.com.ua</a>',
             ));
-
-			// trying to send activation email
-			$this->sendActivationEmail($user);*/
+            /* end registerViaSocial send email*/
 
 			if($this->useYiiUser)
 			{

@@ -4,7 +4,9 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-51910940-1', 'echarter.com.ua');
+    ga('create', 'UA-51910940-1', 'auto', {'allowLinker': true});
+    ga('require', 'linker');
+    ga('linker:autoLink', ['echarter.com.ua', 'echarters.com.ua','www.echarter.com.ua','www.echarters.com.ua'] );
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
 

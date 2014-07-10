@@ -32,8 +32,9 @@ class MailModule extends CWebModule
     {
         if (parent::beforeControllerAction($controller, $action)) {
             return true;
-        } else
+        } else {
             return false;
+        }
     }
 
     protected function parseVariables($text, $variables)
@@ -56,8 +57,9 @@ class MailModule extends CWebModule
     public function send($email, $from, $template, $variables = array())
     {
         $model = Mail::model()->findByAttributes(array('name' => $template));
-        if (empty($model))
+        if (empty($model)) {
             throw new CException(Yii::t('mail', "Шаблон с именем {$template} не найден."));
+        }
 
         list($subject, $body) = $this->parseModel($model, $variables);
         $body = Yii::app()->controller->renderPartial('modules.mail.views.default.view', array('content' => $body), true);
@@ -65,8 +67,9 @@ class MailModule extends CWebModule
 
         $emails = explode(',', $email);
 
-        foreach($emails as $v)
+        foreach($emails as $v) {
             $message->addTo(trim($v));
+        }
 
         $message->from = $from;
         return Yii::app()->mail->send($message);

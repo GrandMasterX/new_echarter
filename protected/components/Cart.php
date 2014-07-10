@@ -7,12 +7,12 @@ class Cart extends CApplicationComponent
 
     public function init()
     {
-		//$this->clear();
+		/*$this->clear();
 		if(isset(Yii::app()->session['cart'])) {
 			$this->_data = Yii::app()->session['cart'];
 		} else {
 			Yii::app()->session['cart'] = array();
-		}
+		}*/
 		
         parent::init();
     }
@@ -115,7 +115,7 @@ class Cart extends CApplicationComponent
 	
 	protected function saveState()
 	{
-		Yii::app()->session['cart'] = $this->_data;
+		//Yii::app()->session['cart'] = $this->_data;
 	}
 	
 	public function getDataProvider()

@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.editable-select.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
     <script type="text/javascript" src="/static/js/jquery-latest.js"></script>
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="icon" type="image/png" href="/images/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/static/css/form/form.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.editable-select.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
