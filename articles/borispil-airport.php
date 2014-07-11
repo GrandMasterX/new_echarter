@@ -1,58 +1,6 @@
-<?php
-$remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"]; $regularFlag="regular"; 
-session_start();
-$country22 = "Россия";
-$city22 = "Москва";
-include ('../includes/functions.php');
-if (!empty($_POST)) {
-    $action = $_POST['action'];
-    //echo 'dev.e-travels.com.ua/api/' . $action . '.php';
-    unset($_POST['action']);
-    $x = getRemoteData('http://dev.e-travels.com.ua/apio/' . $action . '.php?type=avia&res=echarter_reg&remoteUser='.$remoteUser.'&countriesStart=Украина,' . $country22 . '&countriesEnd=' . $country22 . '&citiesStart=Киев,Берлин,Вена,Баку,Буэнос-Айрес,Ереван,Минск,Брюссель,София,Рио-де-Жанейро,Лондон,Будапешт,Ханой,Тбилиси,Копенгаген,Тель-Авив,Мадрид,Рим,Алматы,Оттава,Сеул,Рига,Вильнюс,Кишинёв,Амстердам,Осло,Дубай,Варшава,Лиссабон,Москва,Бухарест,Вашингтон,Белград,Братислава,Бангкок,Стамбул,Ташкент,Киев,Хельсинки,Париж,Загреб,Подгорица,Прага,Женева,Таллин,Токио&citiesEnd=' . $city22 . ',Берлин,Вена,Баку,Буэнос-Айрес,Ереван,Минск,Брюссель,София,Рио-де-Жанейро,Лондон,Будапешт,Ханой,Тбилиси,Копенгаген,Тель-Авив,Мадрид,Рим,Алматы,Оттава,Сеул,Рига,Вильнюс,Кишинёв,Амстердам,Осло,Дубай,Варшава,Лиссабон,Москва,Бухарест,Вашингтон,Белград,Братислава,Бангкок,Стамбул,Ташкент,Киев,Хельсинки,Париж,Загреб,Подгорица,Прага,Женева,Таллин,Токио', $_POST);
-    //print_r($x); die;
-    //header('Content-type', $x[0]);
-    $x = str_replace('/images/', '/images/form/', $x[1]);
-    $x = str_replace('/images/form/form/', '/images/form/', $x);
-    echo $x;
-    die;
-}
-$form = getRemoteData('dev.e-travels.com.ua/apio/getForm.php?type=avia&res=echarter_reg&remoteUser='.$remoteUser.'');
-$form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
-//print_r($form);
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<title>Расписание самолетов Борисполь</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
-<link rel="stylesheet" href="../css/layout.css" type="text/css" media="all">
-<link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
-<?php include('../includes/scripts.php');?> 
-    <link rel="stylesheet" type="text/css" href="/css/form/form.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/jquery.editable-select.css"/>
-	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css"/>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
-	<script type="text/javascript" src="/js/date.js"></script>
-    <script type="text/javascript" src="/js/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="/js/ui.datepicker-ru.js"></script>
-    <script type="text/javascript" src="/js/form_all.js?<?= mt_rand(1, 22222)
-    ; ?>"></script>
-    <script type="text/javascript" src="/js/newformscripts.js"></script>
-</head>
-<body>
-<div class="main">
-<?php include('../includes/header.php');?> 
-<div class="new_form" id="new_form">
-    <?= $form ?>
-</div>
-<div style="clear:both"></div>	
-    <div class="wrapper pad1">
-<h3 class="top" style="text-align:left;">Портал чартерных авиаперевозок<span>Авиакомпании, туроператоры и агентства</span></h3>
+<?php include('../inc/header.php');?>
+<div class="block clearfix">
+<div class="row_block left maintext">
 <h1>Расписание самолетов Борисполь</h1>
 
 					<table align="center" border="1" bordercolor="#f4f4f4" cellpadding="3" cellspacing="0" width="89%" id="table1">
@@ -68,7 +16,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							(авиалайнера)</strong></td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/abu-dhabi.php">Абу-Даби</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Абу-Даби</strong></td>
 
 							<td align="center">PS375</td>
 							<td align="center">Пн, Пт</td>
@@ -92,7 +40,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/almaty.php">Алматы</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Алматы</strong></td>
 
 							<td align="center">PS583</td>
 							<td align="center">Пн, Вт, Чт, Пт<br></td>
@@ -132,7 +80,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">MD-82</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/amsterdam.php">Амстердам</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Амстердам</strong></td>
 
 							<td align="center">PS101</td>
 							<td align="center">Ежедневно</td>
@@ -156,7 +104,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-737</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/astana.php">Астана</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Астана</strong></td>
 
 							<td align="center">PS533</td>
 							<td align="center">Пн, Вт, Пт, Вс</td>
@@ -222,7 +170,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">MD-82</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/baku.php">Баку</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Баку</strong></td>
 
 							<td align="center">J2684</td>
 							<td align="center">Пн, Ср, Чт, Сб</td>
@@ -263,7 +211,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-763</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/barcelona.php">Барселона</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Барселона</strong></td>
 
 							<td align="center">PS991</td>
 							<td align="center">Вт, Ср, Чт, Сб, Вс</td>
@@ -295,7 +243,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-737</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/batumi.php">Батуми</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Батуми</strong></td>
 
 							<td align="center">A9669</td>
 							<td align="center">Пн, Ср, Чт, Пт, Сб, Вс</td>
@@ -311,7 +259,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">MD-82</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/berlin.php">Берлин</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Берлин</strong></td>
 
 							<td align="center">PS203</td>
 							<td align="center">Ежедневно</td>
@@ -319,7 +267,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/bishkek.php">Бишкек</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Бишкек</strong></td>
 
 							<td align="center">VV431</td>
 							<td align="center">Сб</td>
@@ -327,7 +275,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-733</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/brussels.php">Брюссель</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Брюссель</strong></td>
 
 							<td align="center">PS901</td>
 							<td align="center">Пн, Вт, Ср, Чт, Пт</td>
@@ -335,7 +283,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-737</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/budapest.php">Будапешт</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Будапешт</strong></td>
 
 							<td align="center">MA111</td>
 							<td align="center">Ежедневно</td>
@@ -368,7 +316,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Airbus А-320</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/bucharest.php">Бухарест</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Бухарест</strong></td>
 
 							<td align="center">VV231</td>
 							<td align="center">Вт, Вс</td>
@@ -409,7 +357,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/warsaw.php">Варшава</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Варшава</strong></td>
 
 							<td align="center">LO752</td>
 							<td align="center">Ежедневно</td>
@@ -433,7 +381,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/vienna.php">Вена</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Вена</strong></td>
 
 							<td align="center">OS662</td>
 							<td align="center">Ежедневно</td>
@@ -465,7 +413,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-737</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/vilnius.php">Вильнюс</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Вильнюс</strong></td>
 
 							<td align="center">VV245</td>
 							<td align="center">Пн, Вт, Ср, Чт, Пт, Вс</td>
@@ -489,7 +437,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">ER-4</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/hamburg.php">Гамбург</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Гамбург</strong></td>
 
 							<td align="center">VV259</td>
 							<td align="center">Пн, Ср, Пт, Сб</td>
@@ -522,7 +470,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-763</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/delhi.php">Дели</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Дели</strong></td>
 
 							<td align="center">VV151</td>
 							<td align="center">Пн, Ср</td>
@@ -642,7 +590,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">ER-4</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/dubai.php">Дубай</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Дубай</strong></td>
 
 							<td align="center">PS373</td>
 							<td align="center">Вт, Пт</td>
@@ -698,7 +646,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/yerevan.php">Ереван</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Ереван</strong></td>
 							<td align="center">VV461</td>
 							<td align="center">Пн, Ср, Пт</td>
 							<td align="center">12:50 - 17:50</td>
@@ -714,8 +662,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - 
-							<a href="../regular-flights/geneva.php">Женева</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Женева</strong></td>
 							<td align="center">PS 485</td>
 							<td align="center">Чартерный рейс</td>
 							<td align="center">10:15</td>
@@ -772,7 +719,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/kishinev.php">Кишинев</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Кишинев</strong></td>
 							<td align="center">9U136</td>
 							<td align="center">Ср, Сб</td>
 							<td align="center">20:30 - 21:40</td>
@@ -804,7 +751,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/copenhagen.php">Копенгаген</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Копенгаген</strong></td>
 							<td align="center">VV257</td>
 							<td align="center">Пн, Ср, Чт, Пт, Сб, Вс</td>
 							<td align="center">13:10 - 14:50</td>
@@ -844,7 +791,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/lisbon.php">Лиссабон</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Лиссабон</strong></td>
 							<td align="center">PS951</td>
 							<td align="center">Вт, Пт, Вс</td>
 							<td align="center">17:40 - 20:40</td>
@@ -852,7 +799,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/london.php">Лондон</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Лондон</strong></td>
 							<td align="center">PS951</td>
 							<td align="center">Ежедневно</td>
 							<td align="center">09:00 - 10:30</td>
@@ -940,7 +887,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/madrid.php">Мадрид</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Мадрид</strong></td>
 							<td align="center">PS941</td>
 							<td align="center">Пн, Ср, Пт</td>
 							<td align="center">08:10 - 11:45</td>
@@ -965,7 +912,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/milan.php">Милан</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Милан</strong></td>
 							<td align="center">PS311</td>
 							<td align="center">Пн, Вт, Ср, Чт, Пт, Вс</td>
 							<td align="center">10:40 - 12:30</td>
@@ -973,7 +920,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/minsk.php">Минск</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Минск</strong></td>
 							<td align="center">VV485</td>
 							<td align="center">Пн, Вт, Пт, Сб, Вс</td>
 							<td align="center">18:05 - 19:30</td>
@@ -1013,8 +960,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) -
-							<a href="../regular-flights/moscow.php">Москва</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Москва</strong></td>
 							<td align="center">7Д415</td>
 							<td align="center">Пт</td>
 							<td align="center">18:55 - 21:30</td>
@@ -1155,7 +1101,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/munich.php">Мюнхен</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Мюнхен</strong></td>
 							<td align="center">LH2545</td>
 							<td align="center">Ежедневно</td>
 							<td align="center">17:05 - 18:30</td>
@@ -1171,7 +1117,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/naples.php">Неаполь</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Неаполь</strong></td>
 							<td align="center">VV285</td>
 							<td align="center">Вс</td>
 							<td align="center">11:30 - 13:35</td>
@@ -1187,7 +1133,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/new-york.php">Нью-Йорк</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Нью-Йорк</strong></td>
 							<td align="center">VV131</td>
 							<td align="center">Пн, Вт, Чт, Пт, Сб, Вс</td>
 							<td align="center">13:35 - 17:05</td>
@@ -1265,8 +1211,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - 
-							<a href="../regular-flights/oslo.php">Осло</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Осло</strong></td>
 							<td align="center">DY 1521</td>
 							<td align="center">Чартерный рейс</td>
 							<td align="center">19:20</td>
@@ -1274,7 +1219,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/paris.php">Париж</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Париж</strong></td>
 							<td align="center">AF1953</td>
 							<td align="center">Ежедневно</td>
 							<td align="center">12:30 - 14:45</td>
@@ -1298,7 +1243,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/peking.php">Пекин</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Пекин</strong></td>
 							<td align="center">VV181</td>
 							<td align="center">Пн, Ср, Чт, Сб</td>
 							<td align="center">15:30 - 04:40</td>
@@ -1306,7 +1251,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/prague.php">Прага</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Прага</strong></td>
 							<td align="center">OK917</td>
 							<td align="center">Ежедневно</td>
 							<td align="center">15:10 - 16:15</td>
@@ -1338,7 +1283,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/riga.php">Рига</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Рига</strong></td>
 							<td align="center">BT401</td>
 
 							<td align="center">Ежедневно</td>
@@ -1362,7 +1307,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/rome.php">Рим</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Рим</strong></td>
 							<td align="center">PS305</td>
 
 							<td align="center">Пн, Ср, Чт, Пт, Сб</td>
@@ -1436,8 +1381,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">EMBRAER 195</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) -
-							<a href="../regular-flights/st-petersburg.php">Санкт-Петербург</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Санкт-Петербург</strong></td>
 							<td align="center">VV401</td>
 
 							<td align="center">Пн, Вт, Ср, Чт, Сб</td>
@@ -1589,7 +1533,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-737</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/sofia.php">София</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - София</strong></td>
 							<td align="center">VV205</td>
 
 							<td align="center">Пт, Сб</td>
@@ -1613,7 +1557,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-734</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/istanbul.php">Стамбул</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Стамбул</strong></td>
 							<td align="center">TK458</td>
 
 							<td align="center">Пн, Ср, Чт, Пт, Вс</td>
@@ -1685,7 +1629,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/tallinn.php">Таллин</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Таллин</strong></td>
 							<td align="center">OV312</td>
 
 							<td align="center">Пн, Вт, Ср, Чт, Пт, Сб</td>
@@ -1717,7 +1661,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">EMBRAER 195</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/tbilisi.php">Тбилиси</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Тбилиси</strong></td>
 							<td align="center">PS727</td>
 
 							<td align="center">Ежедневно</td>
@@ -1741,7 +1685,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">ER-4</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/tehran.php">Тегеран</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Тегеран</strong></td>
 							<td align="center">RV7901</td>
 
 							<td align="center">Пн</td>
@@ -1757,7 +1701,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">MD-82</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/tel-aviv.php">Тель-Авив</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Тель-Авив</strong></td>
 							<td align="center">IZ352</td>
 
 							<td align="center">Ср, Вс</td>
@@ -1822,7 +1766,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-763</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/toronto.php">Торонто</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Торонто</strong></td>
 							<td align="center">VV141</td>
 
 							<td align="center">Вт, Чт</td>
@@ -1830,8 +1774,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-763</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) -
-							<a href="../regular-flights/frankfurt.php">Франкфурт-на-Майне</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Франкфурт-на-Майне</strong></td>
 							<td align="center">LH1491</td>
 
 							<td align="center">Ежедневно</td>
@@ -1887,7 +1830,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">ER-4</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/helsinki.php">Хельсинки</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Хельсинки</strong></td>
 							<td align="center">AY192</td>
 
 							<td align="center">Вт, Чт</td>
@@ -1919,8 +1862,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - 
-							<a href="../regular-flights/hurghada.php">Хургада</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Хургада</strong></td>
 							<td align="center">KS 4703</td>
 
 							<td align="center">Чартерный рейс</td>
@@ -1937,7 +1879,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-735</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/zurich.php">Цюрих</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Цюрих</strong></td>
 							<td align="center">PS471</td>
 
 							<td align="center">Ср</td>
@@ -1945,7 +1887,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">Боинг-737</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) - <a href="../regular-flights/sharjah.php">Шарджа</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Шарджа</strong></td>
 							<td align="center">G9294</td>
 
 							<td align="center">Вт, Пт, Сб, Вс</td>
@@ -1953,8 +1895,7 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 							<td align="center">А-320</td>
 						</tr>
 						<tr>
-							<td align="center"><strong>Аэропорт Борисполь (Киев) -
-							<a href="../regular-flights/sharm-el-sheikh.php">Шарм-ель-Шейх</a></strong></td>
+							<td align="center"><strong>Аэропорт Борисполь (Киев) - Шарм-ель-Шейх</strong></td>
 							<td align="center">7W 7051</td>
 
 							<td align="center">Чартерный рейс</td>
@@ -1970,10 +1911,12 @@ $form = $x[1] = str_replace('/images/', '/images/form/', $form[1]);
 <iframe width="700" height="309" frameborder="0" style="overflow: hidden; border: 0; -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);" src="http://rasp.yandex.ua/informers/station/9600365/?size=5&amp;color=1&amp;type=tablo"></iframe>
 </div>
 </center>
-<br />	
-<?php include('includes/linkblock.php');?>  	
+<br />
 </div>
-<?php include('../includes/footer.php');?>  
+
+</div></div>
+
 </div>
+<?php include('../inc/footer.php');?>
 </body>
 </html>

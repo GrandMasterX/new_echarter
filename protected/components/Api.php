@@ -83,7 +83,7 @@ class Api extends Config {
         if (!empty($post)) {
 
             $action = $post['action'];//.'OnlyJson';
-            $type = empty($post['type']) ? 'all' : $post['type'];
+            $type = empty($post['type']) ? 'echarter' : $post['type'];
             $res = empty($post['res']) ? 'echarter2' : $post['res'];
 
             $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
@@ -101,6 +101,31 @@ class Api extends Config {
 
         $form = $this->renderPartial($display_form ,array(),true);
         return $form;
+    }
+
+    public function actionGetTimeTable($post) {
+        $post = array(
+            'END_CITY_ID' => "C1E1CDA59082D9CAE040B859C1436099",
+            'ROUND_TRIP'=> "false",
+            'SELECTED_MODES'=> "4;3;8",
+            'START_CITY_ID'=> "928F32EDA461026FE040A8C01E02395E",
+            'TICKETS'=> "1",
+            'TRIP_DATE'=> '13.07.2014',
+            'BACK_TRIP_DATE' => '',
+            'TICKETS_INFO[all]'=>1,
+            'action'=>'searchTrips',
+            'type'=>'echarter',
+            'res'=>'echarter2',
+            'slt'=>'6d7d4ae4fdae7f8c0de21d7f164e688b',
+
+        );
+        $remoteUser =  $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"];
+
+        $action = 'getTimeTable2';//.'OnlyJson';
+        $type = empty($post['type']) ? 'echarter' : $post['type'];
+        $res = empty($post['res']) ? 'echarter2' : $post['res'];
+        $x = $this->actionGetRemoteData('http://api.e-travels.com.ua/apio/'.$action.'.php?type='.$type.'&res='.$res.'&remoteUser='.$remoteUser, $post);
+        return $x;
     }
 
     public function getActionSalt()

@@ -46,8 +46,9 @@
             var name = $(this).parents('.cell_block.background.clearfix').find('.departue').text(),
                 alt_name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text(),
                 popular = 'Популярное направление',
-                in_search = 'Выдача',
+                in_search = 'Поиск',
                 more = 'Клик';
+
             if(name != '') {
                 _gaq.push(['_trackEvent', popular, more, name, 1]);
             } else {
@@ -59,7 +60,7 @@
         /* reservation button from search results*/
         $('.rezer.item.right.check_seats').live('click',function(){
             var name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text();
-            _gaq.push(['_trackEvent', 'Зарезервировать из найденых', 'Клик', name, 1]);
+            _gaq.push(['_trackEvent', 'Забронировать из поиска', 'Клик', name, 1]);
         });
         /* end reservation button from search results*/
 
@@ -71,8 +72,14 @@
         /* end reservation button from search results via moreinfo*/
 
         /* free reservation button click*/
-        $('.booking_order').live('click',function(e){
-            _gaq.push(['_trackEvent', 'Забронировать бесплатно', 'Нажатие', 'оформление заказа', 1]);
+        //$('.booking_order').live('click',function(e){
+            _gaq.push(['_trackEvent', 'Забронировать бесплатно конец', 'Клик', 'оформление заказа', 1]);
+        //});
+        /* end free reservation button click*/
+
+        /* free reservation button click*/
+        $('.reservation_form').find('.btn').live('click',function(e){
+            _gaq.push(['_trackEvent', 'Поиск из выкуп заказа', 'Клик', 'поиск', 1]);
         });
         /* end free reservation button click*/
 
@@ -84,14 +91,14 @@
 
         /* search from Рассписание/Бронь button click*/
         $('.get_ticket').live('click',function(e){
-            _gaq.push(['_trackEvent', 'Искать', 'Клик', $(this).closest('.popup.order').find('h3').text(), 1]);
+            _gaq.push(['_trackEvent', 'Поиск из подробнее в популярных', 'Клик', $(this).closest('.popup.order').find('h3').text(), 1]);
         });
         /* end reservation/order button click*/
 
         /* slider hot tickets*/
         $('.row_town').live('click',function(e){
             var name = $(this).find('.promoStartCityName').val()+' '+$(this).find('.promoEndCityName').val();
-            _gaq.push(['_trackEvent', 'Горячие направления', 'Клик', name, 1]);
+            _gaq.push(['_trackEvent', 'Спецпредложения лето', 'Клик', name, 1]);
         });
         /* end slider hot tickets*/
 

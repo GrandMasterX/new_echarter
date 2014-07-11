@@ -19,7 +19,7 @@ else
     error_reporting(0);
 }
 require_once($yii);
-Yii::app()->onBeginRequest = function($event)
+/*Yii::app()->onBeginRequest = function($event)
 {
     return ob_start("ob_gzhandler");
 };
@@ -28,5 +28,5 @@ Yii::app()->onEndRequest = function($event)
 {
 
     return ob_end_flush();
-};
+};*/
 Yii::createWebApplication($config)->run();

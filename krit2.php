@@ -1,24 +1,10 @@
-<?php include ('inc/form.php'); ?>
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Чартер - остров Крит</title>
-		<meta name="description" content="">
-		<?php include ('inc/scripts.php'); ?>	
-	</head>
-	<body>
-		<?php include('inc/header2.php');?>
-		<div class="popular_container">
-			<div class="wrap">
-				<div id="tripsResultContainer"></div>
-				<div class="block clearfix">
-					<div class="row_block left maintext">
-<h1>Чартер на Крит </h1>
+<?php
+$regular = 1;
+$city22="Крит";
+$country22="Греция";
+$inTarget="в Крит"; //на Мальту, в Сплит
+$ofTarget="Крит";  // аэропорт Сплита
+$individual='<h1>Чартер на Крит </h1>
 
 <p>Греция является идеальной страной для путешествий. В ней много пляжей, гор, 
 скалистых островов, лесов, а также исторических мест, культовых сооружений, 
@@ -126,11 +112,9 @@
 
 <p>На остров Крит чартерные и регулярные самолеты прилетают в аэропорт &quot;Ираклион&quot;</p>
 <p>Международный аэропорт Салоники SKG (Македония) находится в 15 км от города 
-Салоники, из него осуществляются рейсы на Кипр и в Европу.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<?php include('inc/footer.php');?>
-	</body>
-</html>
+Салоники, из него осуществляются рейсы на Кипр и в Европу.</p>';
+$startCityName="Kiev";
+$endCityName="krit";
+$roundTrip="";  // $roundTrip="&roundTrip=1"   - для Мальты
+include('template.php');
+?>

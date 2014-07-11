@@ -35,7 +35,8 @@ class SiteController extends Bus {
     public function actionIndex($page = '') {
         $this->layout = '/layouts/main';
         $form = $this->actionCreateSession($_POST, '/api/form');
-        //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
+        //$data = $this->actionGetTimeTable($_POST);
+        $tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
         $this->render('index', array('form' => $form, 'page'=>$page));
     }
 
@@ -250,10 +251,6 @@ class SiteController extends Bus {
     public function actionGetActionSalt() {
         $salt = $this->getActionSalt();
         echo json_encode($salt);
-    }
-
-    public function actionGetTimeTable() {
-
     }
 
 }

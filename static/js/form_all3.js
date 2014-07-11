@@ -597,7 +597,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('all','echarter2');
+        reLogin('echarter','echarter2');
         //SEARCH BUTTON CLICK
 
 
@@ -629,6 +629,7 @@ $(document).ready(function () {
                 return false;
             }
 
+            $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif"/></div>');
             /* установка параметров авиа фильтров  - конец*/
             searchParams.SELECTED_MODES = "";
             searchParams.SELECTED_MODES = "4;3;8";

@@ -19,7 +19,7 @@
                         <img alt="" src="/static/images/pics/tivat1.png" />
                     </div>
                     <div class="cell_town text left">Киев - Тиват - Киев</div>
-                    <div class="cell_town price left"> от 3200 грн</div>
+                    <div class="cell_town price left"> от 3200.00 грн</div>
                     <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                     <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                     <input type="hidden" class="promoEndCityName" value="Тиват, Черногория" />
@@ -87,7 +87,7 @@
                         <img alt="" src="/static/images/pics/tivat1.png" />
                     </div>
                     <div class="cell_town text left">Киев - Тиват - Киев</div>
-                    <div class="cell_town price left"> от 3200 грн</div>
+                    <div class="cell_town price left"> от 3200.00 грн</div>
                     <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                     <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                     <input type="hidden" class="promoEndCityName" value="Тиват, Черногория" />

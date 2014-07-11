@@ -1,5 +1,4 @@
 RewriteEngine on
-RewriteRule ^(.*)\$ $1.php [L]
 # if a directory or a file exists, use it directly
 AddDefaultCharset utf-8
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -12,3 +11,6 @@ RewriteRule . index.php
 #php_value post_max_size 500M
 #php_value max_execution_time 500
 #php_value max_input_time 500
+
+Redirect 301 /about.php http://echarter.com.ua/about
+Redirect 301 /contacts.php http://echarter.com.ua/contacts

@@ -597,7 +597,7 @@ $(document).ready(function () {
             )
         }
         init(params);
-        reLogin('all','echarter2');
+        reLogin('echarter','echarter2');
         //SEARCH BUTTON CLICK
 
 
@@ -629,6 +629,7 @@ $(document).ready(function () {
                 return false;
             }
 
+            $('#loader').html('<div class="ajax-loader-line"><img src="/img/ajax-loader(1).gif"/></div>');
             /* установка параметров авиа фильтров  - конец*/
             searchParams.SELECTED_MODES = "";
             searchParams.SELECTED_MODES = "4;3;8";
@@ -1451,6 +1452,7 @@ $(document).ready(function () {
         // BOOKING FORM
         objs.resultContainer.on('click', '.booking_order', function () {
 
+
             if($("input.international").length) { //если присутствует авиа рейс
                 var correct = true;
                 $("input.international").each(function(){
@@ -1464,16 +1466,22 @@ $(document).ready(function () {
                         //return false;
                     }
                 });
-                if(!correct) return false;
+                if(!correct) {
+                    _gaq.push(['_trackEvent', 'Забронировать бесплатно ошибка', 'Клик', 'Ошибка', 1]);
+                    return false;
+                }
             }
 
             if ($(this).disabled()) {
+                _gaq.push(['_trackEvent', 'Забронировать бесплатно ошибка', 'Клик', 'Ошибка', 1]);
                 return false;
             }
+
             var obj = $(this);
             var p = obj.parent();
             contentLoader(p);
             var str = $("form[name=order_data]").serialize();
+
             var post = {
                 'order_data': str,
                 'url1': 'http://echarter.com.ua/orderSuccess.php?r=1',
@@ -1500,7 +1508,7 @@ $(document).ready(function () {
                     return;
                 }
                 window.location = json.url;
-
+                _gaq.push(['_trackEvent', 'Забронировать бесплатно успешная', 'Клик', 'Прошла успешно', 1]);
             }, 'json');
         });
 
