@@ -6,16 +6,16 @@
                 <div class="left">
                     <div class="title_footer">регулярные рейсы</div>
                     <ul class="clearfix left">
-                        <li><a href="/regular-flights/prague.php">Прага</a></li>
-                        <li><a href="/regular-flights/yerevan.php">Ереван</a></li>
-                        <li><a href="/regular-flights/sofia.php">София</a></li>
-                        <li><a href="/regular-flights/london.php">Лондон</a></li>
-                        <li><a href="/regular-flights/moscow.php">Москва</a></li>
+                        <li><a href="/flights/prague.php">Прага</a></li>
+                        <li><a href="/regular-flights.php">Ереван</a></li>
+                        <li><a href="/flights/sofia.php">София</a></li>
+                        <li><a href="/flights/london.php">Лондон</a></li>
+                        <li><a href="/flights/moscow.php">Москва</a></li>
                     </ul>
                     <ul class="clearfix left" style="border-right: 1px dotted #fff;">
-                        <li><a href="/regular-flights/istanbul.php">Стамбул</a></li>
-                        <li><a href="/regular-flights/baku.php">Баку</a></li>
-                        <li><a href="/regular-flights/larnaca.php">Ларнака</a></li>
+                        <li><a href="/regular-flights.php">Стамбул</a></li>
+                        <li><a href="/flights/baku.php">Баку</a></li>
+                        <li><a href="/flights/larnaca.php">Ларнака</a></li>
                     </ul>
                 </div>
                 <div class="left">
