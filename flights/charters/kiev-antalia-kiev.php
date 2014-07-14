@@ -3,7 +3,7 @@ $startCityName = 'Киев, Украина';
 $endCityName = 'Анталья, Турция';
 $startCityId = '928F32EDA461026FE040A8C01E02395E';
 $endCityId = 'C4127300130E9B3FE040B859C1431FF7';
-include ('form.php');
+//include ('form.php');
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -15,10 +15,10 @@ include ('form.php');
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Киев - Анталия (Турция) - Киев</title>
 		<meta name="description" content="">
-		<?php include ('../inc/scripts.php'); ?>	
+		<?php //include ('../inc/scripts.php'); ?>
 	</head>
 	<body>
-		<?php include('../inc/header2.php');?>
+		<?php //include('../inc/header2.php');?>
 		<div class="popular_container">
 			<div class="wrap">
 				<div id="tripsResultContainer"></div>

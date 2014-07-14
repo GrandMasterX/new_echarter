@@ -155,9 +155,9 @@
                         Взрослые<br>
                         <span>(25-60 лет)</span>
                         <div class="countFrame">
-                            <div class="countFrameLeft" id="discGroupe0"> </div>
+                            <div class="countFrameLeft" id="discGroupe0" data-target="disc0"> </div>
                             <input type="text" value="1" class="birthday" id="discGroupe0" maxlength="2" readonly="">
-                            <div class="countFrameRight" id="discGroupe0"> </div>
+                            <div class="countFrameRight" id="discGroupe0" data-target="disc0"> </div>
                         </div>
                     </div>
                     <div style="color: grey;font-size: 13px;padding-left: 17px;">Возможные скидки</div>
@@ -289,7 +289,8 @@
                         </tr>
                         <tr>
                             <td colspan="5" style="border-top:1px solid grey;">
-                                <div class="disocuntBlockClose" style="position: relative;float: right;margin-right: -5px;"><img src="http://e-travels.com.ua/images/form/close_new.png" alt="">применить</div>
+                                <div class="disocuntBlockAccept"><img style="width: 10px;margin-left: -11px;" src="http://e-travels.com.ua/images/form/data-check.png" alt="">&nbsp;<!--Применить--></div>
+                                <div class="disocuntBlockClose" style="float: right;"><img src="http://e-travels.com.ua/images/form/close_new.png" alt="">&nbsp;</div>
                             </td>
                         </tr>
                         </tbody></table>
