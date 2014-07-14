@@ -30,6 +30,7 @@
 уже сам выбирает, за что он предпочтёт платить.</p>	
 
 <br />
+            <?php include('includes/linkblock.php');?>
 </div>
 
 </div></div>

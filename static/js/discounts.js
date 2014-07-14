@@ -176,7 +176,7 @@ var totalTicketsAmount = parseInt($('input#totalTicketsAmount').val(), 10),
 
 /*minus ticket data */
 $('.countFrameLeft').live('click',function(){
-    if(tickets_obj[$(this).data('target')] >0 && tickets_obj['all'] >1) {
+    if(tickets_obj['all'] >1) {
         tickets_obj[$(this).data('target')] = tickets_obj[$(this).data('target')]-1;
         tickets_obj['all']--;
         var group_data = $('.container_form').find('.checkbox.left').find("."+$(this).data('target'));

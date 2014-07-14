@@ -36,6 +36,7 @@
 отстраивать аэропорты, инфраструктуру и т.д.</p>	
 
 <br />
+            <?php include('includes/linkblock.php');?>
     </div>
 
     </div></div>

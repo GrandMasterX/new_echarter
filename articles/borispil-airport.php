@@ -1912,6 +1912,7 @@
 </div>
 </center>
 <br />
+<?php include('includes/linkblock.php');?>
 </div>
 
 </div></div>

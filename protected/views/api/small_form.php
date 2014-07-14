@@ -59,9 +59,9 @@
                 Взрослые<br />
                 <span>(25-60 лет)</span>
                 <div class="countFrame">
-                    <div class="countFrameLeft" id="discGroupe0"> </div>
+                    <div class="countFrameLeft" id="discGroupe0" data-target="disc0"> </div>
                     <input type="text" value="1"  class="birthday" id="discGroupe0" maxlength="2" readonly />
-                    <div class="countFrameRight" id="discGroupe0"> </div>
+                    <div class="countFrameRight" id="discGroupe0"data-target="disc0"> </div>
                 </div>
             </div>
             <div style="color: grey;font-size: 13px;padding-left: 17px;">Возможные скидки</div>

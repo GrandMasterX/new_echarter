@@ -77,6 +77,7 @@
 стоимости билетов на другие виды пассажирского транспорта.</p>
 
 <br />
+            <?php include('includes/linkblock.php');?>
     </div>
 
     </div></div>

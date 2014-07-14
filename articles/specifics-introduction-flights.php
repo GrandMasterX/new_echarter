@@ -23,6 +23,7 @@
 бронирования и багажную бирку. </p>	
 
 <br />
+            <?php include('includes/linkblock.php');?>
     </div>
 
 </div></div>

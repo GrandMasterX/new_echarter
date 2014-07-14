@@ -47,6 +47,7 @@ Amadeus Altea Customer Management (CMS), которая предназначен
 нового поколения.</p>	
 
 <br />
+    <?php include('includes/linkblock.php');?>
 </div></div>
     </div>
 
