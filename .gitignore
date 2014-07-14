@@ -1,8 +1,9 @@
 assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
 framework/*
 protected/runtime/*
-protected/config
-protected/config/main.php
 protected/config/*
 nbproject
 nbproject/*
