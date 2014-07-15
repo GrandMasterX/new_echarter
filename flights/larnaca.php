@@ -9,6 +9,11 @@ $PoStrane="Кипру"; //по Англии
 $goroda="Ларнаки";
 $inCity3="В <b>Ларнаке</b>";
 $inCountry="в Кипр";
+
+$toCity = 'Ларнака, Кипр';
+$toCityId = 'DD3BC3350A0D3452E040B859605233B8';
+
+
 $individual='<p>Аэропорт Ларнаки - главный международный аэропорт на Кипре, находися в 
 четырех километрах от города прямо на берегу моря. Перевозчики &quot;Cyprus Airways&quot;, 
 &quot;Aegean Airlines&quot; &quot;Eurocypria Airlines&quot; используют его в качестве своей базы, 

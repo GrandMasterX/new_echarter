@@ -3,6 +3,8 @@ $city22="Тунис";
 $country22="Тунис";
 $inTarget="Тунис"; //на Мальту, в Сплит
 $ofTarget="Туниса";  // аэропорт Сплита
+$toCity = 'Тунис, Тунис';
+$toCityId = 'DD3BC3350A353452E040B859605233B8';
 $individual='';
 /*
 $attention='<br />
@@ -13,7 +15,7 @@ $attention='<br />
 </p>';
 */
 $startCityName="Kiev";
-$endCityName="Antalia";
+$endCityName="tunis";
 $roundTrip="";  // $roundTrip="&roundTrip=1"   - для Мальты
 include('template.php');
 ?>

@@ -57,6 +57,8 @@
                 <ul class="clearfix left">
                     <li><a href="/split.php">Сплит</a></li>
                     <li><a href="/flights/larnaca.php">Ларнака</a></li>
+                    <li><a href="/flights/tel-aviv.php">Тель-Авив</a></li>
+                    <li><a href="/flights/batumi.php">Батуми</a></li>
                 </ul>
             </div>
         </div>

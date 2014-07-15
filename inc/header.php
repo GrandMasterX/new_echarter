@@ -184,9 +184,6 @@
                                     <li>
                                         <a href="/site/oauth?provider=Google" class="gl"></a>
                                     </li>
-
-
-
                                     <li>
                                         <a href="/site/oauth?provider=Facebook" class="fb"></a>
                                     </li>
@@ -237,14 +234,14 @@
             <form class="clearfix">
                 <div class="element from pointCheck">
                     <label>Откуда</label>
-                    <input id="from" type="text" name="from" class="town" placeholder="Введите страну или город" value="">
-                    <input id="startCityId" type="hidden" name="startCityId" class="hid_city_id" value="">
+                    <input id="from" type="text" name="from" class="town" placeholder="Введите страну или город" value="Киев, Украина">
+                    <input id="startCityId" type="hidden" name="startCityId" class="hid_city_id" value="928F32EDA461026FE040A8C01E02395E">
                     <div class="autocompl-block" style="position:absolute;z-index: 10000!important;"></div>
                 </div>
                 <div class="element to pointCheck">
                     <label>Куда</label>
-                    <input id="to" type="text" name="to" class="town" placeholder="Введите страну или город" value="">
-                    <input id="endCityId" type="hidden" name="endCityId" class="hid_city_id" value="">
+                    <input id="to" type="text" name="to" class="town" placeholder="Введите страну или город" value="<? echo $toCity;?>">
+                    <input id="endCityId" type="hidden" name="endCityId" class="hid_city_id" value="<? echo $toCityId?>">
                     <div class="autocompl-block" style="position:absolute;z-index: 10000!important;"></div>
                 </div>
 

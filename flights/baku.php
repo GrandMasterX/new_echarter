@@ -7,6 +7,8 @@ $inTarget="в Баку";
 $inCity2="в <b>Баку</b>";
 $PoStrane="Азербайджану"; //по Англии
 $goroda="Баку";
+$toCity = 'Баку, Азербайджан';
+$toCityId = 'CA82DFCA487D666CE040B859C1430680';
 
 $inCity3="В <b>Баку</b>";
 $inCountry="в Азербайджан";
