@@ -15,7 +15,6 @@
                     <ul class="clearfix left" style="border-right: 1px dotted #fff;">
                         <li><a href="/regular-flights.php">Стамбул</a></li>
                         <li><a href="/flights/baku.php">Баку</a></li>
-                        <li><a href="/flights/larnaca.php">Ларнака</a></li>
                     </ul>
                 </div>
                 <div class="left">
@@ -52,6 +51,12 @@
                         <li><a href="/bangkok.php">Бангкок</a></li>
                         <li><a href="/dubai.php">Дубай</a></li>
                         <li><a href="/emirates.php">ОАЭ</a></li>
+                        <li><a href="/varna.php">Варна</a></li>
+                        <li><a href="/pula.php">Пула</a></li>
+                    </ul>
+                    <ul class="clearfix left">
+                        <li><a href="/split.php">Сплит</a></li>
+                        <li><a href="/flights/larnaca.php">Ларнака</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,6 +68,18 @@
     </div>
 </footer>
 <script>
+    $.fn.alignCenterScreen = function() {
+        this.css("position", "absolute");
+        if(this.outerHeight() == 1) {
+            this.css("top", ($(window).height() - 621) / 2 + $(window).scrollTop()+ "px");
+        } else {
+            this.css("top", ($(window).height() - this.outerHeight()) / 2 + $(window).scrollTop()+ "px");
+        }
+
+        //this.css("left", ($(window).width() - this.outerWidth()) / 2 + $(window).scrollLeft() + "px");
+        //this.css('display','block');
+        return this
+    };
     jQuery.fn.topLink = function(settings) {
         settings = jQuery.extend({
             min: 1,
@@ -107,34 +124,51 @@
             }, 2000);
         });
 
+        $('.dep_date').datepicker().change(function () {
+            $('.dep_date').val($(this).val());
+        });
+        $('.ret_date').datepicker().change(function () {
+            $('.ret_date').val($(this).val());
+        });
+
         $('.row_town').live('click', function(e) {
             var promoStartCityName = $(this).find('input.promoStartCityName').val();
             var promoStartCityId = $(this).find('input.promoStartCityId').val();
             var promoEndCityName = $(this).find('input.promoEndCityName').val();
             var promoEndCityId = $(this).find('input.promoEndCityId').val();
-            var promoStartDate = $(this).find('input.promoStartDate').val();
-            var promoEndDate = $(this).find('input.promoEndDate').val();
+
 
             $('input#startCityId').val(promoStartCityId);
-            $('input#from').val(promoStartCityName);
+            $('input#from').val(promoStartCityName).addClass('check_out');
             $('input#endCityId').val(promoEndCityId);
-            $('input#to').val(promoEndCityName);
-            $('input#tripDate').val(promoStartDate);
-            $('input#backTripDate').val(promoEndDate);
+            $('input#to').val(promoEndCityName).addClass('check_out');
+            //$('input#tripDate').val(promoStartDate);
+            //$('input#backTripDate').val(promoEndDate);
         });
 
         $('.order_ticket').on('click', function() {
-            $('.close_popup').click();
-            $('input#startCityId').val($(this).parent('div').find('input.promoStartCityId').val());
-            $('input#from').val($(this).parent('div').find('input.promoStartCityName').val());
-            $('input#endCityId').val($(this).parent('div').find('input.promoEndCityId').val());
-            $('input#to').val($(this).parent('div').find('input.promoEndCityName').val());
-            //$('input#tripDate').val($(this).parent('div').find('input.promoStartDate').val());
-            //$('input#backTripDate').val($(this).parent('div').find('input.promoEndDate').val());
-            $('html, body').animate({
-                scrollTop: $(".tabs_menu").offset().top
-            }, 2000);
-            $('#tripDate').datepicker('show');
+            $(this).parent('div').find('.elaboration').toggle();
+        });
+
+        $('.get_ticket').on('click',function(){
+            if($(this).closest('.elaboration').find('.dep_date').val() =='') {
+                $(this).closest('.elaboration').find('.dep_date').css('border','1px solid red')
+                $(this).closest('.popup_wrap').find('.footer_popup').html('<span style="margin: 0 0 0 20px;color: red;">Выберите хотя бы одну дату</span>');
+                return false;
+            } else {
+                $('input#startCityId').val($(this).parents('.popup').find('.hidden_data input.promoStartCityId').val());
+                $('input#from').val($(this).parents('.popup').find('.hidden_data input.promoStartCityName').val());
+                $('input#endCityId').val($(this).parents('.popup').find('.hidden_data input.promoEndCityId').val());
+                $('input#to').val($(this).parents('.popup').find('.hidden_data input.promoEndCityName').val());
+                $('input#tripDate').val($(this).parents('.popup').find('.dep_date').val());
+                $('input#backTripDate').val($(this).parents('.popup').find('.ret_date').val());
+                $('.close_popup').click();
+                $(this).closest('.popup_wrap').find('.footer_popup').html('');
+                $('html, body').animate({
+                    scrollTop: $(".tabs_menu").offset().top
+                }, 2000);
+                $('#searchButton').click();
+            }
         });
 
         $('img.del').live('click',function(){
@@ -148,17 +182,19 @@
         });
 
         $('#tripsResultContainer a.moreTripInfo').live('click', function(){
-            $(this).parent('div').find('div.popup.order').show();
+            $(this).parent('div').find('div.popup').show();
+            $(this).parent('div').find('div.popup').alignCenterScreen();
             $('body').find('#overlay').show();
         });
 
         $('.populars a.moreTripInfo').live('click', function(){
-            $(this).parent('div').find('div.popup.order').show();
             $('body').find('#overlay').show();
             if($(this).attr('trip') !='') {
                 var stateObj = { page: $(this).attr('trip') };
-                history.pushState(stateObj, $(this).attr('trip'), '?page='+$(this).attr('trip'));
+                history.pushState(stateObj, $(this).attr('trip'), 'page/'+$(this).attr('trip'));
             }
+            $(this).parent('div').find('div.popup.order').show();
+            $('div.popup.order').alignCenterScreen();
         });
 
         $('.check_seats').live('click', function() {
@@ -188,18 +224,23 @@
         });
 
         $(document).ready(function() {
-            $('.detail_toggle').click(function() {
-                $(this).parent().children('.page').slideToggle(300);
+            $('.detail_toggle').live('click',function() {
+                $(this).closest('.row_block').find('.page').slideToggle(300);
             });
         });
 
         $(document).click(function(event) {
-            //if(!$(event.target).closest('.top_menu_item').length) {
-            //    if($('.top_menu_item').parent('li').hasClass('active')) {
-            //        $('.top_menu_item').parent('li').removeClass('active');
-            //    }
-            // }
+            if(!$(event.target).closest('.top_menu_item').length) {
+                if($('.top_menu_item').parent('li').hasClass('active') && !$(event.target).parents('.block_login').length) {
+                    $('.top_menu_item').parent('li').removeClass('active');
+                }
+            }
+        });
+
+        $('.check_seats .reserve').live('click', function() {
+            $(this).closest('div.popup.order').hide();
         })
+
 
     });
 </script>

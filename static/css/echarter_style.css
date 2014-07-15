@@ -908,3 +908,7 @@ input.check_out {
     text-shadow: #afafaf 1px 0px, #afafaf 1px 1px, #afafaf 0px 1px, #afafaf -1px 1px, #afafaf -1px 0px, #afafaf -1px -1px, #afafaf 0px -1px, #afafaf 1px -1px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px, #afafaf 0 0 2px;
     font-size: 12px;
 }
+
+.block_foto.left .img img{
+    max-width: 100%;
+}

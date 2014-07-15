@@ -53,7 +53,7 @@
                         <img alt="" src="/static/images/pics/byrgas1.png" />
                     </div>
                     <div class="cell_town text left">Киев - Бургас - Киев</div>
-                    <div class="cell_town price left"> от 1809.86 грн</div>
+                    <div class="cell_town price left"> от 2763.26 грн</div>
                     <input type="hidden" class="promoStartCityName" value="Киев, Украина" />
                     <input type="hidden" class="promoStartCityId" value="928F32EDA461026FE040A8C01E02395E" />
                     <input type="hidden" class="promoEndCityName" value="Бургас, Болгария" />

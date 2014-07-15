@@ -29,6 +29,7 @@
     <script type="text/javascript" src="static/js/newformscripts.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
     <script type="text/javascript" src="static/js/discounts.js"></script>
+    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=xBqWQl2CYVfxlUl6gIv4bnnnJ*BK9sfNr/GdUltVma9xHG2wseU8ncntKFl83NlOBAOhT0LxIqaGU759Q*btEcs3Y8PFOIwvMPdq4cWauhCemV5Ynr51YKNlFkmqPRE3Aa*XIznUuYf95dwju9ILIaBIO3/yaoUVM88csrJ2qQs-';</script>
 </head>
 <body>
 <div id="overlay" style="display: none;"></div>
