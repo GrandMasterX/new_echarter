@@ -1,3 +1,4 @@
+<? $title='Развитие авиакомпании';?>
 <?php include('../inc/header.php');?>
     <div class="block clearfix">
         <div class="row_block left maintext">

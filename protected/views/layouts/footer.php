@@ -51,14 +51,15 @@
                     <li><a href="/bangkok.php">Бангкок</a></li>
                     <li><a href="/dubai.php">Дубай</a></li>
                     <li><a href="/emirates.php">ОАЭ</a></li>
-                    <li><a href="/varna.php">Варна</a></li>
-                    <li><a href="/pula.php">Пула</a></li>
+                    <li><a href="/flights/varna.php">Варна</a></li>
+                    <li><a href="/flights/pula.php">Пула</a></li>
                 </ul>
                 <ul class="clearfix left">
-                    <li><a href="/split.php">Сплит</a></li>
+                    <li><a href="/flights/split.php">Сплит</a></li>
                     <li><a href="/flights/larnaca.php">Ларнака</a></li>
                     <li><a href="/flights/tel-aviv.php">Тель-Авив</a></li>
                     <li><a href="/flights/batumi.php">Батуми</a></li>
+                    <li><a href="/flights/kanarskie-ostrova.php">Канарские острова</a></li>
                 </ul>
             </div>
         </div>

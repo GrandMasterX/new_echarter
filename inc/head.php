@@ -1,7 +1,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Чартер <?php echo $inTarget; ?></title>
+    <title>
+        <? if(!empty($title)) {
+            echo $title;
+        } else {
+            echo 'Чартер '.$inTarget;
+        }?></title>
     <meta name="description" content="">
     <link rel="stylesheet" href="/static/css/normalize.min.css">
     <link rel="stylesheet" href="/static/css/echarter_style.css">

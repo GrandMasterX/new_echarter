@@ -1,3 +1,4 @@
+<? $title='Специфика внедрения системы электронных авиабилетов';?>
 <?php include('../inc/header.php');?>
     <div class="block clearfix">
         <div class="row_block left maintext">
