@@ -20,7 +20,6 @@ Redirect 301 /regular-flights/atlanta.php http://echarter.com.ua/regular-flights
 Redirect 301 /regular-flights/austria.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/azerbaijan.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/barcelona.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/baku.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/belarus.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/batumi.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/belgium.php http://echarter.com.ua/regular-flights.php
@@ -65,18 +64,15 @@ Redirect 301 /regular-flights/india.php http://echarter.com.ua/regular-flights.p
 Redirect 301 /regular-flights/hungary.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/iran.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/israel.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/istanbul.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/japan.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/italy.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/kaliningrad.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/karaganda.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/kazakhstan.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/kishinev.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/larnaca.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/las-vegas.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/latvia.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/lisbon.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/london.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/lithuania.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/los-angeles.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/luxembourg.php http://echarter.com.ua/regular-flights.php
@@ -86,7 +82,6 @@ Redirect 301 /regular-flights/mali-losinj.php http://echarter.com.ua/regular-fli
 Redirect 301 /regular-flights/milan.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/minsk.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/moldavia.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/moscow.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/munich.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/naples.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/new-york.php http://echarter.com.ua/regular-flights.php
@@ -96,7 +91,6 @@ Redirect 301 /regular-flights/oslo.php http://echarter.com.ua/regular-flights.ph
 Redirect 301 /regular-flights/norway.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/peking.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/poland.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/prague.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/portugal.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/riga.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/romania.php http://echarter.com.ua/regular-flights.php
@@ -108,7 +102,6 @@ Redirect 301 /regular-flights/shanghai.php http://echarter.com.ua/regular-flight
 Redirect 301 /regular-flights/slovakia.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/sochi.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/south-korea.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/sofia.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/stockholm.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/spain.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/st-petersburg.php http://echarter.com.ua/regular-flights.php
@@ -133,7 +126,6 @@ Redirect 301 /regular-flights/vienna.php http://echarter.com.ua/regular-flights.
 Redirect 301 /regular-flights/vilnius.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/warsaw.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/washington.php http://echarter.com.ua/regular-flights.php
-Redirect 301 /regular-flights/yerevan.php http://echarter.com.ua/regular-flights.php
 Redirect 301 /regular-flights/zurich.php http://echarter.com.ua/regular-flights.php
 
 

@@ -30,6 +30,103 @@
     <script type="text/javascript" src="static/js/newformscripts.js"></script>
     <script type="text/javascript" src="static/js/wSelect.js"></script>
     <? $this->renderPartial('/static/google_analitics');?>
+    <script type="text/javascript">
+
+        /* moreInfo blocks*/
+        $('.moreTripInfo').live('click',function(e){
+            var name = $(this).parents('.cell_block.background.clearfix').find('.departue').text(),
+                alt_name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text(),
+                popular = 'Популярное направление',
+                in_search = 'Поиск',
+                more = 'Клик';
+
+            if(name != '') {
+                _gaq.push(['_trackEvent', popular, more, name, 1]);
+            } else {
+                _gaq.push(['_trackEvent', in_search, more, alt_name, 1]);
+            }
+        });
+        /* end moreInfo blocks*/
+
+        /* reservation button from search results*/
+        $('.rezer.item.right.check_seats').live('click',function(){
+            var name = $(this).parents('.cell_block.clearfix').find('.block_info.right p:eq(1)').text();
+            _gaq.push(['_trackEvent', 'Забронировать из поиска', 'Клик', name, 1]);
+        });
+        /* end reservation button from search results*/
+
+        /* reservation button from search results via moreinfo*/
+        $('.btn_popup .reserve').live('click',function(){
+            var name = $(this).parents('.popup.order').find('.block_info.right p:eq(1)').text();
+            _gaq.push(['_trackEvent', 'Зарезервировать из найденых через подробнее', 'Клик', name, 1]);
+        });
+        /* end reservation button from search results via moreinfo*/
+
+        /* free reservation button click*/
+        //$('.booking_order').live('click',function(e){
+        _gaq.push(['_trackEvent', 'Забронировать бесплатно конец', 'Клик', 'оформление заказа', 1]);
+        //});
+        /* end free reservation button click*/
+
+        /* free reservation button click*/
+        $('.reservation_form').find('.btn').live('click',function(e){
+            _gaq.push(['_trackEvent', 'Поиск из выкуп заказа', 'Клик', 'поиск', 1]);
+        });
+        /* end free reservation button click*/
+
+        /* reservation/order button click*/
+        $('.order_ticket').live('click',function(e){
+            _gaq.push(['_trackEvent', 'Рассписание/Бронь', 'Клик', 'рысскрытие формы', 1]);
+        });
+        /* end reservation/order button click*/
+
+        /* search from Рассписание/Бронь button click*/
+        $('.get_ticket').live('click',function(e){
+            _gaq.push(['_trackEvent', 'Поиск из подробнее в популярных', 'Клик', $(this).closest('.popup.order').find('h3').text(), 1]);
+        });
+        /* end reservation/order button click*/
+
+        /* slider hot tickets*/
+        $('.row_town').live('click',function(e){
+            var name = $(this).find('.promoStartCityName').val()+' '+$(this).find('.promoEndCityName').val();
+            _gaq.push(['_trackEvent', 'Спецпредложения лето', 'Клик', name, 1]);
+        });
+        /* end slider hot tickets*/
+
+        /* search button click*/
+        $('#searchButton').live('click',function(){
+            _gaq.push(['_trackEvent', 'Поиск рейсов', 'Клик', $('#from').val()+' '+$('#to').val()+', дата: '+$('#tripDate').val()+'-'+$('#backTripDate').val(), 1]);
+        });
+        /* end search button click*/
+
+        /* buy throw visa/mastercard */
+        $('.buy_order_alfa').live('click',function(){
+            _gaq.push(['_trackEvent', 'VISA / MasterCard', 'Клик', 'Покупка через Альфабанк', 1]);
+        });
+        $('.buy_order').live('click',function(){
+            _gaq.push(['_trackEvent', 'VISA / MasterCard', 'Клик', 'Покупка через Приватбанк', 1]);
+        });
+        /* end buy throw visa?mastercard */
+
+        /*  Скачать Лист Бронирования*/
+        $('.info_date_to_pay').live('click',function(){
+            _gaq.push(['_trackEvent', 'Скачать Лист Бронирования', 'Клик','', 1]);
+        });
+        /* end Скачать Лист Бронирования*/
+
+        /*  Оплатить Visa / MasterCard*/
+        $('.btn.visa').live('click',function(){
+            _gaq.push(['_trackEvent', 'Оплатить Visa / MasterCard', 'Клик','', 1]);
+        });
+        /* end Оплатить Visa / MasterCard*/
+
+        /*  Другие способы оплаты*/
+        $('.btn.morepvays').live('click',function(){
+            _gaq.push(['_trackEvent', 'Другие способы оплаты', 'Клик','', 1]);
+        });
+        /* end Другие способы оплаты*/
+    </script>
+    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=xBqWQl2CYVfxlUl6gIv4bnnnJ*BK9sfNr/GdUltVma9xHG2wseU8ncntKFl83NlOBAOhT0LxIqaGU759Q*btEcs3Y8PFOIwvMPdq4cWauhCemV5Ynr51YKNlFkmqPRE3Aa*XIznUuYf95dwju9ILIaBIO3/yaoUVM88csrJ2qQs-';</script>
     <script type="text/javascript" src="static/js/discounts.js"></script>
 </head>
 <body>
