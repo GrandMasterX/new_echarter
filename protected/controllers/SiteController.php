@@ -195,7 +195,6 @@ class SiteController extends Bus {
 	}
 
     public function actionLogin() {
-        //r4Hhqu
         if(isset($_POST) && !empty($_POST)) {
             $user = new User('signin');
             $user->attributes = $_POST;

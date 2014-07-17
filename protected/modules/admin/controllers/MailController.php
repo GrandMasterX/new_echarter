@@ -23,7 +23,7 @@ class MailController extends AdminController
 	{
 		$model=new Mail;
 		
-		$this->performAjaxValidation($model);
+		$this->performMailAjaxValidation($model);
 
 		if(isset($_POST['Mail']))
 		{
@@ -48,7 +48,7 @@ class MailController extends AdminController
 	{
 		$model=$this->loadModel($id);
 
-		$this->performAjaxValidation($model);
+		$this->performMailAjaxValidation($model);
 
 		if(isset($_POST['Mail']))
 		{
@@ -117,7 +117,7 @@ class MailController extends AdminController
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+	protected function performMailAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='mail-form')
 		{
