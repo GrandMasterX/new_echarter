@@ -1,6 +1,6 @@
 <? include('inc/header.php');?>
 <div class="block clearfix">
-    <div class="row_block left maintext" style="background-color: #ede2cc;">
+    <div style="width: 100%;margin-bottom: 13px;margin: 0px -4px 13px 8px;font-size: 14px;">
         <?php echo $individual; ?>
     </div>
 </div>

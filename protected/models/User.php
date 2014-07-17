@@ -15,9 +15,15 @@ class User extends CActiveRecord {
     private $_isAuthenticated = false;
     private $_state = array();
     public  $unhashed_password;
-    public  $auth_role;
-    const ROLE_ADMIN = 'admin@admin';
+    const STATUS_NOT_CONFIRMED = 0;
+    const STATUS_CONFIRMED = 1;
+
+    const ROLE_GUEST = 'guest';           // "Гость"
+    const ROLE_CLIENT = 'client';         // "Клиент"
+    const ROLE_MANAGER = 'manager';       // "Менеджер"
+    const ROLE_ADMIN = 'admin';           // "Администратор"
     const SALT = 'ckFdFErhf}yS';
+
     public static function model($className = __CLASS__)
     {
         return parent::model($className);

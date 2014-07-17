@@ -61,6 +61,12 @@
                         <li><a href="/flights/batumi.php">Батуми</a></li>
                         <li><a href="/flights/kanarskie-ostrova.php">Канарские острова</a></li>
                     </ul>
+                    <ul class="clearfix left">
+                        <li><a href="/flights/tenerife.php">Тенерифе</a></li>
+                        <li><a href="/flights/rimini.php">Римини</a></li>
+                        <li><a href="/tivat.php">Тиват</a></li>
+                        <li><a href="/burgas.php">Бургас</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="logo_footer right">
@@ -68,6 +74,18 @@
             </div>
         </div>
         <div class="copy" style="text-align: right; font-size: 11px; color: #fff; line-height: 11px;">© 2014 echarter.com.ua All rights reserved.</div>
+        <div style="display:none;">
+            <!--LiveInternet counter--><script type="text/javascript"><!--
+                document.write("<a href='http://www.liveinternet.ru/click' "+
+                    "target=_blank><img src='//counter.yadro.ru/hit?t44.11;r"+
+                    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                    ";"+Math.random()+
+                    "' alt='' title='LiveInternet' "+
+                    "border='0' width='31' height='31'><\/a>")
+                //--></script><!--/LiveInternet-->
+        </div>
     </div>
 </footer>
 <script>

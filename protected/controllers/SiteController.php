@@ -3,6 +3,7 @@
 class SiteController extends Bus {
 
     public $layout = '/layouts/main';
+
 	/**
 	 * Declares class-based actions.
 	 */
@@ -32,11 +33,12 @@ class SiteController extends Bus {
         );
     }
 
+
     public function actionIndex($page = '') {
         $this->layout = '/layouts/main';
         $form = $this->actionCreateSession($_POST, '/api/form');
         //$data = $this->actionGetTimeTable($_POST);
-        $tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
+        //$tpl = $this->renderPartial('/forms/search_result',array('data'=>$form),true);
         $this->render('index', array('form' => $form, 'page'=>$page));
     }
 
