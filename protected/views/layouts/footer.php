@@ -66,6 +66,7 @@
                     <li><a href="/flights/rimini.php">Римини</a></li>
                     <li><a href="/tivat.php">Тиват</a></li>
                     <li><a href="/burgas.php">Бургас</a></li>
+                    <li><a href="/montenegro.php">Черногория</a></li>
                 </ul>
             </div>
         </div>
