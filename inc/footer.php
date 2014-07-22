@@ -68,6 +68,10 @@
                         <li><a href="/burgas.php">Бургас</a></li>
                         <li><a href="/montenegro.php">Черногория</a></li>
                     </ul>
+                    <ul class="clearfix left">
+                        <li><a href="/flights/barselona.php">Барселона</a></li>
+                        <li><a href="/flights/spain.php">Испания</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="logo_footer right">

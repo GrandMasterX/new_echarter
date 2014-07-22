@@ -301,9 +301,14 @@
                     }
                 });
 
-                $(document).ready(function() {
-                    $('.detail_toggle').live('click',function() {
-                        $(this).closest('.row_block').find('.page').slideToggle(300);
+                $('.detail_toggle').click(function() {
+                    var that = this;
+                    $(this).closest('.row_block').find('.page').slideToggle(300, function(){
+                        if ($(this).is(':visible')) {
+                            $(that).text('< свернуть');
+                        } else {
+                            $(that).text('подробнее >');
+                        }
                     });
                 });
 
