@@ -4,6 +4,7 @@
 </div>
 <div id="tripsResultContainer" style="display: none;"></div>
 <div class="title_">Популярные направления</div>
+<? $this->renderPartial('/static/ceo'); ?>
 <div class="block clearfix populars">
 <div class="row_block left">
 
@@ -987,7 +988,6 @@
 
 </div>
 </div>
-<? $this->renderPartial('/static/ceo'); ?>
 <div class="social_block clearfix">
     <div class="vk left">
         <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>

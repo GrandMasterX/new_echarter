@@ -71,6 +71,7 @@
                     <ul class="clearfix left">
                         <li><a href="/flights/barselona.php">Барселона</a></li>
                         <li><a href="/flights/spain.php">Испания</a></li>
+                        <li><a href="/palma-de-mallorca.php">Пальма де Мальорка</a></li>
                     </ul>
                 </div>
             </div>
